@@ -40,7 +40,7 @@ library(CAGEr)
 library(BSgenome.Dpulex.JGI.dpulex)
 
 #location of bamfiles (move files into this new location on your system)
-inputDir <- system.file("merged_bamfiles",package="CAGEr")
+inputDir <- "/DATA/GROUP/rtraborn/Daphnia_Project/Dp_data/merged_bamfiles"
 
 pathsToInputFiles <- list.files(inputDir, full.names = TRUE)
 
@@ -53,7 +53,7 @@ DpCAGE <- new("CAGEset",
               genomeName = "BSgenome.Dpulex.JGI.dpulex",
               inputFiles = pathsToInputFiles,
               inputFilesType = 'bam',
-              sampleLabels = c('mat_females','mat_males','pE_females')
+              sampleLabels = c('mat_females')
               )
 
 #checking whether the DpCAGE object was successfully created
