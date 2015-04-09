@@ -1,0 +1,10 @@
+"region" "stage" "fraction_of_reads"
+"Exons" "pE_females" 0.418168349198297
+"Introns" "pE_females" 0.0647390864900398
+"Intergenic" "pE_females" 0.517092564311664
+"Exons" "mature_females" 0.409092531600701
+"Introns" "mature_females" 0.0668495836158676
+"Intergenic" "mature_females" 0.524057884783431
+"Exons" "mature_males" 0.382421111283915
+"Introns" "mature_males" 0.065968328809336
+"Intergenic" "mature_males" 0.551610559906749
