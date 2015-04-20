@@ -1,0 +1,7 @@
+"   cluster" "    chr" "    start" "     end" "   strand" "   nr_ctss" "dominant_ctss" "     tpm" "tpm.dominant_ctss" "    q_0.1" "    q_0.9" "interquantile_width"
+"Min.   :    1  " "Length:10214      " "Min.   :     55  " "Min.   :     73  " "Length:10214      " "Min.   : 1.000  " "Min.   :     64  " "Min.   :   0.077  " "Min.   :   0.0383  " "Min.   :     56  " "Min.   :     73  " "Min.   :  1.00  "
+"1st Qu.: 2554  " "Class :character  " "1st Qu.: 203542  " "1st Qu.: 203582  " "Class :character  " "1st Qu.: 2.000  " "1st Qu.: 203562  " "1st Qu.:   3.802  " "1st Qu.:   1.9859  " "1st Qu.: 203560  " "1st Qu.: 203572  " "1st Qu.:  4.00  "
+"Median : 5108  " "Mode  :character  " "Median : 522842  " "Median : 522866  " "Mode  :character  " "Median : 3.000  " "Median : 522862  " "Median :   8.234  " "Median :   4.0662  " "Median : 522844  " "Median : 522866  " "Median :  7.00  "
+"Mean   : 5108  " NA "Mean   : 800490  " "Mean   : 800508  " NA "Mean   : 5.241  " "Mean   : 800499  " "Mean   :  27.304  " "Mean   :  14.3496  " "Mean   : 800493  " "Mean   : 800506  " "Mean   : 13.32  "
+"3rd Qu.: 7661  " NA "3rd Qu.:1122475  " "3rd Qu.:1122485  " NA "3rd Qu.: 6.000  " "3rd Qu.:1122484  " "3rd Qu.:  20.297  " "3rd Qu.:   9.4398  " "3rd Qu.:1122478  " "3rd Qu.:1122485  " "3rd Qu.: 20.00  "
+"Max.   :10214  " NA "Max.   :4192422  " "Max.   :4192457  " NA "Max.   :77.000  " "Max.   :4192453  " "Max.   :3699.801  " "Max.   :2398.3460  " "Max.   :4192423  " "Max.   :4192453  " "Max.   :141.00  "
