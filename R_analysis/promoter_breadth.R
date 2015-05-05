@@ -21,22 +21,16 @@ n_widths_dp <- length(dpul_widths)
 dmel_widths <- width(dmel.gr)
 n_widths_dm <- length(dmel_widths)
 
-n_diff <- n_widths_dp-n_widths_dm 
+width_vec <- c(dpul_widths, dmel_widths)
+org_vec <- c(rep("D_pulex",n_widths_dp),rep("D_melanogaster",n_widths_dm))
 
-print(length(dpul_widths))
-
-dmel_widths2 <-c(dmel_widths,rep(NA,n_diff))
-
-print(length(dmel_widths2))
-
-widths.df  <- as.data.frame(cbind(dpul_widths,dmel_widths2))
-names(widths.df) <- c("D_pulex","D_melanogaster")
+widths.df <- data.frame(width_vec, org_vec)
+names(widths.df) <- c("promoter_breadth","species")
 
 #plotting the figures
 
-f <- ggplot(widths.df, aes(dpul_widths, dmel_widths2))
+f <- ggplot(widths.df, aes(species,promoter_breadth))
 f + geom_boxplot()
-
 
 ggsave("width_compare.png",width=6,height=5)
 
