@@ -2,6 +2,7 @@
 
 require("GenomicRanges")
 require("ggplot2")
+require("scales")
 
 dpul.df <- read.table(file="/home/rtraborn/research/Daphnia/Daphnia_CAGE_Data/promoter_arch/D_pulex/All.samples.tagClusters.qLow0.1_qUp0.9.bed",header=F,stringsAsFactors=F)
 
@@ -29,7 +30,7 @@ names(widths.df) <- c("promoter_breadth","species")
 
 #plotting the figures
 
-ggplot(widths.df, aes(x=promoter_breadth)) + geom_histogram(binwidth=5,fill="blue") + facet_grid(species ~ .)
+ggplot(widths.df, aes(x=promoter_breadth)) + geom_histogram(binwidth=5,colour="blue",fill="white") + facet_grid(species ~ .) + scale_y_continuous(labels=percent)
 
 ggsave("width_compare.png",width=6,height=5)
 
