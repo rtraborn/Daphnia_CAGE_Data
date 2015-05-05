@@ -16,21 +16,27 @@ dpul.gr <- makeGRangesFromDataFrame(dpul.df, seqnames.field="chr", start.field="
 dmel.gr <- makeGRangesFromDataFrame(dmel.df, seqnames.field="chr", start.field="start", end.field="end", strand.field="strand")
 
 dpul_widths <- width(dpul.gr)
+n_widths_dp <- length(dpul_widths)
 
 dmel_widths <- width(dmel.gr)
+n_widths_dm <- length(dmel_widths)
 
-widths.dpul <- as.data.frame(dpul_widths)
-widths.dmel <- as.data.frame(dmel_widths)
+n_diff <- n_widths_dp-n_widths_dm 
 
-names(widths.dpul) <- c("widths")
-names(widths.dmel) <- c("widths")
+print(length(dpul_widths))
+
+dmel_widths2 <-c(dmel_widths,rep(NA,n_diff))
+
+print(length(dmel_widths2))
+
+widths.df  <- as.data.frame(cbind(dpul_widths,dmel_widths2))
+names(widths.df) <- c("D_pulex","D_melanogaster")
 
 #plotting the figures
 
-f <- ggplot(widths.dpul, aes(widths))
-f + geom_density()
-f <- ggplot(widths.dmel, aes(widths))
-f + geom_density()
+f <- ggplot(widths.df, aes(dpul_widths, dmel_widths2))
+f + geom_boxplot()
+
 
 ggsave("width_compare.png",width=6,height=5)
 
