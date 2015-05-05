@@ -29,8 +29,8 @@ names(widths.df) <- c("promoter_breadth","species")
 
 #plotting the figures
 
-f <- ggplot(widths.df, aes(colour=species,x=promoter_breadth))
-f+ geom_density()
+f <- ggplot(widths.df, aes(fill=species,x=promoter_breadth))
+f + geom_density(alpha=0.3)
 
 ggsave("width_compare.png",width=6,height=5)
 
