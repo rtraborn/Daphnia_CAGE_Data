@@ -29,8 +29,7 @@ names(widths.df) <- c("promoter_breadth","species")
 
 #plotting the figures
 
-f <- ggplot(widths.df, aes(fill=species,x=promoter_breadth))
-f + geom_density(alpha=0.3)
+ggplot(widths.df, aes(x=promoter_breadth)) + geom_density(fill="blue") + facet_grid(species ~ .)
 
 ggsave("width_compare.png",width=6,height=5)
 
