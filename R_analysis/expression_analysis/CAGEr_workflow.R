@@ -1,6 +1,5 @@
 # Analysis of Daphnia CAGE data, including promoter annotation using CAGEr and differential expression analysis
 # Credit to Dave Tang for his github tutorial (located here: https://github.com/davetang/ccl2/blob/master/analysis.R)
-#Written on January 20, 2015
 
 #Session Info
 
