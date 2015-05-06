@@ -28,13 +28,14 @@ v <- voom(Dp_dge,design,plot=TRUE)
 
 fit <- lmFit(v,design)
 fit <- eBayes(fit)
+volcanoplot(fit)
 
 options(digits=3)
-top <- topTable(fit,coef=ncol(design),sort.by="P")
+top <- topTable(fit,coef=2,n=Inf,sort.by="P",adjust="BH")
 
 #number of differentially-related promoters
 sum(top$adj.P.Val<0.01)
 
-write.table(top, file="Dp_top_DGE_list.txt",col.names=TRUE,row.names=TRUE)
+write.table(top,file="Dp_top_DGE_list.txt",col.names=TRUE,row.names=TRUE)
 
 #plotMDS(v, labels=1:8, col=as.numeric(genotype))
