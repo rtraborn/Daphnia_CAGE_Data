@@ -1,4 +1,3 @@
-track name="asexual_females (tag clusters (TC) q(0.1)-q(0.9))" description="asexual_females (tag clusters (TC) q(0.1)-q(0.9))" visibility="pack" color=255,0,0
 scaffold_1	51155	51159	.	0	+	51155	51156	0	3	1,4,1	0,0,3
 scaffold_1	51223	51224	.	0	+	51223	51224	0	3	1,1,1	0,0,0
 scaffold_1	100766	100777	.	0	+	100773	100774	0	3	1,8,1	0,1,10
@@ -10223,7 +10222,6 @@ scaffold_99	376719	376781	.	0	-	376757	376758	0	3	1,62,1	0,0,61
 scaffold_99	376803	376807	.	0	-	376803	376804	0	3	1,4,1	0,0,3
 scaffold_99	391432	391456	.	0	-	391432	391433	0	3	1,24,1	0,0,23
 scaffold_99	392132	392134	.	0	-	392132	392133	0	3	1,2,1	0,0,1
-track name="pE_females (tag clusters (TC) q(0.1)-q(0.9))" description="pE_females (tag clusters (TC) q(0.1)-q(0.9))" visibility="pack" color=0,255,0
 scaffold_1	51155	51159	.	0	+	51155	51156	0	3	1,4,1	0,0,3
 scaffold_1	51223	51224	.	0	+	51223	51224	0	3	1,1,1	0,0,0
 scaffold_1	100766	100777	.	0	+	100773	100774	0	3	1,9,1	0,1,10
@@ -20438,7 +20436,6 @@ scaffold_99	376719	376781	.	0	-	376757	376758	0	3	1,34,1	0,19,61
 scaffold_99	376803	376807	.	0	-	376803	376804	0	3	1,4,1	0,0,3
 scaffold_99	391432	391456	.	0	-	391451	391452	0	3	1,24,1	0,0,23
 scaffold_99	392132	392134	.	0	-	392132	392133	0	3	1,2,1	0,0,1
-track name="sexual_males (tag clusters (TC) q(0.1)-q(0.9))" description="sexual_males (tag clusters (TC) q(0.1)-q(0.9))" visibility="pack" color=0,0,255
 scaffold_1	51155	51159	.	0	+	51155	51156	0	3	1,4,1	0,0,3
 scaffold_1	51223	51224	.	0	+	51223	51224	0	3	1,1,1	0,0,0
 scaffold_1	100766	100777	.	0	+	100773	100774	0	3	1,9,1	0,1,10
