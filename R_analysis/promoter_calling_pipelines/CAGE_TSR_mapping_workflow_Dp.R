@@ -5,7 +5,7 @@ require(CAGEr)
 #load the genome as appropriate
 require(BSgenome.Dpulex.JGI.dpulex)
 #enter the location of the directory of mapped bam files from CAGE or other 5' end reads. (Note: the directory must ONLY have the bam files of interest in it)
-c("/home/rtraborn/Daphnia/CAGE/corrected_bamfile") -> thisDir
+c("/home/rtraborn/Daphnia/Daphnia_") -> thisDir
 pathsToInputFiles <- list.files(thisDir, full.names = TRUE)   
 
 #creates the CAGEset S4 object. Enter the genomeName and sampleLabels as appropriate for your analysis
