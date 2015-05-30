@@ -25,7 +25,7 @@ cat("The number of CTSS in sample is", nCTSS,"\n")
 #plots the reverse cumulative distribution of the CTSS in the sample
 #in our case the alpha is set to 1.05 because we already know the values are around 1
 plotReverseCumulatives(myCAGEset, fitInRange = c(5, 1000), onePlot = TRUE)
-normalizeTagCount(myCAGEset, method = "powerLaw", fitInRange = c(5, 1000), alpha = 1, T = 1*10^6)
+normalizeTagCount(myCAGEset, method = "simpleTpm")
 #uncomment the following line if you want a bedgraph file of the CTSSs in the sample
 #exportCTSStoBedGraph(myCAGEset, values = "normalized", oneFile = TRUE)
 
@@ -41,14 +41,14 @@ quantilePositions(myCAGEset, clusters = "tagClusters", qLow = 0.1, qUp = 0.9)
 
 #aggregates tag clusters and then calculates the consensus clusters (promoters across all three conditions) within the sample
 aggregateTagClusters(myCAGEset, tpmThreshold = 5, qLow = 0.1, qUp = 0.9, maxDist = 100)
-quantilePositions(myCAGEset, clusters="consensusClusters", returnInterquartileWidth=TRUE,useMulticore=TRUE)
+quantilePositions(myCAGEset, clusters="consensusClusters")
 consCl <- consensusClusters(myCAGEset)
 
 TSR_summary <- summary(consCl)
 write.table(TSR_summary,file="TSR_interquantile_summary_PA42.txt",sep=" ",col.names=TRUE,row.names=FALSE)
 
 #exports a bed file of the TSRs' interquantile widths
-exportToBed(myCAGEset, what = "consensusClusters", colorByExpressionProfile = TRUE)
+exportToBed(myCAGEset, what = "consensusClusters", oneFile = TRUE)
 
 #saves the CAGEset to a binary 'RData' file in your working directory
 save(myCAGEset,file="Dp_CAGEset_pipe.RData")
