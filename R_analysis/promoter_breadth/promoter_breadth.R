@@ -4,11 +4,11 @@ require("GenomicRanges")
 require("ggplot2")
 require("scales")
 
-dpul.df <- read.table(file="/home/rtraborn/research/Daphnia/Daphnia_CAGE_Data/promoter_arch/D_pulex/All.samples.tagClusters.qLow0.1_qUp0.9.bed",header=F,stringsAsFactors=F)
+dpul.df <- read.table(file="/home/rtraborn/Daphnia/Daphnia_CAGE_Data/promoter_arch/D_pulex/ConsensusClusters_PA42.bed",header=F,stringsAsFactors=F,skip=1)
 
-names(dpul.df) <- c("chr","start","end","score","score2","strand","start2","end2","score3","score4","score5","score6")
+names(dpul.df) <- c("chr","start","end","placeholder","score","strand","start_core","end_core","score2")
                                                                                                                                       
-dmel.df <- read.table(file="/home/rtraborn/research/Daphnia/Daphnia_CAGE_Data/promoter_arch/dmel_hoskins/All.samples.tagClusters.qLow0.1_qUp0.9.bed",header=F,stringsAsFactors=F)
+dmel.df <- read.table(file="/home/rtraborn/Daphnia/Daphnia_CAGE_Data/promoter_arch/dmel_hoskins/All.samples.tagClusters.qLow0.1_qUp0.9.bed",header=F,stringsAsFactors=F)
 
 names(dmel.df) <- c("chr","start","end","score","score2","strand","start2","end2","score3","score4","score5","score6")
 
