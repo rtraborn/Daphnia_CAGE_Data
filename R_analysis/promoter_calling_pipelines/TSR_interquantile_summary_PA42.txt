@@ -1,0 +1,7 @@
+"consensus.cluster" "    chr" "    start" "     end" "   strand" "     tpm"
+"Min.   :    1  " "Length:14267      " "Min.   :     15  " "Min.   :     22  " "Length:14267      " "Min.   :     5.01  "
+"1st Qu.: 3568  " "Class :character  " "1st Qu.:  70748  " "1st Qu.:  70836  " "Class :character  " "1st Qu.:    40.62  "
+"Median : 7134  " "Mode  :character  " "Median : 175445  " "Median : 175501  " "Mode  :character  " "Median :   117.69  "
+"Mean   : 7134  " NA "Mean   : 259260  " "Mean   : 259296  " NA "Mean   :   470.40  "
+"3rd Qu.:10700  " NA "3rd Qu.: 377546  " "3rd Qu.: 377556  " NA "3rd Qu.:   319.22  "
+"Max.   :14267  " NA "Max.   :1364410  " "Max.   :1364431  " NA "Max.   :139017.62  "
