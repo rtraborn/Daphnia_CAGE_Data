@@ -13,9 +13,6 @@ pathsToInputFiles <- list.files(thisDir, full.names = TRUE)
 #creates the CAGEset S4 object. Enter the genomeName and sampleLabels as appropriate for your analysis
 myCAGEset <- new("CAGEset",genomeName="BSgenome.Dpulex.JGI.dpulex",inputFiles=pathsToInputFiles,inputFilesType="bam",sampleLabels=c("mat_females_1","mat_females_2","mat_females_3","mat_males_1","mat_males_2","pE_females_1","pE_females_2","pE_females_3"))
 
-#calculates and plots the pearson correlation between all samples
-#corr.m <- plotCorrelation(myCAGEset, samples = "all", method = "pearson")
-
 #calculating the TSS clusters (a subunit of TSRs)
 getCTSS(myCAGEset)
 ctss <- CTSStagCount(myCAGEset)
@@ -30,6 +27,9 @@ normalizeTagCount(myCAGEset, method = "simpleTpm")
 #uncomment the following line if you want a bedgraph file of the CTSSs in the sample
 #exportCTSStoBedGraph(myCAGEset, values = "normalized", oneFile = TRUE)
 
+#plotting the correlation between datasets
+plotCorrelation(myCAGEset, samples = "all", method = "pearson") 
+
 #saves an R binary of the data. 
 save.image("Dp_TCO.RData")
 
@@ -39,11 +39,14 @@ clusterCTSS(object = myCAGEset, threshold = 1, thresholdIsTpm = TRUE,nrPassThres
 ##TSR widths and summary statistics
 cumulativeCTSSdistribution(myCAGEset, clusters = "tagClusters")
 quantilePositions(myCAGEset, clusters = "tagClusters", qLow = 0.1, qUp = 0.9)
+plotInterquantileWidth(myCAGEset, clusters = "tagClusters", tpmThreshold = 3, qLow = 0.1, qUp = 0.9)
 
 #aggregates tag clusters and then calculates the consensus clusters (promoters across all three conditions) within the sample
 aggregateTagClusters(myCAGEset, tpmThreshold = 5, qLow = 0.1, qUp = 0.9, maxDist = 100)
-quantilePositions(myCAGEset, clusters="consensusClusters")
-consCl <- consensusClusters(myCAGEset)
+consensusCl <- consensusClusters(myCAGEset)
+write.table(consensusCl,file="consensus_clusters_TCO.txt",row.names=FALSE,col.names=TRUE)
+quantilePositions(myCAGEset, clusters="consensusClusters", qLow=0.1,qUp=0.9,useMulticore=TRUE,nrCores=6)
+exportToBed(object = myCAGEset, what = "consensusClusters",qLow = 0.1, qUp = 0.9, oneFile = TRUE)
 
 TSR_summary <- summary(consCl)
 write.table(TSR_summary,file="TSR_interquantile_summary_TCO.txt",sep=" ",col.names=TRUE,row.names=FALSE)
