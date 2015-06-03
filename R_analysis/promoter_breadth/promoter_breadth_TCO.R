@@ -20,7 +20,7 @@ names(widths.df) <- c("promoter_breadth","species")
 
 #plotting the figures
 
-ggplot(widths.df, aes(x=promoter_breadth,y = (..count..)/sum(..count..))) + geom_histogram(binwidth=5,colour="black",fill="orange2") + facet_grid(species ~ .) + scale_y_continuous(labels=percent) + scale_y_continuous(limits=c(0,400)) + labs(y = "Percent of Total \n (n=8378)",x="Promoter width in base pairs (bp)")
+ggplot(widths.df, aes(x=promoter_breadth,y = (..count..)/sum(..count..))) + geom_histogram(binwidth=5,colour="black",fill="orange2") + facet_grid(species ~ .) + scale_y_continuous(labels=percent) + scale_x_continuous(limits=c(0,400)) + labs(y = "Percent of Total \n (n=8378)",x="Promoter width in base pairs (bp)")
 
 ggsave("width_TCO.png",width=8,height=6)
 
