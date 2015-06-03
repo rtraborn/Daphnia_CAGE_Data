@@ -41,17 +41,20 @@ quantilePositions(myCAGEset, clusters = "tagClusters", qLow = 0.1, qUp = 0.9)
 
 #aggregates tag clusters and then calculates the consensus clusters (promoters across all three conditions) within the sample
 aggregateTagClusters(myCAGEset, tpmThreshold = 5, qLow = 0.1, qUp = 0.9, maxDist = 100)
-quantilePositions(myCAGEset, clusters="consensusClusters")
+cumulativeCTSSdistribution(myCAGEset, clusters = "consensusClusters")
+quantilePositions(myCAGEset, clusters="consensusClusters",qLow=0.1,qUp=0.9)
+
 consCl <- consensusClusters(myCAGEset)
+write.table(consCl, file="PA42_consensus_clusters_tpm.txt", col.names=TRUE, row.names=FALSE, quote=FALSE)
 
 TSR_summary <- summary(consCl)
-write.table(TSR_summary,file="TSR_interquantile_summary_PA42.txt",sep=" ",col.names=TRUE,row.names=FALSE)
+write.table(TSR_summary,file="TSR_interquantile_summary_PA42.txt",sep=" ",col.names=TRUE,row.names=FALSE,quote=FALSE)
 
 #exports a bed file of the TSRs' interquantile widths
 exportToBed(myCAGEset, what = "consensusClusters", oneFile = TRUE)
 
 #saves the CAGEset to a binary 'RData' file in your working directory
-save(myCAGEset,file="Dp_CAGEset_pipe.RData")
+save(myCAGEset,file="Dp_CAGEset_PA42.RData")
 
 #analysis is complete
 print("Analysis is complete!")

@@ -36,15 +36,16 @@ save.image("Dp_TCO.RData")
 #clustering the CTSS into so-called Tag Clusters/TCs, which we call TSRs
 clusterCTSS(object = myCAGEset, threshold = 1, thresholdIsTpm = TRUE,nrPassThreshold = 1, method = "distclu", maxDist = 20,removeSingletons = TRUE, keepSingletonsAbove = 5, useMulticore = T, nrCores = 6)
 
-##TSR widths and summary statistics
+#TSR widths and summary statistics
 cumulativeCTSSdistribution(myCAGEset, clusters = "tagClusters")
 quantilePositions(myCAGEset, clusters = "tagClusters", qLow = 0.1, qUp = 0.9)
 plotInterquantileWidth(myCAGEset, clusters = "tagClusters", tpmThreshold = 3, qLow = 0.1, qUp = 0.9)
 
 #aggregates tag clusters and then calculates the consensus clusters (promoters across all three conditions) within the sample
 aggregateTagClusters(myCAGEset, tpmThreshold = 5, qLow = 0.1, qUp = 0.9, maxDist = 100)
+cumulativeCTSSdistribution(myCAGEset, clusters = "consensusClusters")  
 consensusCl <- consensusClusters(myCAGEset)
-write.table(consensusCl,file="consensus_clusters_TCO.txt",row.names=FALSE,col.names=TRUE)
+write.table(consensusCl,file="consensus_clusters_TCO_tpm.txt",row.names=FALSE,col.names=TRUE,quote=FALSE)
 quantilePositions(myCAGEset, clusters="consensusClusters", qLow=0.1,qUp=0.9,useMulticore=TRUE,nrCores=6)
 exportToBed(object = myCAGEset, what = "consensusClusters",qLow = 0.1, qUp = 0.9, oneFile = TRUE)
 
