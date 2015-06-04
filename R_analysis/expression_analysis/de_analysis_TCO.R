@@ -8,17 +8,41 @@ require("edgeR")
 #importing the Dp CAGEr object
 load("/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/promoter_calling_pipelines/Dp_TCO.RData")
 
-#importing the edgeR-adapted consensus cluster counts file
-Dp_edger <- read.table(file="Dp_rep_norm_cons_clusters.txt", header=TRUE, stringsAsFactors=FALSE)
+#CAGE data based expression clustering
+getExpressionProfiles(myCAGEset, what = "consensusClusters",
+                      tpmThreshold = 10, nrPassThreshold = 1,
+                      method = "som", xDim = 4, yDim = 4
+                      )
 
-#importing the design object
-load("Dp_design.RData")
+
+plotExpressionProfiles(myCAGEset, what= "consensusClusters")
+
+#creating a count table
+Dp_edger <- myCAGEset@consensusClustersTpmMatrix
+
+#creating identifier for each tag cluster
+Dp_edger_consensus_cluster <- consensusClusters(myCAGEset)
+rownames(Dp_edger) <- paste(Dp_edger_consensus_cluster$chr,
+					Dp_edger_consensus_cluster$start,
+					Dp_edger_consensus_cluster$end,
+					Dp_edger_consensus_cluster$strand,
+					sep="_")
+
 
 #checking to see what the data.frame looks like
 head(Dp_edger)
 
 lib_sizes <- librarySizes(myCAGEset)
-contrast.matrix <- makeContrasts(mat_male-mat_fem, pE_fem-mat_male, pE_fem-mat_fem, levels=design)
+#contrast.matrix <- makeContrasts(mat_male-mat_fem, pE_fem-mat_male, pE_fem-mat_fem, levels=design)
+
+#importing the design object
+#load("Dp_design.RData")
+
+design <- model.matrix(~ 0+factor(c(1,1,1,3,3,2,2,2)))
+colnames(design) <- c("mat_fem", "pE_fem", "mat_male")
+design
+
+contrast.matrix <- makeContrasts(pE_fem-mat_fem, mat_male-pE_fem, mat_male-mat_fem, levels=design)
 
 group <- c(rep("mat_fem",3),rep("mat_male",2),rep("pE_fem",3)) 
 p_cutoff <- 0.01
@@ -35,15 +59,23 @@ de.tgw2_pE_mat_fem <- exactTest(Dp_dge,pair=c("pE_fem","mat_fem"))
 de.tgw2_male_mat_fem <- exactTest(Dp_dge,pair=c("mat_male","mat_fem"))
 
 v <- voom(Dp_dge,design,plot=TRUE)
-fit <- lmFit(v,design)
-fit <- eBayes(fit)
+fit <- lmFit(v,design=design)
+fit2 <- contrasts.fit(fit, contrast.matrix)
+fit2 <- eBayes(fit)
 
-volcanoplot(fit)
+volcanoplot(fit2)
 
 options(digits=3)
-top_pE <- topTable(fit,coef="pE_fem",n=Inf,sort.by="p",adjust="BH",p=0.01)
-top_mat_fem <- topTable(fit,coef="mat_fem",n=Inf,sort.by="p",adjust="BH",p=0.01)
-top_mat_male <- topTable(fit,coef="mat_male",n=Inf,sort.by="p",adjust="BH",p=0.01)
+top_pE <- topTable(fit2,coef="pE_fem",n=Inf,sort.by="p",adjust="BH",p=0.01)
+
+top_mat_fem <- topTable(fit2,coef="mat_fem",n=Inf,sort.by="p",adjust="BH",p=0.01)
+#top_mat_fem2 <- topTable(top_mat_fem,coef=2,number=Inf,sort.by="P")
+
+top_mat_male <- topTable(fit2,coef="mat_male",n=Inf,sort.by="p",adjust="BH",p=0.01)
+#top_mat_male2 <- topTable(top_mat_male,coef=2,number=Inf,sort.by="P")
+
+results <- decideTests(fit2)
+vennDiagram(results)
 
 #number of differentially-related promoters
 sum(top_pE$adj.P.Val<0.01)
@@ -55,6 +87,7 @@ write.table(top_mat_fem,file="Dp_top_mat_fem.txt",col.names=TRUE,row.names=TRUE,
 write.table(top_mat_male,file="Dp_de_male.txt",col.names=TRUE,row.names=TRUE,quote=FALSE)
 
 de_data <- Dp_dge$pseudo.counts
+
 
 #differential analysis results
 de_data <- cbind(de_data, de.tgw2_pE_male$table)
