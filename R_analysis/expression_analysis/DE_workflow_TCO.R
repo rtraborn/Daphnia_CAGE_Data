@@ -18,9 +18,6 @@ cage_bam_ctss <- CTSStagCount(myCAGEset)
 #tpm normalisation
 normalizeTagCount(myCAGEset, method = "simpleTpm")
 
-#load library for parallelisation
-library(multicore)
-
 #tag clustering with 8 cores
 clusterCTSS(object = myCAGEset,
             threshold = 1,
