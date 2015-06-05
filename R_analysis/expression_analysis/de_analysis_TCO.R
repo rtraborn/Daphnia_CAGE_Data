@@ -6,6 +6,8 @@ require("limma")
 require("edgeR")
 require("Biobase")
 require("gplots")
+require(GenomicRanges)
+require(GenomicFeatures)
 
 #importing the Dp CAGEr object
 load("/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/promoter_calling_pipelines/Dp_TCO.RData")
@@ -66,7 +68,7 @@ de.tgw2_male_mat_fem <- exactTest(Dp_dge,pair=c("mat_male","mat_fem"))
 v <- voom(Dp_dge,design,plot=TRUE)
 fit <- lmFit(v,design=design)
 fit2 <- contrasts.fit(fit, contrast.matrix)
-fit2 <- eBayes(fit)
+fit2 <- eBayes(fit2)
 
 topTable(fit2,coef=ncol(design))
 
@@ -118,32 +120,67 @@ de_data$de <- as.numeric(de_data$FDR<p_cutoff)
 de_data$start <- as.numeric(de_data$start)
 de_data$end <- as.numeric(de_data$end)
 
-#creating a genomicRanges object
-de_data_gr <- with(de_data, GRanges(chr,
-                                    IRanges(start, end, names=row.names(de_data)), strand))
-
-#what does the GR object look like?
-de_data_gr
-
 write.table(de_data,file="de_data_TCO.txt",col.names=TRUE,quote=FALSE)
 
 ###########################################################################
+#Adding gene annotation to promoters
 
-plotMA(fit2,values=c("mat_fem","pE_fem"),col=c("red","blue"),main="TCO MA Plot",legend="topright")
+#first, creating a genomicRanges object from the promoter data
+de_GR <- with(de_data, GRanges(chr,
+                                    IRanges(start, end, names=row.names(de_data)), strand))
+
+#what does the GR object look like?
+de_GR
+
+#importing the gene annotation file
+dpulex_genes <- read.table(file="/home/rtraborn/Daphnia/Daphnia_CAGE_Data/gene_annotations/dpulex_genes.bed", header=FALSE)
+names(dpulex_genes) <- c("chr","start","end","geneID","score","strand","version","type","placeholder","ID2")
+
+#region around gene to call a TSS
+span <- 200
+
+#adding space to the genes on the positive strand
+dpulex_genes[dpulex_genes$strand=='+','start']  <- dpulex_genes[dpulex_genes$strand=='+',"start"]-span
+dpulex_genes[dpulex_genes$strand=='+','end']  <- dpulex_genes[dpulex_genes$strand=='+',"end"]+span
+
+#adding space to the genes on the negative strand
+dpulex_genes[dpulex_genes$strand=='-','start']  <- dpulex_genes[dpulex_genes$strand=='-',"start"]-span
+dpulex_genes[dpulex_genes$strand=='-','end']  <- dpulex_genes[dpulex_genes$strand=='-',"end"]+span
+
+#create GRanges object for all genes
+genes_GR <- with(dpulex_genes, GRanges(chr, IRanges(start, end, names=geneID),strand))
+
+#overlap TSRs with all tag clusters
+tc_overlaps <- findOverlaps(de_GR, genes_GR)
+
+#store number of overlaps
+tc_overlaps_count <- countOverlaps(de_GR, genes_GR)
+
+match_hit2 <- as.data.frame(tc_overlaps)
+
+#name the columns
+names(match_hit2) <- c('query','subject')
+
+promoter_index <- match_hit2$query
+gene_index <- match_hit2$subject
+
+#gene_names <- dpulex_genes[gene_index,'geneID']
+promoter_table <- data.frame(de_data[promoter_index,])
+promoter_table$geneID <- dpulex_genes[gene_index,"geneID"]
+rownames(promoter_table) <- promoter_table$geneID
+
+#names(combined.table2) <- c("chr","start","end","gene_ID","strand","start_TSR","end_TSR")
+
+#remove duplicated entries
+#match_hit2 <- match_hit2[!duplicated(match_hit2$query),]
+
+write.table(promoter_table,file="TCO_promoter_table.txt",col.names=TRUE, row.names=TRUE)
+
+###########################################################################
+#Making heatmaps from the eset data we've generated
 
 png(file="heatmap_TCO_all.png",height=900,width=1260)
 selected  <- p.adjust(fit2$p.value[, 2]) <0.01
 esetSel <- dp_eset[selected, ]
 heatmap(exprs(esetSel))
 dev.off()
-
-#annotation (in progress- needs to be converted to Daphnia; this is a human example)
-#columns <- c("GeneID","Symbol", "chromosome", "type_of_gene")
-#GeneInfo <- read.columns("130811-Homo_sapiens.gene_info",required=columns, stringsAsFactors = FALSE)
-#m <- match(gene$annotation$GeneID, GeneInfo$GeneID)
-
-#Ann <- cbind(gene$annotation[, c("GeneID", "Chr", "Length")], GeneInfo[m, c("Symbol", "type_of_gene")])
-#Ann$Chr <- unlist(lapply(strsplit(Ann$Chr, ";"), function(x) paste(unique(x), collapse = "|")))
-#Ann$Chr <- gsub("chr", "", Ann$Chr)
-#head(Ann)
-
