@@ -85,7 +85,6 @@ sum(top_table$adj.P.Val<0.01)
 
 de_data <- Dp_dge$pseudo.counts
 
-
 #differential analysis results
 de_data <- cbind(de_data, de.tgw2_pE_male$table)
 
@@ -166,21 +165,20 @@ gene_index <- match_hit2$subject
 
 #gene_names <- dpulex_genes[gene_index,'geneID']
 promoter_table <- data.frame(de_data[promoter_index,])
-promoter_table$geneID <- dpulex_genes[gene_index,"geneID"]
-rownames(promoter_table) <- promoter_table$geneID
-
-#names(combined.table2) <- c("chr","start","end","gene_ID","strand","start_TSR","end_TSR")
+promoter_IDs <- dpulex_genes[gene_index,"geneID"]
+rownames(promoter_table) = make.names(promoter_IDs, unique=TRUE)
 
 #remove duplicated entries
 #match_hit2 <- match_hit2[!duplicated(match_hit2$query),]
 
-write.table(promoter_table,file="TCO_promoter_table.txt",col.names=TRUE, row.names=TRUE)
+write.table(promoter_table,file="TCO_promoter_de_table.txt",col.names=TRUE, row.names=TRUE)
 
 ###########################################################################
 #Making heatmaps from the eset data we've generated
 
-png(file="heatmap_TCO_all.png",height=900,width=1260)
+png(file="heatmap_TCO_top_100.png",height=900,width=1260)
 selected  <- p.adjust(fit2$p.value[, 2]) <0.01
+selected <- selected[1:100]
 esetSel <- dp_eset[selected, ]
 heatmap(exprs(esetSel))
 dev.off()
