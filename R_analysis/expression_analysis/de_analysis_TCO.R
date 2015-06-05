@@ -4,6 +4,7 @@
 require("CAGEr")
 require("limma")
 require("edgeR")
+require("Biobase")
 
 #importing the Dp CAGEr object
 load("/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/promoter_calling_pipelines/Dp_TCO.RData")
@@ -28,6 +29,9 @@ rownames(Dp_edger) <- paste(Dp_edger_consensus_cluster$chr,
 					Dp_edger_consensus_cluster$strand,
 					sep="_")
 
+
+
+dp_eset <-new("ExpressionSet", exprs=as.matrix(Dp_edger))
 
 #checking to see what the data.frame looks like
 head(Dp_edger)
@@ -63,28 +67,18 @@ fit <- lmFit(v,design=design)
 fit2 <- contrasts.fit(fit, contrast.matrix)
 fit2 <- eBayes(fit)
 
+topTable(fit2,coef=ncol(design))
+
 volcanoplot(fit2)
 
 options(digits=3)
-top_pE <- topTable(fit2,coef="pE_fem",n=Inf,sort.by="p",adjust="BH",p=0.01)
-
-top_mat_fem <- topTable(fit2,coef="mat_fem",n=Inf,sort.by="p",adjust="BH",p=0.01)
-#top_mat_fem2 <- topTable(top_mat_fem,coef=2,number=Inf,sort.by="P")
-
-top_mat_male <- topTable(fit2,coef="mat_male",n=Inf,sort.by="p",adjust="BH",p=0.01)
-#top_mat_male2 <- topTable(top_mat_male,coef=2,number=Inf,sort.by="P")
-
+top_table <- topTable(fit2,coef=ncol(design),n=Inf,sort.by="p",adjust="BH",p=0.01)
 results <- decideTests(fit2)
+
 vennDiagram(results)
 
 #number of differentially-related promoters
-sum(top_pE$adj.P.Val<0.01)
-sum(top_mat_fem$adj.P.Val<0.01)
-sum(top_mat_male$adj.P.Val<0.01)
-
-write.table(top_pE,file="Dp_top_pE.txt",col.names=TRUE,row.names=TRUE,quote=FALSE)
-write.table(top_mat_fem,file="Dp_top_mat_fem.txt",col.names=TRUE,row.names=TRUE,quote=FALSE)
-write.table(top_mat_male,file="Dp_de_male.txt",col.names=TRUE,row.names=TRUE,quote=FALSE)
+sum(top_table$adj.P.Val<0.01)
 
 de_data <- Dp_dge$pseudo.counts
 
@@ -130,90 +124,17 @@ de_data_gr <- with(de_data, GRanges(chr,
 #what does the GR object look like?
 de_data_gr
 
-write.table(de_data,file="de_data_pE_v_male.txt",col.names=TRUE,quote=FALSE)
+write.table(de_data,file="de_data_TCO.txt",col.names=TRUE,quote=FALSE)
 
 ###########################################################################
 
-de_data <- Dp_dge$pseudo.counts
+plotMA(fit2,values=c("mat_fem","pE_fem"),col=c("red","blue"),main="TCO MA Plot",legend="topright")
 
-#differential analysis results
-de_data2 <- cbind(de_data, de.tgw2_pE_mat_fem$table)
-
-#calculate FDR
-de_data2$FDR <- p.adjust(de_data2$PValue, method='BH')
-
-#dispersion of each tag cluster
-de_data2$tw_dis <- Dp_dge$tagwise.dispersion
-
-#coordinates of each tag cluster
-data_coord2 <- matrix(data=unlist(strsplit(rownames(de_data2), split="_")),
-                      nrow= length(row.names(de_data2)),
-                      byrow=T)
-data_coord2 <- as.data.frame(data_coord2, stringsAsFactors=F)
-head(data_coord2)
-
-col_1 <- data_coord2[,1]
-col_2 <- data_coord2[,2]
-chr_col <- paste(col_1,col_2,sep="_")
-data_coord2 <- data_coord2[,-2]
-data_coord2[,1] <- chr_col
-names(data_coord2) <- c('chr','start','end','strand')
-
-#coordinates of each tag cluster
-de_data2 <- cbind(de_data2, data_coord2)
-
-#create column for differential expression status
-#1 for DE and 0 for not
-de_data2$de <- as.numeric(de_data2$FDR<p_cutoff)
-
-#convert coordinates to numeric
-de_data2$start <- as.numeric(de_data2$start)
-de_data2$end <- as.numeric(de_data2$end)
-
-write.table(de_data2,file="de_data_pE_v_mat_fem.txt",col.names=TRUE,quote=FALSE)
-
-############################################################
-
-de_data <- Dp_dge$pseudo.counts
-
-#differential analysis results
-de_data3 <- cbind(de_data, de.tgw2_male_mat_fem$table)
-
-#calculate FDR
-de_data3$FDR <- p.adjust(de_data3$PValue, method='BH')
-
-#dispersion of each tag cluster
-de_data3$tw_dis <- Dp_dge$tagwise.dispersion
-
-#coordinates of each tag cluster
-data_coord2 <- matrix(data=unlist(strsplit(rownames(de_data3), split="_")),
-                      nrow= length(row.names(de_data3)),
-                      byrow=T)
-data_coord2 <- as.data.frame(data_coord2, stringsAsFactors=F)
-head(data_coord2)
-
-col_1 <- data_coord2[,1]
-col_2 <- data_coord2[,2]
-chr_col <- paste(col_1,col_2,sep="_")
-data_coord2 <- data_coord2[,-2]
-data_coord2[,1] <- chr_col
-names(data_coord2) <- c('chr','start','end','strand')
-
-#coordinates of each tag cluster
-de_data3 <- cbind(de_data3, data_coord2)
-
-#create column for differential expression status
-#1 for DE and 0 for not
-de_data3$de <- as.numeric(de_data3$FDR<p_cutoff)
-
-#convert coordinates to numeric
-de_data3$start <- as.numeric(de_data3$start)
-de_data3$end <- as.numeric(de_data3$end)
-
-write.table(de_data3,file="de_data_male_v_mat_fem.txt",col.names=TRUE,quote=FALSE)
-
-##################################################################
-
+png(file="heatmap_TCO_all.png",height=900,width=1260)
+selected  <- p.adjust(fit2$p.value[, 2]) <0.01
+esetSel <- fit[selected, ]
+heatmap(exprs(dp_eset), scale="none")
+dev.off()
 
 #annotation (in progress- needs to be converted to Daphnia; this is a human example)
 #columns <- c("GeneID","Symbol", "chromosome", "type_of_gene")
