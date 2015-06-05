@@ -77,6 +77,7 @@ volcanoplot(fit2)
 options(digits=3)
 top_table <- topTable(fit2,coef=ncol(design),n=Inf,sort.by="p",adjust="BH",p=0.01)
 results <- decideTests(fit2)
+write.table(results,file="de_TCO_decideTest.txt",row.names=TRUE,quote=FALSE)
 
 vennDiagram(results)
 
@@ -176,9 +177,9 @@ write.table(promoter_table,file="TCO_promoter_de_table.txt",col.names=TRUE, row.
 ###########################################################################
 #Making heatmaps from the eset data we've generated
 
-png(file="heatmap_TCO_top_100.png",height=900,width=1260)
+par(mar=c(4.1,4.1,4.1,4.1))
+png(file="heatmap_TCO_all.png",height=1200,width=1600)
 selected  <- p.adjust(fit2$p.value[, 2]) <0.01
-selected <- selected[1:100]
 esetSel <- dp_eset[selected, ]
 heatmap(exprs(esetSel))
 dev.off()
