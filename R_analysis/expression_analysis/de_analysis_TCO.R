@@ -182,14 +182,16 @@ write.table(promoter_table,file="TCO_promoter_de_table.txt",col.names=TRUE, row.
 ###########################################################################
 #Making heatmaps from the eset data we've generated
 
-par(mar=c(6.1,4.1,4.1,4.1))
-png(file="heatmap_TCO_all.png",height=1200,width=1600)
+par(mar=c(2.1,4.1,2.1,4.1))
+png(file="heatmap_TCO_all.png",height=1600,width=1200)
 selected  <- p.adjust(fit2$p.value[, 2]) <0.01
 esetSel <- dp_eset[selected, ]
 heatmap(exprs(esetSel))
 dev.off()
 
-par(mar=c(6.1,4.1,4.1,4.1))
-png(file="heatmap_TCO_upreg1.png",height=1200,width=1600)
-heatDiagram(results, fit2$coef, low="red", high="yellow",primary=3)
+par(mar=c(2.1,4.1,2.1,4.1))
+png(file="heatmap_TCO_upreg1.png",height=1600,width=1200)
+selected  <- which(results[,3]==1)
+esetSel <- dp_eset[selected, ]
+heatmap(exprs(esetSel))
 dev.off()

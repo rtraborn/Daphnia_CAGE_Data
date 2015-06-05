@@ -1,0 +1,403 @@
+
+R version 3.2.0 (2015-04-16) -- "Full of Ingredients"
+Copyright (C) 2015 The R Foundation for Statistical Computing
+Platform: x86_64-redhat-linux-gnu (64-bit)
+
+R is free software and comes with ABSOLUTELY NO WARRANTY.
+You are welcome to redistribute it under certain conditions.
+Type 'license()' or 'licence()' for distribution details.
+
+  Natural language support but running in an English locale
+
+R is a collaborative project with many contributors.
+Type 'contributors()' for more information and
+'citation()' on how to cite R or R packages in publications.
+
+Type 'demo()' for some demos, 'help()' for on-line help, or
+'help.start()' for an HTML browser interface to help.
+Type 'q()' to quit R.
+
+> #creates a series of plots relating to differential expression analysis
+> # uses the bioconductor package 'limma'
+> 
+> require("CAGEr")
+Loading required package: CAGEr
+Loading required package: BSgenome
+Loading required package: BiocGenerics
+Loading required package: parallel
+
+Attaching package: ‘BiocGenerics’
+
+The following objects are masked from ‘package:parallel’:
+
+    clusterApply, clusterApplyLB, clusterCall, clusterEvalQ,
+    clusterExport, clusterMap, parApply, parCapply, parLapply,
+    parLapplyLB, parRapply, parSapply, parSapplyLB
+
+The following object is masked from ‘package:stats’:
+
+    xtabs
+
+The following objects are masked from ‘package:base’:
+
+    anyDuplicated, append, as.data.frame, as.vector, cbind, colnames,
+    do.call, duplicated, eval, evalq, Filter, Find, get, intersect,
+    is.unsorted, lapply, Map, mapply, match, mget, order, paste, pmax,
+    pmax.int, pmin, pmin.int, Position, rank, rbind, Reduce, rep.int,
+    rownames, sapply, setdiff, sort, table, tapply, union, unique,
+    unlist, unsplit
+
+Loading required package: S4Vectors
+Loading required package: stats4
+Loading required package: IRanges
+Loading required package: GenomeInfoDb
+Loading required package: GenomicRanges
+Loading required package: Biostrings
+Loading required package: XVector
+Loading required package: rtracklayer
+> require("limma")
+Loading required package: limma
+
+Attaching package: ‘limma’
+
+The following object is masked from ‘package:BiocGenerics’:
+
+    plotMA
+
+> require("edgeR")
+Loading required package: edgeR
+> require("Biobase")
+Loading required package: Biobase
+Welcome to Bioconductor
+
+    Vignettes contain introductory material; view with
+    'browseVignettes()'. To cite Bioconductor, see
+    'citation("Biobase")', and for packages 'citation("pkgname")'.
+
+> require("gplots")
+Loading required package: gplots
+
+Attaching package: ‘gplots’
+
+The following object is masked from ‘package:rtracklayer’:
+
+    space
+
+The following object is masked from ‘package:IRanges’:
+
+    space
+
+The following object is masked from ‘package:stats’:
+
+    lowess
+
+> require(GenomicRanges)
+> require(GenomicFeatures)
+Loading required package: GenomicFeatures
+Loading required package: AnnotationDbi
+> 
+> #importing the Dp CAGEr object
+> load("/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/promoter_calling_pipelines/Dp_TCO.RData")
+> 
+> #CAGE data based expression clustering
+> getExpressionProfiles(myCAGEset, what = "consensusClusters",
++                       tpmThreshold = 10, nrPassThreshold = 1,
++                       method = "som", xDim = 4, yDim = 4
++                       )
+> 
+> 
+> plotExpressionProfiles(myCAGEset, what= "consensusClusters")
+
+File 'consensusClusters_expression_profiles.pdf' has been created in your working directory (/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/expression_analysis)
+> 
+> #creating a count table
+> Dp_edger <- myCAGEset@consensusClustersTpmMatrix
+> 
+> #creating identifier for each tag cluster
+> Dp_edger_consensus_cluster <- consensusClusters(myCAGEset)
+> rownames(Dp_edger) <- paste(Dp_edger_consensus_cluster$chr,
++ 					Dp_edger_consensus_cluster$start,
++ 					Dp_edger_consensus_cluster$end,
++ 					Dp_edger_consensus_cluster$strand,
++ 					sep="_")
+> 
+> 
+> 
+> dp_eset <-new("ExpressionSet", exprs=as.matrix(Dp_edger))
+> 
+> #checking to see what the data.frame looks like
+> head(Dp_edger)
+                            sample
+consensus.cluster            mat_females_1 mat_females_2 mat_females_3
+  scaffold_1_36116_36124_+        5.434379      0.000000      0.000000
+  scaffold_1_51155_51224_+       29.238488     27.329136     26.896134
+  scaffold_1_100766_100796_+    131.113953    109.585795    122.690582
+  scaffold_1_120715_120736_+      8.342919      5.250425      9.487335
+  scaffold_1_123356_123357_+      0.000000      0.000000      6.263483
+  scaffold_1_157386_157461_+     37.811029     34.733581     33.159617
+                            sample
+consensus.cluster            mat_males_1 mat_males_2 pE_females_1 pE_females_2
+  scaffold_1_36116_36124_+      0.000000    0.000000     0.000000     0.000000
+  scaffold_1_51155_51224_+     17.878433   26.329169    31.822582    23.987680
+  scaffold_1_100766_100796_+  150.689648  172.957300   157.398563   112.348548
+  scaffold_1_120715_120736_+    8.300701   13.550158     5.143044     5.247305
+  scaffold_1_123356_123357_+    0.000000    9.033439     0.000000     6.559131
+  scaffold_1_157386_157461_+   16.856808   12.668847    18.643533    20.895518
+                            sample
+consensus.cluster            pE_females_3
+  scaffold_1_36116_36124_+       0.000000
+  scaffold_1_51155_51224_+      35.083423
+  scaffold_1_100766_100796_+   153.359715
+  scaffold_1_120715_120736_+    10.073458
+  scaffold_1_123356_123357_+     8.162975
+  scaffold_1_157386_157461_+    17.020671
+> 
+> lib_sizes <- librarySizes(myCAGEset)
+> #contrast.matrix <- makeContrasts(mat_male-mat_fem, pE_fem-mat_male, pE_fem-mat_fem, levels=design)
+> 
+> #importing the design object
+> #load("Dp_design.RData")
+> 
+> design <- model.matrix(~ 0+factor(c(1,1,1,3,3,2,2,2)))
+> colnames(design) <- c("mat_fem", "pE_fem", "mat_male")
+> design
+  mat_fem pE_fem mat_male
+1       1      0        0
+2       1      0        0
+3       1      0        0
+4       0      0        1
+5       0      0        1
+6       0      1        0
+7       0      1        0
+8       0      1        0
+attr(,"assign")
+[1] 1 1 1
+attr(,"contrasts")
+attr(,"contrasts")$`factor(c(1, 1, 1, 3, 3, 2, 2, 2))`
+[1] "contr.treatment"
+
+> 
+> contrast.matrix <- makeContrasts(pE_fem-mat_fem, mat_male-pE_fem, mat_male-mat_fem, levels=design)
+> 
+> group <- c(rep("mat_fem",3),rep("mat_male",2),rep("pE_fem",3)) 
+> p_cutoff <- 0.01
+> rowsum_threshold <- 20
+> 
+> Dp_dge <- DGEList(counts=Dp_edger,group=group)
+> A <- rowSums(Dp_dge$counts) 
+> Dp_dge <- Dp_dge[A>rowsum_threshold,]  
+> Dp_dge <- calcNormFactors(Dp_dge)
+> Dp_dge <- estimateCommonDisp(Dp_dge, verbose=T)
+Disp = 0.03174 , BCV = 0.1782 
+> 
+> de.tgw2_pE_male <- exactTest(Dp_dge,pair=c("pE_fem","mat_male"))
+> de.tgw2_pE_mat_fem <- exactTest(Dp_dge,pair=c("pE_fem","mat_fem"))
+> de.tgw2_male_mat_fem <- exactTest(Dp_dge,pair=c("mat_male","mat_fem"))
+> 
+> head(de.tgw2_pE_mat_fem)
+An object of class "DGEExact"
+$table
+                                 logFC   logCPM     PValue
+scaffold_1_51155_51224_+   -0.30800796 5.075528 0.32686802
+scaffold_1_100766_100796_+ -0.40644797 7.347837 0.08574212
+scaffold_1_120715_120736_+ -0.01077568 3.547460 1.00000000
+scaffold_1_123356_123357_+ -1.36058124 2.726305 0.09477997
+scaffold_1_157386_157461_+  0.71509653 4.886685 0.03035058
+scaffold_1_162014_162063_+  0.23672773 3.137122 0.78929176
+
+$comparison
+[1] "pE_fem"  "mat_fem"
+
+> 
+> v <- voom(Dp_dge,design,plot=TRUE)
+> fit <- lmFit(v,design=design)
+> #fit2 <- contrasts.fit(fit, contrast.matrix)
+> fit2 <- eBayes(fit)
+> 
+> topTable(fit2,coef=ncol(design))
+                                 logFC   AveExpr        t      P.Value
+scaffold_18_339584_339710_-  11.690235 11.516508 155.0059 1.772306e-14
+scaffold_4_2807198_2807261_- 12.098842 12.158450 149.3936 2.339852e-14
+scaffold_18_728347_728370_-  10.552991  2.025599 144.7113 2.974154e-14
+scaffold_182_153376_153483_+ 12.620165 12.382635 146.9182 2.653678e-14
+scaffold_4_3049786_3049903_- 10.413248 10.636654 136.4265 4.636867e-14
+scaffold_14_430585_430642_+   9.614788  1.791047 131.8055 6.011001e-14
+scaffold_4_2370071_2370125_+ 13.110749 13.015713 134.2303 5.239781e-14
+scaffold_104_349383_349500_+ 11.545542 11.625466 132.2212 5.870106e-14
+scaffold_152_84663_84795_-   10.189643 10.112375 128.8880 7.114835e-14
+scaffold_20_954272_954350_-  12.526253 11.813195 131.6859 6.052218e-14
+                                adj.P.Val        B
+scaffold_18_339584_339710_-  5.429191e-11 20.26750
+scaffold_4_2807198_2807261_- 5.429191e-11 20.18234
+scaffold_18_728347_728370_-  5.429191e-11 20.15565
+scaffold_182_153376_153483_+ 5.429191e-11 20.14002
+scaffold_4_3049786_3049903_- 5.429191e-11 20.02073
+scaffold_14_430585_430642_+  5.429191e-11 19.96402
+scaffold_4_2370071_2370125_+ 5.429191e-11 19.92627
+scaffold_104_349383_349500_+ 5.429191e-11 19.90593
+scaffold_152_84663_84795_-   5.429191e-11 19.88220
+scaffold_20_954272_954350_-  5.429191e-11 19.87998
+> 
+> volcanoplot(fit2)
+> 
+> options(digits=3)
+> top_table <- topTable(fit2,coef=ncol(design),n=Inf,sort.by="p",adjust="BH",p=0.01)
+> results <- decideTests(fit2)
+> write.table(results,file="de_TCO_decideTest.txt",row.names=TRUE,quote=FALSE)
+> 
+> vennDiagram(results, names=c("Asexual females","Sexual females","Sexual Males"),include="up",circle.col=c("green","red","blue"))
+> 
+> #top_table2 <- cbind(top_table,results)
+> #write.table(top_table2,file="de_TCO_combined_table.txt", row.names=TRUE,quote=FALSE)
+> 
+> #number of differentially-related promoters
+> sum(top_table$adj.P.Val<0.01)
+[1] 8517
+> 
+> de_data <- Dp_dge$pseudo.counts
+> 
+> #differential analysis results
+> de_data <- cbind(de_data, de.tgw2_pE_male$table)
+> 
+> #calculate FDR
+> de_data$FDR <- p.adjust(de_data$PValue, method='BH')
+> 
+> #dispersion of each tag cluster
+> de_data$tw_dis <- Dp_dge$tagwise.dispersion
+> 
+> #coordinates of each tag cluster
+> data_coord2 <- matrix(data=unlist(strsplit(rownames(de_data), split="_")),
++                       nrow= length(row.names(de_data)),
++                       byrow=T)
+> data_coord2 <- as.data.frame(data_coord2, stringsAsFactors=F)
+> head(data_coord2)
+        V1 V2     V3     V4 V5
+1 scaffold  1  51155  51224  +
+2 scaffold  1 100766 100796  +
+3 scaffold  1 120715 120736  +
+4 scaffold  1 123356 123357  +
+5 scaffold  1 157386 157461  +
+6 scaffold  1 162014 162063  +
+> 
+> col_1 <- data_coord2[,1]
+> col_2 <- data_coord2[,2]
+> chr_col <- paste(col_1,col_2,sep="_")
+> data_coord2 <- data_coord2[,-2]
+> data_coord2[,1] <- chr_col
+> names(data_coord2) <- c('chr','start','end','strand')
+> 
+> #coordinates of each tag cluster
+> de_data <- cbind(de_data, data_coord2)
+> 
+> #create column for differential expression status
+> #1 for DE and 0 for not
+> de_data$de <- as.numeric(de_data$FDR<p_cutoff)
+> 
+> #convert coordinates to numeric
+> de_data$start <- as.numeric(de_data$start)
+> de_data$end <- as.numeric(de_data$end)
+> 
+> write.table(de_data,file="de_data_TCO_pE_male.txt",col.names=TRUE,quote=FALSE)
+> 
+> ###########################################################################
+> #Adding gene annotation to promoters
+> 
+> #first, creating a genomicRanges object from the promoter data
+> de_GR <- with(de_data, GRanges(chr,
++                                     IRanges(start, end, names=row.names(de_data)), strand))
+> 
+> #what does the GR object look like?
+> de_GR
+GRanges object with 10183 ranges and 0 metadata columns:
+                                  seqnames           ranges strand
+                                     <Rle>        <IRanges>  <Rle>
+    scaffold_1_51155_51224_+    scaffold_1 [ 51155,  51224]      +
+  scaffold_1_100766_100796_+    scaffold_1 [100766, 100796]      +
+  scaffold_1_120715_120736_+    scaffold_1 [120715, 120736]      +
+  scaffold_1_123356_123357_+    scaffold_1 [123356, 123357]      +
+  scaffold_1_157386_157461_+    scaffold_1 [157386, 157461]      +
+                         ...           ...              ...    ...
+   scaffold_2516_2406_2407_+ scaffold_2516   [ 2406,  2407]      +
+     scaffold_5392_611_612_+ scaffold_5392   [  611,   612]      +
+   scaffold_5600_1195_1226_+ scaffold_5600   [ 1195,  1226]      +
+  scaffold_574_37623_37624_+  scaffold_574   [37623, 37624]      +
+   scaffold_6547_1560_1598_- scaffold_6547   [ 1560,  1598]      -
+  -------
+  seqinfo: 344 sequences from an unspecified genome; no seqlengths
+> 
+> #importing the gene annotation file
+> dpulex_genes <- read.table(file="/home/rtraborn/Daphnia/Daphnia_CAGE_Data/gene_annotations/dpulex_genes.bed", header=FALSE)
+> names(dpulex_genes) <- c("chr","start","end","geneID","score","strand","version","type","placeholder","ID2")
+> 
+> #region around gene to call a TSS
+> span <- 200
+> 
+> #adding space to the genes on the positive strand
+> dpulex_genes[dpulex_genes$strand=='+','start']  <- dpulex_genes[dpulex_genes$strand=='+',"start"]-span
+> dpulex_genes[dpulex_genes$strand=='+','end']  <- dpulex_genes[dpulex_genes$strand=='+',"end"]+span
+> 
+> #adding space to the genes on the negative strand
+> dpulex_genes[dpulex_genes$strand=='-','start']  <- dpulex_genes[dpulex_genes$strand=='-',"start"]-span
+> dpulex_genes[dpulex_genes$strand=='-','end']  <- dpulex_genes[dpulex_genes$strand=='-',"end"]+span
+> 
+> #create GRanges object for all genes
+> genes_GR <- with(dpulex_genes, GRanges(chr, IRanges(start, end, names=geneID),strand))
+> 
+> #overlap TSRs with all tag clusters
+> tc_overlaps <- findOverlaps(de_GR, genes_GR)
+Warning message:
+In .Seqinfo.mergexy(x, y) :
+  Each of the 2 combined objects has sequence levels not in the other:
+  - in 'x': scaffold_10571, scaffold_10851, scaffold_12610, scaffold_3096, scaffold_3677, scaffold_5023, scaffold_589, scaffold_6071, scaffold_6561, scaffold_6994, scaffold_718, scaffold_7194, scaffold_9449, scaffold_2516, scaffold_5600
+  - in 'y': scaffold_1000, scaffold_10005, scaffold_10008, scaffold_10014, scaffold_10017, scaffold_1002, scaffold_1003, scaffold_10031, scaffold_10032, scaffold_10033, scaffold_10034, scaffold_10049, scaffold_10053, scaffold_1007, scaffold_10071, scaffold_10077, scaffold_10096, scaffold_10098, scaffold_1010, scaffold_1011, scaffold_1012, scaffold_10124, scaffold_10129, scaffold_1013, scaffold_10131, scaffold_10134, scaffold_1014, scaffold_10140, scaffold_10142, scaffold_1015, scaffold_10161, scaffold_10167, scaffold_1017, scaffold_1018, scaffold_10183, scaffold_10189, scaffold_1019, scaffold_1020, scaffold_10201, scaffold_1021, scaffold_10227, scaffold_1023, scaffold_10236, scaffold_1 [... truncated]
+> 
+> #store number of overlaps
+> tc_overlaps_count <- countOverlaps(de_GR, genes_GR)
+Warning message:
+In .Seqinfo.mergexy(x, y) :
+  Each of the 2 combined objects has sequence levels not in the other:
+  - in 'x': scaffold_10571, scaffold_10851, scaffold_12610, scaffold_3096, scaffold_3677, scaffold_5023, scaffold_589, scaffold_6071, scaffold_6561, scaffold_6994, scaffold_718, scaffold_7194, scaffold_9449, scaffold_2516, scaffold_5600
+  - in 'y': scaffold_1000, scaffold_10005, scaffold_10008, scaffold_10014, scaffold_10017, scaffold_1002, scaffold_1003, scaffold_10031, scaffold_10032, scaffold_10033, scaffold_10034, scaffold_10049, scaffold_10053, scaffold_1007, scaffold_10071, scaffold_10077, scaffold_10096, scaffold_10098, scaffold_1010, scaffold_1011, scaffold_1012, scaffold_10124, scaffold_10129, scaffold_1013, scaffold_10131, scaffold_10134, scaffold_1014, scaffold_10140, scaffold_10142, scaffold_1015, scaffold_10161, scaffold_10167, scaffold_1017, scaffold_1018, scaffold_10183, scaffold_10189, scaffold_1019, scaffold_1020, scaffold_10201, scaffold_1021, scaffold_10227, scaffold_1023, scaffold_10236, scaffold_1 [... truncated]
+> 
+> match_hit2 <- as.data.frame(tc_overlaps)
+> 
+> #name the columns
+> names(match_hit2) <- c('query','subject')
+> 
+> promoter_index <- match_hit2$query
+> gene_index <- match_hit2$subject
+> 
+> #gene_names <- dpulex_genes[gene_index,'geneID']
+> promoter_table <- data.frame(de_data[promoter_index,])
+> promoter_IDs <- dpulex_genes[gene_index,"geneID"]
+> rownames(promoter_table) = make.names(promoter_IDs, unique=TRUE)
+> 
+> #remove duplicated entries
+> #match_hit2 <- match_hit2[!duplicated(match_hit2$query),]
+> 
+> write.table(promoter_table,file="TCO_promoter_de_table.txt",col.names=TRUE, row.names=TRUE)
+> 
+> ###########################################################################
+> #Making heatmaps from the eset data we've generated
+> 
+> par(mar=c(2.1,4.1,2.1,4.1))
+> png(file="heatmap_TCO_all.png",height=1600,width=1200)
+> selected  <- p.adjust(fit2$p.value[, 2]) <0.01
+> esetSel <- dp_eset[selected, ]
+> heatmap(exprs(esetSel))
+> dev.off()
+pdf 
+  2 
+> 
+> par(mar=c(2.1,4.1,2.1,4.1))
+> png(file="heatmap_TCO_upreg1.png",height=1600,width=1200)
+> selected  <- which(results[,3]==1)
+> esetSel <- dp_eset[selected, ]
+> heatmap(exprs(esetSel))
+> dev.off()
+pdf 
+  2 
+> 
+> proc.time()
+   user  system elapsed 
+  121.7     2.2   124.8 
