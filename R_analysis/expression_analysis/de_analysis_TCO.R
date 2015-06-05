@@ -69,8 +69,8 @@ head(de.tgw2_pE_mat_fem)
 
 v <- voom(Dp_dge,design,plot=TRUE)
 fit <- lmFit(v,design=design)
-fit2 <- contrasts.fit(fit, contrast.matrix)
-fit2 <- eBayes(fit2)
+#fit2 <- contrasts.fit(fit, contrast.matrix)
+fit2 <- eBayes(fit)
 
 topTable(fit2,coef=ncol(design))
 
@@ -81,7 +81,7 @@ top_table <- topTable(fit2,coef=ncol(design),n=Inf,sort.by="p",adjust="BH",p=0.0
 results <- decideTests(fit2)
 write.table(results,file="de_TCO_decideTest.txt",row.names=TRUE,quote=FALSE)
 
-vennDiagram(results)
+vennDiagram(results, names=c("Asexual females","Sexual females","Sexual Males"),include="up",circle.col=c("green","red","blue"))
 
 #top_table2 <- cbind(top_table,results)
 #write.table(top_table2,file="de_TCO_combined_table.txt", row.names=TRUE,quote=FALSE)
@@ -125,7 +125,7 @@ de_data$de <- as.numeric(de_data$FDR<p_cutoff)
 de_data$start <- as.numeric(de_data$start)
 de_data$end <- as.numeric(de_data$end)
 
-write.table(de_data,file="de_data_TCO.txt",col.names=TRUE,quote=FALSE)
+write.table(de_data,file="de_data_TCO_pE_male.txt",col.names=TRUE,quote=FALSE)
 
 ###########################################################################
 #Adding gene annotation to promoters
@@ -189,8 +189,7 @@ esetSel <- dp_eset[selected, ]
 heatmap(exprs(esetSel))
 dev.off()
 
+par(mar=c(6.1,4.1,4.1,4.1))
 png(file="heatmap_TCO_upreg1.png",height=1200,width=1600)
-selected  <- which(results[,2]==1)
-esetSel <- dp_eset[selected, ]
-heatmap(exprs(esetSel))
+heatDiagram(results, fit2$coef, low="red", high="yellow",primary=3)
 dev.off()
