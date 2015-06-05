@@ -85,7 +85,7 @@ topTable(fit2,coef=ncol(design))
 options(digits=3)
 top_table <- topTable(fit2,coef=ncol(design),n=Inf,sort.by="p",adjust="BH",p=0.01)
 results <- decideTests(fit2)
-write.table(results,file="de_TCO_decideTest.txt",row.names=TRUE,quote=FALSE)
+write.table(top_table_e,file="top_table_pE_male.txt",row.names=TRUE,col.names=TRUE,quote=FALSE)
 
 vennDiagram(results, names=c("Asexual females","Sexual females","Sexual Males"),include="up",circle.col=c("green","red","blue"))
 
