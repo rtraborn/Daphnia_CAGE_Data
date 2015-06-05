@@ -33,7 +33,6 @@ rownames(Dp_edger) <- paste(Dp_edger_consensus_cluster$chr,
 					sep="_")
 
 
-
 dp_eset <-new("ExpressionSet", exprs=as.matrix(Dp_edger))
 
 #checking to see what the data.frame looks like
@@ -196,9 +195,9 @@ write.table(promoter_table,file="TCO_promoter_de_table.txt",col.names=TRUE, row.
 #heatmap(exprs(esetSel))
 #dev.off()
 
-par(mar=c(2.1,4.1,2.1,4.1))
+par(mar=c(2.1,4.1,4.1,4.1))
 png(file="heatmap_TCO_upreg1.png",height=1600,width=1200)
-selected  <- which(de_pE_male[,1]==1)
+selected  <- which(de_data$de==1)
 esetSel <- dp_eset[selected, ]
 heatmap(exprs(esetSel))
 dev.off()
