@@ -60,21 +60,24 @@ A <- rowSums(Dp_dge$counts)
 Dp_dge <- Dp_dge[A>rowsum_threshold,]  
 Dp_dge <- calcNormFactors(Dp_dge)
 Dp_dge <- estimateCommonDisp(Dp_dge, verbose=T)
+plotBCV(Dp_dge)
 
-de.tgw2_pE_male <- exactTest(Dp_dge,pair=c("pE_fem","mat_male"))
-de.tgw2_pE_mat_fem <- exactTest(Dp_dge,pair=c("pE_fem","mat_fem"))
-de.tgw2_male_mat_fem <- exactTest(Dp_dge,pair=c("mat_male","mat_fem"))
-
-head(de.tgw2_pE_mat_fem)
+et <- exactTest(Dp_dge)
+topTags(et, n=20)
+de_pE_male <- decideTestsDGE(et, adjust="BH",p.value=0.01)
+summary(de_pE_male)
+detags <- rownames(Dp_dge)[as.logical(de_pE_male)]
+de.genes_male <- rownames(Dp_dge)[as.logical(de_pE_male)]
+plotSmear(Dp_dge, de.tags = de.genes_male, cex = 0.5)
+abline(h = c(-2, 2), col = "blue")
 
 v <- voom(Dp_dge,design,plot=TRUE)
 fit <- lmFit(v,design=design)
-#fit2 <- contrasts.fit(fit, contrast.matrix)
 fit2 <- eBayes(fit)
 
 topTable(fit2,coef=ncol(design))
 
-volcanoplot(fit2)
+#volcanoplot(fit2)
 
 options(digits=3)
 top_table <- topTable(fit2,coef=ncol(design),n=Inf,sort.by="p",adjust="BH",p=0.01)
@@ -92,7 +95,7 @@ sum(top_table$adj.P.Val<0.01)
 de_data <- Dp_dge$pseudo.counts
 
 #differential analysis results
-de_data <- cbind(de_data, de.tgw2_pE_male$table)
+de_data <- cbind(de_data, et$table)
 
 #calculate FDR
 de_data$FDR <- p.adjust(de_data$PValue, method='BH')
