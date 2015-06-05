@@ -134,8 +134,7 @@ plotMA(fit2,values=c("mat_fem","pE_fem"),col=c("red","blue"),main="TCO MA Plot",
 png(file="heatmap_TCO_all.png",height=900,width=1260)
 selected  <- p.adjust(fit2$p.value[, 2]) <0.01
 esetSel <- dp_eset[selected, ]
-heatmap.2(exprs(esetSel), col=topo.colors(75),
-                    key=TRUE, symkey=FALSE, density.info="none", trace="none", cexRow=0.5)
+heatmap(exprs(esetSel))
 dev.off()
 
 #annotation (in progress- needs to be converted to Daphnia; this is a human example)
