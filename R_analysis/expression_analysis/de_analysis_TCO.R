@@ -65,6 +65,8 @@ de.tgw2_pE_male <- exactTest(Dp_dge,pair=c("pE_fem","mat_male"))
 de.tgw2_pE_mat_fem <- exactTest(Dp_dge,pair=c("pE_fem","mat_fem"))
 de.tgw2_male_mat_fem <- exactTest(Dp_dge,pair=c("mat_male","mat_fem"))
 
+head(de.tgw2_pE_mat_fem)
+
 v <- voom(Dp_dge,design,plot=TRUE)
 fit <- lmFit(v,design=design)
 fit2 <- contrasts.fit(fit, contrast.matrix)
@@ -80,6 +82,9 @@ results <- decideTests(fit2)
 write.table(results,file="de_TCO_decideTest.txt",row.names=TRUE,quote=FALSE)
 
 vennDiagram(results)
+
+#top_table2 <- cbind(top_table,results)
+#write.table(top_table2,file="de_TCO_combined_table.txt", row.names=TRUE,quote=FALSE)
 
 #number of differentially-related promoters
 sum(top_table$adj.P.Val<0.01)
@@ -177,9 +182,15 @@ write.table(promoter_table,file="TCO_promoter_de_table.txt",col.names=TRUE, row.
 ###########################################################################
 #Making heatmaps from the eset data we've generated
 
-par(mar=c(4.1,4.1,4.1,4.1))
+par(mar=c(6.1,4.1,4.1,4.1))
 png(file="heatmap_TCO_all.png",height=1200,width=1600)
 selected  <- p.adjust(fit2$p.value[, 2]) <0.01
+esetSel <- dp_eset[selected, ]
+heatmap(exprs(esetSel))
+dev.off()
+
+png(file="heatmap_TCO_upreg1.png",height=1200,width=1600)
+selected  <- which(results[,2]==1)
 esetSel <- dp_eset[selected, ]
 heatmap(exprs(esetSel))
 dev.off()
