@@ -246,7 +246,7 @@ write.table(promoter_table2,file="TCO_promoter_de_pE_male.txt",col.names=TRUE, r
 
 #male vs pE
 par(mar=c(2.1,4.1,4.1,2.1))
-png(file="heatmap_TCO_upreg1.png",height=1600,width=1200)
+png(file="heatmap_TCO_upreg1.png",height=1600,width=1300)
 selected  <- rownames(top_table_e)
 esetSel <- dp_eset[selected, ]
 heatmap(exprs(esetSel))
@@ -254,7 +254,7 @@ dev.off()
 
 #mat_fem vs pE
 par(mar=c(2.1,4.1,4.1,2.1))
-png(file="heatmap_TCO_upreg2.png",height=1600,width=1200)
+png(file="heatmap_TCO_upreg2.png",height=1600,width=1300)
 selected  <- rownames(top_table_e2)
 esetSel <- dp_eset[selected, ]
 heatmap(exprs(esetSel))
@@ -262,7 +262,7 @@ dev.off()
 
 #male vs mat_fem
 par(mar=c(2.1,4.1,4.1,2.1))
-png(file="heatmap_TCO_upreg3.png",height=1600,width=1200)
+png(file="heatmap_TCO_upreg3.png",height=1600,width=1300)
 selected  <- rownames(top_table_e3)
 esetSel <- dp_eset[selected, ]
 heatmap(exprs(esetSel))
