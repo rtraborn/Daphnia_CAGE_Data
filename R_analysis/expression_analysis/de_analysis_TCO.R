@@ -317,5 +317,5 @@ par(mar=c(4.1,4.1,4.1,4.1))
 png(file="heatmap_TCO_upreg3.png",height=2200,width=2200)
 selected  <- rownames(top_table_e3[1:200])
 esetSel <- dp_eset[selected, ]
-heatmap(exprs(esetSel))
+heatmap(exprs(esetSel),Rowv=NA)
 dev.off()
