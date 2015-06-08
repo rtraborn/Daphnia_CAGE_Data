@@ -10,51 +10,17 @@ require(CAGEr)
 #loads D. pulex genome BS object
 require(BSgenome.Dpulex.JGI.dpulex)
 
-load("/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/promoter_calling_pipelines/Dp_TCO.RData")
+#Importing consensus clusters from file
+for_edger_consensus_cluster <- read.table(file="/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/promoter_calling_pipelines/TCO_consensus_cluster.txt", header=TRUE, stringsAsFactors=FALSE)
 
-getCTSS(myCAGEset, mappingQualityThreshold=10, sequencingQualityThreshold=-1)
-cage_bam_ctss <- CTSStagCount(myCAGEset)
-
-#tpm normalisation
-normalizeTagCount(myCAGEset, method = "simpleTpm")
-
-#tag clustering with 8 cores
-clusterCTSS(object = myCAGEset,
-            threshold = 1,
-            thresholdIsTpm = TRUE,
-            nrPassThreshold = 1,
-            method = "distclu",
-            maxDist = 20,
-            removeSingletons = TRUE,
-            keepSingletonsAbove = 5,
-            useMulticore = T,
-            nrCores = 8
-           )
-
-#cumulative sum of CAGE signal along genomic region
-cumulativeCTSSdistribution(myCAGEset, clusters = "tagClusters", useMulticore = T, nrCores = 6)
-quantilePositions(myCAGEset, clusters = "tagClusters", qLow = 0.1, qUp = 0.9)
-
-#aggregating tag clusters across multiple CAGE datasets
-aggregateTagClusters(myCAGEset, tpmThreshold = 5, qLow = 0.1, qUp = 0.9, maxDist = 100)
-
-#Extracting consensus clusters from CAGEset object
-cage_bam_consensus_cluster <- consensusClusters(myCAGE_set)
+for_edger_count <- read.table(file="/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/promoter_calling_pipelines/TCO_consensus_count_table.txt", header=TRUE, stringsAsFactors=FALSE)
 
 #CAGE data based expression clustering
-getExpressionProfiles(myCAGEset, what = "consensusClusters",
-                      tpmThreshold = 10, nrPassThreshold = 1,
-                      method = "som", xDim = 4, yDim = 2
-                      )
+#getExpressionProfiles(myCAGEset, what = "consensusClusters",
+#                      tpmThreshold = 10, nrPassThreshold = 1,
+#                      method = "som", xDim = 4, yDim = 2
+#                      )
 
-#creating a new object for expression analysis
-for_edger <- myCAGEset
-
-for_edger_count <- for_edger@consensusClustersTpmMatrix
-
-for_edger_consensus_cluster <- consensusClusters(for_edger) 
-
-#promoter_table <- read.table(file="/home/rtraborn/Daphnia/Daphnia_CAGE_Data/data_tables/TCO/TCO_combined_cons_table.txt",header=TRUE,stringsAsFactors=FALSE)
            
 for_edger_consensus_cluster$id <- paste(for_edger_consensus_cluster$chr,
 					for_edger_consensus_cluster$start,
