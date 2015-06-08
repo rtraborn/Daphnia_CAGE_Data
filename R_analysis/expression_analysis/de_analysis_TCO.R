@@ -41,20 +41,19 @@ head(Dp_edger)
 lib_sizes <- librarySizes(myCAGEset)
 #contrast.matrix <- makeContrasts(mat_male-mat_fem, pE_fem-mat_male, pE_fem-mat_fem, levels=design)
 
-#importing the design object
-#load("Dp_design.RData")
-
 design <- model.matrix(~ 0+factor(c(1,1,1,3,3,2,2,2)))
 colnames(design) <- c("mat_fem", "pE_fem", "mat_male")
 design
 
 contrast.matrix <- makeContrasts(pE_fem-mat_fem, mat_male-pE_fem, mat_male-mat_fem, levels=design)
 
-group <- c(rep("mat_fem",3),rep("mat_male",2),rep("pE_fem",3)) 
+group <- c(rep("mat_fem",3),rep("mat_male",2),rep("pE_fem",3))
+group
 p_cutoff <- 0.01
 rowsum_threshold <- 20
 
 Dp_dge <- DGEList(counts=Dp_edger,group=group)
+head(Dp_dge)
 A <- rowSums(Dp_dge$counts) 
 Dp_dge <- Dp_dge[A>rowsum_threshold,]  
 Dp_dge <- calcNormFactors(Dp_dge)
@@ -63,29 +62,82 @@ Dp_dge <- estimateTagwiseDisp(Dp_dge, trend="none")
 
 plotBCV(Dp_dge)
 
-et <- exactTest(Dp_dge)
+###### male vs pE females #######################
+et <- exactTest(Dp_dge,pair=c("mat_male","pE_fem"))
 topTags(et, n=20)
 de_pE_male <- decideTestsDGE(et, adjust="BH",p.value=0.01)
 summary(de_pE_male)
 detags <- rownames(Dp_dge)[as.logical(de_pE_male)]
-de.genes_male <- rownames(Dp_dge)[as.logical(de_pE_male)]
-plotSmear(Dp_dge, de.tags = de.genes_male, cex = 0.5)
+de.genes_pE_male <- rownames(Dp_dge)[as.logical(de_pE_male)]
+plotSmear(Dp_dge, de.tags = de.genes_pE_male, cex = 0.5)
 abline(h = c(-2, 2), col = "blue")
 
-top_table_e <- topTags(et, p.value=0.01)
+top_table_e <- topTags(et, sort.by="PValue",n=100)
+dim(top_table_e)
 
+data_coord2 <- matrix(data=unlist(strsplit(rownames(top_table_e), split="_")),
+                      nrow= length(row.names(top_table_e)),
+                      byrow=T)
+
+data_coord2 <- as.data.frame(data_coord2, stringsAsFactors=F)
+head(data_coord2)
+
+col_1 <- data_coord2[,1]
+col_2 <- data_coord2[,2]
+chr_col <- paste(col_1,col_2,sep="_")
+data_coord2 <- data_coord2[,-2]
+data_coord2[,1] <- chr_col
+data_coord2[,2] <- as.numeric(data_coord2[,2])
+data_coord2[,3] <- as.numeric(data_coord2[,3])
+names(data_coord2) <- c('chr','start','end','strand')
+
+#first, creating a genomicRanges object from the promoter data
+de_GR_1 <- with(data_coord2, GRanges(chr,
+                                    IRanges(start, end, names=row.names(top_table_e)), strand))
+
+
+de_GR_1 <- promoters(de_GR_1, upstream=200, downstream=200)
+
+#what does the GR object look like?
+de_GR_1
+
+###### pE female vs mature females #######################
+et <- exactTest(Dp_dge,pair=c("pE_fem","mat_fem"))
+topTags(et, n=20)
+de_pE_matfem <- decideTestsDGE(et, adjust="BH",p.value=0.01)
+summary(de_pE_matfem)
+detags <- rownames(Dp_dge)[as.logical(de_pE_matfem)]
+de.genes_pE_matfem <- rownames(Dp_dge)[as.logical(de_pE_matfem)]
+plotSmear(Dp_dge, de.tags = de.genes_pE_matfem, cex = 0.5)
+abline(h = c(-2, 2), col = "blue")
+
+top_table_e2 <- topTags(et, sort.by="PValue",n=100)
+
+###### mature females vs males  #######################
+et <- exactTest(Dp_dge,pair=c("mat_fem","mat_male"))
+topTags(et, n=20)
+de_matfem_male <- decideTestsDGE(et, adjust="BH",p.value=0.01)
+summary(de_matfem_male)
+detags <- rownames(Dp_dge)[as.logical(de_matfem_male)]
+de.genes_matfem_male <- rownames(Dp_dge)[as.logical(de_matfem_male)]
+plotSmear(Dp_dge, de.tags = de.genes_matfem_male, cex = 0.5)
+abline(h = c(-2, 2), col = "blue")
+
+top_table_e3 <- topTags(et, sort.by="PValue",n=100)
+                
 v <- voom(Dp_dge,design,plot=TRUE)
 fit <- lmFit(v,design=design)
+head(fit)
 fit2 <- eBayes(fit)
 
 topTable(fit2,coef=ncol(design))
-
-#volcanoplot(fit2)
 
 options(digits=3)
 top_table <- topTable(fit2,coef=ncol(design),n=Inf,sort.by="p",adjust="BH",p=0.01)
 results <- decideTests(fit2)
 write.table(top_table_e,file="top_table_pE_male.txt",row.names=TRUE,col.names=TRUE,quote=FALSE)
+write.table(top_table_e2, file="top_table_matfem_pE.txt",row.names=TRUE,col.names=TRUE, quote=FALSE)
+write.table(top_table_e3, file="top_table_male_matfem.txt", row.names=TRUE,col.names=TRUE,quote=FALSE)
 
 vennDiagram(results, names=c("Asexual females","Sexual females","Sexual Males"),include="up",circle.col=c("green","red","blue"))
 
@@ -94,6 +146,8 @@ vennDiagram(results, names=c("Asexual females","Sexual females","Sexual Males"),
 
 #number of differentially-related promoters
 sum(top_table_e$adj.P.Val<0.01)
+sum(top_table_e2$adj.P.Val<0.01)
+sum(top_table_e2$adj.P.Val<0.01)
 
 de_data <- Dp_dge$pseudo.counts
 
@@ -140,6 +194,9 @@ write.table(de_data,file="de_data_TCO_pE_male.txt",col.names=TRUE,quote=FALSE)
 de_GR <- with(de_data, GRanges(chr,
                                     IRanges(start, end, names=row.names(de_data)), strand))
 
+
+de_GR <- promoters(de_GR, upstream=200, downstream=200)
+
 #what does the GR object look like?
 de_GR
 
@@ -147,43 +204,44 @@ de_GR
 dpulex_genes <- read.table(file="/home/rtraborn/Daphnia/Daphnia_CAGE_Data/gene_annotations/dpulex_genes.bed", header=FALSE)
 names(dpulex_genes) <- c("chr","start","end","geneID","score","strand","version","type","placeholder","ID2")
 
-#region around gene to call a TSS
-span <- 200
-
-#adding space to the genes on the positive strand
-dpulex_genes[dpulex_genes$strand=='+','start']  <- dpulex_genes[dpulex_genes$strand=='+',"start"]-span
-dpulex_genes[dpulex_genes$strand=='+','end']  <- dpulex_genes[dpulex_genes$strand=='+',"end"]+span
-
-#adding space to the genes on the negative strand
-dpulex_genes[dpulex_genes$strand=='-','start']  <- dpulex_genes[dpulex_genes$strand=='-',"start"]-span
-dpulex_genes[dpulex_genes$strand=='-','end']  <- dpulex_genes[dpulex_genes$strand=='-',"end"]+span
-
 #create GRanges object for all genes
 genes_GR <- with(dpulex_genes, GRanges(chr, IRanges(start, end, names=geneID),strand))
 
 #overlap TSRs with all tag clusters
 tc_overlaps <- findOverlaps(de_GR, genes_GR)
 
+tc_overlaps_pE_male <- findOverlaps(de_GR_1, genes_GR)
+
 #store number of overlaps
 tc_overlaps_count <- countOverlaps(de_GR, genes_GR)
 
 match_hit2 <- as.data.frame(tc_overlaps)
+match_hit3 <- as.data.frame(tc_overlaps_pE_male)
 
 #name the columns
 names(match_hit2) <- c('query','subject')
+names(match_hit3) <- c('query', 'subject')
 
 promoter_index <- match_hit2$query
 gene_index <- match_hit2$subject
+
+promoter_index2 <- match_hit2$query
+gene_index2 <- match_hit2$subject
 
 #gene_names <- dpulex_genes[gene_index,'geneID']
 promoter_table <- data.frame(de_data[promoter_index,])
 promoter_IDs <- dpulex_genes[gene_index,"geneID"]
 rownames(promoter_table) = make.names(promoter_IDs, unique=TRUE)
 
+promoter_table2 <- data.frame(top_table_e[promoter_index,])
+promoter_IDs <- dpulex_genes[gene_index,"geneID"]
+rownames(promoter_table2) = make.names(promoter_IDs, unique=TRUE)
+
 #remove duplicated entries
 #match_hit2 <- match_hit2[!duplicated(match_hit2$query),]
 
 write.table(promoter_table,file="TCO_promoter_de_table.txt",col.names=TRUE, row.names=TRUE)
+write.table(promoter_table2,file="TCO_promoter_de_pE_male.txt",col.names=TRUE, row.names=TRUE)
 
 ###########################################################################
 #Making heatmaps from the eset data we've generated
@@ -197,7 +255,7 @@ write.table(promoter_table,file="TCO_promoter_de_table.txt",col.names=TRUE, row.
 
 par(mar=c(2.1,4.1,4.1,4.1))
 png(file="heatmap_TCO_upreg1.png",height=1600,width=1200)
-selected  <- which(de_data$de==1)
+selected  <- rownames(top_table_e)
 esetSel <- dp_eset[selected, ]
 heatmap(exprs(esetSel))
 dev.off()
