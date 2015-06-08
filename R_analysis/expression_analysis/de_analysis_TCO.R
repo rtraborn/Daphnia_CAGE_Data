@@ -70,7 +70,7 @@ de.genes_pE_male <- rownames(Dp_dge)[as.logical(de_pE_male)]
 plotSmear(Dp_dge, de.tags = de.genes_pE_male, cex = 0.5)
 abline(h = c(-2, 2), col = "blue")
 
-top_table_e <- topTags(et, sort.by="PValue",n=100)
+top_table_e <- topTags(et, sort.by="PValue",n=Inf)
 dim(top_table_e)
 
 data_coord2 <- matrix(data=unlist(strsplit(rownames(top_table_e), split="_")),
@@ -109,7 +109,33 @@ de.genes_pE_matfem <- rownames(Dp_dge)[as.logical(de_pE_matfem)]
 plotSmear(Dp_dge, de.tags = de.genes_pE_matfem, cex = 0.5)
 abline(h = c(-2, 2), col = "blue")
 
-top_table_e2 <- topTags(et, sort.by="PValue",n=100)
+top_table_e2 <- topTags(et, sort.by="PValue",n=Inf)
+
+data_coord2 <- matrix(data=unlist(strsplit(rownames(top_table_e2), split="_")),
+                      nrow= length(row.names(top_table_e2)),
+                      byrow=T)
+
+data_coord2 <- as.data.frame(data_coord2, stringsAsFactors=F)
+head(data_coord2)
+
+col_1 <- data_coord2[,1]
+col_2 <- data_coord2[,2]
+chr_col <- paste(col_1,col_2,sep="_")
+data_coord2 <- data_coord2[,-2]
+data_coord2[,1] <- chr_col
+data_coord2[,2] <- as.numeric(data_coord2[,2])
+data_coord2[,3] <- as.numeric(data_coord2[,3])
+names(data_coord2) <- c('chr','start','end','strand')
+
+#first, creating a genomicRanges object from the promoter data
+de_GR_2 <- with(data_coord2, GRanges(chr,
+                                    IRanges(start, end, names=row.names(top_table_e2)), strand))
+
+
+de_GR_2 <- promoters(de_GR_2, upstream=200, downstream=200)
+
+#what does the GR object look like?
+de_GR_2
 
 ###### mature females vs males  #######################
 et <- exactTest(Dp_dge,pair=c("mat_fem","mat_male"))
@@ -121,8 +147,34 @@ de.genes_matfem_male <- rownames(Dp_dge)[as.logical(de_matfem_male)]
 plotSmear(Dp_dge, de.tags = de.genes_matfem_male, cex = 0.5)
 abline(h = c(-2, 2), col = "blue")
 
-top_table_e3 <- topTags(et, sort.by="PValue",n=100)
-                
+top_table_e3 <- topTags(et, sort.by="PValue",n=Inf)
+
+data_coord2 <- matrix(data=unlist(strsplit(rownames(top_table_e3), split="_")),
+                      nrow= length(row.names(top_table_e3)),
+                      byrow=T)
+
+data_coord2 <- as.data.frame(data_coord2, stringsAsFactors=F)
+head(data_coord2)
+
+col_1 <- data_coord2[,1]
+col_2 <- data_coord2[,2]
+chr_col <- paste(col_1,col_2,sep="_")
+data_coord2 <- data_coord2[,-2]
+data_coord2[,1] <- chr_col
+data_coord2[,2] <- as.numeric(data_coord2[,2])
+data_coord2[,3] <- as.numeric(data_coord2[,3])
+names(data_coord2) <- c('chr','start','end','strand')
+
+#first, creating a genomicRanges object from the promoter data
+de_GR_3 <- with(data_coord2, GRanges(chr,
+                                    IRanges(start, end, names=row.names(top_table_e3)), strand))
+
+
+de_GR_3 <- promoters(de_GR_3, upstream=200, downstream=200)
+
+#what does the GR object look like?
+de_GR_3
+
 v <- voom(Dp_dge,design,plot=TRUE)
 fit <- lmFit(v,design=design)
 head(fit)
@@ -246,24 +298,24 @@ write.table(promoter_table2,file="TCO_promoter_de_pE_male.txt",col.names=TRUE, r
 
 #male vs pE
 par(mar=c(2.1,4.1,4.1,2.1))
-png(file="heatmap_TCO_upreg1.png",height=1600,width=1300)
-selected  <- rownames(top_table_e)
+png(file="heatmap_TCO_upreg1.png",height=1600,width=1600)
+selected  <- rownames(top_table_e[1:200])
 esetSel <- dp_eset[selected, ]
 heatmap(exprs(esetSel))
 dev.off()
 
 #mat_fem vs pE
 par(mar=c(2.1,4.1,4.1,2.1))
-png(file="heatmap_TCO_upreg2.png",height=1600,width=1300)
-selected  <- rownames(top_table_e2)
+png(file="heatmap_TCO_upreg2.png",height=1600,width=1600)
+selected  <- rownames(top_table_e2[1:200])
 esetSel <- dp_eset[selected, ]
 heatmap(exprs(esetSel))
 dev.off()
 
 #male vs mat_fem
 par(mar=c(2.1,4.1,4.1,2.1))
-png(file="heatmap_TCO_upreg3.png",height=1600,width=1300)
-selected  <- rownames(top_table_e3)
+png(file="heatmap_TCO_upreg3.png",height=1600,width=1600)
+selected  <- rownames(top_table_e3[1:200])
 esetSel <- dp_eset[selected, ]
 heatmap(exprs(esetSel))
 dev.off()
