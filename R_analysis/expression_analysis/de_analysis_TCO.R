@@ -45,8 +45,6 @@ design <- model.matrix(~ 0+factor(c(1,1,1,3,3,2,2,2)))
 colnames(design) <- c("mat_fem", "pE_fem", "mat_male")
 design
 
-contrast.matrix <- makeContrasts(pE_fem-mat_fem, mat_male-pE_fem, mat_male-mat_fem, levels=design)
-
 group <- c(rep("mat_fem",3),rep("mat_male",2),rep("pE_fem",3))
 group
 p_cutoff <- 0.01
@@ -246,16 +244,26 @@ write.table(promoter_table2,file="TCO_promoter_de_pE_male.txt",col.names=TRUE, r
 ###########################################################################
 #Making heatmaps from the eset data we've generated
 
-#par(mar=c(2.1,4.1,2.1,4.1))
-#png(file="heatmap_TCO_all.png",height=1600,width=1200)
-#selected  <- which(de_data$p.value[,2] <0.01)
-#esetSel <- dp_eset[selected, ]
-#heatmap(exprs(esetSel))
-#dev.off()
-
-par(mar=c(2.1,4.1,4.1,4.1))
+#male vs pE
+par(mar=c(2.1,4.1,4.1,2.1))
 png(file="heatmap_TCO_upreg1.png",height=1600,width=1200)
 selected  <- rownames(top_table_e)
+esetSel <- dp_eset[selected, ]
+heatmap(exprs(esetSel))
+dev.off()
+
+#mat_fem vs pE
+par(mar=c(2.1,4.1,4.1,2.1))
+png(file="heatmap_TCO_upreg2.png",height=1600,width=1200)
+selected  <- rownames(top_table_e2)
+esetSel <- dp_eset[selected, ]
+heatmap(exprs(esetSel))
+dev.off()
+
+#male vs mat_fem
+par(mar=c(2.1,4.1,4.1,2.1))
+png(file="heatmap_TCO_upreg3.png",height=1600,width=1200)
+selected  <- rownames(top_table_e3)
 esetSel <- dp_eset[selected, ]
 heatmap(exprs(esetSel))
 dev.off()
