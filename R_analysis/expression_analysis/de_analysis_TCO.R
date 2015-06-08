@@ -301,7 +301,7 @@ par(mar=c(4.1,4.1,4.1,4.1))
 png(file="heatmap_TCO_upreg1.png",height=2800,width=2800)
 selected  <- rownames(top_table_e[1:200])
 esetSel <- dp_eset[selected, ]
-heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE,symbreaks=TRUE, scale="row", density.info="none",trace="none",
+heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE,symbreaks=TRUE, scale="row", density.info="none",trace="none",col=topo.colors(75),
           key=TRUE)
 dev.off()
 
@@ -310,7 +310,7 @@ par(mar=c(4.1,4.1,4.1,4.1))
 png(file="heatmap_TCO_upreg2.png",height=2800,width=2800)
 selected  <- rownames(top_table_e2[1:200])
 esetSel <- dp_eset[selected, ]
-heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE,symbreaks=TRUE, scale="row", density.info="none",trace="none",
+heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE,symbreaks=TRUE, scale="row", density.info="none",trace="none", col=topo.colors(75),
           key=TRUE)
 dev.off()
 
@@ -319,6 +319,6 @@ par(mar=c(4.1,4.1,4.1,4.1))
 png(file="heatmap_TCO_upreg3.png",height=2800,width=2800)
 selected  <- rownames(top_table_e3[1:200])
 esetSel <- dp_eset[selected, ]
-heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE,symbreaks=TRUE, scale="row", density.info="none",trace="none",
+heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE,symbreaks=TRUE, scale="row", density.info="none",trace="none",col=topo.colors(75),
           key=TRUE)
 dev.off()
