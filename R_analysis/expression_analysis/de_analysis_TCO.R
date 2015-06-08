@@ -302,7 +302,7 @@ png(file="heatmap_TCO_upreg1.png",height=2200,width=2400)
 selected  <- rownames(top_table_e[1:200])
 esetSel <- dp_eset[selected, ]
 heatmap.2(exprs(esetSel),
-          key=TRUE, cexRow=0.5)
+          key=TRUE,)
 dev.off()
 
 #mat_fem vs pE
@@ -311,7 +311,7 @@ png(file="heatmap_TCO_upreg2.png",height=2200,width=2400)
 selected  <- rownames(top_table_e2[1:200])
 esetSel <- dp_eset[selected, ]
 heatmap.2(exprs(esetSel), 
-          key=TRUE, cexRow=0.5)
+          key=TRUE,)
 dev.off()
 
 #male vs mat_fem
@@ -320,5 +320,5 @@ png(file="heatmap_TCO_upreg3.png",height=2200,width=2400)
 selected  <- rownames(top_table_e3[1:200])
 esetSel <- dp_eset[selected, ]
 heatmap.2(exprs(esetSel),
-          key=TRUE,  cexRow=0.5)
+          key=TRUE,)
 dev.off()
