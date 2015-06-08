@@ -298,27 +298,27 @@ write.table(promoter_table2,file="TCO_promoter_de_pE_male.txt",col.names=TRUE, r
 
 #male vs pE
 par(mar=c(4.1,4.1,4.1,4.1))
-png(file="heatmap_TCO_upreg1.png",height=2800,width=2800)
+png(file="heatmap_TCO_pE_v_male.png",height=2800,width=2800)
 selected  <- rownames(top_table_e[1:200])
 esetSel <- dp_eset[selected, ]
-heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE,symbreaks=TRUE, scale="row", density.info="none",trace="none",
+heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE,scale="row", density.info="none",trace="none",
           key=TRUE,margins=c(10,10))
 dev.off()
 
 #mat_fem vs pE
 par(mar=c(4.1,4.1,4.1,4.1))
-png(file="heatmap_TCO_upreg2.png",height=2800,width=2800)
+png(file="heatmap_TCO_matfem_v_pE.png",height=2800,width=2800)
 selected  <- rownames(top_table_e2[1:200])
 esetSel <- dp_eset[selected, ]
-heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE,symbreaks=TRUE, scale="row", density.info="none",trace="none",
+heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE,scale="row", density.info="none",trace="none",
           key=TRUE,margins=c(10,10))
 dev.off()
 
 #male vs mat_fem
 par(mar=c(4.1,4.1,4.1,4.1))
-png(file="heatmap_TCO_upreg3.png",height=2800,width=2800)
+png(file="heatmap_TCO_male_v_matfem.png",height=2800,width=2800)
 selected  <- rownames(top_table_e3[1:200])
 esetSel <- dp_eset[selected, ]
-heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE,symbreaks=TRUE, scale="row", density.info="none",trace="none",
+heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE, scale="row", density.info="none",trace="none",
           key=TRUE, margins=c(10,10))
 dev.off()
