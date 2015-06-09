@@ -358,7 +358,11 @@ dev.off()
 #meiosis genes
 par(mar=c(4.1,4.1,4.1,4.1))
 png(file="heatmap_TCO_meiosis.png",height=2800,width=2800)
-selected  <- as.character(rownames(meiosis_table))
+meiosis_rows <- match(rownames(meiosis_table), rownames(top_table_e))
+length(meiosis_rows)
+head(meiosis_rows)
+meiosis_rows <- na.omit(meiosis_rows)
+selected  <- rownames(top_table_e[meiosis_rows])
 esetSel <- dp_eset[selected, ]
 heatmap(exprs(esetSel))
 dev.off()
