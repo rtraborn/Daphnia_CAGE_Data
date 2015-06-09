@@ -1,118 +1,60 @@
 DpuGr	Location	JGI V1.1              gene model	Protein ID	New Protein              ID	Comments
-
 1	scaffold_4:272236-273762	fgenesh1_pg.C_scaffold_4000034	346811	NA	Same
-
 2	scaffold_4:278009-279502	NCBI_GNO_0400033	311261	346819	truncated 1st exon
-
 3	scaffold_4:279988-281469	NCBI_GNO_0400034	311262	346813	missing final exon
-
 4	scaffold_4:341660-343135	fgenesh1_pg.C_scaffold_4000053	95937	346911	truncated 1st exon
-
 5	scaffold_4:339828-341493	PASA_GEN_0400197	305579	NA	Same
-
 6	scaffold_4:2188983-2190473	NCBI_GNO_0400391	311617	NA	Same
-
 7	scaffold_4:2190837-2192326	NCBI_GNO_0400392	311618	346837	4th exon too long & missing 5th exon
-
 8	scaffold_4:2192733-2194232	NCBI_GNO_0400393	311619	NA	Same
-
 9	scaffold_4:2194646-2196117	NCBI_GNO_0400394	311620	346838	match on all exons but NCBI model has extras at 3' end
-
 10	scaffold_4:2634693-2636319	NCBI_GNO_0400515	311740	346840	truncated 1st exon missing last exon
-
 11	scaffold_145:138652-140036	fgenesh1_pg.C_scaffold_145000046	115102	346841	missing 1st intron & last (5th) exon
-
 12	scaffold_87:435725-437154	NCBI_GNO_8700117	327171	NA	Same
-
 13	scaffold_87:437579-438974	SNAP_00023793	255735	346842	1st exon and truncated 2nd exon
-
 14	scaffold_87:441383-442931	fgenesh1_pg.C_scaffold_87000145	111713	346843	4th intron too long
-
 15	scaffold_40:105929-107556	NCBI_GNO_4000025	321270	346844	last (5th) exon missing
-
-16N	scaffold_40:103864-105444	NCBI_GNO_4000024	321269	NA	Same
-
+16	scaffold_40:103864-105444	NCBI_GNO_4000024	321269	NA	Same
 17	scaffold_87:211272-212862	NCBI_GNO_8700061	327115	346847	5' end missing 9 bp
-
 18	scaffold_87:213286-214940	NCBI_GNO_8700062	327116	346848	5' end missing 9 bp
-
 19	scaffold_87:196838-198317	NCBI_GNO_8700054	327108	346849	5th exon too long
-
 20	scaffold_87:193344-194997	NCBI_GNO_8700053	327107	346850	truncated 1st exon & missing 3rd exon
-
 21	scaffold_87:191113-192511	NCBI_GNO_8700052	327106	NA	Same
-
 22	scaffold_87:187203-188649	SNAP_00023720	255662	NA	Same
-
-23FIX	scaffold_87:185158-186582	NCBI_GNO_8700050	327104	442586	missing last 3 exons
-
+23	scaffold_87:185158-186582	NCBI_GNO_8700050	327104	442586	missing last 3 exons
 24	scaffold_87:30125-31504	NCBI_GNO_8700006	327060	NA	Same
-
 25	scaffold_87:31824-33484	SNAP_00023664	255606	346855	truncated 1st exon & missing 5th exon
-
-26P	scaffold_328:49769-50798	NCBI_GNO_32800005	334296	442583	missing last 2 exons of our model
-
+26	scaffold_328:49769-50798	NCBI_GNO_32800005	334296	442583	missing last 2 exons of our model
 27	scaffold_4:2218191-2219707	SNAP_00002848	234790	346857	5th exon mismatch
-
 28	scaffold_4:2216102-2217599	SNAP_00002847	234789	346858	missing 1st exon
-
 29	scaffold_4:2213168-2214628	NCBI_GNO_0400395	311621	346859	5th intron is longer
-
 30	scaffold_51:492193-493689	NCBI_GNO_5100060	323020	346860	extra intron within 2nd exon
-
 31	scaffold_86:355128-356818	SNAP_00023611	255553	346861	missing 4th exon & truncated 6th exon
-
 32	scaffold_66:753423-755119	NCBI_GNO_6600115	325025	346862	missing last 3 exons
-
 33	scaffold_117:358469-360263	fgenesh1_pg.C_scaffold_117000028	113818	346863	truncated 1st exon
-
-34FIX	scaffold_29:299592-300898	no hit	NA	442578	
-
-35FIX	scaffold_123:44710-46019	NCBI_GNO_12300006	329587	442580	truncated 1st exon & missing 6th exon
-
+34	scaffold_29:299592-300898	no hit	NA	442578	
+35	scaffold_123:44710-46019	NCBI_GNO_12300006	329587	442580	truncated 1st exon & missing 6th exon
 36	scaffold_123:46645-48216	NCBI_GNO_12300007	329588	346866	truncated 1st exon
-
 37	scaffold_187:187229-188772	NCBI_GNO_18700047	332335	346867	truncated 1st & 2nd exons
-
 38	scaffold_187:180574-182181	NCBI_GNO_18700046	332334	346875	1st exon missing & longer 4th exon
-
 39	scaffold_187:182801-184413	PASA_GEN_18700024	302748	346876	truncated 1st exon and 6th exon too long
-
-40P	scaffold_187:184972-186472	fgenesh1_pg.C_scaffold_187000047	NA	NA	
-
+40	scaffold_187:184972-186472	fgenesh1_pg.C_scaffold_187000047	NA	NA	
 41	scaffold_187:177577-179164	no hit	NA	346878	
-
 42	scaffold_4:2636875-2638477	NCBI_GNO_0400516	311741	346879	truncated 1st exon & 3 exons instead of 2
-
 43	scaffold_87:433963-435377	NCBI_GNO_8700116	327170	NA	same
-
-44N	scaffold_6:1830849-1832318	NCBI_GNO_0600407	312608	442555	JGI â 5' 1st exon missing
-
+44	scaffold_6:1830849-1832318	NCBI_GNO_0600407	312608	442555	JGI â 5' 1st exon missing
 45	scaffold_6:1833035-1834297	NCBI_GNO_0600408	312609	346880	truncated 5' end
-
 46	scaffold_8:1391176-1392681	fgenesh1_pg.C_scaffold_8000220	98040	NA	same
-
 47	scaffold_58:302684-304219	NCBI_GNO_5800046	323957	346882	1st & 2nd exons missing/3rd
-
 48	scaffold_2:711166-709624	no hit	NA	NA	exon truncated
-
 49	scaffold_2:705282-706818	NCBI_GNO_0200131	310197	346895	partial, last 4 exons only
-
 50	scaffold_2:702774-704369	NCBI_GNO_0200130	310196	346897	extra intron within 1st exon
-
 51	scaffold_2:700887-702432	NCBI_GNO_0200129	310195	NA	same
-
-52N	scaffold_2:399077-400562	NCBI_GNO_0200074	310142	442581	truncated 1st intron
-
+52	scaffold_2:399077-400562	NCBI_GNO_0200074	310142	442581	truncated 1st intron
 53	scaffold_13:642296-644073	NCBI_GNO_1300117	315056	NA	same
-
 54	scaffold_138:252456-255386	SNAP_00028520	260462	346908	1st & 4th exon missing
-
 55	scaffold_6:842460-843909	SNAP_00003790	235732	346901	4th exon missing & truncated 5th exon
-
 56	scaffold_6:840584-842029	NCBI_GNO_0600186	312387	NA	same
-
 57	scaffold_4:2311538-2313083	NCBI_GNO_0400416	311642	346902	same
-
 58	scaffold_24:135381-137169	NCBI_GNO_2400021	318197	NA	same
 
