@@ -301,9 +301,10 @@ write.table(promoter_table,file="TCO_promoter_de_pE_male.txt",col.names=TRUE, ro
 meiosis_genes <- read.table(file="/home/rtraborn/Daphnia/Daphnia_CAGE_Data/development_reg/meiosis/Dpulex_meiosis_genes.bed", header=TRUE)
 meiosis_IDs <- meiosis_genes$geneID
 promoter_list <- promoter_table$gene
-my_index <-  promoter_list %in% meiosis_IDs
-#head(my_index)
+my_index <-  match(meiosis_IDs,promoter_table$gene)
+length(my_index)
 meiosis_table <- promoter_table[my_index,]
+meiosis_table <- na.omit(meiosis_table)
 
 #differentially-expressed meiosis genes only
 de_index <- which(meiosis_table$de == 1)
@@ -355,9 +356,9 @@ heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE, scale="row", density.info="no
 dev.off()
 
 #meiosis genes
-#par(mar=c(4.1,4.1,4.1,4.1))
-#png(file="heatmap_TCO_meiosis.png",height=2800,width=2800)
-#selected  <- rownames(meiosis_table)
-#esetSel <- dp_eset[selected, ]
-#heatmap(exprs(esetSel))
-#dev.off()
+par(mar=c(4.1,4.1,4.1,4.1))
+png(file="heatmap_TCO_meiosis.png",height=2800,width=2800)
+selected  <- as.character(rownames(meiosis_table))
+esetSel <- dp_eset[selected, ]
+heatmap(exprs(esetSel))
+dev.off()
