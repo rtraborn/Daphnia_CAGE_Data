@@ -239,6 +239,14 @@ de_data$end <- as.numeric(de_data$end)
 
 write.table(de_data,file="de_data_TCO_pE_male.txt",col.names=TRUE,quote=FALSE)
 
+#################################################
+
+#differentially-expressed promoters only
+de_index <- which(de_data$de == 1)
+promoter_de <- de_data[de_index,]
+
+write.table(promoter_de,file="de_data_TCO_pE_male_de_promoters.txt",col.names=TRUE,quote=FALSE)
+
 ###########################################################################
 #Adding gene annotation to promoters
 
@@ -262,56 +270,51 @@ genes_GR <- with(dpulex_genes, GRanges(chr, IRanges(start, end, names=geneID),st
 #overlap TSRs with all tag clusters
 tc_overlaps <- findOverlaps(de_GR, genes_GR)
 
-tc_overlaps_pE_male <- findOverlaps(de_GR_1, genes_GR)
-
 #store number of overlaps
 tc_overlaps_count <- countOverlaps(de_GR, genes_GR)
 
 match_hit2 <- as.data.frame(tc_overlaps)
-match_hit3 <- as.data.frame(tc_overlaps_pE_male)
 
 #name the columns
 names(match_hit2) <- c('query','subject')
-names(match_hit3) <- c('query', 'subject')
+
+head(match_hit2)
 
 promoter_index <- match_hit2$query
 gene_index <- match_hit2$subject
 
-promoter_index2 <- match_hit2$query
-gene_index2 <- match_hit2$subject
+print("Length of promoter index")
+length(promoter_index)
 
 #gene_names <- dpulex_genes[gene_index,'geneID']
 promoter_table <- data.frame(de_data[promoter_index,])
-promoter_IDs <- dpulex_genes[gene_index,"geneID"]
-rownames(promoter_table) = make.names(promoter_IDs, unique=TRUE)
-
-promoter_table2 <- data.frame(top_table_e[promoter_index,])
-promoter_IDs <- dpulex_genes[gene_index,"geneID"]
-promoter_table2$promoter_ID <- rownames(top_table_e[promoter_index,])
-rownames(promoter_table2) <- make.names(promoter_IDs, unique=TRUE)
+gene_IDs <- dpulex_genes[gene_index,"geneID"]
+promoter_table$gene <- gene_IDs
 
 #remove duplicated entries
 #match_hit2 <- match_hit2[!duplicated(match_hit2$query),]
 
-write.table(promoter_table,file="TCO_promoter_de_table.txt",col.names=TRUE, row.names=TRUE)
-write.table(promoter_table2,file="TCO_promoter_de_pE_male.txt",col.names=TRUE, row.names=TRUE)
+write.table(promoter_table,file="TCO_promoter_de_pE_male.txt",col.names=TRUE, row.names=TRUE)
 
 ##########################################################################
 #importing the meiosis gene annotation file
 meiosis_genes <- read.table(file="/home/rtraborn/Daphnia/Daphnia_CAGE_Data/development_reg/meiosis/Dpulex_meiosis_genes.bed", header=TRUE)
+meiosis_IDs <- meiosis_genes$geneID
+promoter_list <- promoter_table$gene
+my_index <-  promoter_list %in% meiosis_IDs
+#head(my_index)
+meiosis_table <- promoter_table[my_index,]
 
-meiosis_IDs <- rownames(meiosis_genes)
-meiosis_table <- promoter_table2[meiosis_IDs,]
-meiosis_table <- na.omit(meiosis_table)
+#differentially-expressed meiosis genes only
+de_index <- which(meiosis_table$de == 1)
+meiosis_de <- meiosis_table[de_index,]
 
-head(meiosis_table)
-dim(meiosis_table)
-meiosis_table <- meiosis_table[-2,]
-write.table(meiosis_table,file="meiosis_table_de.txt",col.names=TRUE,row.names=TRUE,quote=FALSE)
+#head(meiosis_table)
+write.table(meiosis_table,file="meiosis_table.txt",col.names=TRUE,row.names=TRUE,quote=FALSE)
+write.table(meiosis_de,file="meiosis_table_de.txt",col.names=TRUE,row.names=TRUE,quote=FALSE)
 
 ###########################################################################
 #Making heatmaps from the eset data we've generated
-
 
 #overall heatmap
 par(mar=c(4.1,4.1,4.1,4.1))
@@ -354,9 +357,7 @@ dev.off()
 #meiosis genes
 #par(mar=c(4.1,4.1,4.1,4.1))
 #png(file="heatmap_TCO_meiosis.png",height=2800,width=2800)
-#selected  <- meiosis_table$promoter_ID
-#is(selected)
-#selected <- selected[1:20]
+#selected  <- rownames(meiosis_table)
 #esetSel <- dp_eset[selected, ]
 #heatmap(exprs(esetSel))
 #dev.off()
