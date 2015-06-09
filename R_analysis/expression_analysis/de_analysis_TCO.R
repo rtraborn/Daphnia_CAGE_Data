@@ -35,6 +35,8 @@ rownames(Dp_edger) <- paste(Dp_edger_consensus_cluster$chr,
 
 dp_eset <-new("ExpressionSet", exprs=as.matrix(Dp_edger))
 
+head(dp_eset)
+
 #checking to see what the data.frame looks like
 head(Dp_edger)
 
@@ -285,7 +287,8 @@ rownames(promoter_table) = make.names(promoter_IDs, unique=TRUE)
 
 promoter_table2 <- data.frame(top_table_e[promoter_index,])
 promoter_IDs <- dpulex_genes[gene_index,"geneID"]
-rownames(promoter_table2) = make.names(promoter_IDs, unique=TRUE)
+promoter_table2$promoter_ID <- rownames(top_table_e[promoter_index,])
+rownames(promoter_table2) <- make.names(promoter_IDs, unique=TRUE)
 
 #remove duplicated entries
 #match_hit2 <- match_hit2[!duplicated(match_hit2$query),]
@@ -293,13 +296,37 @@ rownames(promoter_table2) = make.names(promoter_IDs, unique=TRUE)
 write.table(promoter_table,file="TCO_promoter_de_table.txt",col.names=TRUE, row.names=TRUE)
 write.table(promoter_table2,file="TCO_promoter_de_pE_male.txt",col.names=TRUE, row.names=TRUE)
 
+##########################################################################
+#importing the meiosis gene annotation file
+meiosis_genes <- read.table(file="/home/rtraborn/Daphnia/Daphnia_CAGE_Data/development_reg/meiosis/Dpulex_meiosis_genes.bed", header=TRUE)
+
+meiosis_IDs <- rownames(meiosis_genes)
+meiosis_table <- promoter_table2[meiosis_IDs,]
+meiosis_table <- na.omit(meiosis_table)
+
+head(meiosis_table)
+dim(meiosis_table)
+meiosis_table <- meiosis_table[-2,]
+write.table(meiosis_table,file="meiosis_table_de.txt",col.names=TRUE,row.names=TRUE,quote=FALSE)
+
 ###########################################################################
 #Making heatmaps from the eset data we've generated
+
+
+#overall heatmap
+par(mar=c(4.1,4.1,4.1,4.1))
+png(file="all_genes_heatmap.png",height=2800,width=2800)
+selected  <- rownames(top_table_e)
+esetSel <- dp_eset[selected,]
+heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE,scale="row", density.info="none",trace="none",
+          key=TRUE,margins=c(10,10))
+dev.off()
 
 #male vs pE
 par(mar=c(4.1,4.1,4.1,4.1))
 png(file="heatmap_TCO_pE_v_male.png",height=2800,width=2800)
 selected  <- rownames(top_table_e[1:200])
+is(selected)
 esetSel <- dp_eset[selected, ]
 heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE,scale="row", density.info="none",trace="none",
           key=TRUE,margins=c(10,10))
@@ -318,7 +345,18 @@ dev.off()
 par(mar=c(4.1,4.1,4.1,4.1))
 png(file="heatmap_TCO_male_v_matfem.png",height=2800,width=2800)
 selected  <- rownames(top_table_e3[1:200])
+print(head(selected))
 esetSel <- dp_eset[selected, ]
 heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE, scale="row", density.info="none",trace="none",
           key=TRUE, margins=c(10,10))
 dev.off()
+
+#meiosis genes
+#par(mar=c(4.1,4.1,4.1,4.1))
+#png(file="heatmap_TCO_meiosis.png",height=2800,width=2800)
+#selected  <- meiosis_table$promoter_ID
+#is(selected)
+#selected <- selected[1:20]
+#esetSel <- dp_eset[selected, ]
+#heatmap(exprs(esetSel))
+#dev.off()
