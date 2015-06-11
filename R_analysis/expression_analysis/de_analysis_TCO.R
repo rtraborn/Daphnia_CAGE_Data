@@ -319,9 +319,11 @@ write.table(meiosis_de,file="meiosis_table_de.txt",col.names=TRUE,row.names=TRUE
 gust_genes <- read.table(file="/home/rtraborn/Daphnia/Daphnia_CAGE_Data/development_reg/gustatory_rec/Dpulex_gustatory_receptor_genes.bed", header=TRUE,stringsAsFactors=FALSE)
 rownames(gust_genes) <- gust_genes$geneID
 gust_IDs <- gust_genes$geneID
-
-promoter_list <- promoter_table$gene
-my_index <-  match(gust_IDs,promoter_table$gene)
+head(gust_IDs)
+promoter_list <- unlist(promoter_table$gene)
+promoter_list <- as.character(promoter_list)
+head(promoter_list)
+my_index <-  match(gust_IDs,promoter_list)
 length(my_index)
 head(my_index)
 gustatory_table <- promoter_table[my_index,]
@@ -333,8 +335,8 @@ de_index <- which(gustatory_table$de == 1)
 gustatory_de <- gustatory_table[de_index,]
 
 #head(meiosis_table)
-write.table(gustatory_table,file="gustatory_table.txt",col.names=TRUE,row.names=TRUE,quote=FALSE)
-write.table(gustatory_de,file="gustatory_table_de.txt",col.names=TRUE,row.names=TRUE,quote=FALSE)
+#write.table(gustatory_table,file="gustatory_table.txt",col.names=TRUE,row.names=TRUE,quote=FALSE)
+#write.table(gustatory_de,file="gustatory_table_de.txt",col.names=TRUE,row.names=TRUE,quote=FALSE)
 
 ###########################################################################
 #Making heatmaps from the eset data we've generated
@@ -378,17 +380,17 @@ heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE, scale="row", density.info="no
 dev.off()
 
 #meiosis genes
-par(mar=c(4.1,4.1,4.1,4.1))
-png(file="heatmap_TCO_meiosis.png",height=2800,width=2800)
-meiosis_rows <- match(rownames(meiosis_table), rownames(top_table_e))
-length(meiosis_rows)
-head(meiosis_rows)
-meiosis_rows <- na.omit(meiosis_rows)
-selected  <- rownames(top_table_e[meiosis_rows])
-esetSel <- dp_eset[selected, ]
-heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE, scale="row", density.info="none",trace="none",
-          key=TRUE, margins=c(10,10))
-dev.off()
+#par(mar=c(4.1,4.1,4.1,4.1))
+#png(file="heatmap_TCO_meiosis.png",height=2800,width=2800)
+#meiosis_rows <- match(rownames(meiosis_table), rownames(top_table_e))
+#length(meiosis_rows)
+#head(meiosis_rows)
+#meiosis_rows <- na.omit(meiosis_rows)
+#selected  <- rownames(top_table_e[meiosis_rows])
+#esetSel <- dp_eset[selected, ]
+#heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE, scale="row", density.info="none",trace="none",
+#          key=TRUE, margins=c(10,10))
+#dev.off()
 
 #gustatory receptors
 par(mar=c(4.1,4.1,4.1,4.1))
