@@ -122,8 +122,17 @@ File 'consensusClusters_expression_profiles.pdf' has been created in your workin
 + 					sep="_")
 > 
 > 
-> 
 > dp_eset <-new("ExpressionSet", exprs=as.matrix(Dp_edger))
+> 
+> head(dp_eset)
+ExpressionSet (storageMode: lockedEnvironment)
+assayData: 1 features, 8 samples 
+  element names: exprs 
+protocolData: none
+phenoData: none
+featureData: none
+experimentData: use 'experimentData(object)'
+Annotation:  
 > 
 > #checking to see what the data.frame looks like
 > head(Dp_edger)
@@ -155,9 +164,6 @@ consensus.cluster            pE_females_3
 > lib_sizes <- librarySizes(myCAGEset)
 > #contrast.matrix <- makeContrasts(mat_male-mat_fem, pE_fem-mat_male, pE_fem-mat_fem, levels=design)
 > 
-> #importing the design object
-> #load("Dp_design.RData")
-> 
 > design <- model.matrix(~ 0+factor(c(1,1,1,3,3,2,2,2)))
 > colnames(design) <- c("mat_fem", "pE_fem", "mat_male")
 > design
@@ -177,90 +183,459 @@ attr(,"contrasts")$`factor(c(1, 1, 1, 3, 3, 2, 2, 2))`
 [1] "contr.treatment"
 
 > 
-> contrast.matrix <- makeContrasts(pE_fem-mat_fem, mat_male-pE_fem, mat_male-mat_fem, levels=design)
-> 
-> group <- c(rep("mat_fem",3),rep("mat_male",2),rep("pE_fem",3)) 
+> group <- c(rep("mat_fem",3),rep("mat_male",2),rep("pE_fem",3))
+> group
+[1] "mat_fem"  "mat_fem"  "mat_fem"  "mat_male" "mat_male" "pE_fem"   "pE_fem"  
+[8] "pE_fem"  
 > p_cutoff <- 0.01
 > rowsum_threshold <- 20
 > 
 > Dp_dge <- DGEList(counts=Dp_edger,group=group)
+> head(Dp_dge)
+An object of class "DGEList"
+$counts
+                            sample
+consensus.cluster            mat_females_1 mat_females_2 mat_females_3
+  scaffold_1_36116_36124_+        5.434379      0.000000      0.000000
+  scaffold_1_51155_51224_+       29.238488     27.329136     26.896134
+  scaffold_1_100766_100796_+    131.113953    109.585795    122.690582
+  scaffold_1_120715_120736_+      8.342919      5.250425      9.487335
+  scaffold_1_123356_123357_+      0.000000      0.000000      6.263483
+  scaffold_1_157386_157461_+     37.811029     34.733581     33.159617
+                            sample
+consensus.cluster            mat_males_1 mat_males_2 pE_females_1 pE_females_2
+  scaffold_1_36116_36124_+      0.000000    0.000000     0.000000     0.000000
+  scaffold_1_51155_51224_+     17.878433   26.329169    31.822582    23.987680
+  scaffold_1_100766_100796_+  150.689648  172.957300   157.398563   112.348548
+  scaffold_1_120715_120736_+    8.300701   13.550158     5.143044     5.247305
+  scaffold_1_123356_123357_+    0.000000    9.033439     0.000000     6.559131
+  scaffold_1_157386_157461_+   16.856808   12.668847    18.643533    20.895518
+                            sample
+consensus.cluster            pE_females_3
+  scaffold_1_36116_36124_+       0.000000
+  scaffold_1_51155_51224_+      35.083423
+  scaffold_1_100766_100796_+   153.359715
+  scaffold_1_120715_120736_+    10.073458
+  scaffold_1_123356_123357_+     8.162975
+  scaffold_1_157386_157461_+    17.020671
+
+$samples
+                 group lib.size norm.factors
+mat_females_1  mat_fem 856781.7            1
+mat_females_2  mat_fem 862365.6            1
+mat_females_3  mat_fem 850101.8            1
+mat_males_1   mat_male 884816.7            1
+mat_males_2   mat_male 865513.4            1
+pE_females_1    pE_fem 877201.0            1
+pE_females_2    pE_fem 878521.2            1
+pE_females_3    pE_fem 883811.7            1
+
 > A <- rowSums(Dp_dge$counts) 
 > Dp_dge <- Dp_dge[A>rowsum_threshold,]  
 > Dp_dge <- calcNormFactors(Dp_dge)
 > Dp_dge <- estimateCommonDisp(Dp_dge, verbose=T)
 Disp = 0.03174 , BCV = 0.1782 
+> Dp_dge <- estimateTagwiseDisp(Dp_dge, trend="none")
 > 
-> de.tgw2_pE_male <- exactTest(Dp_dge,pair=c("pE_fem","mat_male"))
-> de.tgw2_pE_mat_fem <- exactTest(Dp_dge,pair=c("pE_fem","mat_fem"))
-> de.tgw2_male_mat_fem <- exactTest(Dp_dge,pair=c("mat_male","mat_fem"))
+> plotBCV(Dp_dge)
 > 
-> head(de.tgw2_pE_mat_fem)
-An object of class "DGEExact"
-$table
-                                 logFC   logCPM     PValue
-scaffold_1_51155_51224_+   -0.30800796 5.075528 0.32686802
-scaffold_1_100766_100796_+ -0.40644797 7.347837 0.08574212
-scaffold_1_120715_120736_+ -0.01077568 3.547460 1.00000000
-scaffold_1_123356_123357_+ -1.36058124 2.726305 0.09477997
-scaffold_1_157386_157461_+  0.71509653 4.886685 0.03035058
-scaffold_1_162014_162063_+  0.23672773 3.137122 0.78929176
-
-$comparison
-[1] "pE_fem"  "mat_fem"
-
+> ###### male vs pE females #######################
+> et <- exactTest(Dp_dge,pair=c("mat_male","pE_fem"))
+> topTags(et, n=20)
+Comparison of groups:  pE_fem-mat_male 
+                                   logFC    logCPM        PValue           FDR
+scaffold_18_728347_728370_-   -13.285337  8.556576 4.397010e-169 4.477476e-165
+scaffold_14_430585_430642_+   -12.346943  7.622491 3.632506e-132 1.849491e-128
+scaffold_25_949272_949300_+    14.540647 10.396470 2.746909e-122 9.323923e-119
+scaffold_47_127017_127088_-     5.939580 13.266349 4.576122e-118 1.164966e-114
+scaffold_13_738311_738319_+    12.060105  7.916098 4.962139e-106 1.010589e-102
+scaffold_36_524765_524773_+   -14.644106  9.914519 1.538454e-104 2.611012e-101
+scaffold_18_956514_956518_-    13.310825  9.166769 1.632756e-102  2.375194e-99
+scaffold_14_1085111_1085121_+ -12.572262  7.846331 5.515121e-101  7.020060e-98
+scaffold_17_1281679_1281697_+  11.796143  7.653063  2.015509e-89  2.280437e-86
+scaffold_67_457601_457673_-   -12.481268  7.755795  3.085612e-85  3.142078e-82
+scaffold_36_525102_525144_+   -11.001632  6.293784  9.112280e-79  8.435486e-76
+scaffold_67_462373_462418_+   -13.750668  9.023056  2.614964e-77  2.219014e-74
+scaffold_245_22935_23039_+    -11.977726  7.255920  3.044357e-77  2.384668e-74
+scaffold_40_72120_72165_-     -10.636915  5.938039  8.183041e-73  5.951993e-70
+scaffold_113_165495_165518_-    6.251795  8.314149  9.140967e-72  6.205498e-69
+scaffold_10_520875_520898_-    14.299456 10.155610  2.540798e-65  1.617059e-62
+scaffold_12_1046153_1046183_-   3.835009  9.912894  4.107256e-65  2.460246e-62
+scaffold_10_522696_522713_+    15.943977 11.800847  3.708734e-59  2.098113e-56
+scaffold_32_670433_670441_+     4.795538  9.029357  1.794666e-58  9.618465e-56
+scaffold_51_85906_85926_-       5.915047  7.067660  1.660438e-55  8.454122e-53
+> de_pE_male <- decideTestsDGE(et, adjust="BH",p.value=0.01)
+> summary(de_pE_male)
+   [,1]
+-1 1225
+0  7879
+1  1079
+> detags <- rownames(Dp_dge)[as.logical(de_pE_male)]
+> de.genes_pE_male <- rownames(Dp_dge)[as.logical(de_pE_male)]
+> plotSmear(Dp_dge, de.tags = de.genes_pE_male, cex = 0.5)
+> abline(h = c(-2, 2), col = "blue")
 > 
+> top_table_e <- topTags(et, sort.by="PValue",n=Inf)
+> top_table_e$FDR <- p.adjust(top_table_e$PValue, method = "BH")
+> dim(top_table_e)
+[1] 10183     4
+> 
+> data_coord2 <- matrix(data=unlist(strsplit(rownames(top_table_e), split="_")),
++                       nrow= length(row.names(top_table_e)),
++                       byrow=T)
+> 
+> data_coord2 <- as.data.frame(data_coord2, stringsAsFactors=F)
+> head(data_coord2)
+        V1 V2     V3     V4 V5
+1 scaffold 18 728347 728370  -
+2 scaffold 14 430585 430642  +
+3 scaffold 25 949272 949300  +
+4 scaffold 47 127017 127088  -
+5 scaffold 13 738311 738319  +
+6 scaffold 36 524765 524773  +
+> 
+> col_1 <- data_coord2[,1]
+> col_2 <- data_coord2[,2]
+> chr_col <- paste(col_1,col_2,sep="_")
+> data_coord2 <- data_coord2[,-2]
+> data_coord2[,1] <- chr_col
+> data_coord2[,2] <- as.numeric(data_coord2[,2])
+> data_coord2[,3] <- as.numeric(data_coord2[,3])
+> names(data_coord2) <- c('chr','start','end','strand')
+> 
+> #first, creating a genomicRanges object from the promoter data
+> de_GR_1 <- with(data_coord2, GRanges(chr,
++                                     IRanges(start, end, names=row.names(top_table_e)), strand))
+> 
+> 
+> de_GR_1 <- promoters(de_GR_1, upstream=200, downstream=200)
+> 
+> #what does the GR object look like?
+> de_GR_1
+GRanges object with 10183 ranges and 0 metadata columns:
+                                 seqnames           ranges strand
+                                    <Rle>        <IRanges>  <Rle>
+  scaffold_18_728347_728370_- scaffold_18 [728171, 728570]      -
+  scaffold_14_430585_430642_+ scaffold_14 [430385, 430784]      +
+  scaffold_25_949272_949300_+ scaffold_25 [949072, 949471]      +
+  scaffold_47_127017_127088_- scaffold_47 [126889, 127288]      -
+  scaffold_13_738311_738319_+ scaffold_13 [738111, 738510]      +
+                          ...         ...              ...    ...
+  scaffold_96_281128_281138_- scaffold_96 [280939, 281338]      -
+  scaffold_97_362418_362420_+ scaffold_97 [362218, 362617]      +
+  scaffold_97_363403_363417_+ scaffold_97 [363203, 363602]      +
+    scaffold_98_87956_87957_+ scaffold_98 [ 87756,  88155]      +
+  scaffold_99_171351_171371_+ scaffold_99 [171151, 171550]      +
+  -------
+  seqinfo: 344 sequences from an unspecified genome; no seqlengths
+> 
+> options(digits=3)
+> 
+> ###### pE female vs mature females #######################
+> et2 <- exactTest(Dp_dge,pair=c("pE_fem","mat_fem"))
+> topTags(et2, n=20)
+Comparison of groups:  mat_fem-pE_fem 
+                               logFC logCPM    PValue       FDR
+scaffold_25_949272_949300_+    -8.80  10.40 1.41e-159 1.44e-155
+scaffold_13_738311_738319_+   -12.15   7.92 2.90e-155 1.48e-151
+scaffold_18_956514_956518_-    -9.08   9.17 2.65e-143 9.01e-140
+scaffold_17_1281679_1281697_+ -11.88   7.65 7.43e-131 1.89e-127
+scaffold_113_165495_165518_-   -6.11   8.31 2.02e-103 4.12e-100
+scaffold_10_520875_520898_-    -8.71  10.16  3.25e-81  5.52e-78
+scaffold_10_599027_599060_+   -10.66   6.44  3.07e-77  4.47e-74
+scaffold_40_218630_218671_-   -12.27   8.04  1.36e-73  1.74e-70
+scaffold_25_996147_996185_+    -8.34   8.19  6.84e-73  7.74e-70
+scaffold_10_39320_39601_+     -11.24   7.01  1.84e-71  1.88e-68
+scaffold_10_524722_524735_-    -5.63  11.10  5.56e-71  5.14e-68
+scaffold_13_634992_635101_-   -11.78   7.55  9.77e-68  8.29e-65
+scaffold_9_1663314_1663429_-  -11.11   6.89  4.95e-66  3.88e-63
+scaffold_10_522836_523092_+    -8.18   9.47  1.62e-61  1.18e-58
+scaffold_86_359301_359307_+   -10.05   5.84  2.26e-60  1.53e-57
+scaffold_10_522696_522713_+    -8.31  11.80  3.63e-60  2.31e-57
+scaffold_226_74034_74062_-      9.91   5.78  6.28e-60  3.76e-57
+scaffold_105_54477_54482_-      6.45   8.07  1.58e-59  8.93e-57
+scaffold_3_2389621_2389630_-    5.46   8.79  4.15e-58  2.23e-55
+scaffold_11_1399797_1399851_+  -2.91   9.72  7.72e-58  3.93e-55
+> de_pE_matfem <- decideTestsDGE(et2, adjust="BH",p.value=0.01)
+> summary(de_pE_matfem)
+   [,1]
+-1 1150
+0  8045
+1   988
+> detags <- rownames(Dp_dge)[as.logical(de_pE_matfem)]
+> de.genes_pE_matfem <- rownames(Dp_dge)[as.logical(de_pE_matfem)]
+> plotSmear(Dp_dge, de.tags = de.genes_pE_matfem, cex = 0.5)
+> abline(h = c(-2, 2), col = "blue")
+> 
+> top_table_e2 <- topTags(et2, sort.by="PValue",n=Inf)
+> top_table_e2$FDR <- p.adjust(top_table_e2$PValue, method = "BH")
+> 
+> data_coord2 <- matrix(data=unlist(strsplit(rownames(top_table_e2), split="_")),
++                       nrow= length(row.names(top_table_e2)),
++                       byrow=T)
+> data_coord2 <- as.data.frame(data_coord2, stringsAsFactors=F)
+> head(data_coord2)
+        V1  V2      V3      V4 V5
+1 scaffold  25  949272  949300  +
+2 scaffold  13  738311  738319  +
+3 scaffold  18  956514  956518  -
+4 scaffold  17 1281679 1281697  +
+5 scaffold 113  165495  165518  -
+6 scaffold  10  520875  520898  -
+> 
+> col_1 <- data_coord2[,1]
+> col_2 <- data_coord2[,2]
+> chr_col <- paste(col_1,col_2,sep="_")
+> data_coord2 <- data_coord2[,-2]
+> data_coord2[,1] <- chr_col
+> data_coord2[,2] <- as.numeric(data_coord2[,2])
+> data_coord2[,3] <- as.numeric(data_coord2[,3])
+> names(data_coord2) <- c('chr','start','end','strand')
+> 
+> #first, creating a genomicRanges object from the promoter data
+> de_GR_2 <- with(data_coord2, GRanges(chr,
++                                     IRanges(start, end, names=row.names(top_table_e2)), strand))
+> 
+> de_GR_2 <- promoters(de_GR_2, upstream=200, downstream=200)
+> 
+> #what does the GR object look like?
+> de_GR_2
+GRanges object with 10183 ranges and 0 metadata columns:
+                                     seqnames             ranges strand
+                                        <Rle>          <IRanges>  <Rle>
+    scaffold_25_949272_949300_+   scaffold_25 [ 949072,  949471]      +
+    scaffold_13_738311_738319_+   scaffold_13 [ 738111,  738510]      +
+    scaffold_18_956514_956518_-   scaffold_18 [ 956319,  956718]      -
+  scaffold_17_1281679_1281697_+   scaffold_17 [1281479, 1281878]      +
+   scaffold_113_165495_165518_-  scaffold_113 [ 165319,  165718]      -
+                            ...           ...                ...    ...
+     scaffold_9_235211_235216_+    scaffold_9   [235011, 235410]      +
+     scaffold_203_46472_46490_+  scaffold_203   [ 46272,  46671]      +
+      scaffold_2516_1256_1257_+ scaffold_2516   [  1056,   1455]      +
+      scaffold_2516_2406_2407_+ scaffold_2516   [  2206,   2605]      +
+     scaffold_574_37623_37624_+  scaffold_574   [ 37423,  37822]      +
+  -------
+  seqinfo: 344 sequences from an unspecified genome; no seqlengths
+> 
+> ###### asexual females vs males  #######################
+> et3 <- exactTest(Dp_dge,pair=c("mat_fem","mat_male"))
+> topTags(et3, n=20)
+Comparison of groups:  mat_male-mat_fem 
+                              logFC logCPM    PValue       FDR
+scaffold_18_728347_728370_-   13.40   8.56 3.25e-173 3.31e-169
+scaffold_47_127017_127088_-   -7.46  13.27 1.04e-163 5.30e-160
+scaffold_14_430585_430642_+   12.46   7.62 6.06e-136 2.06e-132
+scaffold_14_1085111_1085121_+ 12.68   7.85 2.02e-103 5.13e-100
+scaffold_36_524765_524773_+   10.20   9.91  6.35e-97  1.29e-93
+scaffold_67_457601_457673_-   12.59   7.76  3.29e-87  5.59e-84
+scaffold_36_525102_525144_+   11.11   6.29  2.25e-81  3.27e-78
+scaffold_12_1046153_1046183_- -4.33   9.91  8.70e-81  1.11e-77
+scaffold_245_22935_23039_+    12.09   7.26  3.32e-79  3.76e-76
+scaffold_40_72120_72165_-     10.75   5.94  2.09e-75  2.12e-72
+scaffold_67_462373_462418_+    9.71   9.02  1.14e-71  1.05e-68
+scaffold_958_1392_1439_-      -5.96  13.97  1.96e-68  1.66e-65
+scaffold_4_2993955_2993976_-  -4.51   8.66  2.61e-67  2.04e-64
+scaffold_10_1904550_1904623_-  3.62   8.28  9.82e-67  6.88e-64
+scaffold_97_428994_429002_-   -3.86   8.53  1.01e-66  6.88e-64
+scaffold_25_741934_741953_-    3.13   7.83  2.77e-66  1.77e-63
+scaffold_88_276950_277007_-   -3.74   8.96  1.59e-65  9.53e-63
+scaffold_121_21177_21182_-    -5.38   7.21  3.78e-64  2.14e-61
+scaffold_12_1887441_1887561_+ -3.83   9.21  3.73e-61  2.00e-58
+scaffold_6_1142921_1142929_+   3.83   9.14  1.54e-58  7.83e-56
+> de_matfem_male <- decideTestsDGE(et3, adjust="BH",p.value=0.01)
+> summary(de_matfem_male)
+   [,1]
+-1 1582
+0  6972
+1  1629
+> detags <- rownames(Dp_dge)[as.logical(de_matfem_male)]
+> de.genes_matfem_male <- rownames(Dp_dge)[as.logical(de_matfem_male)]
+> plotSmear(Dp_dge, de.tags = de.genes_matfem_male, cex = 0.5)
+> abline(h = c(-2, 2), col = "blue")
+> 
+> top_table_e3 <- topTags(et3, sort.by="PValue",n=Inf)
+> top_table_e3$FDR <- p.adjust(top_table_e3$PValue, method = "BH")
+> 
+> data_coord2 <- matrix(data=unlist(strsplit(rownames(top_table_e3), split="_")),
++                       nrow= length(row.names(top_table_e3)),
++                       byrow=T)
+> 
+> data_coord2 <- as.data.frame(data_coord2, stringsAsFactors=F)
+> head(data_coord2)
+        V1 V2      V3      V4 V5
+1 scaffold 18  728347  728370  -
+2 scaffold 47  127017  127088  -
+3 scaffold 14  430585  430642  +
+4 scaffold 14 1085111 1085121  +
+5 scaffold 36  524765  524773  +
+6 scaffold 67  457601  457673  -
+> 
+> col_1 <- data_coord2[,1]
+> col_2 <- data_coord2[,2]
+> chr_col <- paste(col_1,col_2,sep="_")
+> data_coord2 <- data_coord2[,-2]
+> data_coord2[,1] <- chr_col
+> data_coord2[,2] <- as.numeric(data_coord2[,2])
+> data_coord2[,3] <- as.numeric(data_coord2[,3])
+> names(data_coord2) <- c('chr','start','end','strand')
+> 
+> #first, creating a genomicRanges object from the promoter data
+> de_GR_3 <- with(data_coord2, GRanges(chr,
++                                     IRanges(start, end, names=row.names(top_table_e3)), strand))
+> 
+> 
+> de_GR_3 <- promoters(de_GR_3, upstream=200, downstream=200)
+> 
+> #what does the GR object look like?
+> de_GR_3
+GRanges object with 10183 ranges and 0 metadata columns:
+                                    seqnames             ranges strand
+                                       <Rle>          <IRanges>  <Rle>
+    scaffold_18_728347_728370_-  scaffold_18 [ 728171,  728570]      -
+    scaffold_47_127017_127088_-  scaffold_47 [ 126889,  127288]      -
+    scaffold_14_430585_430642_+  scaffold_14 [ 430385,  430784]      +
+  scaffold_14_1085111_1085121_+  scaffold_14 [1084911, 1085310]      +
+    scaffold_36_524765_524773_+  scaffold_36 [ 524565,  524964]      +
+                            ...          ...                ...    ...
+   scaffold_9_1663314_1663429_-   scaffold_9 [1663230, 1663629]      -
+    scaffold_92_332654_332655_-  scaffold_92 [ 332456,  332855]      -
+       scaffold_924_7500_7526_+ scaffold_924 [   7300,    7699]      +
+    scaffold_97_373633_373653_+  scaffold_97 [ 373433,  373832]      +
+    scaffold_97_315209_315242_-  scaffold_97 [ 315043,  315442]      -
+  -------
+  seqinfo: 344 sequences from an unspecified genome; no seqlengths
+> 
+> #removing the limma commands for now
 > v <- voom(Dp_dge,design,plot=TRUE)
 > fit <- lmFit(v,design=design)
-> #fit2 <- contrasts.fit(fit, contrast.matrix)
+> head(fit)
+An object of class "MArrayLM"
+$coefficients
+                           mat_fem pE_fem mat_male
+scaffold_1_51155_51224_+     4.914   5.20    4.728
+scaffold_1_100766_100796_+   7.013   7.40    7.595
+scaffold_1_120715_120736_+   3.082   3.07    3.726
+scaffold_1_123356_123357_+   0.338   1.94    1.372
+scaffold_1_157386_157461_+   5.248   4.55    4.175
+scaffold_1_162014_162063_+   3.291   3.05   -0.744
+
+$stdev.unscaled
+                           mat_fem pE_fem mat_male
+scaffold_1_51155_51224_+     0.136  0.134    0.175
+scaffold_1_100766_100796_+   0.129  0.130    0.161
+scaffold_1_120715_120736_+   0.356  0.415    0.278
+scaffold_1_123356_123357_+   1.155  0.740    1.096
+scaffold_1_157386_157461_+   0.130  0.148    0.200
+scaffold_1_162014_162063_+   0.295  0.421    1.620
+
+$sigma
+[1] 1.126 0.982 0.848 1.575 0.581 0.250
+
+$df.residual
+[1] 5 5 5 5 5 5
+
+$cov.coefficients
+         mat_fem pE_fem mat_male
+mat_fem    0.333  0.000      0.0
+pE_fem     0.000  0.333      0.0
+mat_male   0.000  0.000      0.5
+
+$pivot
+[1] 1 2 3
+
+$Amean
+  scaffold_1_51155_51224_+ scaffold_1_100766_100796_+ 
+                      4.98                       7.31 
+scaffold_1_120715_120736_+ scaffold_1_123356_123357_+ 
+                      3.25                       1.19 
+scaffold_1_157386_157461_+ scaffold_1_162014_162063_+ 
+                      4.72                       2.20 
+
+$method
+[1] "ls"
+
+$design
+  mat_fem pE_fem mat_male
+1       1      0        0
+2       1      0        0
+3       1      0        0
+4       0      0        1
+5       0      0        1
+6       0      1        0
+7       0      1        0
+8       0      1        0
+attr(,"assign")
+[1] 1 1 1
+attr(,"contrasts")
+attr(,"contrasts")$`factor(c(1, 1, 1, 3, 3, 2, 2, 2))`
+[1] "contr.treatment"
+
+
 > fit2 <- eBayes(fit)
 > 
 > topTable(fit2,coef=ncol(design))
-                                 logFC   AveExpr        t      P.Value
-scaffold_18_339584_339710_-  11.690235 11.516508 155.0059 1.772306e-14
-scaffold_4_2807198_2807261_- 12.098842 12.158450 149.3936 2.339852e-14
-scaffold_18_728347_728370_-  10.552991  2.025599 144.7113 2.974154e-14
-scaffold_182_153376_153483_+ 12.620165 12.382635 146.9182 2.653678e-14
-scaffold_4_3049786_3049903_- 10.413248 10.636654 136.4265 4.636867e-14
-scaffold_14_430585_430642_+   9.614788  1.791047 131.8055 6.011001e-14
-scaffold_4_2370071_2370125_+ 13.110749 13.015713 134.2303 5.239781e-14
-scaffold_104_349383_349500_+ 11.545542 11.625466 132.2212 5.870106e-14
-scaffold_152_84663_84795_-   10.189643 10.112375 128.8880 7.114835e-14
-scaffold_20_954272_954350_-  12.526253 11.813195 131.6859 6.052218e-14
-                                adj.P.Val        B
-scaffold_18_339584_339710_-  5.429191e-11 20.26750
-scaffold_4_2807198_2807261_- 5.429191e-11 20.18234
-scaffold_18_728347_728370_-  5.429191e-11 20.15565
-scaffold_182_153376_153483_+ 5.429191e-11 20.14002
-scaffold_4_3049786_3049903_- 5.429191e-11 20.02073
-scaffold_14_430585_430642_+  5.429191e-11 19.96402
-scaffold_4_2370071_2370125_+ 5.429191e-11 19.92627
-scaffold_104_349383_349500_+ 5.429191e-11 19.90593
-scaffold_152_84663_84795_-   5.429191e-11 19.88220
-scaffold_20_954272_954350_-  5.429191e-11 19.87998
+                             logFC AveExpr   t  P.Value adj.P.Val    B
+scaffold_18_339584_339710_-  11.69   11.52 155 1.77e-14  5.43e-11 20.3
+scaffold_4_2807198_2807261_- 12.10   12.16 149 2.34e-14  5.43e-11 20.2
+scaffold_18_728347_728370_-  10.55    2.03 145 2.97e-14  5.43e-11 20.2
+scaffold_182_153376_153483_+ 12.62   12.38 147 2.65e-14  5.43e-11 20.1
+scaffold_4_3049786_3049903_- 10.41   10.64 136 4.64e-14  5.43e-11 20.0
+scaffold_14_430585_430642_+   9.61    1.79 132 6.01e-14  5.43e-11 20.0
+scaffold_4_2370071_2370125_+ 13.11   13.02 134 5.24e-14  5.43e-11 19.9
+scaffold_104_349383_349500_+ 11.55   11.63 132 5.87e-14  5.43e-11 19.9
+scaffold_152_84663_84795_-   10.19   10.11 129 7.11e-14  5.43e-11 19.9
+scaffold_20_954272_954350_-  12.53   11.81 132 6.05e-14  5.43e-11 19.9
 > 
-> volcanoplot(fit2)
-> 
-> options(digits=3)
 > top_table <- topTable(fit2,coef=ncol(design),n=Inf,sort.by="p",adjust="BH",p=0.01)
 > results <- decideTests(fit2)
-> write.table(results,file="de_TCO_decideTest.txt",row.names=TRUE,quote=FALSE)
 > 
 > vennDiagram(results, names=c("Asexual females","Sexual females","Sexual Males"),include="up",circle.col=c("green","red","blue"))
 > 
 > #top_table2 <- cbind(top_table,results)
 > #write.table(top_table2,file="de_TCO_combined_table.txt", row.names=TRUE,quote=FALSE)
 > 
+> head(et)
+An object of class "DGEExact"
+$table
+                            logFC logCPM   PValue
+scaffold_1_51155_51224_+    0.474   5.08 0.170984
+scaffold_1_100766_100796_+ -0.176   7.35 0.446203
+scaffold_1_120715_120736_+ -0.650   3.55 0.234203
+scaffold_1_123356_123357_+  0.126   2.73 1.000000
+scaffold_1_157386_157461_+  0.369   4.89 0.350277
+scaffold_1_162014_162063_+  5.730   3.14 0.000133
+
+$comparison
+[1] "mat_male" "pE_fem"  
+
+> 
+> head(top_table_e)
+Comparison of groups:  pE_fem-mat_male 
+                             logFC logCPM    PValue       FDR
+scaffold_18_728347_728370_- -13.29   8.56 4.40e-169 4.48e-165
+scaffold_14_430585_430642_+ -12.35   7.62 3.63e-132 1.85e-128
+scaffold_25_949272_949300_+  14.54  10.40 2.75e-122 9.32e-119
+scaffold_47_127017_127088_-   5.94  13.27 4.58e-118 1.16e-114
+scaffold_13_738311_738319_+  12.06   7.92 4.96e-106 1.01e-102
+scaffold_36_524765_524773_+ -14.64   9.91 1.54e-104 2.61e-101
+> 
 > #number of differentially-related promoters
-> sum(top_table$adj.P.Val<0.01)
-[1] 8517
+> sum(top_table_e$FDR<0.01)
+[1] 0
+> sum(top_table_e2$FDR<0.01)
+[1] 0
+> sum(top_table_e3$FDR<0.01)
+[1] 0
+> 
+> ################################### male vs pE females ############################
 > 
 > de_data <- Dp_dge$pseudo.counts
 > 
 > #differential analysis results
-> de_data <- cbind(de_data, de.tgw2_pE_male$table)
+> de_data <- cbind(de_data, et$table)
 > 
-> #calculate FDR
-> de_data$FDR <- p.adjust(de_data$PValue, method='BH')
+> #calculating the false discovery rate
+> de_data$FDR <- p.adjust(de_data$PValue, method = 'BH')
 > 
 > #dispersion of each tag cluster
 > de_data$tw_dis <- Dp_dge$tagwise.dispersion
@@ -297,51 +672,128 @@ scaffold_20_954272_954350_-  5.429191e-11 19.87998
 > de_data$start <- as.numeric(de_data$start)
 > de_data$end <- as.numeric(de_data$end)
 > 
-> write.table(de_data,file="de_data_TCO_pE_male.txt",col.names=TRUE,quote=FALSE)
+> de_data1 <- de_data
 > 
-> ###########################################################################
+> write.table(de_data1,file="TCO_pE_v_male_de.txt",col.names=TRUE,quote=FALSE)
+> 
+> ################################### pE females vs asexual females ############################
+> 
+> de_data <- Dp_dge$pseudo.counts
+> 
+> #differential analysis results
+> de_data <- cbind(de_data, et2$table)
+> 
+> #calculating the FDR
+> de_data$FDR <- p.adjust(de_data$PValue, method = 'BH')
+> 
+> #dispersion of each tag cluster
+> de_data$tw_dis <- Dp_dge$tagwise.dispersion
+> 
+> #coordinates of each tag cluster
+> data_coord2 <- matrix(data=unlist(strsplit(rownames(de_data), split="_")),
++                       nrow= length(row.names(de_data)),
++                       byrow=T)
+> data_coord2 <- as.data.frame(data_coord2, stringsAsFactors=F)
+> head(data_coord2)
+        V1 V2     V3     V4 V5
+1 scaffold  1  51155  51224  +
+2 scaffold  1 100766 100796  +
+3 scaffold  1 120715 120736  +
+4 scaffold  1 123356 123357  +
+5 scaffold  1 157386 157461  +
+6 scaffold  1 162014 162063  +
+> 
+> col_1 <- data_coord2[,1]
+> col_2 <- data_coord2[,2]
+> chr_col <- paste(col_1,col_2,sep="_")
+> data_coord2 <- data_coord2[,-2]
+> data_coord2[,1] <- chr_col
+> names(data_coord2) <- c('chr','start','end','strand')
+> 
+> #coordinates of each tag cluster
+> de_data <- cbind(de_data, data_coord2)
+> 
+> #create column for differential expression status
+> #1 for DE and 0 for not
+> de_data$de <- as.numeric(de_data$FDR<p_cutoff)
+> 
+> #convert coordinates to numeric
+> de_data$start <- as.numeric(de_data$start)
+> de_data$end <- as.numeric(de_data$end)
+> 
+> de_data2 <- de_data
+> 
+> write.table(de_data2,file="TCO_pE_v_matfem_de.txt",col.names=TRUE,quote=FALSE)
+> 
+> ###################################  asexual females vs males  ############################
+> 
+> de_data <- Dp_dge$pseudo.counts
+> 
+> #differential analysis results
+> de_data <- cbind(de_data, et3$table)
+> 
+> #calculating the FDR
+> de_data$FDR <- p.adjust(de_data$PValue, method = 'BH')
+> 
+> #dispersion of each tag cluster
+> de_data$tw_dis <- Dp_dge$tagwise.dispersion
+> 
+> #coordinates of each tag cluster
+> data_coord2 <- matrix(data=unlist(strsplit(rownames(de_data), split="_")),
++                       nrow= length(row.names(de_data)),
++                       byrow=T)
+> 
+> data_coord2 <- as.data.frame(data_coord2, stringsAsFactors=F)
+> head(data_coord2)
+        V1 V2     V3     V4 V5
+1 scaffold  1  51155  51224  +
+2 scaffold  1 100766 100796  +
+3 scaffold  1 120715 120736  +
+4 scaffold  1 123356 123357  +
+5 scaffold  1 157386 157461  +
+6 scaffold  1 162014 162063  +
+> 
+> col_1 <- data_coord2[,1]
+> col_2 <- data_coord2[,2]
+> chr_col <- paste(col_1,col_2,sep="_")
+> data_coord2 <- data_coord2[,-2]
+> data_coord2[,1] <- chr_col
+> names(data_coord2) <- c('chr','start','end','strand')
+> 
+> #coordinates of each tag cluster
+> de_data <- cbind(de_data, data_coord2)
+> 
+> #create column for differential expression status
+> #1 for DE and 0 for not
+> de_data$de <- as.numeric(de_data$FDR<p_cutoff)
+> 
+> #convert coordinates to numeric
+> de_data$start <- as.numeric(de_data$start)
+> de_data$end <- as.numeric(de_data$end)
+> 
+> de_data3 <- de_data
+> 
+> write.table(de_data3,file="TCO_matfem_v_males_de.txt",col.names=TRUE,quote=FALSE)
+> 
+> ####################################
 > #Adding gene annotation to promoters
 > 
-> #first, creating a genomicRanges object from the promoter data
-> de_GR <- with(de_data, GRanges(chr,
-+                                     IRanges(start, end, names=row.names(de_data)), strand))
-> 
-> #what does the GR object look like?
-> de_GR
-GRanges object with 10183 ranges and 0 metadata columns:
-                                  seqnames           ranges strand
-                                     <Rle>        <IRanges>  <Rle>
-    scaffold_1_51155_51224_+    scaffold_1 [ 51155,  51224]      +
-  scaffold_1_100766_100796_+    scaffold_1 [100766, 100796]      +
-  scaffold_1_120715_120736_+    scaffold_1 [120715, 120736]      +
-  scaffold_1_123356_123357_+    scaffold_1 [123356, 123357]      +
-  scaffold_1_157386_157461_+    scaffold_1 [157386, 157461]      +
-                         ...           ...              ...    ...
-   scaffold_2516_2406_2407_+ scaffold_2516   [ 2406,  2407]      +
-     scaffold_5392_611_612_+ scaffold_5392   [  611,   612]      +
-   scaffold_5600_1195_1226_+ scaffold_5600   [ 1195,  1226]      +
-  scaffold_574_37623_37624_+  scaffold_574   [37623, 37624]      +
-   scaffold_6547_1560_1598_- scaffold_6547   [ 1560,  1598]      -
-  -------
-  seqinfo: 344 sequences from an unspecified genome; no seqlengths
-> 
-> #importing the gene annotation file
+> #importing the gene annotation file (only need to do this a single time)
 > dpulex_genes <- read.table(file="/home/rtraborn/Daphnia/Daphnia_CAGE_Data/gene_annotations/dpulex_genes.bed", header=FALSE)
 > names(dpulex_genes) <- c("chr","start","end","geneID","score","strand","version","type","placeholder","ID2")
 > 
-> #region around gene to call a TSS
-> span <- 200
-> 
-> #adding space to the genes on the positive strand
-> dpulex_genes[dpulex_genes$strand=='+','start']  <- dpulex_genes[dpulex_genes$strand=='+',"start"]-span
-> dpulex_genes[dpulex_genes$strand=='+','end']  <- dpulex_genes[dpulex_genes$strand=='+',"end"]+span
-> 
-> #adding space to the genes on the negative strand
-> dpulex_genes[dpulex_genes$strand=='-','start']  <- dpulex_genes[dpulex_genes$strand=='-',"start"]-span
-> dpulex_genes[dpulex_genes$strand=='-','end']  <- dpulex_genes[dpulex_genes$strand=='-',"end"]+span
-> 
 > #create GRanges object for all genes
 > genes_GR <- with(dpulex_genes, GRanges(chr, IRanges(start, end, names=geneID),strand))
+> 
+> #################################### pE vs males ########################################
+> 
+> #next, creating a genomicRanges object from the promoter data
+> de_GR <- with(de_data1, GRanges(chr,
++                                     IRanges(start, end, names=row.names(de_data1)), strand))
+> 
+> de_GR <- promoters(de_GR, upstream=200, downstream=200)
+> 
+> #de_GR #for debugging
 > 
 > #overlap TSRs with all tag clusters
 > tc_overlaps <- findOverlaps(de_GR, genes_GR)
@@ -352,52 +804,266 @@ In .Seqinfo.mergexy(x, y) :
   - in 'y': scaffold_1000, scaffold_10005, scaffold_10008, scaffold_10014, scaffold_10017, scaffold_1002, scaffold_1003, scaffold_10031, scaffold_10032, scaffold_10033, scaffold_10034, scaffold_10049, scaffold_10053, scaffold_1007, scaffold_10071, scaffold_10077, scaffold_10096, scaffold_10098, scaffold_1010, scaffold_1011, scaffold_1012, scaffold_10124, scaffold_10129, scaffold_1013, scaffold_10131, scaffold_10134, scaffold_1014, scaffold_10140, scaffold_10142, scaffold_1015, scaffold_10161, scaffold_10167, scaffold_1017, scaffold_1018, scaffold_10183, scaffold_10189, scaffold_1019, scaffold_1020, scaffold_10201, scaffold_1021, scaffold_10227, scaffold_1023, scaffold_10236, scaffold_1 [... truncated]
 > 
 > #store number of overlaps
-> tc_overlaps_count <- countOverlaps(de_GR, genes_GR)
-Warning message:
-In .Seqinfo.mergexy(x, y) :
-  Each of the 2 combined objects has sequence levels not in the other:
-  - in 'x': scaffold_10571, scaffold_10851, scaffold_12610, scaffold_3096, scaffold_3677, scaffold_5023, scaffold_589, scaffold_6071, scaffold_6561, scaffold_6994, scaffold_718, scaffold_7194, scaffold_9449, scaffold_2516, scaffold_5600
-  - in 'y': scaffold_1000, scaffold_10005, scaffold_10008, scaffold_10014, scaffold_10017, scaffold_1002, scaffold_1003, scaffold_10031, scaffold_10032, scaffold_10033, scaffold_10034, scaffold_10049, scaffold_10053, scaffold_1007, scaffold_10071, scaffold_10077, scaffold_10096, scaffold_10098, scaffold_1010, scaffold_1011, scaffold_1012, scaffold_10124, scaffold_10129, scaffold_1013, scaffold_10131, scaffold_10134, scaffold_1014, scaffold_10140, scaffold_10142, scaffold_1015, scaffold_10161, scaffold_10167, scaffold_1017, scaffold_1018, scaffold_10183, scaffold_10189, scaffold_1019, scaffold_1020, scaffold_10201, scaffold_1021, scaffold_10227, scaffold_1023, scaffold_10236, scaffold_1 [... truncated]
+> #tc_overlaps_count <- countOverlaps(de_GR, genes_GR)
 > 
 > match_hit2 <- as.data.frame(tc_overlaps)
 > 
 > #name the columns
 > names(match_hit2) <- c('query','subject')
 > 
+> #head(match_hit2)
+> 
 > promoter_index <- match_hit2$query
 > gene_index <- match_hit2$subject
 > 
+> print("Length of promoter index")
+[1] "Length of promoter index"
+> length(promoter_index)
+[1] 6921
+> 
 > #gene_names <- dpulex_genes[gene_index,'geneID']
-> promoter_table <- data.frame(de_data[promoter_index,])
-> promoter_IDs <- dpulex_genes[gene_index,"geneID"]
-> rownames(promoter_table) = make.names(promoter_IDs, unique=TRUE)
+> promoter_table <- data.frame(de_data1[promoter_index,])
+> gene_IDs <- dpulex_genes[gene_index,"geneID"]
+> promoter_table$gene <- gene_IDs
 > 
 > #remove duplicated entries
 > #match_hit2 <- match_hit2[!duplicated(match_hit2$query),]
 > 
-> write.table(promoter_table,file="TCO_promoter_de_table.txt",col.names=TRUE, row.names=TRUE)
+> write.table(promoter_table,file="TCO_promoter_de_pE_male.txt",col.names=TRUE, row.names=TRUE)
+> 
+> #################################### pE vs asexual females  ########################################
+> 
+> #creating a genomicRanges object from the promoter data
+> de_GR <- with(de_data2, GRanges(chr,
++                                     IRanges(start, end, names=row.names(de_data2)), strand))
+> 
+> de_GR <- promoters(de_GR, upstream=200, downstream=200)
+> 
+> #de_GR #for debugging
+> 
+> #overlap TSRs with all tag clusters
+> tc_overlaps <- findOverlaps(de_GR, genes_GR)
+Warning message:
+In .Seqinfo.mergexy(x, y) :
+  Each of the 2 combined objects has sequence levels not in the other:
+  - in 'x': scaffold_10571, scaffold_10851, scaffold_12610, scaffold_3096, scaffold_3677, scaffold_5023, scaffold_589, scaffold_6071, scaffold_6561, scaffold_6994, scaffold_718, scaffold_7194, scaffold_9449, scaffold_2516, scaffold_5600
+  - in 'y': scaffold_1000, scaffold_10005, scaffold_10008, scaffold_10014, scaffold_10017, scaffold_1002, scaffold_1003, scaffold_10031, scaffold_10032, scaffold_10033, scaffold_10034, scaffold_10049, scaffold_10053, scaffold_1007, scaffold_10071, scaffold_10077, scaffold_10096, scaffold_10098, scaffold_1010, scaffold_1011, scaffold_1012, scaffold_10124, scaffold_10129, scaffold_1013, scaffold_10131, scaffold_10134, scaffold_1014, scaffold_10140, scaffold_10142, scaffold_1015, scaffold_10161, scaffold_10167, scaffold_1017, scaffold_1018, scaffold_10183, scaffold_10189, scaffold_1019, scaffold_1020, scaffold_10201, scaffold_1021, scaffold_10227, scaffold_1023, scaffold_10236, scaffold_1 [... truncated]
+> 
+> #store number of overlaps
+> #tc_overlaps_count <- countOverlaps(de_GR, genes_GR)
+> 
+> match_hit2 <- as.data.frame(tc_overlaps)
+> 
+> #name the columns
+> names(match_hit2) <- c('query','subject')
+> 
+> #head(match_hit2)
+> 
+> promoter_index <- match_hit2$query
+> gene_index <- match_hit2$subject
+> 
+> print("Length of promoter index")
+[1] "Length of promoter index"
+> length(promoter_index)
+[1] 6921
+> 
+> #gene_names <- dpulex_genes[gene_index,'geneID']
+> promoter_table <- data.frame(de_data2[promoter_index,])
+> gene_IDs <- dpulex_genes[gene_index,"geneID"]
+> promoter_table$gene <- gene_IDs
+> 
+> #remove duplicated entries
+> #match_hit2 <- match_hit2[!duplicated(match_hit2$query),]
+> 
+> write.table(promoter_table,file="TCO_promoter_de_pE_matfem.txt",col.names=TRUE, row.names=TRUE)
+> 
+> #################################### pE vs asexual females  ########################################
+> 
+> #creating a genomicRanges object from the promoter data
+> de_GR <- with(de_data3, GRanges(chr,
++                                     IRanges(start, end, names=row.names(de_data3)), strand))
+> 
+> de_GR <- promoters(de_GR, upstream=200, downstream=200)
+> 
+> #de_GR #for debugging
+> 
+> #overlap TSRs with all tag clusters
+> tc_overlaps <- findOverlaps(de_GR, genes_GR)
+Warning message:
+In .Seqinfo.mergexy(x, y) :
+  Each of the 2 combined objects has sequence levels not in the other:
+  - in 'x': scaffold_10571, scaffold_10851, scaffold_12610, scaffold_3096, scaffold_3677, scaffold_5023, scaffold_589, scaffold_6071, scaffold_6561, scaffold_6994, scaffold_718, scaffold_7194, scaffold_9449, scaffold_2516, scaffold_5600
+  - in 'y': scaffold_1000, scaffold_10005, scaffold_10008, scaffold_10014, scaffold_10017, scaffold_1002, scaffold_1003, scaffold_10031, scaffold_10032, scaffold_10033, scaffold_10034, scaffold_10049, scaffold_10053, scaffold_1007, scaffold_10071, scaffold_10077, scaffold_10096, scaffold_10098, scaffold_1010, scaffold_1011, scaffold_1012, scaffold_10124, scaffold_10129, scaffold_1013, scaffold_10131, scaffold_10134, scaffold_1014, scaffold_10140, scaffold_10142, scaffold_1015, scaffold_10161, scaffold_10167, scaffold_1017, scaffold_1018, scaffold_10183, scaffold_10189, scaffold_1019, scaffold_1020, scaffold_10201, scaffold_1021, scaffold_10227, scaffold_1023, scaffold_10236, scaffold_1 [... truncated]
+> 
+> #store number of overlaps
+> #tc_overlaps_count <- countOverlaps(de_GR, genes_GR)
+> 
+> match_hit2 <- as.data.frame(tc_overlaps)
+> 
+> #name the columns
+> names(match_hit2) <- c('query','subject')
+> 
+> #head(match_hit2)
+> 
+> promoter_index <- match_hit2$query
+> gene_index <- match_hit2$subject
+> 
+> print("Length of promoter index")
+[1] "Length of promoter index"
+> length(promoter_index)
+[1] 6921
+> 
+> #gene_names <- dpulex_genes[gene_index,'geneID']
+> promoter_table <- data.frame(de_data3[promoter_index,])
+> gene_IDs <- dpulex_genes[gene_index,"geneID"]
+> promoter_table$gene <- gene_IDs
+> 
+> #remove duplicated entries
+> #match_hit2 <- match_hit2[!duplicated(match_hit2$query),]
+> 
+> write.table(promoter_table,file="TCO_promoter_de_matfem_v_male.txt",col.names=TRUE, row.names=TRUE)
+> 
+> ################################# Gene Family Analyses ##############################
+> 
+> #importing the meiosis gene annotation file
+> meiosis_genes <- read.table(file="/home/rtraborn/Daphnia/Daphnia_CAGE_Data/development_reg/meiosis/Dpulex_meiosis_genes.bed", header=TRUE)
+> meiosis_IDs <- meiosis_genes$geneID
+> promoter_list <- promoter_table$gene
+> my_index <-  match(meiosis_IDs,promoter_table$gene)
+> length(my_index)
+[1] 129
+> meiosis_table <- promoter_table[my_index,]
+> meiosis_table <- na.omit(meiosis_table)
+> 
+> #differentially-expressed meiosis genes only
+> de_index <- which(meiosis_table$de == 1)
+> meiosis_de <- meiosis_table[de_index,]
+> 
+> #head(meiosis_table)
+> #write.table(meiosis_table,file="meiosis_table.txt",col.names=TRUE,row.names=TRUE,quote=FALSE)
+> #write.table(meiosis_de,file="meiosis_table_de.txt",col.names=TRUE,row.names=TRUE,quote=FALSE)
+> 
+> ##########################################################################
+> #importing the gust. receptors  gene annotation file
+> gust_genes <- read.table(file="/home/rtraborn/Daphnia/Daphnia_CAGE_Data/development_reg/gustatory_rec/Dpulex_gustatory_receptor_genes.bed", header=TRUE,stringsAsFactors=FALSE)
+> rownames(gust_genes) <- gust_genes$geneID
+> gust_IDs <- gust_genes$geneID
+> head(gust_IDs)
+[1] "JGI_V11_95918"  "JGI_V11_311261" "JGI_V11_311262" "JGI_V11_305579"
+[5] "JGI_V11_311617" "JGI_V11_311618"
+> promoter_list <- unlist(promoter_table$gene)
+> promoter_list <- as.character(promoter_list)
+> head(promoter_list)
+[1] "JGI_V11_189791" "JGI_V11_219913" "JGI_V11_299986" "JGI_V11_299784"
+[5] "JGI_V11_231974" "JGI_V11_299786"
+> my_index <-  match(gust_IDs,promoter_list)
+> length(my_index)
+[1] 51
+> head(my_index)
+[1] NA NA NA NA NA NA
+> gustatory_table <- promoter_table[my_index,]
+> gustatory_table <- na.omit(gustatory_table)
+> head(gustatory_table)
+ [1] mat_females_1 mat_females_2 mat_females_3 mat_males_1   mat_males_2  
+ [6] pE_females_1  pE_females_2  pE_females_3  logFC         logCPM       
+[11] PValue        FDR           tw_dis        chr           start        
+[16] end           strand        de            gene         
+<0 rows> (or 0-length row.names)
+> 
+> #differentially-expressed gustatory genes only
+> de_index <- which(gustatory_table$de == 1)
+> gustatory_de <- gustatory_table[de_index,]
+> 
+> #write.table(gustatory_table,file="gustatory_table.txt",col.names=TRUE,row.names=TRUE,quote=FALSE)
+> #write.table(gustatory_de,file="gustatory_table_de.txt",col.names=TRUE,row.names=TRUE,quote=FALSE)
 > 
 > ###########################################################################
 > #Making heatmaps from the eset data we've generated
 > 
-> par(mar=c(2.1,4.1,2.1,4.1))
-> png(file="heatmap_TCO_all.png",height=1600,width=1200)
-> selected  <- p.adjust(fit2$p.value[, 2]) <0.01
-> esetSel <- dp_eset[selected, ]
-> heatmap(exprs(esetSel))
+> #overall heatmap
+> par(mar=c(4.1,4.1,4.1,4.1))
+> png(file="all_genes_heatmap.png",height=2800,width=2800)
+> selected  <- rownames(top_table_e)
+> esetSel <- dp_eset[selected,]
+> heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE,scale="row", density.info="none",trace="none",
++           key=TRUE,margins=c(10,10))
 > dev.off()
 pdf 
   2 
 > 
-> par(mar=c(2.1,4.1,2.1,4.1))
-> png(file="heatmap_TCO_upreg1.png",height=1600,width=1200)
-> selected  <- which(results[,3]==1)
+> #male vs pE
+> par(mar=c(4.1,4.1,4.1,4.1))
+> png(file="heatmap_TCO_pE_v_male.png",height=2800,width=2800)
+> selected  <- rownames(top_table_e[1:200])
+> is(selected)
+ [1] "character"             "vector"                "data.frameRowLabels"  
+ [4] "SuperClassMethod"      "characterORconnection" "characterORNULL"      
+ [7] "atomic"                "EnumerationValue"      "characterORMIAME"     
+[10] "vectorORfactor"       
 > esetSel <- dp_eset[selected, ]
-> heatmap(exprs(esetSel))
+> heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE,scale="row", density.info="none",trace="none",
++           key=TRUE,margins=c(10,10))
 > dev.off()
 pdf 
   2 
+> 
+> #mat_fem vs pE
+> par(mar=c(4.1,4.1,4.1,4.1))
+> png(file="heatmap_TCO_matfem_v_pE.png",height=2800,width=2800)
+> selected  <- rownames(top_table_e2[1:200])
+> esetSel <- dp_eset[selected, ]
+> heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE,scale="row", density.info="none",trace="none",
++           key=TRUE,margins=c(10,10))
+> dev.off()
+pdf 
+  2 
+> 
+> #male vs mat_fem
+> par(mar=c(4.1,4.1,4.1,4.1))
+> png(file="heatmap_TCO_male_v_matfem.png",height=2800,width=2800)
+> selected  <- rownames(top_table_e3[1:200])
+> print(head(selected))
+[1] "scaffold_18_728347_728370_-"   "scaffold_47_127017_127088_-"  
+[3] "scaffold_14_430585_430642_+"   "scaffold_14_1085111_1085121_+"
+[5] "scaffold_36_524765_524773_+"   "scaffold_67_457601_457673_-"  
+> esetSel <- dp_eset[selected, ]
+> heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE, scale="row", density.info="none",trace="none",
++           key=TRUE, margins=c(10,10))
+> dev.off()
+pdf 
+  2 
+> 
+> #meiosis genes
+> par(mar=c(4.1,4.1,4.1,4.1))
+> png(file="heatmap_TCO_meiosis.png",height=2800,width=2800)
+> meiosis_rows <- match(rownames(meiosis_table), rownames(top_table_e))
+> length(meiosis_rows)
+[1] 29
+> head(meiosis_rows)
+[1] 10033    NA  6032  7991   576  1126
+> meiosis_rows <- na.omit(meiosis_rows)
+> selected  <- rownames(top_table_e[meiosis_rows])
+> esetSel <- dp_eset[selected, ]
+> heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE, scale="row", density.info="none",trace="none",
++           key=TRUE, margins=c(10,10))
+> dev.off()
+pdf 
+  2 
+> 
+> #gustatory receptors
+> #par(mar=c(4.1,4.1,4.1,4.1))
+> #png(file="heatmap_TCO_gust_receptors.png",height=2800,width=2800)
+> #gustatory_list <- as.character(rownames(gustatory_table))
+> #promoter_list <- as.character(rownames(top_table_e))
+> #gustatory_rows <- match(gustatory_list, promoter_list)
+> #length(gustatory_rows)
+> #head(gustatory_rows)
+> #gustatory_rows <- na.omit(gustatory_rows)
+> #selected  <- rownames(top_table_e[gustatory_rows])
+> #esetSel <- dp_eset[selected, ]
+> #heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE, scale="row", density.info="none",trace="none",
+> #          key=TRUE, margins=c(10,10))
 > 
 > proc.time()
    user  system elapsed 
-  121.7     2.2   124.8 
+ 100.63    1.79  103.58 
