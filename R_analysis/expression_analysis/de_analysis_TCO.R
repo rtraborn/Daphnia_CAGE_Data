@@ -56,11 +56,18 @@ Dp_dge <- DGEList(counts=Dp_edger,group=group)
 head(Dp_dge)
 A <- rowSums(Dp_dge$counts) 
 Dp_dge <- Dp_dge[A>rowsum_threshold,]  
-Dp_dge <- calcNormFactors(Dp_dge)
+#Dp_dge <- calcNormFactors(Dp_dge)
 Dp_dge <- estimateCommonDisp(Dp_dge, verbose=T)
 Dp_dge <- estimateTagwiseDisp(Dp_dge, trend="none")
-
 plotBCV(Dp_dge)
+v <- voom(Dp_dge, design, plot=TRUE)
+fit <- lmFit(v,design)
+fit <- eBayes(fit)
+options(digits=3)
+de_table <- topTable(fit, coef=ncol(design), sort.by="logFC",adjust.method="BH")
+head(de_table)
+plotMDS(v, labels=c("mfem1","mfem2","mfem3","male1","male2","pE1","pE2","pE3"), main="MDS plot for all eight libraries")
+volcanoplot(fit,coef=ncol(design))
 
 ###### male vs pE females #######################
 et <- exactTest(Dp_dge,pair=c("mat_male","pE_fem"))
@@ -200,11 +207,6 @@ head(et)
 
 head(top_table_e)
 
-#number of differentially-related promoters
-sum(top_table_e$FDR<0.01)
-sum(top_table_e2$FDR<0.01)
-sum(top_table_e3$FDR<0.01)
-
 ################################### male vs pE females ############################
 
 de_data <- Dp_dge$pseudo.counts
@@ -245,7 +247,7 @@ de_data$end <- as.numeric(de_data$end)
 
 de_data1 <- de_data
 
-write.table(de_data1,file="TCO_pE_v_male_de.txt",col.names=TRUE,quote=FALSE)
+#write.table(de_data1,file="TCO_pE_v_male_de.txt",col.names=TRUE,quote=FALSE)
 
 ################################### pE females vs asexual females ############################
 
@@ -287,7 +289,7 @@ de_data$end <- as.numeric(de_data$end)
 
 de_data2 <- de_data
 
-write.table(de_data2,file="TCO_pE_v_matfem_de.txt",col.names=TRUE,quote=FALSE)
+#write.table(de_data2,file="TCO_pE_v_matfem_de.txt",col.names=TRUE,quote=FALSE)
 
 ###################################  asexual females vs males  ############################
 
@@ -330,7 +332,7 @@ de_data$end <- as.numeric(de_data$end)
 
 de_data3 <- de_data
 
-write.table(de_data3,file="TCO_matfem_v_males_de.txt",col.names=TRUE,quote=FALSE)
+#write.table(de_data3,file="TCO_matfem_v_males_de.txt",col.names=TRUE,quote=FALSE)
 
 ####################################
 #Adding gene annotation to promoters
@@ -379,7 +381,7 @@ promoter_table$gene <- gene_IDs
 #remove duplicated entries
 #match_hit2 <- match_hit2[!duplicated(match_hit2$query),]
 
-write.table(promoter_table,file="TCO_promoter_de_pE_male.txt",col.names=TRUE, row.names=TRUE)
+#write.table(promoter_table,file="TCO_promoter_de_pE_male.txt",col.names=TRUE, row.names=TRUE)
 
 #################################### pE vs asexual females  ########################################
 
@@ -418,7 +420,7 @@ promoter_table$gene <- gene_IDs
 #remove duplicated entries
 #match_hit2 <- match_hit2[!duplicated(match_hit2$query),]
 
-write.table(promoter_table,file="TCO_promoter_de_pE_matfem.txt",col.names=TRUE, row.names=TRUE)
+#write.table(promoter_table,file="TCO_promoter_de_pE_matfem.txt",col.names=TRUE, row.names=TRUE)
 
 #################################### pE vs asexual females  ########################################
 
@@ -457,7 +459,15 @@ promoter_table$gene <- gene_IDs
 #remove duplicated entries
 #match_hit2 <- match_hit2[!duplicated(match_hit2$query),]
 
-write.table(promoter_table,file="TCO_promoter_de_matfem_v_male.txt",col.names=TRUE, row.names=TRUE)
+#write.table(promoter_table,file="TCO_promoter_de_matfem_v_male.txt",col.names=TRUE, row.names=TRUE)
+
+####################################
+
+#number of differentially-related promoters
+sum(de_data1$FDR<0.01)
+sum(de_data2$FDR<0.01)
+sum(de_data3$FDR<0.01)
+sum(de_table$B<0.01)
 
 ################################# Gene Family Analyses ##############################
 
@@ -509,8 +519,8 @@ par(mar=c(4.1,4.1,4.1,4.1))
 png(file="all_genes_heatmap.png",height=2800,width=2800)
 selected  <- rownames(top_table_e)
 esetSel <- dp_eset[selected,]
-heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE,scale="row", density.info="none",trace="none",
-          key=TRUE,margins=c(10,10))
+#heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE,scale="row", density.info="none",trace="none",
+#          key=TRUE,margins=c(10,10))
 dev.off()
 
 #male vs pE
@@ -519,18 +529,18 @@ png(file="heatmap_TCO_pE_v_male.png",height=2800,width=2800)
 selected  <- rownames(top_table_e[1:200])
 is(selected)
 esetSel <- dp_eset[selected, ]
-heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE,scale="row", density.info="none",trace="none",
-          key=TRUE,margins=c(10,10))
-dev.off()
+#heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE,scale="row", density.info="none",trace="none",
+#          key=TRUE,margins=c(10,10))
+#dev.off()
 
 #mat_fem vs pE
 par(mar=c(4.1,4.1,4.1,4.1))
 png(file="heatmap_TCO_matfem_v_pE.png",height=2800,width=2800)
 selected  <- rownames(top_table_e2[1:200])
 esetSel <- dp_eset[selected, ]
-heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE,scale="row", density.info="none",trace="none",
-          key=TRUE,margins=c(10,10))
-dev.off()
+#heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE,scale="row", density.info="none",trace="none",
+#          key=TRUE,margins=c(10,10))
+#dev.off()
 
 #male vs mat_fem
 par(mar=c(4.1,4.1,4.1,4.1))
@@ -538,9 +548,9 @@ png(file="heatmap_TCO_male_v_matfem.png",height=2800,width=2800)
 selected  <- rownames(top_table_e3[1:200])
 print(head(selected))
 esetSel <- dp_eset[selected, ]
-heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE, scale="row", density.info="none",trace="none",
-          key=TRUE, margins=c(10,10))
-dev.off()
+#heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE, scale="row", density.info="none",trace="none",
+#          key=TRUE, margins=c(10,10))
+#dev.off()
 
 #meiosis genes
 par(mar=c(4.1,4.1,4.1,4.1))
@@ -551,9 +561,9 @@ head(meiosis_rows)
 meiosis_rows <- na.omit(meiosis_rows)
 selected  <- rownames(top_table_e[meiosis_rows])
 esetSel <- dp_eset[selected, ]
-heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE, scale="row", density.info="none",trace="none",
-          key=TRUE, margins=c(10,10))
-dev.off()
+#heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE, scale="row", density.info="none",trace="none",
+#          key=TRUE, margins=c(10,10))
+#dev.off()
 
 #gustatory receptors
 #par(mar=c(4.1,4.1,4.1,4.1))
