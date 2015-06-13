@@ -41,14 +41,19 @@ head(dp_eset)
 head(Dp_edger)
 
 lib_sizes <- librarySizes(myCAGEset)
-#contrast.matrix <- makeContrasts(mat_male-mat_fem, pE_fem-mat_male, pE_fem-mat_fem, levels=design)
-
-design <- model.matrix(~ 0+factor(c(1,1,1,3,3,2,2,2)))
+design <- model.matrix(~0+factor(c(1,1,1,3,3,2,2,2)))
 colnames(design) <- c("mat_fem", "pE_fem", "mat_male")
 design
 
+male_v_matfem <- makeContrasts(mat_male-mat_fem, levels=design)
+pE_v_male <- makeContrasts(pE_fem-mat_male, levels=design)
+matfem_v_pE <- makeContrasts(mat_fem-pE_fem, levels=design)
+male_v_females <- makeContrasts(mat_male-(mat_fem+mat_male)/2, levels=design)
+asex_v_sexuals <- makeContrasts(mat_fem-(mat_fem+pE_fem)/2, levels=design)
+
 group <- c(rep("mat_fem",3),rep("mat_male",2),rep("pE_fem",3))
 group
+
 p_cutoff <- 0.01
 rowsum_threshold <- 20
 
@@ -59,7 +64,15 @@ Dp_dge <- Dp_dge[A>rowsum_threshold,]
 #Dp_dge <- calcNormFactors(Dp_dge)
 Dp_dge <- estimateCommonDisp(Dp_dge, verbose=T)
 Dp_dge <- estimateTagwiseDisp(Dp_dge, trend="none")
+
+gfit <- glmFit(Dp_dge, design)
+lrt <- glmLRT(gfit, contrast=pE_v_male)
+
+head(lrt)
+
 plotBCV(Dp_dge)
+
+Dp_dge <- calcNormFactors(Dp_dge)
 v <- voom(Dp_dge, design, plot=TRUE)
 fit <- lmFit(v,design)
 fit <- eBayes(fit)
