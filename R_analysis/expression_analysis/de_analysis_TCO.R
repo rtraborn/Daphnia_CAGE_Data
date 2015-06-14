@@ -45,14 +45,17 @@ design <- model.matrix(~0+factor(c(1,1,1,3,3,2,2,2)))
 colnames(design) <- c("mat_fem", "pE_fem", "mat_male")
 design
 
-male_v_matfem <- makeContrasts(mat_male-mat_fem, levels=design)
-pE_v_male <- makeContrasts(pE_fem-mat_male, levels=design)
-matfem_v_pE <- makeContrasts(mat_fem-pE_fem, levels=design)
-male_v_females <- makeContrasts(mat_male-(mat_fem+mat_male)/2, levels=design)
-asex_v_sexuals <- makeContrasts(mat_fem-(mat_fem+pE_fem)/2, levels=design)
+contrasts.matrix <- makeContrasts(
+    MvMf=mat_male-mat_fem,
+    pEvM=pE_fem-mat_male,
+    MfvpE=mat_fem-pE_fem,
+    MvF=mat_male-(mat_fem+pE_fem)/2,
+    AvS=mat_fem-(mat_fem+pE_fem)/2,
+    levels=design)
+
+contrasts.matrix
 
 group <- c(rep("mat_fem",3),rep("mat_male",2),rep("pE_fem",3))
-group
 
 p_cutoff <- 0.01
 rowsum_threshold <- 20
@@ -65,22 +68,44 @@ Dp_dge <- Dp_dge[A>rowsum_threshold,]
 Dp_dge <- estimateCommonDisp(Dp_dge, verbose=T)
 Dp_dge <- estimateTagwiseDisp(Dp_dge, trend="none")
 
-gfit <- glmFit(Dp_dge, design)
-lrt <- glmLRT(gfit, contrast=pE_v_male)
-
-head(lrt)
+#gfit <- glmFit(Dp_dge, design)
+#lrt_pE_male <- glmLRT(gfit, contrast=pE_v_male)
+#lrt_male_mf <- glmLRT(gfit, contrast=male_v_matfem)
+#lrt_matfem_v_pE <- glmLRT(gfit, contrast=matfem_v_pE)
+#lrt_male_v_fem <- glmLRT(gfit, contrast=male_v_females)
+#lrt_asex_v_sex <- glmLRT(gfit, contrast=asex_v_sexuals)
+#head(lrt)
 
 plotBCV(Dp_dge)
 
 Dp_dge <- calcNormFactors(Dp_dge)
+
 v <- voom(Dp_dge, design, plot=TRUE)
 fit <- lmFit(v,design)
-fit <- eBayes(fit)
+fit2 <- contrasts.fit(fit,contrasts.matrix)
+fit2 <- eBayes(fit2)
+res <- decideTests(fit2,p.value=0.01,lfc=log2(2))
+ind = which( apply(res,1,function(x) {length(which(x != 0))>0}) == T)
+length(ind)
+
+head(res)
+
+vennDiagram(res)
+
 options(digits=3)
-de_table <- topTable(fit, coef=ncol(design), sort.by="logFC",adjust.method="BH")
-head(de_table)
-plotMDS(v, labels=c("mfem1","mfem2","mfem3","male1","male2","pE1","pE2","pE3"), main="MDS plot for all eight libraries")
-volcanoplot(fit,coef=ncol(design))
+de_table1 <- topTable(fit2, coef=1, sort.by="logFC",adjust.method="BH")
+head(de_table1)
+de_table2 <- topTable(fit2, coef=2, sort.by="logFC",adjust.method="BH")
+head(de_table2)
+de_table3 <- topTable(fit2, coef=3, sort.by="logFC",adjust.method="BH")
+head(de_table3)
+de_table4 <- topTable(fit2, coef=4, sort.by="logFC",adjust.method="BH")
+de_table5 <- topTable(fit2, coef=5, sort.by="logFC",adjust.method="BH")
+
+plotMDS(v, labels=c("mf1","mf2","mf3","m1","m2","pE1","pE2","pE3"), main="MDS plot for all eight libraries")
+volcanoplot(fit2,coef=1)
+volcanoplot(fit2,coef=2)
+volcanoplot(fit2,coef=3)
 
 ###### male vs pE females #######################
 et <- exactTest(Dp_dge,pair=c("mat_male","pE_fem"))
@@ -480,7 +505,7 @@ promoter_table$gene <- gene_IDs
 sum(de_data1$FDR<0.01)
 sum(de_data2$FDR<0.01)
 sum(de_data3$FDR<0.01)
-sum(de_table$B<0.01)
+#sum(de_table$B<0.01)
 
 ################################# Gene Family Analyses ##############################
 
