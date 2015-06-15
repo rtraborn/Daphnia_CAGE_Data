@@ -414,7 +414,7 @@ gustatory_de <- gustatory_table[de_index,]
 #overall heatmap
 par(mar=c(4.1,4.1,4.1,4.1))
 png(file="all_genes_heatmap.png",height=2800,width=2800)
-selected  <- rownames(de_table1)
+selected  <- rownames(de_data1)
 esetSel <- dp_eset[selected,]
 heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE,scale="row", density.info="none",trace="none",
           key=TRUE,margins=c(10,10))
@@ -423,8 +423,10 @@ dev.off()
 #male vs asexuals
 par(mar=c(4.1,4.1,4.1,4.1))
 png(file="heatmap_TCO_male_v_matfem.png",height=2800,width=2800)
-selected  <- rownames(de_table1[de_table1$FDR<0.01,])
-is(selected)
+de_index <- which(de_data1$FDR<0.01)
+length(de_index)
+de <- de_table1[de_index,]
+selected <- rownames(de)
 esetSel <- dp_eset[selected, ]
 heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE,scale="row", density.info="none",trace="none",
           key=TRUE,margins=c(10,10))
@@ -433,7 +435,10 @@ dev.off()
 #pE v male
 par(mar=c(4.1,4.1,4.1,4.1))
 png(file="heatmap_TCO_pE_v_male.png",height=2800,width=2800)
-selected  <- rownames(de_table2[de_table2$FDR<0.01,])
+de_index <- which(de_data2$FDR<0.01)
+length(de_index)
+de <- de_table2[de_index,]
+selected <- rownames(de)
 esetSel <- dp_eset[selected, ]
 heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE,scale="row", density.info="none",trace="none",
           key=TRUE,margins=c(10,10))
@@ -442,12 +447,14 @@ dev.off()
 #asexuals vs pE
 par(mar=c(4.1,4.1,4.1,4.1))
 png(file="heatmap_TCO_matfem_v_pE.png",height=2800,width=2800)
-selected  <- rownames(de_table3[de_table3$FDR<0.01,])
-print(head(selected))
+de_index <- which(de_data3$FDR<0.01)
+length(de_index)
+de <- de_table3[de_index,]
+selected <- rownames(de)
 esetSel <- dp_eset[selected, ]
 heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE, scale="row", density.info="none",trace="none",
-#          key=TRUE, margins=c(10,10))
-#dev.off()
+         key=TRUE, margins=c(10,10))
+dev.off()
 
 #meiosis genes
 par(mar=c(4.1,4.1,4.1,4.1))
@@ -456,7 +463,7 @@ meiosis_rows <- match(rownames(meiosis_table), rownames(de_table1))
 length(meiosis_rows)
 head(meiosis_rows)
 meiosis_rows <- na.omit(meiosis_rows)
-selected  <- rownames(de_data1[meiosis_rows])
+selected  <- rownames(de_data1[meiosis_rows,])
 esetSel <- dp_eset[selected, ]
 heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE, scale="row", density.info="none",trace="none",
           key=TRUE, margins=c(10,10))
