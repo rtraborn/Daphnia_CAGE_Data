@@ -230,8 +230,51 @@ de_data$end <- as.numeric(de_data$end)
 de_data3 <- de_data
 
 write.table(de_data3,file="TCO_matfem_v_pE_de.txt",col.names=TRUE,quote=FALSE)
+###################################  Males vs Females  ############################
+
+de_data <- Dp_dge$pseudo.counts
+
+#differential analysis results
+de_data <- cbind(de_data, de_table4)
+
+#calculating the FDR
+de_data$FDR <- p.adjust(de_data$P.Value, method = 'BH')
+
+#dispersion of each tag cluster
+de_data$tw_dis <- Dp_dge$tagwise.dispersion
+
+#coordinates of each tag cluster
+data_coord2 <- matrix(data=unlist(strsplit(rownames(de_data), split="_")),
+                      nrow= length(row.names(de_data)),
+                      byrow=T)
+
+data_coord2 <- as.data.frame(data_coord2, stringsAsFactors=F)
+head(data_coord2)
+
+col_1 <- data_coord2[,1]
+col_2 <- data_coord2[,2]
+chr_col <- paste(col_1,col_2,sep="_")
+data_coord2 <- data_coord2[,-2]
+data_coord2[,1] <- chr_col
+names(data_coord2) <- c('chr','start','end','strand')
+
+#coordinates of each tag cluster
+de_data <- cbind(de_data, data_coord2)
+
+#create column for differential expression status
+#1 for DE and 0 for not
+de_data$de <- as.numeric(de_data$FDR<p_cutoff)
+
+#convert coordinates to numeric
+de_data$start <- as.numeric(de_data$start)
+de_data$end <- as.numeric(de_data$end)
+
+de_data4 <- de_data
+
+write.table(de_data3,file="TCO_male_v_females_de.txt",col.names=TRUE,quote=FALSE)
 
 ####################################
+
 #Adding gene annotation to promoters
 
 #importing the gene annotation file (only need to do this a single time)
@@ -278,7 +321,11 @@ promoter_table$gene <- gene_IDs
 #remove duplicated entries
 #match_hit2 <- match_hit2[!duplicated(match_hit2$query),]
 
-#write.table(promoter_table,file="TCO_promoter_de_pE_male.txt",col.names=TRUE, row.names=TRUE)
+de_index <- which(promoter_table$FDR<0.01)
+length(de_index)
+promoter_table <- promoter_table[de_index,]
+
+write.table(promoter_table,file="TCO_MvMf_de_table_genes.txt",col.names=TRUE, row.names=TRUE)
 
 #################################### pE vs asexual females  ########################################
 
@@ -317,7 +364,11 @@ promoter_table$gene <- gene_IDs
 #remove duplicated entries
 #match_hit2 <- match_hit2[!duplicated(match_hit2$query),]
 
-#write.table(promoter_table,file="TCO_promoter_de_pE_matfem.txt",col.names=TRUE, row.names=TRUE)
+de_index <- which(promoter_table$FDR<0.01)
+length(de_index)
+promoter_table <- promoter_table[de_index,]
+
+write.table(promoter_table,file="TCO_pEvM_de_table_genes.txt",col.names=TRUE, row.names=TRUE)
 
 #################################### pE vs asexual females  ########################################
 
@@ -356,7 +407,11 @@ promoter_table$gene <- gene_IDs
 #remove duplicated entries
 #match_hit2 <- match_hit2[!duplicated(match_hit2$query),]
 
-#write.table(promoter_table,file="TCO_promoter_de_matfem_v_male.txt",col.names=TRUE, row.names=TRUE)
+de_index <- which(promoter_table$FDR <0.01)
+length(de_index)
+promoter_table <- promoter_table[de_index,]
+
+write.table(promoter_table,file="TCO_MfvpE_de_table_genes.txt",col.names=TRUE, row.names=TRUE)
 
 ####################################
 
@@ -383,7 +438,7 @@ meiosis_de <- meiosis_table[de_index,]
 
 #head(meiosis_table)
 #write.table(meiosis_table,file="meiosis_table.txt",col.names=TRUE,row.names=TRUE,quote=FALSE)
-#write.table(meiosis_de,file="meiosis_table_de.txt",col.names=TRUE,row.names=TRUE,quote=FALSE)
+write.table(meiosis_de,file="meiosis_table_de.txt",col.names=TRUE,row.names=TRUE,quote=FALSE)
 
 ##########################################################################
 #importing the gust. receptors  gene annotation file
@@ -455,6 +510,30 @@ esetSel <- dp_eset[selected, ]
 heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE, scale="row", density.info="none",trace="none",
          key=TRUE, margins=c(10,10))
 dev.off()
+
+#male vs both females
+par(mar=c(4.1,4.1,4.1,4.1))
+png(file="heatmap_TCO_males_v_females.png",height=2800,width=2800)
+de_index <- which(de_data4$FDR<0.01)
+length(de_index)
+de <- de_table4[de_index,]
+selected <- rownames(de)
+esetSel <- dp_eset[selected, ]
+heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE, scale="row", density.info="none",trace="none",
+         key=TRUE, margins=c(10,10))
+dev.off()
+
+#asexuals vs both sexuals
+#par(mar=c(4.1,4.1,4.1,4.1))
+#png(file="heatmap_asex_v_sexuals.png",height=2800,width=2800)
+#de_index <- which(de_data5$FDR<0.01)
+#length(de_index)
+#de <- de_table5[de_index,]
+#selected <- rownames(de)
+#esetSel <- dp_eset[selected, ]
+#heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE, scale="row", density.info="none",trace="none",
+#         key=TRUE, margins=c(10,10))
+#dev.off()
 
 #meiosis genes
 par(mar=c(4.1,4.1,4.1,4.1))
