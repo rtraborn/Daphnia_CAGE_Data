@@ -37,7 +37,7 @@ dp_eset <-new("ExpressionSet", exprs=as.matrix(Dp_edger))
 
 head(dp_eset)
 
-#checking to see what the data.frame looks like
+#checking to see what the data frame looks like
 head(Dp_edger)
 
 lib_sizes <- librarySizes(myCAGEset)
@@ -77,20 +77,20 @@ fit <- lmFit(v,design)
 fit2 <- contrasts.fit(fit,contrasts.matrix)
 fit2 <- eBayes(fit2)
 res <- decideTests(fit2,p.value=0.01,lfc=log2(2))
-ind = which( apply(res,1,function(x) {length(which(x != 0))>0}) == T)
+ind = which(apply(res,1,function(x) {length(which(x != 0))>0}) == T)
 length(ind)
 
 head(res)
 
 options(digits=3)
-de_table1 <- topTable(fit2, coef=1, adjust.method="BH",n=Inf)
+de_table1 <- topTable(fit2, coef=1, sort="none",adjust.method="BH",n=Inf)
 head(de_table1)
-de_table2 <- topTable(fit2, coef=2, adjust.method="BH",n=Inf)
+de_table2 <- topTable(fit2, coef=2, sort="none",adjust.method="BH",n=Inf)
 head(de_table2)
-de_table3 <- topTable(fit2, coef=3, adjust.method="BH",n=Inf)
+de_table3 <- topTable(fit2, coef=3, sort="none",adjust.method="BH",n=Inf)
 head(de_table3)
-de_table4 <- topTable(fit2, coef=4, adjust.method="BH",n=Inf)
-de_table5 <- topTable(fit2, coef=5, adjust.method="BH",n=Inf)
+de_table4 <- topTable(fit2, coef=4, sort="none", adjust.method="BH",n=Inf)
+de_table5 <- topTable(fit2, coef=5, sort="none", adjust.method="BH",n=Inf)
 
 plotMDS(v, labels=c("mf1","mf2","mf3","m1","m2","pE1","pE2","pE3"), main="MDS plot for all eight libraries")
 volcanoplot(fit2,coef=1,highlight=20)
