@@ -271,7 +271,50 @@ de_data$end <- as.numeric(de_data$end)
 
 de_data4 <- de_data
 
-write.table(de_data3,file="TCO_male_v_females_de.txt",col.names=TRUE,quote=FALSE)
+write.table(de_data4,file="TCO_male_v_females_de.txt",col.names=TRUE,quote=FALSE)
+
+###################################  Asexual vs Sexuals  ############################
+
+de_data <- Dp_dge$pseudo.counts
+
+#differential analysis results
+de_data <- cbind(de_data, de_table5)
+
+#calculating the FDR
+de_data$FDR <- p.adjust(de_data$P.Value, method = 'BH')
+
+#dispersion of each tag cluster
+de_data$tw_dis <- Dp_dge$tagwise.dispersion
+
+#coordinates of each tag cluster
+data_coord2 <- matrix(data=unlist(strsplit(rownames(de_data), split="_")),
+                      nrow= length(row.names(de_data)),
+                      byrow=T)
+
+data_coord2 <- as.data.frame(data_coord2, stringsAsFactors=F)
+head(data_coord2)
+
+col_1 <- data_coord2[,1]
+col_2 <- data_coord2[,2]
+chr_col <- paste(col_1,col_2,sep="_")
+data_coord2 <- data_coord2[,-2]
+data_coord2[,1] <- chr_col
+names(data_coord2) <- c('chr','start','end','strand')
+
+#coordinates of each tag cluster
+de_data <- cbind(de_data, data_coord2)
+
+#create column for differential expression status
+#1 for DE and 0 for not
+de_data$de <- as.numeric(de_data$FDR<p_cutoff)
+
+#convert coordinates to numeric
+de_data$start <- as.numeric(de_data$start)
+de_data$end <- as.numeric(de_data$end)
+
+de_data5 <- de_data
+
+write.table(de_data5,file="TCO_asexual_v_sexuals_de.txt",col.names=TRUE,quote=FALSE)
 
 ####################################
 
@@ -524,16 +567,16 @@ heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE, scale="row", density.info="no
 dev.off()
 
 #asexuals vs both sexuals
-#par(mar=c(4.1,4.1,4.1,4.1))
-#png(file="heatmap_asex_v_sexuals.png",height=2800,width=2800)
-#de_index <- which(de_data5$FDR<0.01)
-#length(de_index)
-#de <- de_table5[de_index,]
-#selected <- rownames(de)
-#esetSel <- dp_eset[selected, ]
-#heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE, scale="row", density.info="none",trace="none",
-#         key=TRUE, margins=c(10,10))
-#dev.off()
+par(mar=c(4.1,4.1,4.1,4.1))
+png(file="heatmap_asex_v_sexuals.png",height=2800,width=2800)
+de_index <- which(de_data5$FDR<0.01)
+length(de_index)
+de <- de_table5[de_index,]
+selected <- rownames(de)
+esetSel <- dp_eset[selected, ]
+heatmap.2(exprs(esetSel), symm=FALSE,symkey=FALSE, scale="row", density.info="none",trace="none",
+         key=TRUE, margins=c(10,10))
+dev.off()
 
 #meiosis genes
 par(mar=c(4.1,4.1,4.1,4.1))
