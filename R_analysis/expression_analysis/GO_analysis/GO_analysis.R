@@ -37,7 +37,7 @@ str(geneList)
 #making an S4 object from topGO
 
 dpGOdata <- new("topGOdata",
-description = "Genes strongly upregulated in males", ontology = "MF",
+description = "Genes strongly upregulated in males", ontology = "BP",
 allGenes = geneList,
 nodeSize = 20,
 annot = annFUN.gene2GO,
@@ -81,7 +81,7 @@ str(geneList)
 #making an S4 object from topGO
 
 dpGOdata <- new("topGOdata",
-description = "Genes strongly upregulated in pE vs asexual females", ontology = "MF",
+description = "Genes strongly upregulated in pE vs asexual females", ontology = "BP",
 allGenes = geneList,
 nodeSize = 20,
 annot = annFUN.gene2GO,
