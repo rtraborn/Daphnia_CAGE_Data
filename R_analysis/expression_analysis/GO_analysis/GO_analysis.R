@@ -39,7 +39,7 @@ str(geneList)
 dpGOdata <- new("topGOdata",
 description = "Genes strongly upregulated in males", ontology = "MF",
 allGenes = geneList,
-nodeSize = 10,
+nodeSize = 20,
 annot = annFUN.gene2GO,
 gene2GO = geneID2GO)
 
@@ -51,7 +51,7 @@ allRes <- GenTable(dpGOdata, classicFisher = resultFisher,
 classicKS = resultKS, elimKS = resultKS.elim,
  orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 25)
 
-printGraph(dpGOdata, resultFisher, firstSigNodes = 5, fn.prefix = "tGO", useInfo = "all", pdfSW = TRUE)
+printGraph(dpGOdata, resultFisher, firstSigNodes = 5, useInfo = "all", pdfSW = TRUE,fn.prefix="MvMF_upreg_tGO_")
 write.table(allRes,file="upreg_males_GO_fisher.txt",col.names=TRUE,row.names=FALSE,quote=FALSE)
 
 ## pE vs Asexual females
@@ -83,7 +83,7 @@ str(geneList)
 dpGOdata <- new("topGOdata",
 description = "Genes strongly upregulated in pE vs asexual females", ontology = "MF",
 allGenes = geneList,
-nodeSize = 10,
+nodeSize = 20,
 annot = annFUN.gene2GO,
 gene2GO = geneID2GO)
 
@@ -95,7 +95,7 @@ allRes <- GenTable(dpGOdata, classicFisher = resultFisher,
 classicKS = resultKS, elimKS = resultKS.elim,
  orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 25)
 
-printGraph(dpGOdata, resultFisher, firstSigNodes = 5, fn.prefix = "tGO", useInfo = "all", pdfSW = TRUE)
+printGraph(dpGOdata, resultFisher, firstSigNodes = 5, useInfo = "all", pdfSW = TRUE,fn.prefix="pEvMF_upreg_tGO_")
 write.table(allRes,file="upreg_pE_v_matfem_GO_fisher.txt",col.names=TRUE,row.names=FALSE,quote=FALSE)
 
 

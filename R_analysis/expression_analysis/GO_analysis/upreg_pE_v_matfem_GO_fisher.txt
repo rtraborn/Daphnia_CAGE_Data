@@ -1,26 +1,26 @@
 GO.ID Term Annotated Significant Expected Rank in classicFisher classicFisher classicKS elimKS
-GO:0042302 structural constituent of cuticle 147 3 4.28 25 0.81 < 1e-30 < 1e-30
-GO:0003674 molecular_function 1742 26 50.71 53 1.00 1.4e-05 < 1e-30
-GO:0005319 lipid transporter activity 11 0 0.32 54 1.00 0.00193 2.2e-27
-GO:0005524 ATP binding 73 0 2.13 55 1.00 4.6e-19 2.5e-26
-GO:0005509 calcium ion binding 55 0 1.6 56 1.00 1.1e-11 1.8e-18
-GO:0005525 GTP binding 62 1 1.8 28 0.84 4.0e-17 3.0e-18
-GO:0005515 protein binding 109 1 3.17 32 0.96 1.5e-12 1.1e-17
-GO:0005215 transporter activity 112 0 3.26 57 1.00 3.2e-14 5.4e-14
-GO:0003824 catalytic activity 588 10 17.12 46 0.99 1.9e-23 1.5e-13
-GO:0004672 protein kinase activity 82 2 2.39 19 0.70 3.4e-08 2.3e-09
-GO:0008757 S-adenosylmethionine-dependent methyltra... 16 0 0.47 58 1.00 5.9e-06 1.3e-07
-GO:0008270 zinc ion binding 30 2 0.87 4 0.22 2.7e-08 1.4e-06
-GO:0005198 structural molecule activity 264 6 7.69 21 0.80 1.2e-27 3.8e-06
-GO:0008146 sulfotransferase activity 13 0 0.38 59 1.00 9.5e-05 5.4e-06
-GO:0004871 signal transducer activity 30 0 0.87 60 1.00 0.00025 8.0e-05
-GO:0016491 oxidoreductase activity 69 2 2.01 18 0.60 0.00018 0.00012
-GO:0005488 binding 709 9 20.64 52 1.00 1.4e-14 0.00040
-GO:0016740 transferase activity 182 2 5.3 33 0.97 1.3e-11 0.00051
-GO:0004553 hydrolase activity, hydrolyzing O-glycos... 30 0 0.87 61 1.00 0.00724 0.00061
-GO:0046872 metal ion binding 101 2 2.94 22 0.80 2.7e-19 0.00064
-GO:0016829 lyase activity 17 0 0.49 62 1.00 0.08275 0.00115
-GO:0015291 secondary active transmembrane transport... 14 0 0.41 63 1.00 0.00396 0.00179
-GO:0004866 endopeptidase inhibitor activity 13 0 0.38 64 1.00 0.01543 0.00185
-GO:0004872 receptor activity 20 0 0.58 65 1.00 0.00402 0.00231
-GO:0004197 cysteine-type endopeptidase activity 27 0 0.79 66 1.00 0.00941 0.00276
+GO:0042302 structural constituent of cuticle 147 3 4.28 19 0.81 < 1e-30 < 1e-30
+GO:0005524 ATP binding 73 0 2.13 48 1.00 4.6e-19 2.5e-26
+GO:0022892 substrate-specific transporter activity 53 0 1.54 49 1.00 1.3e-05 4.3e-26
+GO:0003674 molecular_function 1742 26 50.71 47 1.00 1.4e-05 4.6e-20
+GO:0005509 calcium ion binding 55 0 1.6 50 1.00 1.1e-11 1.8e-18
+GO:0005525 GTP binding 62 1 1.8 22 0.84 4.0e-17 3.0e-18
+GO:0005515 protein binding 109 1 3.17 26 0.96 1.5e-12 1.1e-17
+GO:0003824 catalytic activity 588 10 17.12 40 0.99 1.9e-23 7.1e-15
+GO:0005215 transporter activity 112 0 3.26 51 1.00 3.2e-14 2.7e-13
+GO:0004672 protein kinase activity 82 2 2.39 13 0.70 3.4e-08 2.3e-09
+GO:0008168 methyltransferase activity 21 0 0.61 52 1.00 2.3e-07 5.8e-09
+GO:0008270 zinc ion binding 30 2 0.87 1 0.22 2.7e-08 1.4e-06
+GO:0005198 structural molecule activity 264 6 7.69 15 0.80 1.2e-27 3.8e-06
+GO:0016740 transferase activity 182 2 5.3 27 0.97 1.3e-11 1.2e-05
+GO:0004871 signal transducer activity 30 0 0.87 53 1.00 0.00025 8.0e-05
+GO:0016491 oxidoreductase activity 69 2 2.01 12 0.60 0.00018 0.00012
+GO:0005488 binding 709 9 20.64 46 1.00 1.4e-14 0.00040
+GO:0004553 hydrolase activity, hydrolyzing O-glycos... 30 0 0.87 54 1.00 0.00724 0.00061
+GO:0046872 metal ion binding 101 2 2.94 16 0.80 2.7e-19 0.00064
+GO:0004872 receptor activity 20 0 0.58 55 1.00 0.00402 0.00231
+GO:0004197 cysteine-type endopeptidase activity 27 0 0.79 56 1.00 0.00941 0.00276
+GO:0008324 cation transmembrane transporter activit... 29 0 0.84 57 1.00 0.00851 0.00313
+GO:0015075 ion transmembrane transporter activity 36 0 1.05 58 1.00 0.00265 0.00368
+GO:0004175 endopeptidase activity 55 0 1.6 59 1.00 8.5e-05 0.00426
+GO:0046914 transition metal ion binding 40 2 1.16 2 0.33 5.8e-07 0.00644
