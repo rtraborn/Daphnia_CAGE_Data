@@ -52,6 +52,50 @@ classicKS = resultKS, elimKS = resultKS.elim,
  orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 25)
 
 printGraph(dpGOdata, resultFisher, firstSigNodes = 5, fn.prefix = "tGO", useInfo = "all", pdfSW = TRUE)
-write.table(allRes,file="upreg_males_GO_fisher.txt",col.names=TRUE,row.names=FALSE,quotes=FALSE)
+write.table(allRes,file="upreg_males_GO_fisher.txt",col.names=TRUE,row.names=FALSE,quote=FALSE)
+
+## pE vs Asexual females
+pEvMF_de <- read.table(file="/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/expression_analysis/de_tables/TCO_pEvM_de_table_genes.txt",header=TRUE,stringsAsFactors=FALSE)
+
+cutoff <- 0.001
+
+pEvMF_de$FDR <- as.numeric(pEvMF_de$FDR)
+pEvMF_de$logFC <- as.numeric(pEvMF_de$FDR)
+
+#tag clusters significantly upregulated in Males
+pEvMF_up_list <- subset(pEvMF_de, FDR<cutoff & logFC>0)
+up_pEvMF_gene <- pEvMF_up_list$gene
+
+length(up_pEvMF_gene)
+head(pEvMF_up_list)
+
+#universal list
+all_promoter <- pEvMF_up_list$promoter_ID
+geneID2GO <- readMappings(file = "/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/expression_analysis/GO_analysis/dp_jgi_v11.map")
+
+geneNames <- names(geneID2GO)
+geneList <- factor(as.integer(geneNames %in% up_pEvMF_gene))
+names(geneList) <- geneNames
+str(geneList)
+
+#making an S4 object from topGO
+
+dpGOdata <- new("topGOdata",
+description = "Genes strongly upregulated in pE vs asexual females", ontology = "MF",
+allGenes = geneList,
+nodeSize = 10,
+annot = annFUN.gene2GO,
+gene2GO = geneID2GO)
+
+resultFisher <- runTest(dpGOdata, algorithm = "classic", statistic = "fisher")
+resultKS <- runTest(dpGOdata, algorithm = "classic", statistic = "ks")
+resultKS.elim <- runTest(dpGOdata, algorithm = "elim", statistic = "ks")
+
+allRes <- GenTable(dpGOdata, classicFisher = resultFisher,
+classicKS = resultKS, elimKS = resultKS.elim,
+ orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 25)
+
+printGraph(dpGOdata, resultFisher, firstSigNodes = 5, fn.prefix = "tGO", useInfo = "all", pdfSW = TRUE)
+write.table(allRes,file="upreg_pE_v_matfem_GO_fisher.txt",col.names=TRUE,row.names=FALSE,quote=FALSE)
 
 
