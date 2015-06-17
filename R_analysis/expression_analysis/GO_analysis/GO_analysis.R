@@ -57,7 +57,7 @@ write.table(allRes,file="upreg_males_GO_fisher.txt",col.names=TRUE,row.names=FAL
 ## pE vs Asexual females
 pEvMF_de <- read.table(file="/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/expression_analysis/de_tables/TCO_pEvM_de_table_genes.txt",header=TRUE,stringsAsFactors=FALSE)
 
-cutoff <- 0.01
+cutoff <- 0.001
 
 pEvMF_de$FDR <- as.numeric(pEvMF_de$FDR)
 pEvMF_de$logFC <- as.numeric(pEvMF_de$FDR)
