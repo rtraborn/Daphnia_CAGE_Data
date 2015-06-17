@@ -1,0 +1,26 @@
+GO.ID Term Annotated Significant Expected Rank in classicFisher classicFisher classicKS elimKS
+GO:0042302 structural constituent of cuticle 147 8 9.82 35 0.781 < 1e-30 < 1e-30
+GO:0003674 molecular_function 1742 86 116.42 63 1.000 3.8e-07 < 1e-30
+GO:0005525 GTP binding 62 1 4.14 56 0.987 1.3e-18 8.7e-28
+GO:0022892 substrate-specific transporter activity 53 0 3.54 64 1.000 1.6e-06 3.1e-27
+GO:0005524 ATP binding 73 5 4.88 15 0.546 2.9e-16 3.2e-23
+GO:0005488 binding 709 32 47.38 59 0.998 1.3e-14 4.8e-23
+GO:0005509 calcium ion binding 55 6 3.68 3 0.158 2.3e-08 1.5e-13
+GO:0003824 catalytic activity 588 32 39.3 49 0.933 8.0e-24 3.5e-12
+GO:0005215 transporter activity 112 6 7.49 32 0.773 1.6e-12 2.1e-10
+GO:0008168 methyltransferase activity 21 1 1.4 30 0.767 6.4e-07 1.2e-08
+GO:0008270 zinc ion binding 30 2 2 25 0.606 4.4e-09 2.0e-07
+GO:0005198 structural molecule activity 264 11 17.64 54 0.975 4.3e-30 3.3e-07
+GO:0004672 protein kinase activity 82 8 5.48 6 0.178 1.6e-06 1.6e-06
+GO:0005515 protein binding 109 12 7.28 1 0.056 3.2e-08 3.5e-06
+GO:0003735 structural constituent of ribosome 92 0 6.15 65 1.000 0.00216 6.8e-06
+GO:0016491 oxidoreductase activity 69 3 4.61 37 0.852 3.7e-05 1.6e-05
+GO:0004553 hydrolase activity, hydrolyzing O-glycos... 30 0 2 66 1.000 0.00198 9.3e-05
+GO:0004175 endopeptidase activity 55 3 3.68 28 0.724 0.00027 9.6e-05
+GO:0046872 metal ion binding 101 8 6.75 11 0.362 4.8e-17 0.00039
+GO:0016740 transferase activity 182 12 12.16 23 0.566 4.4e-10 0.00064
+GO:0008324 cation transmembrane transporter activit... 29 0 1.94 67 1.000 0.00236 0.00066
+GO:0004872 receptor activity 20 0 1.34 68 1.000 0.00149 0.00077
+GO:0004871 signal transducer activity 30 2 2 26 0.606 0.00109 0.00114
+GO:0015075 ion transmembrane transporter activity 36 0 2.41 69 1.000 0.00054 0.00250
+GO:0046914 transition metal ion binding 40 2 2.67 29 0.760 6.3e-08 0.00324

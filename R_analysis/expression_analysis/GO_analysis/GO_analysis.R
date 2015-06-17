@@ -57,7 +57,7 @@ write.table(allRes,file="upreg_males_GO_fisher.txt",col.names=TRUE,row.names=FAL
 ## pE vs Asexual females
 pEvMF_de <- read.table(file="/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/expression_analysis/de_tables/TCO_pEvM_de_table_genes.txt",header=TRUE,stringsAsFactors=FALSE)
 
-cutoff <- 0.001
+cutoff <- 0.01
 
 pEvMF_de$FDR <- as.numeric(pEvMF_de$FDR)
 pEvMF_de$logFC <- as.numeric(pEvMF_de$FDR)
@@ -81,7 +81,7 @@ str(geneList)
 #making an S4 object from topGO
 
 dpGOdata <- new("topGOdata",
-description = "Genes strongly upregulated in pE vs asexual females", ontology = "BP",
+description = "Genes strongly upregulated in pE vs asexual females", ontology = "MF",
 allGenes = geneList,
 nodeSize = 20,
 annot = annFUN.gene2GO,
@@ -96,6 +96,44 @@ classicKS = resultKS, elimKS = resultKS.elim,
  orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 25)
 
 printGraph(dpGOdata, resultFisher, firstSigNodes = 5, useInfo = "all", pdfSW = TRUE,fn.prefix="pEvMF_upreg_tGO_")
-write.table(allRes,file="upreg_pE_v_matfem_GO_fisher.txt",col.names=TRUE,row.names=FALSE,quote=FALSE)
+write.table(allRes,file="upreg_pE_v_matfem_GO_fisher_MF.txt",col.names=TRUE,row.names=FALSE,quote=FALSE)
 
 
+############ upregulated in asexual vs sexual females
+
+pEvMF_de <- read.table(file="/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/expression_analysis/de_tables/TCO_pEvM_de_table_genes.txt",header=TRUE,stringsAsFactors=FALSE)
+
+#tag clusters significantly upregulated in asexuals 
+#(down in pE means up in asexuals)
+pEvMF_down_list <- subset(pEvMF_de, FDR<cutoff & logFC<0)
+down_pEvMF_gene <- pEvMF_down_list$gene
+
+length(down_pEvMF_gene)
+head(pEvMF_down_list)
+
+geneID2GO <- readMappings(file = "/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/expression_analysis/GO_analysis/dp_jgi_v11.map")
+
+geneNames <- names(geneID2GO)
+geneList <- factor(as.integer(geneNames %in% down_pEvMF_gene))
+names(geneList) <- geneNames
+str(geneList)
+
+#making an S4 object from topGO
+
+dpGOdata <- new("topGOdata",
+description = "Genes strongly upregulated in asexual females vs sexual (pE) females", ontology = "MF",
+allGenes = geneList,
+nodeSize = 20,
+annot = annFUN.gene2GO,
+gene2GO = geneID2GO)
+
+resultFisher <- runTest(dpGOdata, algorithm = "classic", statistic = "fisher")
+resultKS <- runTest(dpGOdata, algorithm = "classic", statistic = "ks")
+resultKS.elim <- runTest(dpGOdata, algorithm = "elim", statistic = "ks")
+
+allRes <- GenTable(dpGOdata, classicFisher = resultFisher,
+classicKS = resultKS, elimKS = resultKS.elim,
+ orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 25)
+
+printGraph(dpGOdata, resultFisher, firstSigNodes = 5, useInfo = "all", pdfSW = TRUE,fn.prefix="MfvpE_upreg_tGO")
+write.table(allRes,file="upreg_matfem_v_pE_GO_fisher_MF.txt",col.names=TRUE,row.names=FALSE,quote=FALSE)
