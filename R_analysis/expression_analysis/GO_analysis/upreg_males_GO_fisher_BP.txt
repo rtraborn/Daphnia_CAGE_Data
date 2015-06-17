@@ -1,0 +1,26 @@
+GO.ID Term Annotated Significant Expected Rank in classicFisher classicFisher classicKS elimKS
+GO:0008150 biological_process 396 83 92.22 80 0.99 0.0012 < 1e-30
+GO:0015992 proton transport 20 1 4.66 81 1.00 3.2e-12 2.2e-17
+GO:0009168 purine ribonucleoside monophosphate bios... 20 3 4.66 47 0.88 1.6e-09 3.9e-14
+GO:0046034 ATP metabolic process 20 1 4.66 82 1.00 1.6e-09 1.4e-13
+GO:1901137 carbohydrate derivative biosynthetic pro... 29 3 6.75 77 0.98 1.8e-07 1.8e-12
+GO:0008152 metabolic process 288 58 67.07 75 0.98 7.4e-10 6.1e-10
+GO:0009058 biosynthetic process 51 6 11.88 79 0.99 2.7e-12 3.0e-07
+GO:0006812 cation transport 29 1 6.75 97 1.00 2.0e-08 0.0015
+GO:1901576 organic substance biosynthetic process 41 5 9.55 76 0.98 5.7e-08 0.0023
+GO:0006810 transport 75 12 17.47 70 0.97 8.1e-06 0.0045
+GO:0044711 single-organism biosynthetic process 31 4 7.22 69 0.96 4.0e-10 0.0054
+GO:0007155 cell adhesion 23 5 5.36 36 0.65 0.0021 0.0133
+GO:0022610 biological adhesion 23 5 5.36 37 0.65 0.0021 0.0133
+GO:0044249 cellular biosynthetic process 39 5 9.08 73 0.97 8.3e-08 0.0342
+GO:0050789 regulation of biological process 20 7 4.66 7 0.16 0.0061 0.0446
+GO:0050794 regulation of cellular process 20 7 4.66 8 0.16 0.0061 0.0446
+GO:0065007 biological regulation 21 7 4.89 12 0.19 0.0088 0.0655
+GO:0015672 monovalent inorganic cation transport 23 1 5.36 95 1.00 1.8e-11 0.0857
+GO:0005975 carbohydrate metabolic process 24 3 5.59 66 0.95 0.4637 0.0943
+GO:0044267 cellular protein metabolic process 72 16 16.77 35 0.64 0.2504 0.1030
+GO:0007154 cell communication 20 7 4.66 9 0.16 0.0235 0.1107
+GO:0008104 protein localization 36 8 8.38 30 0.63 0.2273 0.1189
+GO:0015031 protein transport 36 8 8.38 31 0.63 0.2273 0.1189
+GO:0033036 macromolecule localization 36 8 8.38 32 0.63 0.2273 0.1189
+GO:0045184 establishment of protein localization 36 8 8.38 33 0.63 0.2273 0.1189

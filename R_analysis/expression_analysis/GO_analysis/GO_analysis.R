@@ -52,10 +52,10 @@ classicKS = resultKS, elimKS = resultKS.elim,
  orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 25)
 
 printGraph(dpGOdata, resultFisher, firstSigNodes = 5, useInfo = "all", pdfSW = TRUE,fn.prefix="MvMF_upreg_tGO_BP")
-write.table(allRes,file="upreg_males_GO_fisher.txt",col.names=TRUE,row.names=FALSE,quote=FALSE)
+write.table(allRes,file="upreg_males_GO_fisher_BP.txt",col.names=TRUE,row.names=FALSE,quote=FALSE)
 
 dpGOdata <- new("topGOdata",
-description = "Genes strongly upregulated in males", ontology = "BP",
+description = "Genes strongly upregulated in males", ontology = "MF",
 allGenes = geneList,
 nodeSize = 20,
 annot = annFUN.gene2GO,
@@ -70,7 +70,7 @@ classicKS = resultKS, elimKS = resultKS.elim,
  orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 25)
 
 printGraph(dpGOdata, resultFisher, firstSigNodes = 5, useInfo = "all", pdfSW = TRUE,fn.prefix="MvMF_upreg_tGO_MF")
-write.table(allRes,file="upreg_males_GO_fisher.txt",col.names=TRUE,row.names=FALSE,quote=FALSE)
+write.table(allRes,file="upreg_males_GO_fisher_MF.txt",col.names=TRUE,row.names=FALSE,quote=FALSE)
 
 
 ## pE vs Asexual females
