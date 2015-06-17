@@ -13,7 +13,7 @@ Dp_JGI_genes <- c("promoter_ID","chr","start","end","strand","gene","GO_ID","KOG
 ## Males vs Asexual females
 MvMF_de <- read.table(file="/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/expression_analysis/de_tables/TCO_MvMf_de_table_genes.txt",header=TRUE,stringsAsFactors=FALSE)
 
-cutoff <- 0.01
+cutoff <- 0.001
 
 MvMF_de$FDR <- as.numeric(MvMF_de$FDR)
 MvMF_de$logFC <- as.numeric(MvMF_de$FDR)
@@ -52,7 +52,7 @@ classicKS = resultKS, elimKS = resultKS.elim,
  orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 25)
 
 printGraph(dpGOdata, resultFisher, firstSigNodes = 5, useInfo = "all", pdfSW = TRUE,fn.prefix="MvMF_upreg_tGO_BP")
-write.table(allRes,file="upreg_males_GO_fisher_BP.txt",col.names=TRUE,row.names=FALSE,quote=FALSE)
+write.table(allRes,file="MvMF_upreg_GO_fisher_BP.txt",col.names=TRUE,row.names=FALSE,quote=FALSE)
 
 dpGOdata <- new("topGOdata",
 description = "Genes strongly upregulated in males", ontology = "MF",
@@ -70,13 +70,13 @@ classicKS = resultKS, elimKS = resultKS.elim,
  orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 25)
 
 printGraph(dpGOdata, resultFisher, firstSigNodes = 5, useInfo = "all", pdfSW = TRUE,fn.prefix="MvMF_upreg_tGO_MF")
-write.table(allRes,file="upreg_males_GO_fisher_MF.txt",col.names=TRUE,row.names=FALSE,quote=FALSE)
+write.table(allRes,file="MvMF_upreg_GO_fisher_MF.txt",col.names=TRUE,row.names=FALSE,quote=FALSE)
 
 
 ## pE vs Asexual females
 pEvMF_de <- read.table(file="/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/expression_analysis/de_tables/TCO_pEvM_de_table_genes.txt",header=TRUE,stringsAsFactors=FALSE)
 
-cutoff <- 0.01
+cutoff <- 0.001
 
 pEvMF_de$FDR <- as.numeric(pEvMF_de$FDR)
 pEvMF_de$logFC <- as.numeric(pEvMF_de$FDR)
