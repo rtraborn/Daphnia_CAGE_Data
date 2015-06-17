@@ -1,0 +1,26 @@
+GO.ID Term Annotated Significant Expected Rank in classicFisher classicFisher classicKS elimKS
+GO:0008150 biological_process 396 17 26.35 57 1.00 0.0021 1.5e-24
+GO:0015992 proton transport 20 0 1.33 58 1.00 3.3e-10 4.2e-16
+GO:0009168 purine ribonucleoside monophosphate bios... 20 1 1.33 31 0.75 6.1e-09 4.7e-14
+GO:0046034 ATP metabolic process 20 0 1.33 59 1.00 9.1e-08 3.3e-12
+GO:0008152 metabolic process 288 12 19.16 56 1.00 5.1e-11 1.5e-11
+GO:1901137 carbohydrate derivative biosynthetic pro... 29 2 1.93 19 0.59 2.7e-05 2.0e-10
+GO:0009058 biosynthetic process 51 3 3.39 23 0.68 2.5e-09 4.2e-07
+GO:0007155 cell adhesion 23 0 1.53 60 1.00 0.0001 8.2e-06
+GO:0006810 transport 75 0 4.99 61 1.00 9.7e-06 1.1e-05
+GO:0006139 nucleobase-containing compound metabolic... 37 2 2.46 25 0.73 9.0e-11 0.0039
+GO:0055086 nucleobase-containing small molecule met... 31 1 2.06 54 0.89 4.6e-09 0.0060
+GO:0044711 single-organism biosynthetic process 31 1 2.06 55 0.89 3.3e-09 0.0104
+GO:0009116 nucleoside metabolic process 24 0 1.6 62 1.00 4.6e-09 0.0108
+GO:1901657 glycosyl compound metabolic process 24 0 1.6 63 1.00 4.6e-09 0.0108
+GO:0006811 ion transport 32 0 2.13 64 1.00 1.5e-06 0.0116
+GO:1901135 carbohydrate derivative metabolic proces... 38 2 2.53 27 0.74 2.6e-05 0.0135
+GO:0043170 macromolecule metabolic process 104 6 6.92 24 0.73 0.0473 0.0164
+GO:1901576 organic substance biosynthetic process 41 3 2.73 18 0.53 1.2e-05 0.0269
+GO:0008104 protein localization 36 0 2.4 65 1.00 0.0726 0.0273
+GO:0015031 protein transport 36 0 2.4 66 1.00 0.0726 0.0273
+GO:0033036 macromolecule localization 36 0 2.4 67 1.00 0.0726 0.0273
+GO:0045184 establishment of protein localization 36 0 2.4 68 1.00 0.0726 0.0273
+GO:0051641 cellular localization 36 0 2.4 69 1.00 0.0726 0.0273
+GO:0051649 establishment of localization in cell 36 0 2.4 70 1.00 0.0726 0.0273
+GO:0071702 organic substance transport 36 0 2.4 71 1.00 0.0726 0.0273
