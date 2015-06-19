@@ -11,6 +11,11 @@ plot.values <- melt(meiosis_table)
 names(plot.values) <- c("gene","variable","value")    
 p <- ggplot(plot.values, aes(variable, gene)) + geom_tile(aes(fill = value))
 meiosis_figure <- p + scale_fill_gradient2(low="#D7191C", mid="white", high="#2C7BB6")
+
+base_size <- 9
+ p + theme_grey(base_size = base_size) + labs(x = "", y = "")
+
 png(file="meiosis_grid_heatmap.png",height=1200,width=900)
 meiosis_figure
+
 dev.off()
