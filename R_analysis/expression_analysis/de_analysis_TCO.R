@@ -333,7 +333,7 @@ genes_GR <- with(dpulex_genes, GRanges(chr, IRanges(start, end, names=geneID),st
 de_GR <- with(de_data1, GRanges(chr,
                                     IRanges(start, end, names=row.names(de_data1)), strand))
 
-de_GR <- promoters(de_GR, upstream=200, downstream=200)
+de_GR <- promoters(de_GR, upstream=500, downstream=100)
 
 #de_GR #for debugging
 
@@ -467,20 +467,44 @@ sum(de_data3$FDR<0.01)
 ################################# Gene Family Analyses ##############################
 
 #importing the meiosis gene annotation file
-meiosis_genes <- read.table(file="/home/rtraborn/Daphnia/Daphnia_CAGE_Data/development_reg/meiosis/Dpulex_meiosis_genes.bed", header=TRUE)
+meiosis_genes <- read.table(file="/home/rtraborn/Daphnia/Daphnia_CAGE_Data/development_reg/meiosis/meiosis_genes_upstream_intervals.bed", header=TRUE)
 meiosis_IDs <- meiosis_genes$geneID
 promoter_list <- promoter_table$gene
-my_index <-  match(meiosis_IDs,promoter_table$gene)
-length(my_index)
-meiosis_table <- promoter_table[my_index,]
-meiosis_table <- na.omit(meiosis_table)
+
+meiosis_gr <- with(meiosis_genes, GRanges(chr,
+                                    IRanges(start, end, names=meiosis_IDs), strand))
+
+meiosis_OL <- findOverlaps(de_GR, meiosis_gr)
+
+match_hit2 <- as.data.frame(meiosis_OL)
+
+#name the columns
+names(match_hit2) <- c('query','subject')
+
+#head(match_hit2)
+
+promoter_index <- match_hit2$query
+gene_index <- match_hit2$subject
+
+print("Length of promoter index")
+length(promoter_index)
+
+#gene_names <- dpulex_genes[gene_index,'geneID']
+promoter_table <- data.frame(de_data1[promoter_index,])
+gene_IDs <- dpulex_genes[gene_index,"geneID"]
+promoter_table$gene <- gene_IDs
+
+#remove duplicated entries
+#match_hit2 <- match_hit2[!duplicated(match_hit2$query),]
+
+meiosis_table <- na.omit(promoter_table)
 
 #differentially-expressed meiosis genes only
 de_index <- which(meiosis_table$de == 1)
 meiosis_de <- meiosis_table[de_index,]
 
 #head(meiosis_table)
-#write.table(meiosis_table,file="meiosis_table.txt",col.names=TRUE,row.names=TRUE,quote=FALSE)
+write.table(meiosis_table,file="meiosis_table.txt",col.names=TRUE,row.names=TRUE,quote=FALSE)
 write.table(meiosis_de,file="meiosis_table_de.txt",col.names=TRUE,row.names=TRUE,quote=FALSE)
 
 ##########################################################################
