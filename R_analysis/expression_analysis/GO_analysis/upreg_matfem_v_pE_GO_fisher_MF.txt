@@ -1,26 +1,11 @@
 GO.ID Term Annotated Significant Expected Rank in classicFisher classicFisher classicKS elimKS
-GO:0042302 structural constituent of cuticle 147 0 1.87 28 1.000 < 1e-30 < 1e-30
-GO:0003674 molecular_function 1742 10 22.14 27 1.000 1.1e-05 < 1e-30
-GO:0022892 substrate-specific transporter activity 53 0 0.67 29 1.000 3.3e-05 5.4e-26
-GO:0005525 GTP binding 62 0 0.79 30 1.000 2.1e-17 1.6e-25
-GO:0005524 ATP binding 73 0 0.93 31 1.000 2.8e-18 3.1e-25
-GO:0005509 calcium ion binding 55 0 0.7 32 1.000 3.8e-11 1.3e-17
-GO:0005515 protein binding 109 1 1.39 17 0.760 8.8e-12 1.7e-16
-GO:0003824 catalytic activity 588 5 7.47 21 0.901 3.3e-22 4.8e-16
-GO:0005215 transporter activity 112 0 1.42 33 1.000 2.9e-13 1.5e-12
-GO:0004672 protein kinase activity 82 1 1.04 13 0.656 3.7e-08 3.3e-09
-GO:0008168 methyltransferase activity 21 0 0.27 34 1.000 3.5e-07 9.7e-09
-GO:0005198 structural molecule activity 264 0 3.36 35 1.000 4.2e-30 3.4e-08
-GO:0008270 zinc ion binding 30 2 0.38 1 0.055 4.6e-08 2.4e-06
-GO:0016740 transferase activity 182 1 2.31 22 0.911 5.7e-11 3.4e-05
-GO:0005488 binding 709 4 9.01 24 0.991 5.0e-13 9.7e-05
-GO:0016491 oxidoreductase activity 69 1 0.88 12 0.591 0.00017 0.00014
-GO:0004871 signal transducer activity 30 0 0.38 36 1.000 0.00044 0.00015
-GO:0046872 metal ion binding 101 2 1.28 10 0.370 2.3e-18 0.00071
-GO:0004553 hydrolase activity, hydrolyzing O-glycos... 30 0 0.38 37 1.000 0.01128 0.00116
-GO:0003735 structural constituent of ribosome 92 0 1.17 38 1.000 0.04646 0.00263
-GO:0004872 receptor activity 20 0 0.25 39 1.000 0.00591 0.00352
-GO:0015075 ion transmembrane transporter activity 36 0 0.46 40 1.000 0.00452 0.00378
-GO:0004197 cysteine-type endopeptidase activity 27 0 0.34 41 1.000 0.01417 0.00463
-GO:0008324 cation transmembrane transporter activit... 29 0 0.37 42 1.000 0.01307 0.00526
-GO:0004175 endopeptidase activity 55 0 0.7 43 1.000 0.00019 0.00689
+GO:0042302 structural constituent of cuticle 147 0 1.87 32 1.00 < 1e-30 < 1e-30
+GO:0003674 molecular_function 1742 10 22.14 31 1.00 1.1e-05 < 1e-30
+GO:0005319 lipid transporter activity 11 0 0.14 33 1.00 0.002 2.7e-27
+GO:0005525 GTP binding 62 0 0.79 34 1.00 2.1e-17 1.6e-25
+GO:0005524 ATP binding 73 0 0.93 35 1.00 2.8e-18 3.1e-25
+GO:0005509 calcium ion binding 55 0 0.7 36 1.00 3.8e-11 1.3e-17
+GO:0005515 protein binding 109 1 1.39 21 0.76 8.8e-12 1.7e-16
+GO:0003824 catalytic activity 588 5 7.47 25 0.90 3.3e-22 5.6e-15
+GO:0005215 transporter activity 112 0 1.42 37 1.00 2.9e-13 3.3e-13
+GO:0004672 protein kinase activity 82 1 1.04 17 0.66 3.7e-08 3.3e-09

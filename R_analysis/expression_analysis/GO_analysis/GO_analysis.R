@@ -39,7 +39,7 @@ str(geneList)
 dpGOdata <- new("topGOdata",
 description = "Genes strongly upregulated in males", ontology = "BP",
 allGenes = geneList,
-nodeSize = 20,
+nodeSize = 10,
 annot = annFUN.gene2GO,
 gene2GO = geneID2GO)
 
@@ -49,7 +49,7 @@ resultKS.elim <- runTest(dpGOdata, algorithm = "elim", statistic = "ks")
 
 allRes <- GenTable(dpGOdata, classicFisher = resultFisher,
 classicKS = resultKS, elimKS = resultKS.elim,
- orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 25)
+ orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 10)
 
 printGraph(dpGOdata, resultFisher, firstSigNodes = 5, useInfo = "all", pdfSW = TRUE,fn.prefix="MvMF_upreg_tGO_BP")
 write.table(allRes,file="MvMF_upreg_GO_fisher_BP.txt",col.names=TRUE,row.names=FALSE,quote=FALSE)
@@ -57,7 +57,7 @@ write.table(allRes,file="MvMF_upreg_GO_fisher_BP.txt",col.names=TRUE,row.names=F
 dpGOdata <- new("topGOdata",
 description = "Genes strongly upregulated in males", ontology = "MF",
 allGenes = geneList,
-nodeSize = 20,
+nodeSize = 10,
 annot = annFUN.gene2GO,
 gene2GO = geneID2GO)
 
@@ -67,7 +67,7 @@ resultKS.elim <- runTest(dpGOdata, algorithm = "elim", statistic = "ks")
 
 allRes <- GenTable(dpGOdata, classicFisher = resultFisher,
 classicKS = resultKS, elimKS = resultKS.elim,
- orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 25)
+ orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 10)
 
 printGraph(dpGOdata, resultFisher, firstSigNodes = 5, useInfo = "all", pdfSW = TRUE,fn.prefix="MvMF_upreg_tGO_MF")
 write.table(allRes,file="MvMF_upreg_GO_fisher_MF.txt",col.names=TRUE,row.names=FALSE,quote=FALSE)
@@ -102,7 +102,7 @@ str(geneList)
 dpGOdata <- new("topGOdata",
 description = "Genes strongly upregulated in pE vs asexual females", ontology = "BP",
 allGenes = geneList,
-nodeSize = 20,
+nodeSize = 10,
 annot = annFUN.gene2GO,
 gene2GO = geneID2GO)
 
@@ -112,7 +112,7 @@ resultKS.elim <- runTest(dpGOdata, algorithm = "elim", statistic = "ks")
 
 allRes <- GenTable(dpGOdata, classicFisher = resultFisher,
 classicKS = resultKS, elimKS = resultKS.elim,
- orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 25)
+ orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 10)
 
 printGraph(dpGOdata, resultFisher, firstSigNodes = 5, useInfo = "all", pdfSW = TRUE,fn.prefix="pEvMF_upreg_tGO_BP")
 write.table(allRes,file="upreg_pE_v_matfem_GO_fisher_BP.txt",col.names=TRUE,row.names=FALSE,quote=FALSE)
@@ -120,7 +120,7 @@ write.table(allRes,file="upreg_pE_v_matfem_GO_fisher_BP.txt",col.names=TRUE,row.
 dpGOdata <- new("topGOdata",
 description = "Genes strongly upregulated in pE vs asexual females", ontology = "MF",
 allGenes = geneList,
-nodeSize = 20,
+nodeSize = 10,
 annot = annFUN.gene2GO,
 gene2GO = geneID2GO)
 
@@ -130,7 +130,7 @@ resultKS.elim <- runTest(dpGOdata, algorithm = "elim", statistic = "ks")
 
 allRes <- GenTable(dpGOdata, classicFisher = resultFisher,
 classicKS = resultKS, elimKS = resultKS.elim,
- orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 25)
+ orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 10)
 
 printGraph(dpGOdata, resultFisher, firstSigNodes = 5, useInfo = "all", pdfSW = TRUE,fn.prefix="pEvMF_upreg_tGO_MF")
 write.table(allRes,file="upreg_pE_v_matfem_GO_fisher_MF.txt",col.names=TRUE,row.names=FALSE,quote=FALSE)
@@ -159,7 +159,7 @@ str(geneList)
 dpGOdata <- new("topGOdata",
 description = "Genes strongly upregulated in asexual females vs sexual (pE) females", ontology = "BP",
 allGenes = geneList,
-nodeSize = 20,
+nodeSize = 10,
 annot = annFUN.gene2GO,
 gene2GO = geneID2GO)
 
@@ -169,7 +169,7 @@ resultKS.elim <- runTest(dpGOdata, algorithm = "elim", statistic = "ks")
 
 allRes <- GenTable(dpGOdata, classicFisher = resultFisher,
 classicKS = resultKS, elimKS = resultKS.elim,
- orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 25)
+ orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 10)
 
 printGraph(dpGOdata, resultFisher, firstSigNodes = 5, useInfo = "all", pdfSW = TRUE,fn.prefix="MfvpE_upreg_tGO_BP")
 write.table(allRes,file="upreg_matfem_v_pE_GO_fisher_BP.txt",col.names=TRUE,row.names=FALSE,quote=FALSE)
@@ -177,7 +177,7 @@ write.table(allRes,file="upreg_matfem_v_pE_GO_fisher_BP.txt",col.names=TRUE,row.
 dpGOdata <- new("topGOdata",
 description = "Genes strongly upregulated in asexual females vs sexual (pE) females", ontology = "MF",
 allGenes = geneList,
-nodeSize = 20,
+nodeSize = 10,
 annot = annFUN.gene2GO,
 gene2GO = geneID2GO)
 
@@ -187,7 +187,7 @@ resultKS.elim <- runTest(dpGOdata, algorithm = "elim", statistic = "ks")
 
 allRes <- GenTable(dpGOdata, classicFisher = resultFisher,
 classicKS = resultKS, elimKS = resultKS.elim,
- orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 25)
+ orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 10)
 
 printGraph(dpGOdata, resultFisher, firstSigNodes = 5, useInfo = "all", pdfSW = TRUE,fn.prefix="MfvpE_upreg_tGO_MF")
 write.table(allRes,file="upreg_matfem_v_pE_GO_fisher_MF.txt",col.names=TRUE,row.names=FALSE,quote=FALSE)
