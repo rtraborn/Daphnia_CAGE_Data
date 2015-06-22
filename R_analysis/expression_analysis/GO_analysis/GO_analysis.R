@@ -52,7 +52,7 @@ classicKS = resultKS, elimKS = resultKS.elim,
  orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 10)
 
 printGraph(dpGOdata, resultKS, firstSigNodes = 10, useInfo = "all", pdfSW = TRUE,fn.prefix="MvMF_upreg_tGO_BP")
-write.table(allRes,file="MvMF_upreg_GO_fisher_BP.txt",col.names=TRUE,row.names=FALSE,quote=FALSE,sep="\t")
+write.table(allRes,file="MvMF_upreg_GO_fisher_BP.txt",col.names=TRUE,row.names=FALSE,quote=TRUE,sep="\t")
 
 dpGOdata <- new("topGOdata",
 description = "Genes strongly upregulated in males", ontology = "MF",
@@ -70,7 +70,7 @@ classicKS = resultKS, elimKS = resultKS.elim,
  orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 10)
 
 printGraph(dpGOdata, resultKS, firstSigNodes = 10, useInfo = "all", pdfSW = TRUE,fn.prefix="MvMF_upreg_tGO_MF")
-write.table(allRes,file="MvMF_upreg_GO_fisher_MF.txt",col.names=TRUE,row.names=FALSE,quote=FALSE,sep="\t")
+write.table(allRes,file="MvMF_upreg_GO_fisher_MF.txt",col.names=TRUE,row.names=FALSE,quote=TRUE,sep="\t")
 
 
 ## pE vs Asexual females
@@ -115,7 +115,7 @@ classicKS = resultKS, elimKS = resultKS.elim,
  orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 10)
 
 printGraph(dpGOdata, resultKS, firstSigNodes = 10, useInfo = "all", pdfSW = TRUE,fn.prefix="pEvMF_upreg_tGO_BP")
-write.table(allRes,file="upreg_pE_v_matfem_GO_fisher_BP.txt",col.names=TRUE,row.names=FALSE,quote=FALSE,sep="\t")
+write.table(allRes,file="upreg_pE_v_matfem_GO_fisher_BP.txt",col.names=TRUE,row.names=FALSE,quote=TRUE,sep="\t")
 
 dpGOdata <- new("topGOdata",
 description = "Genes strongly upregulated in pE vs asexual females", ontology = "MF",
@@ -133,7 +133,7 @@ classicKS = resultKS, elimKS = resultKS.elim,
  orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 10)
 
 printGraph(dpGOdata, resultKS, firstSigNodes = 10, useInfo = "all", pdfSW = TRUE,fn.prefix="pEvMF_upreg_tGO_MF")
-write.table(allRes,file="upreg_pE_v_matfem_GO_fisher_MF.txt",col.names=TRUE,row.names=FALSE,quote=FALSE,sep="\t")
+write.table(allRes,file="upreg_pE_v_matfem_GO_fisher_MF.txt",col.names=TRUE,row.names=FALSE,quote=TRUE,sep="\t")
 
 ############ upregulated in asexual vs sexual females
 
@@ -172,7 +172,7 @@ classicKS = resultKS, elimKS = resultKS.elim,
  orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 10)
 
 printGraph(dpGOdata, resultKS, firstSigNodes = 10, useInfo = "all", pdfSW = TRUE,fn.prefix="MfvpE_upreg_tGO_BP")
-write.table(allRes,file="upreg_matfem_v_pE_GO_fisher_BP.txt",col.names=TRUE,row.names=FALSE,quote=FALSE,sep="\t")
+write.table(allRes,file="upreg_matfem_v_pE_GO_fisher_BP.txt",col.names=TRUE,row.names=FALSE,quote=TRUE,sep="\t")
 
 dpGOdata <- new("topGOdata",
 description = "Genes strongly upregulated in asexual females vs sexual (pE) females", ontology = "MF",
@@ -190,4 +190,4 @@ classicKS = resultKS, elimKS = resultKS.elim,
  orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 10)
 
 printGraph(dpGOdata, resultKS, firstSigNodes = 10, useInfo = "all", pdfSW = TRUE,fn.prefix="MfvpE_upreg_tGO_MF")
-write.table(allRes,file="upreg_matfem_v_pE_GO_fisher_MF.txt",col.names=TRUE,row.names=FALSE,quote=FALSE,sep="\t")
+write.table(allRes,file="upreg_matfem_v_pE_GO_fisher_MF.txt",col.names=TRUE,row.names=FALSE,quote=TRUE,sep="\t")

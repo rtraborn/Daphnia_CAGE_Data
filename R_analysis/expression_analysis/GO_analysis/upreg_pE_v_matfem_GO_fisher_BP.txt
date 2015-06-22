@@ -1,11 +1,11 @@
-GO.ID	Term	Annotated	Significant	Expected	Rank in classicFisher	classicFisher	classicKS	elimKS
-GO:0008152	metabolic process	288	3	7.33	38	1.00	5.2e-11	1.5e-28
-GO:0008150	biological_process	396	7	10.07	37	0.99	0.0149	4.6e-24
-GO:0015986	ATP synthesis coupled proton transport	18	0	0.46	39	1.00	1.7e-08	7.3e-14
-GO:0006810	transport	75	0	1.91	40	1.00	0.0001	6.5e-05
-GO:0006139	nucleobase-containing compound metabolic...	37	0	0.94	41	1.00	1.2e-11	0.00019
-GO:0009058	biosynthetic process	51	1	1.3	31	0.75	1.2e-09	0.00022
-GO:0007155	cell adhesion	23	1	0.59	19	0.45	0.0016	0.00082
-GO:0043170	macromolecule metabolic process	104	2	2.65	32	0.78	0.0277	0.00232
-GO:0009168	purine ribonucleoside monophosphate bios...	20	0	0.51	42	1.00	2.1e-09	0.00297
-GO:0006807	nitrogen compound metabolic process	49	0	1.25	43	1.00	6.5e-11	0.00693
+"GO.ID"	"Term"	"Annotated"	"Significant"	"Expected"	"Rank in classicFisher"	"classicFisher"	"classicKS"	"elimKS"
+"GO:0008152"	"metabolic process"	288	3	7.33	38	"1.00"	"5.2e-11"	"1.5e-28"
+"GO:0008150"	"biological_process"	396	7	10.07	37	"0.99"	"0.0149"	"4.6e-24"
+"GO:0015986"	"ATP synthesis coupled proton transport"	18	0	0.46	39	"1.00"	"1.7e-08"	"7.3e-14"
+"GO:0006810"	"transport"	75	0	1.91	40	"1.00"	"0.0001"	"6.5e-05"
+"GO:0006139"	"nucleobase-containing compound metabolic..."	37	0	0.94	41	"1.00"	"1.2e-11"	"0.00019"
+"GO:0009058"	"biosynthetic process"	51	1	1.3	31	"0.75"	"1.2e-09"	"0.00022"
+"GO:0007155"	"cell adhesion"	23	1	0.59	19	"0.45"	"0.0016"	"0.00082"
+"GO:0043170"	"macromolecule metabolic process"	104	2	2.65	32	"0.78"	"0.0277"	"0.00232"
+"GO:0009168"	"purine ribonucleoside monophosphate bios..."	20	0	0.51	42	"1.00"	"2.1e-09"	"0.00297"
+"GO:0006807"	"nitrogen compound metabolic process"	49	0	1.25	43	"1.00"	"6.5e-11"	"0.00693"

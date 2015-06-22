@@ -1,11 +1,11 @@
-GO.ID	Term	Annotated	Significant	Expected	Rank in classicFisher	classicFisher	classicKS	elimKS
-GO:0042302	structural constituent of cuticle	147	0	1.87	32	1.00	< 1e-30	< 1e-30
-GO:0003674	molecular_function	1742	10	22.14	31	1.00	1.1e-05	< 1e-30
-GO:0005319	lipid transporter activity	11	0	0.14	33	1.00	0.002	2.7e-27
-GO:0005525	GTP binding	62	0	0.79	34	1.00	2.1e-17	1.6e-25
-GO:0005524	ATP binding	73	0	0.93	35	1.00	2.8e-18	3.1e-25
-GO:0005509	calcium ion binding	55	0	0.7	36	1.00	3.8e-11	1.3e-17
-GO:0005515	protein binding	109	1	1.39	21	0.76	8.8e-12	1.7e-16
-GO:0003824	catalytic activity	588	5	7.47	25	0.90	3.3e-22	5.6e-15
-GO:0005215	transporter activity	112	0	1.42	37	1.00	2.9e-13	3.3e-13
-GO:0004672	protein kinase activity	82	1	1.04	17	0.66	3.7e-08	3.3e-09
+"GO.ID"	"Term"	"Annotated"	"Significant"	"Expected"	"Rank in classicFisher"	"classicFisher"	"classicKS"	"elimKS"
+"GO:0042302"	"structural constituent of cuticle"	147	0	1.87	32	"1.00"	"< 1e-30"	"< 1e-30"
+"GO:0003674"	"molecular_function"	1742	10	22.14	31	"1.00"	"1.1e-05"	"< 1e-30"
+"GO:0005319"	"lipid transporter activity"	11	0	0.14	33	"1.00"	"0.002"	"2.7e-27"
+"GO:0005525"	"GTP binding"	62	0	0.79	34	"1.00"	"2.1e-17"	"1.6e-25"
+"GO:0005524"	"ATP binding"	73	0	0.93	35	"1.00"	"2.8e-18"	"3.1e-25"
+"GO:0005509"	"calcium ion binding"	55	0	0.7	36	"1.00"	"3.8e-11"	"1.3e-17"
+"GO:0005515"	"protein binding"	109	1	1.39	21	"0.76"	"8.8e-12"	"1.7e-16"
+"GO:0003824"	"catalytic activity"	588	5	7.47	25	"0.90"	"3.3e-22"	"5.6e-15"
+"GO:0005215"	"transporter activity"	112	0	1.42	37	"1.00"	"2.9e-13"	"3.3e-13"
+"GO:0004672"	"protein kinase activity"	82	1	1.04	17	"0.66"	"3.7e-08"	"3.3e-09"
