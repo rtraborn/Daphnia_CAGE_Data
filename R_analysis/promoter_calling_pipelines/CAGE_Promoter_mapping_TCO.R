@@ -7,7 +7,7 @@ require(CAGEr)
 require(BSgenome.Dpulex.JGI.dpulex)
 
 #enter the location of the directory of mapped bam files from CAGE or other 5' end reads. (Note: the directory must ONLY have the bam files of interest in it)
-thisDir <- c("/home/rtraborn/Daphnia/CAGE/demultiplexed_matched/bam_files/TCO_bams/bam_filtered/files")
+thisDir <- c("/home/rtraborn/Daphnia/CAGE/demultiplexed_matched/bam_files/TCO_bams/bam_filtered/files/replicates")
 pathsToInputFiles <- list.files(thisDir, full.names = TRUE)   
 
 #creates the CAGEset S4 object. Enter the genomeName and sampleLabels as appropriate for your analysis
@@ -49,7 +49,7 @@ write.table(consensusCl,file="consensus_clusters_TCO_tpm.txt",row.names=FALSE,co
 quantilePositions(myCAGEset, clusters="consensusClusters", qLow=0.1,qUp=0.9,useMulticore=TRUE,nrCores=6)
 exportToBed(object = myCAGEset, what = "consensusClusters",qLow = 0.1, qUp = 0.9, oneFile = TRUE)
 
-TSR_summary <- summary(consCl)
+TSR_summary <- summary(consensusCl)
 write.table(TSR_summary,file="TSR_interquantile_summary_TCO.txt",sep=" ",col.names=TRUE,row.names=FALSE)
 
 #exports a bed file of the TSRs' interquantile widths
