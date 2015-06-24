@@ -4,8 +4,3 @@
 "GO:0015986"	"ATP synthesis coupled proton transport"	18	0	0.6	46	"1.00"	"1.1e-08"	"3.7e-14"
 "GO:0007155"	"cell adhesion"	23	0	0.77	47	"1.00"	"0.00027"	"2.8e-05"
 "GO:0006810"	"transport"	75	0	2.5	48	"1.00"	"7.3e-05"	"4.8e-05"
-"GO:0009058"	"biosynthetic process"	51	1	1.7	39	"0.84"	"5.4e-10"	"0.00015"
-"GO:0009168"	"purine ribonucleoside monophosphate bios..."	20	0	0.67	49	"1.00"	"1.3e-09"	"0.00297"
-"GO:0006139"	"nucleobase-containing compound metabolic..."	37	1	1.23	30	"0.73"	"6.7e-11"	"0.00310"
-"GO:0006629"	"lipid metabolic process"	14	0	0.47	50	"1.00"	"0.00077"	"0.00626"
-"GO:0006807"	"nitrogen compound metabolic process"	49	1	1.63	38	"0.82"	"2.3e-10"	"0.00693"

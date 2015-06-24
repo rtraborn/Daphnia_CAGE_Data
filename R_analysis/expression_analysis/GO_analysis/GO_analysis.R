@@ -49,9 +49,9 @@ resultKS.elim <- runTest(dpGOdata, algorithm = "elim", statistic = "ks")
 
 allRes <- GenTable(dpGOdata, classicFisher = resultFisher,
 classicKS = resultKS, elimKS = resultKS.elim,
- orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 10)
+ orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 25)
 
-printGraph(dpGOdata, resultKS, firstSigNodes = 10, useInfo = "all", pdfSW = TRUE,fn.prefix="MvMF_upreg_tGO_BP")
+printGraph(dpGOdata, resultKS, firstSigNodes = 5, useInfo = "all", pdfSW = TRUE,fn.prefix="MvMF_upreg_tGO_BP")
 write.table(allRes,file="MvMF_upreg_GO_fisher_BP.txt",col.names=TRUE,row.names=FALSE,quote=TRUE,sep="\t")
 
 dpGOdata <- new("topGOdata",
@@ -67,9 +67,9 @@ resultKS.elim <- runTest(dpGOdata, algorithm = "elim", statistic = "ks")
 
 allRes <- GenTable(dpGOdata, classicFisher = resultFisher,
 classicKS = resultKS, elimKS = resultKS.elim,
- orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 10)
+ orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 25)
 
-printGraph(dpGOdata, resultKS, firstSigNodes = 10, useInfo = "all", pdfSW = TRUE,fn.prefix="MvMF_upreg_tGO_MF")
+printGraph(dpGOdata, resultKS, firstSigNodes = 5, useInfo = "all", pdfSW = TRUE,fn.prefix="MvMF_upreg_tGO_MF")
 write.table(allRes,file="MvMF_upreg_GO_fisher_MF.txt",col.names=TRUE,row.names=FALSE,quote=TRUE,sep="\t")
 
 
@@ -112,9 +112,9 @@ resultKS.elim <- runTest(dpGOdata, algorithm = "elim", statistic = "ks")
 
 allRes <- GenTable(dpGOdata, classicFisher = resultFisher,
 classicKS = resultKS, elimKS = resultKS.elim,
- orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 10)
+ orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 25)
 
-printGraph(dpGOdata, resultKS, firstSigNodes = 10, useInfo = "all", pdfSW = TRUE,fn.prefix="pEvMF_upreg_tGO_BP")
+printGraph(dpGOdata, resultKS, firstSigNodes = 5, useInfo = "all", pdfSW = TRUE,fn.prefix="pEvMF_upreg_tGO_BP")
 write.table(allRes,file="upreg_pE_v_matfem_GO_fisher_BP.txt",col.names=TRUE,row.names=FALSE,quote=TRUE,sep="\t")
 
 dpGOdata <- new("topGOdata",
@@ -130,9 +130,9 @@ resultKS.elim <- runTest(dpGOdata, algorithm = "elim", statistic = "ks")
 
 allRes <- GenTable(dpGOdata, classicFisher = resultFisher,
 classicKS = resultKS, elimKS = resultKS.elim,
- orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 10)
+ orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 25)
 
-printGraph(dpGOdata, resultKS, firstSigNodes = 10, useInfo = "all", pdfSW = TRUE,fn.prefix="pEvMF_upreg_tGO_MF")
+printGraph(dpGOdata, resultKS, firstSigNodes = 5, useInfo = "all", pdfSW = TRUE,fn.prefix="pEvMF_upreg_tGO_MF")
 write.table(allRes,file="upreg_pE_v_matfem_GO_fisher_MF.txt",col.names=TRUE,row.names=FALSE,quote=TRUE,sep="\t")
 
 ############ upregulated in asexual vs sexual females
@@ -169,9 +169,9 @@ resultKS.elim <- runTest(dpGOdata, algorithm = "elim", statistic = "ks")
 
 allRes <- GenTable(dpGOdata, classicFisher = resultFisher,
 classicKS = resultKS, elimKS = resultKS.elim,
- orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 10)
+ orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 5)
 
-printGraph(dpGOdata, resultKS, firstSigNodes = 10, useInfo = "all", pdfSW = TRUE,fn.prefix="MfvpE_upreg_tGO_BP")
+printGraph(dpGOdata, resultKS, firstSigNodes = 5, useInfo = "all", pdfSW = TRUE,fn.prefix="MfvpE_upreg_tGO_BP")
 write.table(allRes,file="upreg_matfem_v_pE_GO_fisher_BP.txt",col.names=TRUE,row.names=FALSE,quote=TRUE,sep="\t")
 
 dpGOdata <- new("topGOdata",
@@ -187,7 +187,7 @@ resultKS.elim <- runTest(dpGOdata, algorithm = "elim", statistic = "ks")
 
 allRes <- GenTable(dpGOdata, classicFisher = resultFisher,
 classicKS = resultKS, elimKS = resultKS.elim,
- orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 10)
+ orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 25)
 
-printGraph(dpGOdata, resultKS, firstSigNodes = 10, useInfo = "all", pdfSW = TRUE,fn.prefix="MfvpE_upreg_tGO_MF")
+printGraph(dpGOdata, resultKS, firstSigNodes = 5, useInfo = "all", pdfSW = TRUE,fn.prefix="MfvpE_upreg_tGO_MF")
 write.table(allRes,file="upreg_matfem_v_pE_GO_fisher_MF.txt",col.names=TRUE,row.names=FALSE,quote=TRUE,sep="\t")
