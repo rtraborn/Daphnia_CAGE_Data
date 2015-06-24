@@ -10,7 +10,7 @@ require(GenomicRanges)
 require(GenomicFeatures)
 
 #importing the Dp CAGEr object
-load("/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/promoter_calling_pipelines/Dp_TCO.RData")
+load("/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/promoter_calling_pipelines/Dp_CAGEset_TCO.RData")
 
 #CAGE data based expression clustering
 getExpressionProfiles(myCAGEset, what = "consensusClusters",
@@ -58,7 +58,7 @@ contrasts.matrix
 group <- c(rep("mat_fem",3),rep("mat_male",2),rep("pE_fem",3))
 
 p_cutoff <- 0.01
-rowsum_threshold <- 20
+rowsum_threshold <- 25
 
 Dp_dge <- DGEList(counts=Dp_edger,group=group)
 head(Dp_dge)
