@@ -13,7 +13,7 @@ Dp_JGI_genes <- c("promoter_ID","chr","start","end","strand","gene","GO_ID","KOG
 ## Males vs Asexual females
 MvMF_de <- read.table(file="/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/expression_analysis/de_tables/TCO_MvMf_de_table_genes.txt",header=TRUE,stringsAsFactors=FALSE)
 
-cutoff <- 0.001
+cutoff <- 0.01
 
 MvMF_de$FDR <- as.numeric(MvMF_de$FDR)
 MvMF_de$logFC <- as.numeric(MvMF_de$FDR)
@@ -39,8 +39,8 @@ str(geneList)
 dpGOdata <- new("topGOdata",
 description = "Genes strongly upregulated in males", ontology = "BP",
 allGenes = geneList,
-nodeSize = 10,
 annot = annFUN.gene2GO,
+nodeSize = 3,
 gene2GO = geneID2GO)
 
 resultFisher <- runTest(dpGOdata, algorithm = "classic", statistic = "fisher")
@@ -49,7 +49,7 @@ resultKS.elim <- runTest(dpGOdata, algorithm = "elim", statistic = "ks")
 
 allRes <- GenTable(dpGOdata, classicFisher = resultFisher,
 classicKS = resultKS, elimKS = resultKS.elim,
- orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 25)
+ orderBy = "classicFisher", ranksOf = "classicFisher", topNodes = 25)
 
 printGraph(dpGOdata, resultKS, firstSigNodes = 5, useInfo = "all", pdfSW = TRUE,fn.prefix="MvMF_upreg_tGO_BP")
 write.table(allRes,file="MvMF_upreg_GO_fisher_BP.txt",col.names=TRUE,row.names=FALSE,quote=TRUE,sep="\t")
@@ -57,7 +57,7 @@ write.table(allRes,file="MvMF_upreg_GO_fisher_BP.txt",col.names=TRUE,row.names=F
 dpGOdata <- new("topGOdata",
 description = "Genes strongly upregulated in males", ontology = "MF",
 allGenes = geneList,
-nodeSize = 10,
+nodeSize=3,
 annot = annFUN.gene2GO,
 gene2GO = geneID2GO)
 
@@ -67,16 +67,19 @@ resultKS.elim <- runTest(dpGOdata, algorithm = "elim", statistic = "ks")
 
 allRes <- GenTable(dpGOdata, classicFisher = resultFisher,
 classicKS = resultKS, elimKS = resultKS.elim,
- orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 25)
+ orderBy = "classicFisher", ranksOf = "classicFisher", topNodes = 25)
+
+test.stat <- new("classicCount", testStatistic = GOFisherTest, name = "Fisher test")
+resultFisher <- getSigGroups(dpGOdata, test.stat)
+resultFisher
 
 printGraph(dpGOdata, resultKS, firstSigNodes = 5, useInfo = "all", pdfSW = TRUE,fn.prefix="MvMF_upreg_tGO_MF")
 write.table(allRes,file="MvMF_upreg_GO_fisher_MF.txt",col.names=TRUE,row.names=FALSE,quote=TRUE,sep="\t")
 
-
 ## pE vs Asexual females
 pEvMF_de <- read.table(file="/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/expression_analysis/de_tables/TCO_pEvM_de_table_genes.txt",header=TRUE,stringsAsFactors=FALSE)
 
-cutoff <- 0.001
+cutoff <- 0.01
 
 pEvMF_de$FDR <- as.numeric(pEvMF_de$FDR)
 pEvMF_de$logFC <- as.numeric(pEvMF_de$FDR)
@@ -102,8 +105,8 @@ str(geneList)
 dpGOdata <- new("topGOdata",
 description = "Genes strongly upregulated in pE vs asexual females", ontology = "BP",
 allGenes = geneList,
-nodeSize = 10,
 annot = annFUN.gene2GO,
+nodeSize = 3,
 gene2GO = geneID2GO)
 
 resultFisher <- runTest(dpGOdata, algorithm = "classic", statistic = "fisher")
@@ -112,7 +115,7 @@ resultKS.elim <- runTest(dpGOdata, algorithm = "elim", statistic = "ks")
 
 allRes <- GenTable(dpGOdata, classicFisher = resultFisher,
 classicKS = resultKS, elimKS = resultKS.elim,
- orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 25)
+ orderBy = "classicFisher", ranksOf = "classicFisher", topNodes = 25)
 
 printGraph(dpGOdata, resultKS, firstSigNodes = 5, useInfo = "all", pdfSW = TRUE,fn.prefix="pEvMF_upreg_tGO_BP")
 write.table(allRes,file="upreg_pE_v_matfem_GO_fisher_BP.txt",col.names=TRUE,row.names=FALSE,quote=TRUE,sep="\t")
@@ -120,7 +123,7 @@ write.table(allRes,file="upreg_pE_v_matfem_GO_fisher_BP.txt",col.names=TRUE,row.
 dpGOdata <- new("topGOdata",
 description = "Genes strongly upregulated in pE vs asexual females", ontology = "MF",
 allGenes = geneList,
-nodeSize = 10,
+nodeSize = 3,
 annot = annFUN.gene2GO,
 gene2GO = geneID2GO)
 
@@ -130,7 +133,7 @@ resultKS.elim <- runTest(dpGOdata, algorithm = "elim", statistic = "ks")
 
 allRes <- GenTable(dpGOdata, classicFisher = resultFisher,
 classicKS = resultKS, elimKS = resultKS.elim,
- orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 25)
+ orderBy = "classicFisher", ranksOf = "classicFisher", topNodes = 25)
 
 printGraph(dpGOdata, resultKS, firstSigNodes = 5, useInfo = "all", pdfSW = TRUE,fn.prefix="pEvMF_upreg_tGO_MF")
 write.table(allRes,file="upreg_pE_v_matfem_GO_fisher_MF.txt",col.names=TRUE,row.names=FALSE,quote=TRUE,sep="\t")
@@ -159,8 +162,8 @@ str(geneList)
 dpGOdata <- new("topGOdata",
 description = "Genes strongly upregulated in asexual females vs sexual (pE) females", ontology = "BP",
 allGenes = geneList,
-nodeSize = 10,
 annot = annFUN.gene2GO,
+nodeSize=3,
 gene2GO = geneID2GO)
 
 resultFisher <- runTest(dpGOdata, algorithm = "classic", statistic = "fisher")
@@ -169,7 +172,7 @@ resultKS.elim <- runTest(dpGOdata, algorithm = "elim", statistic = "ks")
 
 allRes <- GenTable(dpGOdata, classicFisher = resultFisher,
 classicKS = resultKS, elimKS = resultKS.elim,
- orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 25)
+ orderBy = "classicFisher", ranksOf = "classicFisher", topNodes = 25)
 
 printGraph(dpGOdata, resultKS, firstSigNodes = 5, useInfo = "all", pdfSW = TRUE,fn.prefix="MfvpE_upreg_tGO_BP")
 write.table(allRes,file="upreg_matfem_v_pE_GO_fisher_BP.txt",col.names=TRUE,row.names=FALSE,quote=TRUE,sep="\t")
@@ -177,8 +180,8 @@ write.table(allRes,file="upreg_matfem_v_pE_GO_fisher_BP.txt",col.names=TRUE,row.
 dpGOdata <- new("topGOdata",
 description = "Genes strongly upregulated in asexual females vs sexual (pE) females", ontology = "MF",
 allGenes = geneList,
-nodeSize = 10,
 annot = annFUN.gene2GO,
+nodeSize=3,
 gene2GO = geneID2GO)
 
 resultFisher <- runTest(dpGOdata, algorithm = "classic", statistic = "fisher")
@@ -187,7 +190,7 @@ resultKS.elim <- runTest(dpGOdata, algorithm = "elim", statistic = "ks")
 
 allRes <- GenTable(dpGOdata, classicFisher = resultFisher,
 classicKS = resultKS, elimKS = resultKS.elim,
- orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 25)
+ orderBy = "classicFisher", ranksOf = "classicFisher", topNodes = 25)
 
 printGraph(dpGOdata, resultKS, firstSigNodes = 5, useInfo = "all", pdfSW = TRUE,fn.prefix="MfvpE_upreg_tGO_MF")
 write.table(allRes,file="upreg_matfem_v_pE_GO_fisher_MF.txt",col.names=TRUE,row.names=FALSE,quote=TRUE,sep="\t")
