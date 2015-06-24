@@ -172,7 +172,11 @@ resultKS.elim <- runTest(dpGOdata, algorithm = "elim", statistic = "ks")
 
 allRes <- GenTable(dpGOdata, classicFisher = resultFisher,
 classicKS = resultKS, elimKS = resultKS.elim,
+<<<<<<< HEAD
  orderBy = "classicFisher", ranksOf = "classicFisher", topNodes = 25)
+=======
+ orderBy = "elimKS", ranksOf = "classicFisher", topNodes = 25)
+>>>>>>> 031b9b97c49720d41e021780c56bdcad6145874e
 
 printGraph(dpGOdata, resultKS, firstSigNodes = 5, useInfo = "all", pdfSW = TRUE,fn.prefix="MfvpE_upreg_tGO_BP")
 write.table(allRes,file="upreg_matfem_v_pE_GO_fisher_BP.txt",col.names=TRUE,row.names=FALSE,quote=TRUE,sep="\t")
