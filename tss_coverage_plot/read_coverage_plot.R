@@ -7,6 +7,6 @@ library("reshape2")
 total_cov <- read.table(file="total_read_coverage.txt",header=TRUE)
 
 #plotting the figure
-png("TSS_coverage_plot.png",width=960,height=960)
-ggplot(total_cov, aes(x = stage, y = fraction_of_reads,fill=region))+geom_bar(width=0.75,stat='identity')+coord_flip()
+png("TSS_coverage_plot.png",width=960,height=600)
+ggplot(total_cov, aes(x = stage, y = fraction_of_reads,fill=region))+geom_bar(width=0.60,stat='identity')+coord_flip()
 dev.off()
