@@ -13,6 +13,7 @@ mycols <- c('#FFFD00', '#97CB00', '#3168FF', '#FF0200')
 
 #plotting the figure
 png("TSS_coverage_plot.png",width=600,height=100)
-ggplot(total_cov, aes(y=coverage_fraction,x=sample,fill=region))+geom_bar(width=0.40,stat='identity')+coord_flip()
+ggplot(total_cov, aes(y=coverage_fraction,x=sample,fill=region))+geom_bar(width=0.40,stat='identity')+coord_flip() +
+    theme(axis.title.x =NULL)
 dev.off()
 
