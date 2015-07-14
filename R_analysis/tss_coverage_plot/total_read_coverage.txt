@@ -1,5 +1,0 @@
-"fraction_vector" "fraction_name"
-"0.389432550959997" "exon"
-"0.28029187761903" "500bp_up"
-"0.267006452249322" "intergenic"
-"0.0632691191716508" "intron"
