@@ -1,1 +1,0 @@
-cmd = Dp_homer_tag_directory/tss.txt /DATA/GROUP/rtraborn/Daphnia_Project/Dp_data/annotation_files/Daphnia_pulex.fasta Dp_TSS_Motif_output_2/ -S 100 -size -50,20 -len 6,8,10,12 -mis 1 -p 6
