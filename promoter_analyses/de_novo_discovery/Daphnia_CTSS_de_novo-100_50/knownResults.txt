@@ -1,0 +1,12 @@
+Motif Name	Consensus	P-value	Log P-value	q-value (Benjamini)	# of Target Sequences with Motif(of 2335780)	% of Target Sequences with Motif	# of Background Sequences with Motif(of 685667)	% of Background Sequences with Motif
+Unknown3/Drosophila-Promoters/Homer	ACVAKCTGGCAGCGC	1e-2547	-5.867e+03	0.0000	25460.0	1.09%	3496.9	0.51%
+E-box/Drosophila-Promoters/Homer	AACAGCTGTTHN	1e-1677	-3.863e+03	0.0000	51591.0	2.21%	10077.0	1.47%
+Initiator/Drosophila-Promoters/Homer	NTCAGTYG	1e-1340	-3.087e+03	0.0000	466106.0	19.98%	123374.5	17.98%
+Unknown5/Drosophila-Promoters/Homer	GCTGATAASV	1e-815	-1.877e+03	0.0000	133713.0	5.73%	33265.6	4.85%
+DREF/Drosophila-Promoters/Homer	AVYTATCGATAD	1e-689	-1.587e+03	0.0000	21061.0	0.90%	4100.8	0.60%
+TATA-box/Drosophila-Promoters/Homer	CTATAAAAGCSV	1e-437	-1.008e+03	0.0000	22591.0	0.97%	4863.9	0.71%
+Unknown6/Drosophila-Promoters/Homer	AATTTTAAAA	1e-378	-8.713e+02	0.0000	313089.0	13.42%	85846.4	12.51%
+Unknown2/Drosophila-Promoters/Homer	CATCMCTA	1e-61	-1.410e+02	0.0000	114849.0	4.92%	32197.1	4.69%
+Unknown1(NR/Ini-like)/Drosophila-Promoters/Homer	MYGGTCACACTG	1e-53	-1.227e+02	0.0000	21659.0	0.93%	5729.8	0.84%
+Unknown4/Drosophila-Promoters/Homer	AAAAATACCRMA	1e-11	-2.633e+01	0.0000	24811.0	1.06%	6987.8	1.02%
+caudal(Homeobox)/Drosophila-Embryos-ChIP-Chip(modEncode)/Homer	GGYCATAAAW	1e0	0.000e+00	1.0000	185983.0	7.97%	57905.7	8.44%

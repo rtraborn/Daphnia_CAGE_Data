@@ -1,0 +1,1 @@
+cmd = research/Daphnia/tss.txt /DATA/GROUP/rtraborn/Daphnia_Project/Dp_data/annotation_files/Daphnia_pulex.fasta Dp_motif_de_novo -size -100,50 -len 6,8,10,12 -bits -mset insects

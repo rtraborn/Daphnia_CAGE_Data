@@ -1,0 +1,1 @@
+cmd = CTSS.pooled.samples.bed /DATA/GROUP/rtraborn/Daphnia_Project/Dp_data/annotation_files/Daphnia_pulex.fasta Daphnia_CTSS_de_novo -size -100,50 -len 6,8,10,12 -mset insects
