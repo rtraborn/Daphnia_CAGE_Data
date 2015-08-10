@@ -1,7 +1,4 @@
-------------------------
-GAGTATCTCC	Motif7 position-specific probability matrix
-------------------------
-letter-probability matrix:
+>GAGTATCTCC	   Motif7	11.520558	-240.011159	0	T:105.0(0.62%),B:8.6(0.03%),P:1e-104	Tpos:62.4,Tstd:8.0,Bpos:45.6,Bstd:20.6,StrandBias:6.7,Multiplicity:1.00
 0.001	0.001	0.912	0.086
 0.997	0.001	0.001	0.001
 0.001	0.001	0.997	0.001

@@ -1,7 +1,4 @@
-------------------------
-GTATAAAARG	Motif2 position-specific probability matrix
-------------------------
-letter-probability matrix:
+>GTATAAAARG	   Motif2	8.140117	-1157.272519	0	T:1105.0(6.52%),B:324.8(1.01%),P:1e-502	Tpos:23.7,Tstd:6.8,Bpos:35.0,Bstd:20.6,StrandBias:3.6,Multiplicity:1.00
 0.168	0.098	0.670	0.064
 0.026	0.006	0.018	0.950
 0.975	0.008	0.007	0.010

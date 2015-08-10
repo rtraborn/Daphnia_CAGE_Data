@@ -1,7 +1,4 @@
-------------------------
-TATAAAAACC	Motif8 position-specific probability matrix
-------------------------
-letter-probability matrix:
+>TATAAAAACC	   Motif8	10.489144	-231.747605	0	T:167.0(0.99%),B:34.0(0.11%),P:1e-100	Tpos:24.3,Tstd:9.2,Bpos:36.9,Bstd:18.0,StrandBias:2.9,Multiplicity:1.00
 0.001	0.001	0.001	0.997
 0.997	0.001	0.001	0.001
 0.001	0.001	0.001	0.997

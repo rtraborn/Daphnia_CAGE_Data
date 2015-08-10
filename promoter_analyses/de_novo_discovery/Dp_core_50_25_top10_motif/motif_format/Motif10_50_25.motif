@@ -1,7 +1,4 @@
-------------------------
-TRGYAAYGYC	Motif10 position-specific probability matrix
-------------------------
-letter-probability matrix:
+>TRGYAAYGYC	   Motif10	6.840686	-173.062561	0	T:168.0(0.99%),B:50.8(0.16%),P:1e-75	Tpos:28.6,Tstd:15.2,Bpos:33.7,Bstd:15.9,StrandBias:1.2,Multiplicity:1.00
 0.179	0.108	0.005	0.708
 0.373	0.139	0.444	0.045
 0.285	0.088	0.517	0.110

@@ -1,7 +1,4 @@
-------------------------
-ATCTGGCAAC	Motif9 position-specific probability matrix
-------------------------
-letter-probability matrix:
+>ATCTGGCAAC	   Motif9	9.381277	-219.333859	0	T:180.0(1.06%),B:44.0(0.14%),P:1e-95	Tpos:25.1,Tstd:13.8,Bpos:39.3,Bstd:22.7,StrandBias:2.5,Multiplicity:1.00
 0.997	0.001	0.001	0.001
 0.001	0.001	0.001	0.997
 0.130	0.769	0.001	0.100

@@ -1,7 +1,4 @@
-------------------------
-GCAGACGACA	Motif3 position-specific probability matrix
-------------------------
-letter-probability matrix:
+>GCAGACGACA	   Motif3	7.242235	-1131.239682	0	T:1750.0(10.33%),B:853.8(2.66%),P:1e-491	Tpos:39.7,Tstd:17.3,Bpos:36.6,Bstd:22.7,StrandBias:0.5,Multiplicity:1.04
 0.326	0.020	0.653	0.001
 0.001	0.997	0.001	0.001
 0.997	0.001	0.001	0.001

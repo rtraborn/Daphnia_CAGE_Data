@@ -1,7 +1,4 @@
-------------------------
-CTAGATGGCG	Motif6 position-specific probability matrix
-------------------------
-letter-probability matrix:
+>CTAGATGGCG	   Motif6	7.822155	-278.280472	0	T:484.0(2.86%),B:254.1(0.79%),P:1e-120	Tpos:27.4,Tstd:14.7,Bpos:34.9,Bstd:19.1,StrandBias:1.7,Multiplicity:1.00
 0.132	0.774	0.057	0.037
 0.139	0.233	0.052	0.576
 0.904	0.017	0.032	0.047
