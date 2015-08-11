@@ -1,0 +1,6 @@
+bedtools coverage -s -counts -abam /home/rtraborn/Daphnia/CAGE/Dp_CAGE_all_sorted.bam -b TCO_CDSs_sorted.bed > TCO_CDSs.coverage
+bedtools coverage -s -counts -abam /home/rtraborn/Daphnia/CAGE/Dp_CAGE_all_sorted.bam -b TCO_CDS_intron_sorted.bed > TCO_CDS_intron.coverage
+bedtools coverage -counts -abam /home/rtraborn/Daphnia/CAGE/Dp_CAGE_all_sorted.bam -b TCO_intergenic_new_sorted.bed > TCO_intergenic.coverage
+bedtools coverage -s -counts -abam /home/rtraborn/Daphnia/CAGE/Dp_CAGE_all_sorted.bam -b TCO_CDSs_1kb_flank_sort.bed > TCO_CDSs_1kb_flank.coverage
+bedtools coverage -s -counts -abam /home/rtraborn/Daphnia/CAGE/Dp_CAGE_all_sorted.bam -b TCO_CDSs_1kb_downstream_flank_sort.bed > TCO_CDSs_1kb_downstream_flank.coverage
+	  
