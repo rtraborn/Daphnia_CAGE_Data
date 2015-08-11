@@ -4,13 +4,13 @@
 
 require(CAGEr)
 #load the genome as appropriate
-require(BSgenome.Dpulex.PA42)
+require(BSgenome.Dpulex.IU.dappa2)
 #enter the location of the directory of mapped bam files from CAGE or other 5' end reads. (Note: the directory must ONLY have the bam files of interest in it)
 thisDir <- c("/home/rtraborn/Daphnia/CAGE/demultiplexed_matched/bam_files/PA42_bams/filtered/replicate_bams")
 pathsToInputFiles <- list.files(thisDir, full.names = TRUE)   
 
 #creates the CAGEset S4 object. Enter the genomeName and sampleLabels as appropriate for your analysis
-myCAGEset <- new("CAGEset",genomeName="BSgenome.Dpulex.PA42",inputFiles=pathsToInputFiles,inputFilesType="bam",sampleLabels=c("mat_females_1","mat_females_2","mat_females_3","mat_males_1","mat_males_2","pE_females_1","pE_females_2","pE_females_3"))
+myCAGEset <- new("CAGEset",genomeName="BSgenome.Dpulex.IU.dappa2",inputFiles=pathsToInputFiles,inputFilesType="bam",sampleLabels=c("mat_females_1","mat_females_2","mat_females_3","mat_males_1","mat_males_2","pE_females_1","pE_females_2","pE_females_3"))
 
 #calculates and plots the pearson correlation between all samples
 #corr.m <- plotCorrelation(myCAGEset, samples = "all", method = "pearson")
