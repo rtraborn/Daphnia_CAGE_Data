@@ -1,7 +1,7 @@
 #!/bin/bash
 
-WD1=/home/rtraborn/Daphnia/genome_sequence/
-GENOME=/home/rtraborn/Daphnia/genome_sequence/Daphnia_pulex.fasta
+WD1=/home/rtraborn/Daphnia/genome_sequence/PA42_v2_assembly/
+GENOME=PA42_scaffold2.0.fasta 
 WD2=/home/rtraborn/Daphnia/CAGE/demultiplexed_matched/fastq_files
 
 cd $WD1
