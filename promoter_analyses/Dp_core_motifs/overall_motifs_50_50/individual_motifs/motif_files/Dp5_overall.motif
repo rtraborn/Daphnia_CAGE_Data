@@ -1,7 +1,4 @@
-------------------------
-1-WAGCAGACGA position-specific probability matrix
-------------------------
-letter-probability matrix:
+>WAGCAGACGA	   1-WAGCAGACGA	7.997175	-1759.675841	0	T:1523.0(8.99%),B:398.3(1.24%),P:1e-764	Tpos:36.5,Tstd:15.1,Bpos:34.2,Bstd:23.1,StrandBias:-0.3,Multiplicity:1.04
 0.404	0.094	0.168	0.335
 0.658	0.013	0.041	0.288
 0.055	0.016	0.915	0.014
