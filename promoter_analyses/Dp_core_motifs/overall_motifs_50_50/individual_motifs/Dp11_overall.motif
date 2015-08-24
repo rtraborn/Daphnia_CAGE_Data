@@ -1,7 +1,4 @@
-------------------------
-11-CTGTCAGW position-specific probability matrix
-------------------------
-letter-probability matrix:
+>CTGTCAGW	11-CTGTCAGW	6.788039	-175.822517	0	T:906.0(5.35%),B:852.1(2.73%),P:1e-76	Tpos:54.9,Tstd:24.7,Bpos:50.9,Bstd:35.9,StrandBias:10.0,Multiplicity:1.04
 0.001	0.612	0.331	0.056
 0.078	0.138	0.129	0.655
 0.001	0.001	0.997	0.001

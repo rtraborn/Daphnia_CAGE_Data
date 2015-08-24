@@ -1,7 +1,4 @@
-------------------------
-5-CARCGTTGCC position-specific probability matrix
-------------------------
-letter-probability matrix:
+>CARCGTTGCC	5-CARCGTTGCC	7.725740	-429.092931	0	T:580.0(3.42%),B:245.5(0.77%),P:1e-186	Tpos:24.6,Tstd:13.4,Bpos:33.6,Bstd:21.6,StrandBias:-2.0,Multiplicity:1.01
 0.118	0.751	0.108	0.023
 0.599	0.078	0.151	0.172
 0.388	0.078	0.497	0.037

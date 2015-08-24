@@ -1,7 +1,4 @@
-------------------------
-12-YTGTTTAS position-specific probability matrix
-------------------------
-letter-probability matrix:
+>YTGTTTAS	12-YTGTTTAS	9.498295	-170.069389	0	T:321.0(1.89%),B:175.8(0.56%),P:1e-73	Tpos:44.5,Tstd:24.2,Bpos:50.5,Bstd:32.3,StrandBias:10.0,Multiplicity:1.02
 0.001	0.526	0.001	0.472
 0.001	0.001	0.001	0.997
 0.001	0.001	0.997	0.001

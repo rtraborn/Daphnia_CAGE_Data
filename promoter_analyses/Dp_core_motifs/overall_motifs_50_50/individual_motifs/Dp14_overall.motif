@@ -1,7 +1,4 @@
-------------------------
-22-ACMACAAC position-specific probability matrix
-------------------------
-letter-probability matrix:
+>ACMACAAC	22-ACMACAAC	6.302766	-47.318402	0	T:804.0(4.75%),B:1051.1(3.36%),P:1e-20	Tpos:58.2,Tstd:28.0,Bpos:51.7,Bstd:34.4,StrandBias:10.0,Multiplicity:1.15
 0.626	0.161	0.085	0.128
 0.071	0.556	0.105	0.268
 0.483	0.408	0.053	0.056

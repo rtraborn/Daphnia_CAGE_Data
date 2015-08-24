@@ -1,7 +1,4 @@
-------------------------
-4-TCGTCTGC position-specific probability matrix
-------------------------
-letter-probability matrix:
+>TCGTCTGC	4-TCGTCTGC	9.044369	-674.921621	0	T:667.0(3.94%),B:197.7(0.63%),P:1e-293	Tpos:42.2,Tstd:18.5,Bpos:48.9,Bstd:33.9,StrandBias:10.0,Multiplicity:1.01
 0.001	0.001	0.001	0.997
 0.132	0.866	0.001	0.001
 0.001	0.001	0.997	0.001

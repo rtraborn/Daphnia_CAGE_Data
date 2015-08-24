@@ -1,7 +1,4 @@
-------------------------
-8-AGATGGCG position-specific probability matrix
-------------------------
-letter-probability matrix:
+>AGATGGCG	8-AGATGGCG	7.268134	-343.367235	0	T:685.0(4.04%),B:389.2(1.25%),P:1e-149	Tpos:42.0,Tstd:24.4,Bpos:51.2,Bstd:29.3,StrandBias:10.0,Multiplicity:1.01
 0.997	0.001	0.001	0.001
 0.154	0.039	0.793	0.014
 0.946	0.001	0.052	0.001

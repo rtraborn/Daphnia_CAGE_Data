@@ -1,7 +1,4 @@
-------------------------
-10-TCTCCGAC position-specific probability matrix
-------------------------
-letter-probability matrix:
+>TCTCCGAC	10-TCTCCGAC	8.236954	-202.542841	0	T:172.0(1.02%),B:42.0(0.13%),P:1e-87	Tpos:65.9,Tstd:12.5,Bpos:47.1,Bstd:33.3,StrandBias:10.0,Multiplicity:1.00
 0.100	0.100	0.100	0.700
 0.100	0.700	0.100	0.100
 0.100	0.100	0.100	0.700
