@@ -249,6 +249,6 @@ head(my_matrix)
 
 png(file="motif_cooc_heatmap_all.png")
 
-heatmap.2(Dpm_presence_array_i,scale="none")
+heatmap.2(Dpm_presence_array_i,scale="none",Rowv=NA)
 
 dev.off()
