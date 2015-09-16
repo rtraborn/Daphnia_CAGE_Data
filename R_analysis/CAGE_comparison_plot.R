@@ -57,21 +57,21 @@ gr_gene
 
 gr_gene2 <- gr_gene[gr_gene$name %in% "CDS"]
 
-gr_gene3 <- gr_gene[gr_gene$name %in% "five_prime_utr"]
+#gr_gene3 <- gr_gene[gr_gene$name %in% "five_prime_utr"]
 
-gr_gene4 <- append(gr_gene2, gr_gene3)
+#gr_gene4 <- append(gr_gene2, gr_gene3)
 
 #bam <- scanBam(Dp.bam,index=Dp.bai)
 
 gr_gene2
 
-plot <- autoplot(Dp_align, which = gr_gene4,method="raw",geom="line", color="#510099",stat="coverage")
+plot <- autoplot(Dp_align, which = gr_gene2,method="raw",geom="line", color="#CC79A7",stat="coverage")
 
 is(plot)
 
-p1 <- plot + coord_cartesian(xlim = c(2092131,2095168)) + theme_bw()
+p1 <- plot + coord_cartesian(xlim = c(1142640,1144629)) + theme_bw()
 
-p2 <- ggplot() + geom_alignment(gr_gene2,type="exon") + coord_cartesian(xlim = c(2092131,2095168),ylim=c(0,1000)) + scale_x_continuous() + theme_bw()
+p2 <- ggplot() + geom_alignment(gr_gene2,type="exon") + coord_cartesian(xlim = c(1142640,1144629),ylim=c(0,1000)) + scale_x_continuous() + theme_bw()
 
 labeled(p1) <- FALSE
 
@@ -81,6 +81,9 @@ tracks(p1,p2,heights=c(8,1)) + theme(panel.grid.major = element_blank(), panel.g
     panel.background = element_blank(), axis.line = element_line(colour = "black"))
 
 ggsave(file="pE_region.png", width=6, height=2,dpi=300,scale=1.5)
+
+
+######## mature females plot ###############
 
 coord_region <- GRanges("scaffold_6", IRanges(1142640,1144629),strand="+")
 
@@ -118,7 +121,7 @@ Dp_align_p <- as(myStrand, "GAlignments")
 
 is(Dp_align_p)
 
-plot_peaked <- autoplot(Dp_align_p,which=peaked_gr,method="raw",geom="line",color="#E5A118",stat="coverage")
+plot_peaked <- autoplot(Dp_align_p,which=peaked_gr,method="raw",geom="line",color="darkgreen",stat="coverage")
 
 p1_p <- plot_peaked + coord_cartesian(xlim = c(1142640,1144629), ylim=c(0,1000)) + theme_bw()
 
@@ -169,7 +172,7 @@ Dp_align_p <- as(myStrand, "GAlignments")
 
 is(Dp_align_p)
 
-plot_peaked <- autoplot(Dp_align_p,which=peaked_gr,method="raw",geom="line",color="#E5A118",stat="coverage")
+plot_peaked <- autoplot(Dp_align_p,which=peaked_gr,method="raw",geom="line",color="purple",stat="coverage")
 
 p1_p <- plot_peaked + coord_cartesian(xlim = c(1142640,1144629), ylim=c(0,1000)) + theme_bw()
 
