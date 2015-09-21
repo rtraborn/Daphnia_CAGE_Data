@@ -65,7 +65,7 @@ gr_gene2 <- gr_gene[gr_gene$name %in% "CDS"]
 
 gr_gene2
 
-plot <- autoplot(Dp_align, which = gr_gene2,method="raw",geom="line", color="#CC79A7",stat="coverage")
+plot <- autoplot(Dp_align, which = coord_region, method="raw",geom="line", color="#CC79A7",stat="coverage")
 
 is(plot)
 
@@ -121,7 +121,7 @@ Dp_align_p <- as(myStrand, "GAlignments")
 
 is(Dp_align_p)
 
-plot_peaked <- autoplot(Dp_align_p,which=peaked_gr,method="raw",geom="line",color="darkgreen",stat="coverage")
+plot_peaked <- autoplot(Dp_align_p,which=coord_region,method="raw",geom="line",color="darkgreen",stat="coverage")
 
 p1_p <- plot_peaked + coord_cartesian(xlim = c(1142640,1144629), ylim=c(0,1000)) + theme_bw()
 
@@ -172,7 +172,7 @@ Dp_align_p <- as(myStrand, "GAlignments")
 
 is(Dp_align_p)
 
-plot_peaked <- autoplot(Dp_align_p,which=peaked_gr,method="raw",geom="line",color="purple",stat="coverage")
+plot_peaked <- autoplot(Dp_align_p,which=coord_region,method="raw",geom="line",color="purple",stat="coverage")
 
 p1_p <- plot_peaked + coord_cartesian(xlim = c(1142640,1144629), ylim=c(0,1000)) + theme_bw()
 
