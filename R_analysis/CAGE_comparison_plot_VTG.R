@@ -123,9 +123,9 @@ is(Dp_align_p)
 
 plot_peaked <- autoplot(Dp_align_p,which=coord_region,method="raw",geom="line",color="darkgreen",stat="coverage")
 
-p1_p <- plot_peaked + coord_cartesian(xlim = c(1142640,1144629)) + theme_bw()
+p1_p <- plot_peaked + coord_cartesian(xlim = c(151539,157785)) + theme_bw()
 
-p2_p <- ggplot() + geom_alignment(gr_gene4) + coord_cartesian(xlim=c(1142640,1144629)) + scale_x_continuous() + 
+p2_p <- ggplot() + geom_alignment(gr_gene4) + coord_cartesian(xlim=c(151539,157785)) + scale_x_continuous() + 
                              theme_bw()
 
 tracks(p1_p,p2_p,heights=c(8,1)) + theme(panel.grid.major = element_blank(),
