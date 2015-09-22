@@ -121,7 +121,7 @@ Dp_align_p <- as(myStrand, "GAlignments")
 
 is(Dp_align_p)
 
-plot_peaked <- autoplot(Dp_align_p,which=coord_region,method="raw",geom="area",color="darkgreen",coverage.fill="darkgreen",stat="coverage")
+plot_peaked <- autoplot(Dp_align_p,which=coord_region,method="raw",geom="area",color="darkgreen",fill="darkgreen",stat="coverage")
 
 p1_p <- plot_peaked + coord_cartesian(xlim = c(151539,157785)) + theme_bw()
 
@@ -172,7 +172,7 @@ Dp_align_p <- as(myStrand, "GAlignments")
 
 is(Dp_align_p)
 
-plot_peaked <- autoplot(Dp_align_p,which=coord_region,method="raw",geom="area",color="purple",coverage.fill="purple",stat="coverage")
+plot_peaked <- autoplot(Dp_align_p,which=coord_region,method="raw",geom="area",color="purple",fill="purple",stat="coverage")
 
 p1_p <- plot_peaked + coord_cartesian(xlim = c(151539,157785)) + theme_bw()
 
