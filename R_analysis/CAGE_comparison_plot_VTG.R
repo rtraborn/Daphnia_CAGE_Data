@@ -29,21 +29,22 @@ Dp.bam <- c("/home/rtraborn/Daphnia/CAGE/TCO/pE_fem_filtered_merged.bam")
 
 Dp.bai <- c("/home/rtraborn/Daphnia/CAGE/TCO/pE_fem_filtered_merged.bam.bai")
 
-coord_region <- GRanges("scaffold_6", IRanges(1142640,1144629),strand="+")
+coord_region <- GRanges("scaffold_47", IRanges(151539,157785),strand="-")
 
 myFlag <- scanBamFlag()
 
-my_param <- ScanBamParam(flag=myFlag,what=c("flag", "mrnm", "mpos"), which=GRanges("scaffold_6", IRanges(1142640,1144629),strand="+"))
+#scaffold_47:151,539-157,785
+my_param <- ScanBamParam(flag=myFlag,what=c("flag", "mrnm", "mpos"), which=GRanges("scaffold_47", IRanges(151539,157785),strand="-"))
 
 aln <- readGAlignments(Dp.bam, index=Dp.bai,param=my_param,use.names=TRUE)
 
-endDp <- start(aln)
+endDp <- end(aln)
 
 strandDp <- strand(aln)
 
-for (i in 1:length(endDp)) { endDp[i] + 1 -> endDp[i] }
+for (i in 1:length(endDp)) { endDp[i] - 1 -> endDp[i] }
 
-myStrand <- GRanges("scaffold_6",IRanges(start(aln),endDp),strand=strandDp,names=names(aln))
+myStrand <- GRanges("scaffold_47",IRanges(endDp,end(aln)),strand=strandDp,names=names(aln))
 
 Dp_align <- as(myStrand, "GAlignments")
 
@@ -69,9 +70,9 @@ plot <- autoplot(Dp_align, which = coord_region, method="raw",geom="line", color
 
 is(plot)
 
-p1 <- plot + coord_cartesian(xlim = c(1142640,1144629) + theme_bw()
+p1 <- plot + coord_cartesian(xlim = c(151539,157785)) + theme_bw()
 
-p2 <- ggplot() + geom_alignment(gr_gene2,type="exon") + coord_cartesian(xlim = c(1142640,1144629)) + scale_x_continuous() + theme_bw()
+p2 <- ggplot() + geom_alignment(gr_gene2,type="exon") + coord_cartesian(xlim = c(151539,157785)) + scale_x_continuous() + theme_bw()
 
 labeled(p1) <- FALSE
 
@@ -80,12 +81,11 @@ labeled(p2) <- FALSE
 tracks(p1,p2,heights=c(8,1)) + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
     panel.background = element_blank(), axis.line = element_line(colour = "black"))
 
-ggsave(file="pE_region.png", width=6, height=2,dpi=300,scale=1.5)
-
+ggsave(file="pE_region_VTG.png", width=6, height=2,dpi=300,scale=1.5)
 
 ######## mature females plot ###############
 
-coord_region <- GRanges("scaffold_6", IRanges(1142640,1144629),strand="+")
+coord_region <- GRanges("scaffold_47", IRanges(151539,157785),strand="-")
 
 gr_gene3 <- subsetByOverlaps(Dp_gr,coord_region)
 
@@ -99,7 +99,7 @@ peaked_gr <- gr_gene4
 
 myFlag <- scanBamFlag()
 
-matfem_fem_param<- ScanBamParam(flag=myFlag,what=c("flag", "mrnm", "mpos"), which=GRanges("scaffold_6",IRanges(1142640,1144629),strand="+"))
+matfem_fem_param<- ScanBamParam(flag=myFlag,what=c("flag", "mrnm", "mpos"), which=GRanges("scaffold_47",IRanges(151539,157785),strand="-"))
 
 Dp.bam <- c("/home/rtraborn/Daphnia/CAGE/TCO/mat_fem_filtered_merged.bam")
 
@@ -107,15 +107,15 @@ Dp.bai <- c("/home/rtraborn/Daphnia/CAGE/TCO/mat_fem_filtered_merged.bam.bai")
 
 p_aln <- readGAlignments(Dp.bam, index=Dp.bai,param=matfem_fem_param,use.names=TRUE)
 
-endDp <- start(p_aln)
+endDp <- end(p_aln)
 
 strandDp <- strand(p_aln)
 
 strandDp
 
-for (i in 1:length(endDp)) { endDp[i] + 1 -> endDp[i] }
+for (i in 1:length(endDp)) { endDp[i] - 1 -> endDp[i] }
 
-myStrand <- GRanges("scaffold_6",IRanges(start(p_aln),endDp),strand=strandDp,names=names(p_aln))
+myStrand <- GRanges("scaffold_47",IRanges(endDp,end(p_aln)),strand=strandDp,names=names(p_aln))
 
 Dp_align_p <- as(myStrand, "GAlignments")
 
@@ -132,11 +132,11 @@ tracks(p1_p,p2_p,heights=c(8,1)) + theme(panel.grid.major = element_blank(),
                                    panel.grid.minor = element_blank(), 
     panel.background = element_blank(), axis.line = element_line(colour = "black"))
 
-ggsave(file="mat_fem_region.png", width=6, height=2,dpi=300,scale=1.5)
+ggsave(file="mat_fem_region_VTG.png", width=6, height=2,dpi=300,scale=1.5)
 
 ########## mature males plot ###########
 
-coord_region <- GRanges("scaffold_6", IRanges(1142640,1144629),strand="+")
+coord_region <- GRanges("scaffold_47", IRanges(151539,157785),strand="-")
 
 gr_gene3 <- subsetByOverlaps(Dp_gr,coord_region)
 
@@ -150,7 +150,7 @@ peaked_gr <- gr_gene4
 
 myFlag <- scanBamFlag()
 
-matmale_param <- ScanBamParam(flag=myFlag,what=c("flag", "mrnm", "mpos"), which=GRanges("scaffold_6",IRanges(1142640,1144629),strand="+"))
+matmale_param <- ScanBamParam(flag=myFlag,what=c("flag", "mrnm", "mpos"), which=GRanges("scaffold_47",IRanges(151539,157785),strand="-"))
 
 Dp.bam <- c("/home/rtraborn/Daphnia/CAGE/TCO/mat_male_filtered_merged.bam")
 
@@ -166,7 +166,7 @@ strandDp
 
 for (i in 1:length(endDp)) { endDp[i] + 1 -> endDp[i] }
 
-myStrand <- GRanges("scaffold_6",IRanges(start(p_aln),endDp),strand=strandDp,names=names(p_aln))
+myStrand <- GRanges("scaffold_47",IRanges(endDp,end(p_aln)),strand=strandDp,names=names(p_aln))
 
 Dp_align_p <- as(myStrand, "GAlignments")
 
@@ -174,14 +174,14 @@ is(Dp_align_p)
 
 plot_peaked <- autoplot(Dp_align_p,which=coord_region,method="raw",geom="line",color="purple",stat="coverage")
 
-p1_p <- plot_peaked + coord_cartesian(xlim = c(1142640,1144629)) + theme_bw()
+p1_p <- plot_peaked + coord_cartesian(xlim = c(151539,157785)) + theme_bw()
 
-p2_p <- ggplot() + geom_alignment(gr_gene4) + coord_cartesian(xlim=c(1142640,1144629)) + scale_x_continuous() + 
+p2_p <- ggplot() + geom_alignment(gr_gene4) + coord_cartesian(xlim=c(151539,157785)) + scale_x_continuous() + 
                              theme_bw()
 
 tracks(p1_p,p2_p,heights=c(8,1)) + theme(panel.grid.major = element_blank(),
                                    panel.grid.minor = element_blank(), 
     panel.background = element_blank(), axis.line = element_line(colour = "black"))
 
-ggsave(file="mat_males_region.png", width=6, height=2,dpi=300,scale=1.5)
+ggsave(file="mat_males_region_VTG.png", width=6, height=2,dpi=300,scale=1.5)
 
