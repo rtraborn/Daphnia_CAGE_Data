@@ -1,0 +1,33 @@
+## [rtraborn@gnomic bbmap]$ ./stats.sh /DATA/GROUP/rtraborn/Daphnia_Project/Dp_data/annotation_files/Daphnia_pulex.fasta
+A       C       G       T       N       IUPAC   Other   GC      GC_stdev
+0.2962  0.2039  0.2037  0.2961  0.1958  0.0000  0.0000  0.4077  0.0753
+
+Main genome scaffold total:             5191
+Main genome contig total:               19008
+Main genome scaffold sequence total:    197.262 MB
+Main genome contig sequence total:      158.633 MB      19.583% gap
+Main genome scaffold N/L50:             75/642.089 KB
+Main genome contig N/L50:               831/49.25 KB
+Max scaffold length:                    4.193 MB
+Max contig length:                      528.83 KB
+Number of scaffolds > 50 KB:            420
+% main genome in scaffolds > 50 KB:     82.98%
+
+
+Minimum         Number          Number          Total           Total           Scaffold
+Scaffold        of              of              Scaffold        Contig          Contig  
+Length          Scaffolds       Contigs         Length          Length          Coverage
+--------        --------------  --------------  --------------  --------------  --------
+    All                  5,191          19,008     197,261,574     158,632,522    80.42%
+    500                  5,191          19,008     197,261,574     158,632,522    80.42%
+   1 KB                  5,191          19,008     197,261,574     158,632,522    80.42%
+ 2.5 KB                  3,117          16,933     194,526,618     155,897,904    80.14%
+   5 KB                  2,513          15,818     192,257,335     154,178,718    80.19%
+  10 KB                  1,206          12,754     182,461,724     149,066,346    81.70%
+  25 KB                    754          11,189     176,244,472     144,665,947    82.08%
+  50 KB                    420           9,659     163,680,489     140,972,612    86.13%
+ 100 KB                    283           8,311     153,893,835     136,108,916    88.44%
+ 250 KB                    169           6,476     136,252,171     123,735,075    90.81%
+ 500 KB                     95           4,305     110,150,255     102,072,871    92.67%
+   1 MB                     45           2,532      75,424,506      70,670,514    93.70%
+ 2.5 MB                      5             397      17,298,521      16,658,238    96.30%
