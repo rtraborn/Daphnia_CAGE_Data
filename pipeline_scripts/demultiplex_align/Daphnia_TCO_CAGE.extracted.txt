@@ -1,0 +1,8 @@
+extracted	mat_females_1	28803508
+extracted	mat_females_2	16701216
+extracted	mat_females_3	29786273
+extracted	mature_males_1	18512317
+extracted	mature_males_2	24655373
+extracted	pE_females_1	24076420
+extracted	pE_females_2	24567545
+extracted	pE_females_3	15115501
