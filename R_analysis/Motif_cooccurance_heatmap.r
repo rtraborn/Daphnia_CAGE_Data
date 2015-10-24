@@ -7,7 +7,7 @@ setwd("/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/promoter_calling_pipe
 
 promoter_comp <- read.table(file="Dpm_core_matrix.logPvalue.matrix.txt", skip=1, header=FALSE,sep="\t",stringsAsFactors = FALSE)
 
-colnames(promoter_comp) <- c("MotifID","Dpm1","Dpm2","Dpm3","Dpm4","Dpm5","Dpm6","Dpm7","Dpm8") 
+colnames(promoter_comp) <- c("MotifID","Dpm1","Dpm2","Dpm3","Dpm4","Dpm5","Dpm6i","Dpm6","Dpm7") #renaming to match the final Dpm set
 
 row_in <- promoter_comp[,1]
 
@@ -32,6 +32,8 @@ r1
 hmcol<-brewer.pal(11,"RdBu")
 
 png(file="Dpm_motifs_correlation.png",height=960,width=960,bg = "transparent")
+
+plot.new()
 
 heatmap.2(promoter_comp_m,trace="none",notecol="black",col=colorRampPalette(c("red","white","blue"))(100))
 
@@ -197,6 +199,8 @@ head(Inr_df)
 
 ggplot(Inr_df, aes(x=factor(Shape),y=as.numeric(breadth))) + geom_boxplot()
 
+ggplot(Inr_df, aes(x=factor(Shape),y=as.numeric(nTSSs))) + geom_boxplot()
+
 ggplot(TATA_df, aes(x=factor(Shape),y=as.numeric(breadth))) + geom_boxplot()
 
 combined_df <- rbind(TATA_df,Inr_df) 
@@ -249,6 +253,86 @@ head(my_matrix)
 
 png(file="motif_cooc_heatmap_all.png")
 
-heatmap(Dpm_presence_array_i,scale="none",Rowv=NA)
+#heatmap.2(Dpm_presence_array_i,scale="none")
 
-dev.off()
+TATA_index <- which(Dpm_breadth_motif_presence_matrix_i$Dpm2==1)
+
+head(data_array)
+
+head(combined_df)
+
+dim(combined_df)
+
+dim(Dpm_breadth_motif_presence_matrix_i)
+
+head(Dpm_breadth_motif_presence_matrix_i)
+
+TATA <- rep("TATA-less",nrow(Dpm_breadth_motif_presence_matrix_i))
+
+TATA[TATA_index] <- "TATA"
+
+head(TATA_vector)
+
+length(TATA_index)
+
+Dpm_total_matrix <- cbind(Dpm_breadth_motif_presence_matrix_i,TATA)
+
+head(Dpm_total_matrix)
+
+ggplot(Dpm_total_matrix, aes(x=factor(TATA),y=as.numeric(SI))) + geom_boxplot()
+
+head(Dpm_breadth_motif_presence_matrix_i)
+
+new_matrix <- cbind(Dpm_breadth_motif_presence_matrix_i$breadth,Dpm_breadth_motif_presence_matrix_i$nTSSs, Dpm_breadth_motif_presence_matrix_i$SI)
+
+colnames(new_matrix) <- c("breadth","count","SI")
+
+new_df <- as.data.frame(new_matrix)
+
+head(new_df)
+
+dim(new_matrix)
+
+quantile(new_df$breadth,probs = seq(0, 1, 0.05))
+
+quantile(new_df$SI,probs = seq(0, 1, 0.05))
+
+broadest_index <- which(new_df$breadth > 45)
+
+sharpest_index <- which(new_df$SI > 1.12382271532844)
+
+length(sharpest_index)
+
+breadth_id <- rep("regular",nrow(new_matrix))
+
+breadth_id[broadest_index] <- "broad"
+
+breadth_id[sharpest_index ] <- "peaked"
+
+new_df2 <- cbind(new_df,breadth_id)
+
+head(new_df2)
+
+ggplot(new_df2, aes(x=count, y=breadth, color=breadth_id)) + geom_point(shape=1) + scale_x_continuous(limit=c(0,10000)) + geom_smooth(method=lm) 
+
+test_loess <- loess(data=new_df2,count ~ breadth)
+
+summary(test_loess)
+
+test_lm <- lm(data=new_df2,SI ~ breadth)
+
+summary(test_lm)
+
+ggplot(new_df2, aes(x=count, y=breadth, colour=breadth_id)) + geom_point(shape=1) + scale_x_log10() + geom_smooth(model="loess")
+
+ggsave(file="consensus_TSR_shape_xy_scatter.png")
+
+head(new_df2)
+
+test_lm <- lm(formula = count ~ breadth, data=new_df2)
+
+summary(test_lm)
+
+ggplot(new_df2, aes(x=breadth_id, y=count,colour=breadth_id)) + geom_boxplot() + scale_y_continuous(limit=c(0,50000))
+
+ggsave(file="consensus_TSR_shape_boxplot.png")
