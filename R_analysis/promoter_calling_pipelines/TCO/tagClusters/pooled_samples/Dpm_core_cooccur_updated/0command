@@ -1,0 +1,1 @@
+annotatePeaks.pl combined.pos TCOv1.1 -m /home/rtraborn/Daphnia/Daphnia_CAGE_Data/promoter_analyses/Dp_core_motifs/overall_motifs_50_50/individual_motifs/motif_files/Dpm_core_list_find2.motif -matrix DpTCO_occ -size -400,100  >  DpTCO_peak_Dpm_core_TCs_pooled_new
