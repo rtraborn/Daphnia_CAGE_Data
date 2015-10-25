@@ -3,15 +3,19 @@ library(gplots)
 
 library(RColorBrewer)
 
-setwd("/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/promoter_calling_pipelines/TCO/tagClusters/pooled_samples/Dpm_core_cooccur")
+setwd("/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/promoter_calling_pipelines/TCO/tagClusters/pooled_samples/homer_pos_files")
 
-promoter_comp <- read.table(file="Dpm_core_matrix.logPvalue.matrix.txt", skip=1, header=FALSE,sep="\t",stringsAsFactors = FALSE)
+promoter_comp <- read.table(file="DpTCO_occ.logPvalue.matrix.txt", skip=1, header=FALSE,sep="\t",stringsAsFactors = FALSE)
 
-colnames(promoter_comp) <- c("MotifID","Dpm1","Dpm2","Dpm3","Dpm4","Dpm5","Dpm6i","Dpm6","Dpm7") #renaming to match the final Dpm set
+head(promoter_comp)
+
+colnames(promoter_comp) <- c("MotifID","Dpm1","Dpm2","Dpm3","Dpm4","Dpm5","Dpm6","Dpm7") #renaming to match the final Dpm set
 
 row_in <- promoter_comp[,1]
 
 promoter_comp <- promoter_comp[,-1]
+
+head(promoter_comp)
 
 rownames(promoter_comp) <- colnames(promoter_comp)
 
@@ -22,8 +26,6 @@ promoter_comp_m <- as.matrix(promoter_comp)
 head(promoter_comp_m)
 
 is.matrix(promoter_comp_m)
-
-promoter_comp_m <- promoter_comp_m[-6,-6] #removing Dpm6 because it is only present in a small fraction of promoters
 
 r1 <- range(promoter_comp_m) - median(promoter_comp_m)
 
