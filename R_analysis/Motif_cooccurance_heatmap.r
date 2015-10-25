@@ -3,7 +3,7 @@ library(gplots)
 
 library(RColorBrewer)
 
-setwd("/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/promoter_calling_pipelines/TCO/tagClusters/pooled_samples/homer_pos_files")
+setwd("/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/promoter_calling_pipelines/TCO/tagClusters/pooled_samples/Dpm_core_cooccur_updated")
 
 promoter_comp <- read.table(file="DpTCO_occ.logPvalue.matrix.txt", skip=1, header=FALSE,sep="\t",stringsAsFactors = FALSE)
 
