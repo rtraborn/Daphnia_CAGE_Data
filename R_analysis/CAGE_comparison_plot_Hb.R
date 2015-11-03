@@ -33,7 +33,7 @@ coord_region <- GRanges("scaffold_13", IRanges(626000,637112),strand="-")
 
 myFlag <- scanBamFlag()
 
-my_param <- ScanBamParam(flag=myFlag,what=c("flag", "mrnm", "mpos"), which=GRanges("scaffold_13", IRanges(626000,637112),strand="-"))
+my_param <- ScanBamParam(flag=myFlag,what=c("flag", "mrnm", "mpos"), which=GRanges("scaffold_13", IRanges(626000,636000),strand="-"))
 
 aln <- readGAlignments(Dp.bam, index=Dp.bai,param=my_param,use.names=TRUE)
 
@@ -69,9 +69,9 @@ plot <- autoplot(Dp_align, which = coord_region, method="raw",geom="area", color
 
 is(plot)
 
-p1 <- plot + coord_cartesian(xlim = c(626000,637112)) + theme_bw() + ylim(0,300000)
+p1 <- plot + coord_cartesian(xlim = c(626000,636000)) + theme_bw() + ylim(0,300000)
 
-p2 <- ggplot() + geom_alignment(gr_gene2,type="exon") + coord_cartesian(xlim = c(626000,637112)) + scale_x_continuous() + theme_bw()
+p2 <- ggplot() + geom_alignment(gr_gene2,type="exon") + coord_cartesian(xlim = c(626000,636000)) + scale_x_continuous() + theme_bw()
 
 labeled(p1) <- FALSE
 
@@ -82,7 +82,7 @@ labeled(p2) <- FALSE
 
 ######## mature females plot ###############
 
-coord_region <- GRanges("scaffold_13", IRanges(626000,637112),strand="-")
+coord_region <- GRanges("scaffold_13", IRanges(626000,636000),strand="-")
 
 gr_gene3 <- subsetByOverlaps(Dp_gr,coord_region)
 
@@ -96,7 +96,7 @@ peaked_gr <- gr_gene4
 
 myFlag <- scanBamFlag()
 
-matfem_fem_param<- ScanBamParam(flag=myFlag,what=c("flag", "mrnm", "mpos"), which=GRanges("scaffold_13",IRanges(626000,637112),strand="-"))
+matfem_fem_param<- ScanBamParam(flag=myFlag,what=c("flag", "mrnm", "mpos"), which=GRanges("scaffold_13",IRanges(626000,636000),strand="-"))
 
 Dp.bam <- c("/home/rtraborn/Daphnia/CAGE/TCO/mat_fem_filtered_merged.bam")
 
@@ -120,9 +120,9 @@ is(Dp_align_p)
 
 plot_peaked <- autoplot(Dp_align_p,which=coord_region,method="raw",geom="area",color="darkgreen",fill="darkgreen",stat="coverage", ymin=0, ymax=20000 )
 
-p1_p <- plot_peaked + coord_cartesian(xlim = c(626000,637112)) + theme_bw() + ylim(0,3000)
+p1_p <- plot_peaked + coord_cartesian(xlim = c(626000,636000)) + theme_bw() + ylim(0,3000)
 
-p2_p <- ggplot() + geom_alignment(gr_gene4) + coord_cartesian(xlim=c(626000,637112)) + scale_x_continuous() + 
+p2_p <- ggplot() + geom_alignment(gr_gene4) + coord_cartesian(xlim=c(626000,636000)) + scale_x_continuous() + 
                              theme_bw()
 
 #tracks(p1_p,p2_p,heights=c(8,1)) + theme(panel.grid.major = element_blank(),
@@ -133,7 +133,7 @@ p2_p <- ggplot() + geom_alignment(gr_gene4) + coord_cartesian(xlim=c(626000,6371
 
 ########## mature males plot ###########
 
-coord_region <- GRanges("scaffold_13", IRanges(626000,637112),strand="-")
+coord_region <- GRanges("scaffold_13", IRanges(626000,636000),strand="-")
 
 gr_gene3 <- subsetByOverlaps(Dp_gr,coord_region)
 
@@ -147,7 +147,7 @@ peaked_gr <- gr_gene4
 
 myFlag <- scanBamFlag()
 
-matmale_param <- ScanBamParam(flag=myFlag,what=c("flag", "mrnm", "mpos"), which=GRanges("scaffold_13",IRanges(626000,637112),strand="-"))
+matmale_param <- ScanBamParam(flag=myFlag,what=c("flag", "mrnm", "mpos"), which=GRanges("scaffold_13",IRanges(626000,636000),strand="-"))
 
 Dp.bam <- c("/home/rtraborn/Daphnia/CAGE/TCO/mat_male_filtered_merged.bam")
 
@@ -173,7 +173,7 @@ plot_peaked <- autoplot(Dp_align_p,which=coord_region,method="raw",geom="area",c
 
 p3_p <- plot_peaked + coord_cartesian(xlim = c(626000,637112)) + theme_bw() + ylim(0,3000)
 
-p4_p <- ggplot() + geom_alignment(gr_gene4) + coord_cartesian(xlim=c(626000,637112)) + scale_x_continuous() + 
+p4_p <- ggplot() + geom_alignment(gr_gene4) + coord_cartesian(xlim=c(626000,636000)) + scale_x_continuous() + 
                              theme_bw()
 
 #tracks(p3_p,p4_p,heights=c(8,1)) + theme(panel.grid.major = element_blank(),
