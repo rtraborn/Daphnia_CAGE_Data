@@ -1,4 +1,4 @@
-
+  
 library(ggbio)
 
 library(rtracklayer)
@@ -182,7 +182,7 @@ p4_p <- ggplot() + geom_alignment(gr_gene4) + coord_cartesian(xlim=c(626000,6371
 
 #ggsave(file="mat_males_region_VTG.png", width=6, height=2,dpi=300,scale=1.5)
 
-tracks(p1,p1_p,p3_p,p4_p,heights=c(5,5,5,1)) + theme(panel.grid.major = element_blank(),
+tracks(p1,p1_p,p3_p,p2,heights=c(5,5,5,2)) + theme(panel.grid.major = element_blank(),
                                    panel.grid.minor = element_blank(), 
     panel.background = element_blank(), axis.line = element_line(colour = "black"))
 
