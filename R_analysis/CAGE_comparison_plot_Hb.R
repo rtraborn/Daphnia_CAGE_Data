@@ -29,12 +29,11 @@ Dp.bam <- c("/home/rtraborn/Daphnia/CAGE/TCO/pE_fem_filtered_merged.bam")
 
 Dp.bai <- c("/home/rtraborn/Daphnia/CAGE/TCO/pE_fem_filtered_merged.bam.bai")
 
-coord_region <- GRanges("scaffold_47", IRanges(151539,157785),strand="-")
+coord_region <- GRanges("scaffold_13", IRanges(626000,637112),strand="-")
 
 myFlag <- scanBamFlag()
 
-#scaffold_47:151,539-157,785
-my_param <- ScanBamParam(flag=myFlag,what=c("flag", "mrnm", "mpos"), which=GRanges("scaffold_47", IRanges(151539,157785),strand="-"))
+my_param <- ScanBamParam(flag=myFlag,what=c("flag", "mrnm", "mpos"), which=GRanges("scaffold_13", IRanges(626000,637112),strand="-"))
 
 aln <- readGAlignments(Dp.bam, index=Dp.bai,param=my_param,use.names=TRUE)
 
@@ -44,7 +43,7 @@ strandDp <- strand(aln)
 
 for (i in 1:length(endDp)) { endDp[i] - 1 -> endDp[i] }
 
-myStrand <- GRanges("scaffold_47",IRanges(endDp,end(aln)),strand=strandDp,names=names(aln))
+myStrand <- GRanges("scaffold_13",IRanges(endDp,end(aln)),strand=strandDp,names=names(aln))
 
 Dp_align <- as(myStrand, "GAlignments")
 
@@ -70,22 +69,20 @@ plot <- autoplot(Dp_align, which = coord_region, method="raw",geom="area", color
 
 is(plot)
 
-p1 <- plot + coord_cartesian(xlim = c(151539,157785)) + theme_bw() + ylim(0,15000)
+p1 <- plot + coord_cartesian(xlim = c(626000,637112)) + theme_bw() + ylim(0,15000)
 
-p2 <- ggplot() + geom_alignment(gr_gene2,type="exon") + coord_cartesian(xlim = c(151539,157785)) + scale_x_continuous() + theme_bw()
+p2 <- ggplot() + geom_alignment(gr_gene2,type="exon") + coord_cartesian(xlim = c(626000,637112)) + scale_x_continuous() + theme_bw()
 
 labeled(p1) <- FALSE
 
 labeled(p2) <- FALSE
 
-tracks(p1,p2,heights=c(8,1)) + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
-    panel.background = element_blank(), axis.line = element_line(colour = "black"))
-
-ggsave(file="pE_region_VTG.png", width=6, height=2,dpi=300,scale=1.5)
+#tracks(p1,p2,heights=c(8,1)) + theme(panel.grid.major = element_blank(), panel.grid.minor = element_blank(), 
+#    panel.background = element_blank(), axis.line = element_line(colour = "black"))
 
 ######## mature females plot ###############
 
-coord_region <- GRanges("scaffold_47", IRanges(151539,157785),strand="-")
+coord_region <- GRanges("scaffold_13", IRanges(626000,637112),strand="-")
 
 gr_gene3 <- subsetByOverlaps(Dp_gr,coord_region)
 
@@ -99,7 +96,7 @@ peaked_gr <- gr_gene4
 
 myFlag <- scanBamFlag()
 
-matfem_fem_param<- ScanBamParam(flag=myFlag,what=c("flag", "mrnm", "mpos"), which=GRanges("scaffold_47",IRanges(151539,157785),strand="-"))
+matfem_fem_param<- ScanBamParam(flag=myFlag,what=c("flag", "mrnm", "mpos"), which=GRanges("scaffold_13",IRanges(626000,637112),strand="-"))
 
 Dp.bam <- c("/home/rtraborn/Daphnia/CAGE/TCO/mat_fem_filtered_merged.bam")
 
@@ -115,7 +112,7 @@ strandDp
 
 for (i in 1:length(endDp)) { endDp[i] - 1 -> endDp[i] }
 
-myStrand <- GRanges("scaffold_47",IRanges(endDp,end(p_aln)),strand=strandDp,names=names(p_aln))
+myStrand <- GRanges("scaffold_13",IRanges(endDp,end(p_aln)),strand=strandDp,names=names(p_aln))
 
 Dp_align_p <- as(myStrand, "GAlignments")
 
@@ -123,20 +120,20 @@ is(Dp_align_p)
 
 plot_peaked <- autoplot(Dp_align_p,which=coord_region,method="raw",geom="area",color="darkgreen",fill="darkgreen",stat="coverage", ymin=0, ymax=20000 )
 
-p1_p <- plot_peaked + coord_cartesian(xlim = c(151539,157785)) + theme_bw() + ylim(0,15000)
+p1_p <- plot_peaked + coord_cartesian(xlim = c(626000,637112)) + theme_bw() + ylim(0,15000)
 
-p2_p <- ggplot() + geom_alignment(gr_gene4) + coord_cartesian(xlim=c(151539,157785)) + scale_x_continuous() + 
+p2_p <- ggplot() + geom_alignment(gr_gene4) + coord_cartesian(xlim=c(626000,637112)) + scale_x_continuous() + 
                              theme_bw()
 
-tracks(p1_p,p2_p,heights=c(8,1)) + theme(panel.grid.major = element_blank(),
-                                   panel.grid.minor = element_blank(), 
-    panel.background = element_blank(), axis.line = element_line(colour = "black"))
+#tracks(p1_p,p2_p,heights=c(8,1)) + theme(panel.grid.major = element_blank(),
+#                                   panel.grid.minor = element_blank(), 
+#    panel.background = element_blank(), axis.line = element_line(colour = "black"))
 
-ggsave(file="mat_fem_region_VTG.png", width=6, height=2,dpi=300,scale=1.5)
+#ggsave(file="mat_fem_region_VTG.png", width=6, height=2,dpi=300,scale=1.5)
 
 ########## mature males plot ###########
 
-coord_region <- GRanges("scaffold_47", IRanges(151539,157785),strand="-")
+coord_region <- GRanges("scaffold_13", IRanges(626000,637112),strand="-")
 
 gr_gene3 <- subsetByOverlaps(Dp_gr,coord_region)
 
@@ -150,7 +147,7 @@ peaked_gr <- gr_gene4
 
 myFlag <- scanBamFlag()
 
-matmale_param <- ScanBamParam(flag=myFlag,what=c("flag", "mrnm", "mpos"), which=GRanges("scaffold_47",IRanges(151539,157785),strand="-"))
+matmale_param <- ScanBamParam(flag=myFlag,what=c("flag", "mrnm", "mpos"), which=GRanges("scaffold_13",IRanges(626000,637112),strand="-"))
 
 Dp.bam <- c("/home/rtraborn/Daphnia/CAGE/TCO/mat_male_filtered_merged.bam")
 
@@ -166,7 +163,7 @@ strandDp
 
 for (i in 1:length(endDp)) { endDp[i] + 1 -> endDp[i] }
 
-myStrand <- GRanges("scaffold_47",IRanges(endDp,end(p_aln)),strand=strandDp,names=names(p_aln))
+myStrand <- GRanges("scaffold_13",IRanges(endDp,end(p_aln)),strand=strandDp,names=names(p_aln))
 
 Dp_align_p <- as(myStrand, "GAlignments")
 
@@ -174,21 +171,21 @@ is(Dp_align_p)
 
 plot_peaked <- autoplot(Dp_align_p,which=coord_region,method="raw",geom="area",color="purple",fill="purple",stat="coverage")
 
-p3_p <- plot_peaked + coord_cartesian(xlim = c(151539,157785)) + theme_bw() + ylim(0,15000)
+p3_p <- plot_peaked + coord_cartesian(xlim = c(626000,637112)) + theme_bw() + ylim(0,15000)
 
-p4_p <- ggplot() + geom_alignment(gr_gene4) + coord_cartesian(xlim=c(151539,157785)) + scale_x_continuous() + 
+p4_p <- ggplot() + geom_alignment(gr_gene4) + coord_cartesian(xlim=c(626000,637112)) + scale_x_continuous() + 
                              theme_bw()
 
-tracks(p3_p,p4_p,heights=c(8,1)) + theme(panel.grid.major = element_blank(),
+#tracks(p3_p,p4_p,heights=c(8,1)) + theme(panel.grid.major = element_blank(),
+#                                   panel.grid.minor = element_blank(), 
+#    panel.background = element_blank(), axis.line = element_line(colour = "black"))
+
+#ggsave(file="mat_males_region_VTG.png", width=6, height=2,dpi=300,scale=1.5)
+
+tracks(p1,p1_p,p3_p,p4_p,heights=c(5,5,5,1)) + theme(panel.grid.major = element_blank(),
                                    panel.grid.minor = element_blank(), 
     panel.background = element_blank(), axis.line = element_line(colour = "black"))
 
-ggsave(file="mat_males_region_VTG.png", width=6, height=2,dpi=300,scale=1.5)
-
-tracks(p1,p1_p,p3_p,p4_p,heights=c(4,4,4,1)) + theme(panel.grid.major = element_blank(),
-                                   panel.grid.minor = element_blank(), 
-    panel.background = element_blank(), axis.line = element_line(colour = "black"))
-
-ggsave(file="VTG_plot_combined.png", width=6, height=2, scale=1.5)
+ggsave(file="Hb_upreg_pE_plot_combined.png", width=6, height=2, scale=1.5)
 
 
