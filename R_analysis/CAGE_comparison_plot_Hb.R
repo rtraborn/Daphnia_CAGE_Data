@@ -29,7 +29,7 @@ Dp.bam <- c("/home/rtraborn/Daphnia/CAGE/TCO/pE_fem_filtered_merged.bam")
 
 Dp.bai <- c("/home/rtraborn/Daphnia/CAGE/TCO/pE_fem_filtered_merged.bam.bai")
 
-coord_region <- GRanges("scaffold_13", IRanges(626000,637112),strand="-")
+coord_region <- GRanges("scaffold_13", IRanges(626000,636000),strand="-")
 
 myFlag <- scanBamFlag()
 

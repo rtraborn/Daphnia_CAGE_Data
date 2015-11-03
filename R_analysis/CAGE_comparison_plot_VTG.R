@@ -185,7 +185,7 @@ tracks(p3_p,p4_p,heights=c(8,1)) + theme(panel.grid.major = element_blank(),
 
 ggsave(file="mat_males_region_VTG.png", width=6, height=2,dpi=300,scale=1.5)
 
-tracks(p1,p1_p,p3_p,p4_p,heights=c(4,4,4,1)) + theme(panel.grid.major = element_blank(),
+tracks(p1,p1_p,p3_p,p4_p,heights=c(5,5,5,2)) + theme(panel.grid.major = element_blank(),
                                    panel.grid.minor = element_blank(), 
     panel.background = element_blank(), axis.line = element_line(colour = "black"))
 
