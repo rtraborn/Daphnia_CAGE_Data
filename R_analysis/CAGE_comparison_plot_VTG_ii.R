@@ -29,12 +29,12 @@ Dp.bam <- c("/home/rtraborn/Daphnia/CAGE/TCO/pE_fem_filtered_merged.bam")
 
 Dp.bai <- c("/home/rtraborn/Daphnia/CAGE/TCO/pE_fem_filtered_merged.bam.bai")
 
-coord_region <- GRanges("scaffold_47", IRanges(116142,127656),strand="-")
+coord_region <- GRanges("scaffold_47", IRanges(122000,127656),strand="-")
 
 myFlag <- scanBamFlag()
 
 #scaffold_47:151,539-157,785
-my_param <- ScanBamParam(flag=myFlag,what=c("flag", "mrnm", "mpos"), which=GRanges("scaffold_47", IRanges(116142,127656),strand="-"))
+my_param <- ScanBamParam(flag=myFlag,what=c("flag", "mrnm", "mpos"), which=GRanges("scaffold_47", IRanges(122000,127656),strand="-"))
 
 aln <- readGAlignments(Dp.bam, index=Dp.bai,param=my_param,use.names=TRUE)
 
@@ -70,9 +70,9 @@ plot <- autoplot(Dp_align, which = coord_region, method="raw",geom="area", color
 
 is(plot)
 
-p1 <- plot + coord_cartesian(xlim = c(116142,127656)) + theme_bw() + ylim(0,1000000)
+p1 <- plot + coord_cartesian(xlim = c(122000,127656)) + theme_bw() + ylim(0,1000000)
 
-p2 <- ggplot() + geom_alignment(gr_gene2,type="exon") + coord_cartesian(xlim = c(116142,127656)) + scale_x_continuous() + theme_bw()
+p2 <- ggplot() + geom_alignment(gr_gene2,type="exon") + coord_cartesian(xlim = c(122000,127656)) + scale_x_continuous() + theme_bw()
 
 labeled(p1) <- FALSE
 
@@ -85,7 +85,7 @@ ggsave(file="pE_region_VTG.png", width=6, height=2,dpi=300,scale=1.5)
 
 ######## mature females plot ###############
 
-coord_region <- GRanges("scaffold_47", IRanges(116142,127656),strand="-")
+coord_region <- GRanges("scaffold_47", IRanges(122000,127656),strand="-")
 
 gr_gene3 <- subsetByOverlaps(Dp_gr,coord_region)
 
@@ -99,7 +99,7 @@ peaked_gr <- gr_gene4
 
 myFlag <- scanBamFlag()
 
-matfem_fem_param<- ScanBamParam(flag=myFlag,what=c("flag", "mrnm", "mpos"), which=GRanges("scaffold_47",IRanges(116142,127656),strand="-"))
+matfem_fem_param<- ScanBamParam(flag=myFlag,what=c("flag", "mrnm", "mpos"), which=GRanges("scaffold_47",IRanges(122000,127656),strand="-"))
 
 Dp.bam <- c("/home/rtraborn/Daphnia/CAGE/TCO/mat_fem_filtered_merged.bam")
 
@@ -123,9 +123,9 @@ is(Dp_align_p)
 
 plot_peaked <- autoplot(Dp_align_p,which=coord_region,method="raw",geom="area",color="darkgreen",fill="darkgreen",stat="coverage", ymin=0, ymax=20000 )
 
-p1_p <- plot_peaked + coord_cartesian(xlim = c(116142,127656)) + theme_bw() + ylim(0,1000000)
+p1_p <- plot_peaked + coord_cartesian(xlim = c(122000,127656)) + theme_bw() + ylim(0,1000000)
 
-p2_p <- ggplot() + geom_alignment(gr_gene4) + coord_cartesian(xlim=c(116142,127656)) + scale_x_continuous() + 
+p2_p <- ggplot() + geom_alignment(gr_gene4) + coord_cartesian(xlim=c(122000,127656)) + scale_x_continuous() + 
                              theme_bw()
 
 tracks(p1_p,p2_p,heights=c(8,1)) + theme(panel.grid.major = element_blank(),
@@ -136,7 +136,7 @@ ggsave(file="mat_fem_region_VTG.png", width=6, height=2,dpi=300,scale=1.5)
 
 ########## mature males plot ###########
 
-coord_region <- GRanges("scaffold_47", IRanges(116142,127656),strand="-")
+coord_region <- GRanges("scaffold_47", IRanges(122000,127656),strand="-")
 
 gr_gene3 <- subsetByOverlaps(Dp_gr,coord_region)
 
@@ -150,7 +150,7 @@ peaked_gr <- gr_gene4
 
 myFlag <- scanBamFlag()
 
-matmale_param <- ScanBamParam(flag=myFlag,what=c("flag", "mrnm", "mpos"), which=GRanges("scaffold_47",IRanges(116142,127656),strand="-"))
+matmale_param <- ScanBamParam(flag=myFlag,what=c("flag", "mrnm", "mpos"), which=GRanges("scaffold_47",IRanges(122000,127656),strand="-"))
 
 Dp.bam <- c("/home/rtraborn/Daphnia/CAGE/TCO/mat_male_filtered_merged.bam")
 
@@ -176,7 +176,7 @@ plot_peaked <- autoplot(Dp_align_p,which=coord_region,method="raw",geom="area",c
 
 p3_p <- plot_peaked + coord_cartesian(xlim = c(116142,127656)) + theme_bw() + ylim(0,1000000)
 
-p4_p <- ggplot() + geom_alignment(gr_gene4) + coord_cartesian(xlim=c(116142,127656)) + scale_x_continuous() + 
+p4_p <- ggplot() + geom_alignment(gr_gene4) + coord_cartesian(xlim=c(122000,127656)) + scale_x_continuous() + 
                              theme_bw()
 
 tracks(p3_p,p4_p,heights=c(8,1)) + theme(panel.grid.major = element_blank(),
