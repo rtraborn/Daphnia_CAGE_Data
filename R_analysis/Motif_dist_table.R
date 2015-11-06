@@ -58,13 +58,13 @@ p <- ggplot(motif_hist_m, aes(x=position, y=density),group=motif)
 
 p + geom_line(aes(colour=motif)) + xlim(-100,100) + theme_bw() + labs(x="Position relative to TSS\n(in bp)",y="Density of sites")
 
-ggsave(file="Dp_motif_density_TC_50_50_1bp_hist_200_200_5_Dpm_45.png")
+ggsave(file="Dp_motif_density_TC_50_50_1bp_hist_100_100_5_Dpm_45.png")
 
 p <- ggplot(motif_hist_i_m, aes(x=position, y=density),group=motif)
 
 p + geom_line(aes(colour=motif)) + xlim(-100,100) + theme_bw() + labs(x="Position relative to TSS\n(in bp)",y="Density of sites")
 
-ggsave(file="Dp_motif_density_TC_50_50_5bp_hist_200_200_Dpm_5_16.png")
+ggsave(file="Dp_motif_density_TC_50_50_5bp_hist_100_100_Dpm_5_16.png")
 
 hist_loc2 <- DpTCO_dist[,1]
 

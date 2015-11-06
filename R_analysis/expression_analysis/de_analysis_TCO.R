@@ -10,7 +10,7 @@ require(GenomicRanges)
 require(GenomicFeatures)
 
 #importing the Dp CAGEr object
-load("/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/promoter_calling_pipelines/Dp_CAGEset_TCO.RData")
+load("/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/promoter_calling_pipelines/TCO/Dp_CAGEset_TCO.RData")
 
 #CAGE data based expression clustering
 getExpressionProfiles(myCAGEset, what = "consensusClusters",
