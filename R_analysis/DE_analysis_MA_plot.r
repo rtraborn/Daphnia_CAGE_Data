@@ -111,7 +111,7 @@ head(Dp_edger_consensus_cluster)
 
 head(promoter_table)
 
-head(dp_eset)
+#head(dp_eset)
 
 dp_eset <-new("ExpressionSet", exprs=as.matrix(edger_table))
 
@@ -199,17 +199,17 @@ head(fit$genes)
 
 fit2[1438,]
 
-?volcanoplot
+#?volcanoplot
 
 is(fit2)
 
-?plotMA
+#?plotMA
 
 Dp_dge$samples$group
 
-et.tgw <- exactTest(Dp_dge,pair=c("mat_fem","pE_fem"),dispersion=NULL,common.disp=FALSE)
+et <- exactTest(Dp_dge,pair=c("mat_fem","pE_fem"))
 
-head(et)
+#head(et)
 
 summary(de <- decideTestsDGE(et, p=0.01, adjust="BH"))
 
@@ -217,18 +217,9 @@ detags <- rownames(Dp_dge)[as.logical(de)]
 
 png(file="mat_fem_v_pE_plotsmear.png",res=300)
 
+plot.new()
+
 plotSmear(et, de.tags=detags, smooth.scatter = FALSE, smearWidth = 0.5, lowess=FALSE); abline(h = c(-2, 2), col = "dodgerblue", lwd = 2,lty=3)
 
 dev.off()
-
-getwd()
-
-plotMA(fit2)
-
-#plotSmear(qlf, de.tags=DEnames)
-
-volcanoplot(fit2,coef=2,highlight=50)
-
-?volcanoplot
-
 
