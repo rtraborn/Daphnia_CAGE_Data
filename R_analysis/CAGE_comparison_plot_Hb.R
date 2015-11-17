@@ -171,7 +171,7 @@ is(Dp_align_p)
 
 plot_peaked <- autoplot(Dp_align_p,which=coord_region,method="raw",geom="area",color="purple",fill="purple",stat="coverage")
 
-p3_p <- plot_peaked + coord_cartesian(xlim = c(634000,637112)) + theme_bw()
+p3_p <- plot_peaked + coord_cartesian(xlim = c(634000,636000)) + theme_bw()
 
 p4_p <- ggplot() + geom_alignment(gr_gene4) + coord_cartesian(xlim=c(634000,636000)) + scale_x_continuous() + 
                              theme_bw()
