@@ -69,7 +69,7 @@ plot <- autoplot(Dp_align, which = coord_region, method="raw",geom="area", color
 
 is(plot)
 
-p1 <- plot + coord_cartesian(xlim = c(634000,636000)) + theme_bw()
+p1 <- plot + theme_bw()
 
 p2 <- ggplot() + geom_alignment(gr_gene2,type="exon") + scale_x_continuous() + theme_bw()
 
@@ -120,7 +120,7 @@ is(Dp_align_p)
 
 plot_peaked <- autoplot(Dp_align_p,which=coord_region,method="raw",geom="area",color="darkgreen",fill="darkgreen",stat="coverage")
 
-p1_p <- plot_peaked + coord_cartesian(xlim = c(634000,636000)) + theme_bw()
+p1_p <- plot_peaked + theme_bw()
 
 p2_p <- ggplot() + geom_alignment(gr_gene4) + coord_cartesian(xlim=c(634000,636000)) + scale_x_continuous() + 
                              theme_bw()
@@ -171,7 +171,7 @@ is(Dp_align_p)
 
 plot_peaked <- autoplot(Dp_align_p,which=coord_region,method="raw",geom="area",color="purple",fill="purple",stat="coverage")
 
-p3_p <- plot_peaked + coord_cartesian(xlim = c(634000,636000)) + theme_bw()
+p3_p <- plot_peaked + theme_bw()
 
 p4_p <- ggplot() + geom_alignment(gr_gene4) + coord_cartesian(xlim=c(634000,636000)) + scale_x_continuous() + 
                              theme_bw()
@@ -182,7 +182,7 @@ p4_p <- ggplot() + geom_alignment(gr_gene4) + coord_cartesian(xlim=c(634000,6360
 
 #ggsave(file="mat_males_region_VTG.png", width=6, height=2,dpi=300,scale=1.5)
 
-tracks(p1,p1_p,p3_p,p2,heights=c(5,5,5,2)) + theme(panel.grid.major = element_blank(),
+tracks(p3_p,p1_p,p1,p2,heights=c(6,6,6,2)) + theme(panel.grid.major = element_blank(),
                                    panel.grid.minor = element_blank(), 
     panel.background = element_blank(), axis.line = element_line(colour = "black"))
 
