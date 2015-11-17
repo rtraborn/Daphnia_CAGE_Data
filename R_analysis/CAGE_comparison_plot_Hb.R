@@ -69,7 +69,7 @@ plot <- autoplot(Dp_align, which = coord_region, method="raw",geom="area", color
 
 is(plot)
 
-p1 <- plot + theme_bw()
+p1 <- plot + theme_bw() 
 
 p2 <- ggplot() + geom_alignment(gr_gene2,type="exon") + scale_x_continuous() + theme_bw()
 
@@ -120,7 +120,7 @@ is(Dp_align_p)
 
 plot_peaked <- autoplot(Dp_align_p,which=coord_region,method="raw",geom="area",color="darkgreen",fill="darkgreen",stat="coverage")
 
-p1_p <- plot_peaked + theme_bw()
+p1_p <- plot_peaked + theme_bw() + ylim(0,1000)
 
 p2_p <- ggplot() + geom_alignment(gr_gene4) + coord_cartesian(xlim=c(634000,636000)) + scale_x_continuous() + 
                              theme_bw()
@@ -171,7 +171,7 @@ is(Dp_align_p)
 
 plot_peaked <- autoplot(Dp_align_p,which=coord_region,method="raw",geom="area",color="purple",fill="purple",stat="coverage")
 
-p3_p <- plot_peaked + theme_bw()
+p3_p <- plot_peaked + theme_bw() + ylim(0,1000)
 
 p4_p <- ggplot() + geom_alignment(gr_gene4) + coord_cartesian(xlim=c(634000,636000)) + scale_x_continuous() + 
                              theme_bw()
