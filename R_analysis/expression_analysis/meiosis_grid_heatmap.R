@@ -2,10 +2,10 @@
 require(ggplot2)
 require(reshape2)
 
-meiosis_expression <- read.table(file="/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/expression_analysis/de_tables/meiosis_expression_table_de.txt",header=TRUE,stringsAsFactors=FALSE)
-meiosis_table <- cbind(meiosis_expression$t_value_1,meiosis_expression$t_value_2,meiosis_expression$t_value_3) 
+meiosis_expression <- read.csv(file="/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/expression_analysis/de_tables/meiosis_expression_table_de.csv",header=TRUE,stringsAsFactors=FALSE)
+meiosis_table <- cbind(meiosis_expression$t_value_Male_v_Females,meiosis_expression$t_value_Asex_v_Sexuals,meiosis_expression$t_value_Asex_v_pE) 
 rownames(meiosis_table) <- rownames(meiosis_expression)
-colnames(meiosis_table) <- c("Ameiotic female - meiotic female","Meiotic female - male","Male - meiotic female")
+colnames(meiosis_table) <- c("Male_v_Females","Asex_v_sexuals","Asex_v_pE")
 
 plot.values <- melt(meiosis_table)
 names(plot.values) <- c("gene","variable","value")    
