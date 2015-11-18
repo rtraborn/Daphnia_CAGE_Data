@@ -4,7 +4,7 @@ require(reshape2)
 
 meiosis_expression <- read.csv(file="/home/rtraborn/Daphnia/Daphnia_CAGE_Data/R_analysis/expression_analysis/de_tables/meiosis_expression_table_de.csv",header=TRUE,stringsAsFactors=FALSE)
 meiosis_table <- cbind(meiosis_expression$t_value_Male_v_Females,meiosis_expression$t_value_Asex_v_Sexuals,meiosis_expression$t_value_Asex_v_pE) 
-rownames(meiosis_table) <- rownames(meiosis_expression)
+rownames(meiosis_table) <- meiosis_expression[,1]
 colnames(meiosis_table) <- c("Male_v_Females","Asex_v_sexuals","Asex_v_pE")
 
 plot.values <- melt(meiosis_table)
