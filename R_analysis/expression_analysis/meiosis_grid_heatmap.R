@@ -12,7 +12,7 @@ names(plot.values) <- c("gene","variable","value")
 
 p <- ggplot(plot.values, aes(variable, gene)) + geom_tile(aes(fill = value))
 
-meiosis_figure <- p + scale_fill_gradient2(low="#D7191C", mid="white", high="#2C7BB6") +
+meiosis_figure <- p + scale_fill_gradient2(low="#D7191C", mid="white", high="#184465") +
 labs(y="Gene symbol", x="", fill="t-value") +  scale_x_discrete(expand = c(0, 0)) +
      scale_y_discrete(expand = c(0, 0)) + theme(axis.text.x=element_text(angle = -45, hjust = 0))
 
