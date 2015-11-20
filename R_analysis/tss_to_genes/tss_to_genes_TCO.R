@@ -13,7 +13,7 @@ names(dpulex_genes) <- c("chr","start","end","geneID","score","strand","version"
 names(dpulex_promoters) <- c("chr","start","end","placeholder","score","strand","start2","end2","score2")
 
 #region around gene to call a TSS
-span <- 200
+span <- 400
 
 #adding space to the genes on the positive strand
 dpulex_genes[dpulex_genes$strand=='+','start']  <- dpulex_genes[dpulex_genes$strand=='+',"start"]-span
@@ -43,6 +43,8 @@ promoter_index <- match_hit2$query
 gene_index <- match_hit2$subject
 
 #gene_names <- dpulex_genes[gene_index,'geneID']
+promoter_table$promoter <- paste(dpulex_promoters[promoter_index,1],dpulex_promoters[promoter_index,2], dpulex_promoters[promoter_index,3], dpulex_promoters[promoter_index,6],sep="_")
+
 promoter_table <- data.frame(dpulex_promoters[promoter_index,1:3])
 promoter_table$strand <- dpulex_promoters[promoter_index,6]
 
