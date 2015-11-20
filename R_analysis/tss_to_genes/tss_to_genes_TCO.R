@@ -43,7 +43,6 @@ promoter_index <- match_hit2$query
 gene_index <- match_hit2$subject
 
 #gene_names <- dpulex_genes[gene_index,'geneID']
-promoter_table$promoter <- paste(dpulex_promoters[promoter_index,1],dpulex_promoters[promoter_index,2], dpulex_promoters[promoter_index,3], dpulex_promoters[promoter_index,6],sep="_")
 
 promoter_table <- data.frame(dpulex_promoters[promoter_index,1:3])
 promoter_table$strand <- dpulex_promoters[promoter_index,6]
@@ -55,6 +54,8 @@ promoter_table$gene_end <- dpulex_genes[gene_index,'end']
 promoter_table$gene_strand <- dpulex_genes[gene_index,'strand']
 
 promoter_table$expression <- dpulex_expression[promoter_index,6]
+
+promoter_table$promoter <- paste(dpulex_genes[promoter_index,1], dpulex_genes[promoter_index,2], dpulex_genes[promoter_index,3], dpulex_genes[promoter_index,6],sep="_")
 
 #names(combined.table2) <- c("chr","start","end","gene_ID","strand","start_TSR","end_TSR")
 
