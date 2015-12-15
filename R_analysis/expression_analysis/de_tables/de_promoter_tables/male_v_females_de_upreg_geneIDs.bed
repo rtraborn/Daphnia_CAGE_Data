@@ -1,0 +1,984 @@
+scaffold_1	262533	264044	.	.	-	gene329
+scaffold_1	433643	435148	.	.	-	
+scaffold_1	562054	563716	.	.	+	gene43
+scaffold_1	562601	564167	.	.	+	gene43
+scaffold_1	563061	564715	.	.	+	gene43
+scaffold_1	563390	565079	.	.	+	gene43
+scaffold_1	695475	696979	.	.	-	gene373
+scaffold_1	847544	849048	.	.	-	
+scaffold_1	919353	920867	.	.	+	
+scaffold_1	1004206	1005726	.	.	+	gene80
+scaffold_1	1142210	1143715	.	.	+	gene83
+scaffold_1	1327387	1328889	.	.	+	
+scaffold_1	1424888	1426395	.	.	-	gene107
+scaffold_1	1478244	1479781	.	.	+	gene110
+scaffold_1	1548820	1550355	.	.	-	gene411
+scaffold_1	1579437	1580943	.	.	-	
+scaffold_1	1629097	1630601	.	.	-	gene417;gene418
+scaffold_1	1657019	1658520	.	.	+	
+scaffold_1	1668302	1669803	.	.	+	
+scaffold_1	1686079	1687580	.	.	+	gene136
+scaffold_1	1854662	1856165	.	.	-	gene433
+scaffold_1	1877308	1878823	.	.	-	
+scaffold_1	2083003	2084540	.	.	+	
+scaffold_1	2209656	2211161	.	.	-	gene464;gene465
+scaffold_1	2475365	2476866	.	.	-	gene500
+scaffold_1	2505413	2506942	.	.	-	gene504
+scaffold_1	2569401	2570910	.	.	-	gene506
+scaffold_1	2665114	2666619	.	.	-	gene521
+scaffold_1	2691683	2693185	.	.	+	gene226
+scaffold_1	2752011	2753534	.	.	+	gene229
+scaffold_1	2795647	2797149	.	.	+	gene234
+scaffold_1	2859553	2861079	.	.	+	gene247
+scaffold_1	2859742	2861243	.	.	+	gene247
+scaffold_1	2923339	2924861	.	.	+	gene255
+scaffold_1	3079412	3080962	.	.	-	
+scaffold_1	3088340	3089863	.	.	+	gene263
+scaffold_1	3097186	3098687	.	.	-	gene549;gene550
+scaffold_1	3765097	3766614	.	.	-	gene576
+scaffold_1	3779850	3781577	.	.	+	
+scaffold_1	3782344	3783855	.	.	+	gene296
+scaffold_1	4048273	4049777	.	.	-	gene598
+scaffold_1	4139314	4140860	.	.	+	gene320
+scaffold_10	99173	100692	.	.	-	gene882
+scaffold_10	277600	279195	.	.	+	gene620
+scaffold_10	479318	480819	.	.	-	gene930
+scaffold_10	493118	494647	.	.	+	gene658
+scaffold_10	583034	584541	.	.	+	gene667
+scaffold_10	649859	651390	.	.	-	gene959
+scaffold_10	662341	663846	.	.	+	gene681
+scaffold_10	678099	679611	.	.	-	gene961
+scaffold_10	678992	680529	.	.	+	gene686
+scaffold_10	856374	857875	.	.	+	gene706
+scaffold_10	886860	888366	.	.	+	gene710
+scaffold_10	887083	888587	.	.	+	gene710
+scaffold_10	968615	970121	.	.	+	gene725
+scaffold_10	973659	975166	.	.	+	gene726
+scaffold_10	1247780	1249283	.	.	-	gene1024
+scaffold_10	1285071	1286579	.	.	+	
+scaffold_10	1323519	1325020	.	.	+	gene780
+scaffold_10	1391465	1393084	.	.	-	gene1045
+scaffold_10	1829026	1830530	.	.	+	gene832
+scaffold_10	1829345	1830878	.	.	+	gene832
+scaffold_10	1830480	1832011	.	.	+	gene832
+scaffold_10	1903582	1905371	.	.	-	gene1104
+scaffold_10	1904050	1905623	.	.	-	gene1104
+scaffold_10	2104971	2106487	.	.	+	gene865
+scaffold_10	2119864	2121368	.	.	+	gene868
+scaffold_100	107269	108801	.	.	-	gene1177
+scaffold_100	210884	212392	.	.	-	
+scaffold_1006	1922	3425	.	.	-	gene1245
+scaffold_101	103350	104857	.	.	+	gene1261
+scaffold_101	185954	187463	.	.	-	gene1306
+scaffold_101	208513	210017	.	.	+	gene1313
+scaffold_101	432471	434055	.	.	-	gene1326
+scaffold_103	332417	333970	.	.	-	gene1537
+scaffold_104	260535	262040	.	.	+	gene1578
+scaffold_104	374255	375758	.	.	+	gene1586
+scaffold_105	42059	43594	.	.	-	
+scaffold_10571	0	1375	.	.	-	
+scaffold_106	197578	199080	.	.	+	
+scaffold_107	65724	67231	.	.	-	gene1860
+scaffold_107	65840	67491	.	.	-	gene1860
+scaffold_107	73001	74556	.	.	-	gene1860
+scaffold_107	74756	76333	.	.	-	gene1860
+scaffold_107	164385	165903	.	.	+	gene1835
+scaffold_108	299281	300818	.	.	-	
+scaffold_108	345442	346951	.	.	-	
+scaffold_109	328564	330086	.	.	+	
+scaffold_11	32182	33686	.	.	-	gene2067
+scaffold_11	43252	44899	.	.	+	gene2069
+scaffold_11	58517	60035	.	.	+	
+scaffold_11	399559	401063	.	.	+	gene2097
+scaffold_11	414360	415883	.	.	+	gene2097
+scaffold_11	496665	498170	.	.	+	
+scaffold_11	756898	758406	.	.	+	gene2127
+scaffold_11	1041478	1042990	.	.	+	gene2348
+scaffold_11	1058591	1060096	.	.	-	
+scaffold_11	1096594	1098292	.	.	-	gene2355
+scaffold_11	1397674	1399247	.	.	-	
+scaffold_11	1399297	1400850	.	.	+	
+scaffold_11	1566833	1568344	.	.	-	
+scaffold_11	1575459	1577007	.	.	-	gene2407
+scaffold_11	1577541	1579141	.	.	-	
+scaffold_11	1604884	1606386	.	.	+	gene2203;gene2204
+scaffold_111	33418	34965	.	.	+	
+scaffold_111	77206	78731	.	.	-	gene2564
+scaffold_111	117790	119293	.	.	+	
+scaffold_113	116524	118051	.	.	-	gene2716
+scaffold_113	116792	118336	.	.	-	gene2716
+scaffold_113	320281	321782	.	.	-	
+scaffold_114	79434	80941	.	.	+	gene2763
+scaffold_115	184518	186026	.	.	+	
+scaffold_115	212626	214235	.	.	+	gene2869
+scaffold_115	288818	290323	.	.	+	
+scaffold_118	328312	329848	.	.	+	gene3157;gene3183
+scaffold_119	146954	148459	.	.	-	gene3240
+scaffold_119	294428	295933	.	.	+	
+scaffold_12	386348	387854	.	.	-	gene3295
+scaffold_12	600991	602496	.	.	-	gene3337
+scaffold_12	718841	720396	.	.	-	gene3574
+scaffold_12	747258	748763	.	.	-	gene3578
+scaffold_12	1103008	1104518	.	.	+	
+scaffold_12	1111846	1113347	.	.	+	
+scaffold_12	1122002	1123505	.	.	+	
+scaffold_12	1272095	1273596	.	.	-	gene3625
+scaffold_12	1305648	1307153	.	.	-	gene3626;gene3627
+scaffold_12	1443697	1445202	.	.	-	gene3647;gene3648
+scaffold_12	1451703	1453253	.	.	+	
+scaffold_12	1539726	1541309	.	.	+	gene3428
+scaffold_120	28733	30239	.	.	+	gene3714
+scaffold_120	304712	306219	.	.	+	
+scaffold_120	352412	353966	.	.	+	gene3744
+scaffold_121	68505	70015	.	.	-	gene3830
+scaffold_121	72603	74108	.	.	-	gene3831
+scaffold_121	128051	129556	.	.	-	gene3841
+scaffold_121	164156	165657	.	.	-	gene3801
+scaffold_121	281238	282748	.	.	-	
+scaffold_123	172894	174395	.	.	+	gene3970
+scaffold_125	124451	125955	.	.	-	gene4115
+scaffold_125	124654	126159	.	.	-	gene4115
+scaffold_12610	195	1699	.	.	-	
+scaffold_129	55398	56919	.	.	-	gene4417
+scaffold_129	244216	245721	.	.	+	
+scaffold_129	277608	279109	.	.	-	
+scaffold_13	148284	149791	.	.	+	gene4483
+scaffold_13	149645	151196	.	.	+	gene4483
+scaffold_13	281296	282800	.	.	+	gene4692
+scaffold_13	358604	360111	.	.	-	gene4703
+scaffold_13	445546	447058	.	.	+	gene4515
+scaffold_13	683554	685059	.	.	-	gene4747
+scaffold_13	767575	769082	.	.	+	gene4553
+scaffold_13	1211764	1213265	.	.	+	
+scaffold_13	1342320	1343821	.	.	-	
+scaffold_13	1396944	1398456	.	.	+	
+scaffold_13	1462272	1463781	.	.	-	
+scaffold_13	1624001	1625557	.	.	+	
+scaffold_13	1847775	1849276	.	.	+	
+scaffold_13	1866563	1868067	.	.	-	
+scaffold_130	147826	149379	.	.	+	
+scaffold_130	290198	291703	.	.	+	
+scaffold_130	324500	326013	.	.	-	gene4932
+scaffold_131	161998	163506	.	.	+	
+scaffold_131	265581	267085	.	.	+	gene4963
+scaffold_1329	2312	3830	.	.	+	gene5119
+scaffold_134	180840	182347	.	.	-	gene5217
+scaffold_134	195231	196738	.	.	+	gene5190
+scaffold_138	167431	168934	.	.	-	
+scaffold_138	280706	282207	.	.	-	
+scaffold_139	174731	176353	.	.	+	gene5523
+scaffold_14	430095	431635	.	.	+	
+scaffold_14	431125	432627	.	.	+	
+scaffold_14	476978	478479	.	.	-	gene5818;gene5819
+scaffold_14	477135	478676	.	.	-	gene5818;gene5819
+scaffold_14	578107	579634	.	.	+	
+scaffold_14	951952	953456	.	.	-	gene5851
+scaffold_14	1084611	1086121	.	.	+	gene5675
+scaffold_14	1287324	1288838	.	.	-	gene5883
+scaffold_14	1513274	1514856	.	.	+	gene5728
+scaffold_14	1556163	1557736	.	.	-	gene5927
+scaffold_143	185029	186533	.	.	+	gene6195
+scaffold_143	220194	221861	.	.	-	gene6199;gene6222
+scaffold_143	225179	226680	.	.	+	
+scaffold_143	266109	267618	.	.	+	gene6202
+scaffold_145	195553	197057	.	.	+	gene6332
+scaffold_146	71929	73451	.	.	-	gene6439
+scaffold_15	19282	20842	.	.	+	gene6658
+scaffold_15	99123	100631	.	.	-	
+scaffold_15	105057	106579	.	.	-	gene6834
+scaffold_15	105328	106914	.	.	-	gene6834
+scaffold_15	105604	107118	.	.	-	gene6834
+scaffold_15	106815	108399	.	.	-	
+scaffold_15	213293	214803	.	.	+	gene6675
+scaffold_15	233541	235099	.	.	+	gene6678
+scaffold_15	644597	646110	.	.	+	gene6734
+scaffold_15	651382	652890	.	.	+	gene6735
+scaffold_15	804312	805869	.	.	-	gene6882
+scaffold_15	811409	812910	.	.	+	gene6751
+scaffold_15	852618	854152	.	.	+	
+scaffold_15	1056146	1057658	.	.	+	
+scaffold_15	1056273	1057792	.	.	+	
+scaffold_15	1121448	1123033	.	.	-	gene6904
+scaffold_15	1319979	1321480	.	.	-	
+scaffold_15	1337030	1338534	.	.	+	
+scaffold_15	1354146	1355717	.	.	-	gene6797;gene6928
+scaffold_15	1401966	1403468	.	.	-	gene6935
+scaffold_151	206716	208312	.	.	-	gene7054
+scaffold_155	209443	211011	.	.	-	gene7236
+scaffold_155	210673	212177	.	.	-	gene7236
+scaffold_155	211519	213081	.	.	-	gene7236
+scaffold_155	269151	270692	.	.	+	gene7218
+scaffold_16	260550	262054	.	.	-	
+scaffold_16	316179	317693	.	.	-	gene7493;gene7659
+scaffold_16	322772	324274	.	.	-	gene7660
+scaffold_16	475449	476950	.	.	+	
+scaffold_16	618251	619779	.	.	+	gene7514
+scaffold_16	624958	626474	.	.	-	gene7687
+scaffold_16	1076801	1078307	.	.	-	gene7725
+scaffold_16	1142313	1143825	.	.	+	gene7571
+scaffold_16	1183839	1185344	.	.	-	gene7739
+scaffold_161	85004	86516	.	.	-	gene7834
+scaffold_166	65506	67017	.	.	-	
+scaffold_167	40133	41670	.	.	-	
+scaffold_169	27833	29334	.	.	+	gene8208
+scaffold_17	57939	59442	.	.	-	gene8473
+scaffold_17	77832	79340	.	.	+	gene8252
+scaffold_17	494139	495641	.	.	+	gene8321
+scaffold_17	601358	602871	.	.	+	gene8335
+scaffold_17	620511	622013	.	.	-	gene8556
+scaffold_17	663628	665129	.	.	+	gene8344
+scaffold_17	665366	666896	.	.	+	
+scaffold_17	866605	868108	.	.	+	
+scaffold_17	946767	948274	.	.	+	gene8378
+scaffold_17	947142	948646	.	.	+	gene8378
+scaffold_17	1019118	1020643	.	.	+	gene8387
+scaffold_17	1047885	1049412	.	.	+	gene8392
+scaffold_17	1236290	1237795	.	.	+	gene8422
+scaffold_17	1295607	1297112	.	.	-	gene8639
+scaffold_17	1296603	1298129	.	.	+	gene8428
+scaffold_17	1357561	1359062	.	.	+	gene8437
+scaffold_17	1357666	1359184	.	.	+	gene8437
+scaffold_17	1418724	1420325	.	.	+	gene8449
+scaffold_171	52858	54386	.	.	+	gene8734
+scaffold_172	129829	131364	.	.	+	
+scaffold_173	44367	45870	.	.	-	gene8816
+scaffold_173	46953	48457	.	.	+	gene8789
+scaffold_173	47725	49235	.	.	+	gene8789
+scaffold_173	150182	151707	.	.	-	gene8832
+scaffold_173	150948	152469	.	.	-	gene8832
+scaffold_174	76349	77898	.	.	+	
+scaffold_178	150526	152082	.	.	+	gene9056
+scaffold_18	38341	39844	.	.	-	
+scaffold_18	113016	114525	.	.	-	
+scaffold_18	255588	257156	.	.	+	gene9107
+scaffold_18	289733	291239	.	.	+	gene9110
+scaffold_18	357959	359463	.	.	+	gene9124
+scaffold_18	523186	524689	.	.	-	gene9375
+scaffold_18	699851	701354	.	.	-	gene9398
+scaffold_18	727847	729370	.	.	-	gene9402
+scaffold_18	820394	821905	.	.	+	gene9203
+scaffold_18	828295	829803	.	.	+	gene9206
+scaffold_18	1019091	1020599	.	.	+	gene9237
+scaffold_182	29409	30949	.	.	-	gene9602
+scaffold_182	203931	205432	.	.	-	gene9612
+scaffold_187	55234	56743	.	.	+	gene9770
+scaffold_187	57160	58668	.	.	+	gene9771
+scaffold_187	85144	86652	.	.	-	gene9805
+scaffold_187	89573	91115	.	.	-	gene9806
+scaffold_187	95350	96857	.	.	+	gene9774
+scaffold_187	95788	97427	.	.	+	gene9774
+scaffold_187	175132	176715	.	.	-	
+scaffold_187	191343	192852	.	.	-	gene9823
+scaffold_188	162491	163992	.	.	-	
+scaffold_189	53384	54888	.	.	+	
+scaffold_19	263159	264660	.	.	+	gene9972
+scaffold_19	299903	301436	.	.	-	gene9973
+scaffold_19	332337	333848	.	.	+	
+scaffold_19	473892	475408	.	.	-	
+scaffold_19	607121	608645	.	.	+	
+scaffold_19	611347	612881	.	.	+	
+scaffold_19	631033	632538	.	.	-	gene10001
+scaffold_19	737499	739008	.	.	+	
+scaffold_19	1337766	1339267	.	.	-	
+scaffold_191	22562	24161	.	.	+	
+scaffold_191	105245	106748	.	.	-	
+scaffold_191	158210	159714	.	.	-	gene10122
+scaffold_192	152020	153524	.	.	-	
+scaffold_193	47755	49264	.	.	-	
+scaffold_197	61746	63250	.	.	-	gene10317
+scaffold_197	134561	136064	.	.	-	
+scaffold_2	61724	63229	.	.	-	
+scaffold_2	127385	128894	.	.	+	gene10720
+scaffold_2	193149	194653	.	.	-	gene10729
+scaffold_2	238558	240060	.	.	+	gene10401
+scaffold_2	249164	250677	.	.	+	gene10401
+scaffold_2	251750	253303	.	.	+	gene10401
+scaffold_2	257151	258699	.	.	+	gene10401
+scaffold_2	505472	506976	.	.	-	
+scaffold_2	624942	626444	.	.	-	gene10784
+scaffold_2	676719	678221	.	.	-	gene10788
+scaffold_2	741647	743149	.	.	-	
+scaffold_2	1046488	1048045	.	.	+	gene10466
+scaffold_2	1324436	1325948	.	.	+	gene10494
+scaffold_2	1403846	1405365	.	.	-	gene10503
+scaffold_2	1730159	1731700	.	.	-	
+scaffold_2	1743632	1745138	.	.	-	gene10529;gene10889
+scaffold_2	1759230	1760770	.	.	-	
+scaffold_2	1760074	1761663	.	.	-	
+scaffold_2	1773831	1775400	.	.	+	gene10532
+scaffold_2	1796870	1798532	.	.	-	gene10902
+scaffold_2	2038820	2040321	.	.	-	
+scaffold_2	2247783	2249345	.	.	+	gene10571
+scaffold_2	2260154	2261661	.	.	-	
+scaffold_2	2405989	2407513	.	.	+	
+scaffold_2	2520221	2521798	.	.	+	gene10584
+scaffold_2	2535673	2537177	.	.	+	
+scaffold_2	2559828	2561333	.	.	+	
+scaffold_2	2580066	2581567	.	.	+	gene10592
+scaffold_2	2756050	2757558	.	.	+	gene10605
+scaffold_2	2802845	2804352	.	.	+	
+scaffold_2	2811032	2812622	.	.	+	gene10614
+scaffold_2	2876052	2877558	.	.	-	gene10978
+scaffold_2	2916019	2917539	.	.	+	gene10620
+scaffold_2	3252159	3253666	.	.	-	
+scaffold_2	3429876	3431381	.	.	+	
+scaffold_2	3520727	3522253	.	.	+	gene10677
+scaffold_2	3667422	3668923	.	.	-	gene11043
+scaffold_20	517670	519171	.	.	-	gene11233
+scaffold_20	530603	532112	.	.	-	gene11234
+scaffold_20	658790	660305	.	.	+	gene11112
+scaffold_20	892610	894115	.	.	-	
+scaffold_20	940522	942032	.	.	+	gene11134
+scaffold_20	949477	950981	.	.	+	gene11139
+scaffold_20	951401	952910	.	.	+	gene11140
+scaffold_20	953348	954971	.	.	-	gene11277
+scaffold_20	953775	955350	.	.	-	gene11277
+scaffold_20	1028184	1029693	.	.	+	gene11147
+scaffold_20	1110560	1112066	.	.	+	gene11158
+scaffold_20	1211923	1213424	.	.	-	gene11298
+scaffold_20	1313307	1314811	.	.	-	
+scaffold_20	1316419	1317920	.	.	-	gene11308;gene11309
+scaffold_20	1408039	1409629	.	.	-	gene11323
+scaffold_204	158707	160300	.	.	+	
+scaffold_21	369064	370568	.	.	-	
+scaffold_21	561645	563148	.	.	+	gene11628
+scaffold_21	917608	919110	.	.	-	gene11777;gene11778
+scaffold_21	1116260	1117835	.	.	+	gene11672
+scaffold_21	1237118	1238623	.	.	+	
+scaffold_21	1421117	1422630	.	.	-	gene11840
+scaffold_21	1423905	1425409	.	.	-	
+scaffold_210	10753	12280	.	.	-	
+scaffold_210	73290	74797	.	.	+	gene11848
+scaffold_210	79953	81491	.	.	+	gene11850
+scaffold_211	78746	80249	.	.	+	
+scaffold_211	85752	87284	.	.	+	gene11879
+scaffold_211	85973	87482	.	.	+	gene11879
+scaffold_211	88196	89727	.	.	+	gene11880
+scaffold_211	91877	93378	.	.	+	gene11880
+scaffold_211	94474	95979	.	.	+	
+scaffold_211	141715	143393	.	.	-	gene11904
+scaffold_213	138282	139784	.	.	+	gene11961
+scaffold_218	139454	140960	.	.	-	
+scaffold_219	79003	80506	.	.	-	gene12120
+scaffold_220	43865	45368	.	.	-	gene12397
+scaffold_220	50159	51675	.	.	+	gene12378
+scaffold_223	129452	130955	.	.	+	gene12479
+scaffold_226	119721	121227	.	.	+	gene12562
+scaffold_23	171720	173221	.	.	-	
+scaffold_23	181310	182819	.	.	-	
+scaffold_23	191060	192569	.	.	-	gene12749
+scaffold_23	212480	213987	.	.	-	gene12752
+scaffold_23	359774	361277	.	.	-	
+scaffold_23	386065	387573	.	.	+	gene12655
+scaffold_23	423115	424616	.	.	-	
+scaffold_23	604147	605651	.	.	+	
+scaffold_23	627136	628638	.	.	+	
+scaffold_23	659788	661290	.	.	+	gene12683
+scaffold_23	922218	923719	.	.	+	gene12708
+scaffold_232	113145	114649	.	.	-	gene12923
+scaffold_238	23514	25120	.	.	+	gene13044
+scaffold_238	24735	26297	.	.	+	gene13044
+scaffold_238	28979	30483	.	.	+	gene13044
+scaffold_238	42588	44092	.	.	-	
+scaffold_24	211858	213364	.	.	+	
+scaffold_24	403448	404949	.	.	+	gene13116
+scaffold_24	440585	442086	.	.	+	
+scaffold_24	578540	580116	.	.	-	gene13228
+scaffold_24	606800	608305	.	.	+	gene13126
+scaffold_24	1068550	1070053	.	.	+	gene13166
+scaffold_24	1136973	1138501	.	.	-	gene13320;gene13321
+scaffold_245	8382	9890	.	.	+	gene13433
+scaffold_245	10655	12158	.	.	-	gene13445
+scaffold_245	22435	24017	.	.	+	gene13436
+scaffold_25	201047	202552	.	.	-	gene13707;gene13708
+scaffold_25	279205	280706	.	.	-	
+scaffold_25	357689	359273	.	.	+	gene13567
+scaffold_25	421499	423125	.	.	-	gene13730
+scaffold_25	422153	423723	.	.	-	gene13730
+scaffold_25	536610	538139	.	.	-	
+scaffold_25	596553	598056	.	.	+	gene13591
+scaffold_25	683812	685342	.	.	+	gene13755
+scaffold_25	741137	742658	.	.	-	gene13761
+scaffold_25	741436	742952	.	.	-	gene13761
+scaffold_25	747511	749013	.	.	-	
+scaffold_25	898249	899817	.	.	+	gene13632
+scaffold_25	1111673	1113361	.	.	+	gene13669
+scaffold_25	1169684	1171189	.	.	+	gene13679
+scaffold_25	1174306	1175882	.	.	-	gene13796
+scaffold_25	1175500	1177014	.	.	-	gene13796
+scaffold_2516	756	2257	.	.	+	
+scaffold_253	74646	76150	.	.	+	gene13862
+scaffold_253	75703	77242	.	.	+	gene13862
+scaffold_253	76200	77719	.	.	+	gene13862
+scaffold_26	458356	459952	.	.	+	gene13964;gene14075
+scaffold_26	751895	753400	.	.	+	
+scaffold_26	1013773	1015330	.	.	+	gene14021
+scaffold_26	1118745	1120269	.	.	-	gene14126
+scaffold_260	56618	58119	.	.	+	gene14151
+scaffold_262	47135	48636	.	.	+	gene14175
+scaffold_27	40802	42366	.	.	+	gene14258
+scaffold_27	1157093	1158596	.	.	-	
+scaffold_28	222548	224051	.	.	+	
+scaffold_28	248855	250356	.	.	+	gene14568
+scaffold_28	293755	295260	.	.	+	
+scaffold_28	594415	595916	.	.	-	gene14710
+scaffold_28	742376	743885	.	.	+	gene14610
+scaffold_28	1076405	1077915	.	.	+	gene14641
+scaffold_28	1161835	1163336	.	.	-	gene14761
+scaffold_285	43834	45338	.	.	-	gene14835
+scaffold_285	57630	59137	.	.	-	gene14836;gene14837
+scaffold_285	63050	64570	.	.	-	gene14838
+scaffold_285	76847	78358	.	.	-	gene14841
+scaffold_29	40289	41794	.	.	+	
+scaffold_29	75884	77394	.	.	+	gene14901
+scaffold_29	86693	88309	.	.	-	
+scaffold_29	94029	95530	.	.	+	
+scaffold_29	697796	699317	.	.	-	gene15075
+scaffold_29	699256	700775	.	.	-	gene15075
+scaffold_29	839777	841334	.	.	+	gene14955
+scaffold_29	1015237	1016742	.	.	-	gene15102
+scaffold_29	1128700	1130223	.	.	-	
+scaffold_29	1230444	1231953	.	.	-	gene15130
+scaffold_299	32433	33953	.	.	-	gene15238
+scaffold_299	59464	60985	.	.	-	gene15241
+scaffold_3	9781	11283	.	.	-	gene15589
+scaffold_3	10346	11949	.	.	-	gene15589
+scaffold_3	183370	184960	.	.	-	gene15607
+scaffold_3	183595	185215	.	.	-	gene15607
+scaffold_3	184270	185951	.	.	-	gene15607
+scaffold_3	184574	186194	.	.	-	gene15607
+scaffold_3	184858	186454	.	.	-	gene15607
+scaffold_3	185699	187220	.	.	-	gene15607
+scaffold_3	210083	211592	.	.	+	gene15265
+scaffold_3	210372	211879	.	.	+	gene15265
+scaffold_3	459850	461352	.	.	-	gene15633
+scaffold_3	462152	463719	.	.	-	gene15634
+scaffold_3	463965	465589	.	.	-	gene15634
+scaffold_3	464184	465702	.	.	-	gene15634
+scaffold_3	465541	467048	.	.	-	gene15635
+scaffold_3	465678	467180	.	.	-	gene15635
+scaffold_3	465913	467594	.	.	-	gene15635
+scaffold_3	543686	545188	.	.	-	gene15645
+scaffold_3	819350	820854	.	.	-	gene15318
+scaffold_3	827282	828868	.	.	-	
+scaffold_3	840448	841957	.	.	-	gene15670
+scaffold_3	842461	843965	.	.	-	gene15671
+scaffold_3	1042752	1044256	.	.	+	gene15335
+scaffold_3	1118940	1120458	.	.	+	gene15341
+scaffold_3	1394494	1396001	.	.	+	gene15366
+scaffold_3	1432734	1434243	.	.	+	gene15372
+scaffold_3	1434014	1435515	.	.	+	gene15372
+scaffold_3	1613673	1615175	.	.	+	gene15741
+scaffold_3	1968174	1969710	.	.	+	gene15418
+scaffold_3	2106705	2108206	.	.	+	gene15787
+scaffold_3	2180707	2182394	.	.	-	gene15794
+scaffold_3	2181499	2183018	.	.	-	gene15794
+scaffold_3	2204054	2205568	.	.	+	
+scaffold_3	2398173	2399677	.	.	-	gene15822
+scaffold_3	2445235	2446737	.	.	-	gene15467
+scaffold_3	2600084	2601588	.	.	-	
+scaffold_3	2664936	2666507	.	.	-	gene15841
+scaffold_3	2790133	2791639	.	.	-	
+scaffold_3	2898151	2899667	.	.	-	
+scaffold_3	2934772	2936345	.	.	+	gene15513
+scaffold_3	3159703	3161205	.	.	+	gene15534
+scaffold_3	3457732	3459235	.	.	-	gene15918
+scaffold_3	3508467	3510049	.	.	-	gene15925
+scaffold_3	3509028	3510536	.	.	-	gene15925
+scaffold_3	3521759	3523271	.	.	-	gene15927
+scaffold_3	3569480	3571039	.	.	-	
+scaffold_3	3764663	3766189	.	.	+	gene15584
+scaffold_30	164456	165958	.	.	+	
+scaffold_30	701084	702591	.	.	-	gene16107
+scaffold_30	1024537	1026038	.	.	+	gene16128
+scaffold_307	16848	18351	.	.	+	
+scaffold_31	230681	232188	.	.	+	
+scaffold_31	275355	276856	.	.	-	gene16340
+scaffold_31	330212	331717	.	.	+	
+scaffold_31	960957	962458	.	.	-	
+scaffold_32	75627	77133	.	.	-	gene16567
+scaffold_32	171322	172860	.	.	-	gene16574
+scaffold_32	183811	185406	.	.	-	
+scaffold_32	202420	203952	.	.	-	gene16505
+scaffold_32	240882	242395	.	.	-	gene16507
+scaffold_32	364906	366414	.	.	+	gene16512
+scaffold_32	1023577	1025083	.	.	+	gene16544
+scaffold_32	1023720	1025230	.	.	+	gene16544
+scaffold_34	141467	142968	.	.	+	
+scaffold_34	955676	957193	.	.	+	gene17102
+scaffold_35	338770	340426	.	.	+	gene17309
+scaffold_35	460516	462077	.	.	+	
+scaffold_35	551515	553016	.	.	+	gene17323
+scaffold_35	553451	554954	.	.	+	gene17323
+scaffold_3535	0	1169	.	.	-	
+scaffold_36	76275	77782	.	.	-	gene17696
+scaffold_36	185839	187343	.	.	-	gene17714;gene17715
+scaffold_36	187272	188783	.	.	-	
+scaffold_36	524266	525772	.	.	+	gene17599
+scaffold_36	524602	526144	.	.	+	gene17599
+scaffold_36	684121	685622	.	.	-	gene17799
+scaffold_3677	3357	4858	.	.	-	
+scaffold_37	718061	719563	.	.	+	
+scaffold_37	828502	830004	.	.	+	gene17983
+scaffold_37	866883	868389	.	.	-	gene18058
+scaffold_37	892704	894208	.	.	-	gene18059
+scaffold_37	916794	918295	.	.	-	gene18060
+scaffold_37	963853	965354	.	.	-	gene18064
+scaffold_37	993133	994648	.	.	-	
+scaffold_37	1013312	1014813	.	.	-	
+scaffold_39	182726	184266	.	.	-	gene18478
+scaffold_39	183480	184988	.	.	-	gene18394
+scaffold_39	188136	189640	.	.	-	gene18479
+scaffold_39	195443	197015	.	.	-	gene18484
+scaffold_39	201727	203231	.	.	-	gene18487;gene18488
+scaffold_39	415944	417448	.	.	+	gene18410
+scaffold_39	418277	419805	.	.	+	gene18411
+scaffold_39	477137	478644	.	.	+	gene18424
+scaffold_39	606247	607754	.	.	+	gene18437
+scaffold_39	608628	610157	.	.	+	gene18437
+scaffold_39	690503	692063	.	.	+	gene18448;gene18521
+scaffold_39	962933	964439	.	.	+	gene18459
+scaffold_39	969599	971107	.	.	-	gene18538
+scaffold_4	206411	207919	.	.	-	
+scaffold_4	841301	842814	.	.	-	gene19021
+scaffold_4	989084	990587	.	.	-	gene19033
+scaffold_4	1011294	1012810	.	.	-	gene19036
+scaffold_4	1151916	1153417	.	.	+	gene18704
+scaffold_4	1223581	1225084	.	.	-	gene19055
+scaffold_4	1228211	1229720	.	.	-	
+scaffold_4	1309690	1311192	.	.	+	gene18722
+scaffold_4	1535931	1537455	.	.	-	
+scaffold_4	1664680	1666186	.	.	-	
+scaffold_4	2006605	2008108	.	.	-	gene19115
+scaffold_4	2152370	2153872	.	.	-	gene19130
+scaffold_4	2295476	2296979	.	.	+	
+scaffold_4	2320934	2322467	.	.	-	gene19150
+scaffold_4	2322072	2323579	.	.	-	gene19150
+scaffold_4	2333235	2334741	.	.	-	gene19153
+scaffold_4	2336024	2337525	.	.	-	
+scaffold_4	2372227	2373733	.	.	+	gene18833
+scaffold_4	2626222	2627723	.	.	+	gene18892
+scaffold_4	2726211	2727717	.	.	-	
+scaffold_4	2771478	2772984	.	.	+	
+scaffold_4	2822395	2823923	.	.	+	gene18919
+scaffold_4	2859076	2860583	.	.	+	
+scaffold_4	3016658	3018162	.	.	+	gene18937
+scaffold_40	71620	73135	.	.	-	
+scaffold_40	74915	76426	.	.	+	gene19228
+scaffold_40	95592	97110	.	.	+	gene19229
+scaffold_40	267903	269404	.	.	+	
+scaffold_40	406215	407716	.	.	+	
+scaffold_40	708770	710557	.	.	-	gene19390
+scaffold_40	709220	710798	.	.	-	gene19390
+scaffold_40	715554	717057	.	.	+	gene19290
+scaffold_40	741707	743211	.	.	+	gene19295
+scaffold_40	880673	882174	.	.	+	
+scaffold_40	886948	888453	.	.	+	
+scaffold_41	25779	27284	.	.	+	
+scaffold_41	217361	219018	.	.	-	gene19592
+scaffold_41	231642	233143	.	.	-	
+scaffold_41	691628	693133	.	.	+	gene19549
+scaffold_41	807949	809453	.	.	+	
+scaffold_4175	0	1478	.	.	+	gene19707
+scaffold_42	20457	21958	.	.	+	
+scaffold_42	84217	85720	.	.	-	gene19807
+scaffold_42	290916	292426	.	.	+	gene19748
+scaffold_42	634605	636109	.	.	-	gene19837
+scaffold_42	691209	692716	.	.	-	
+scaffold_42	718865	720366	.	.	-	gene19847
+scaffold_42	786001	787507	.	.	-	gene19857
+scaffold_42	1009614	1011123	.	.	+	gene19792
+scaffold_4245	1566	3069	.	.	+	gene19924
+scaffold_43	88872	90376	.	.	+	gene19987
+scaffold_43	93915	95502	.	.	+	gene19989
+scaffold_43	94304	95807	.	.	+	gene19989
+scaffold_43	102262	103765	.	.	+	gene19990
+scaffold_43	565866	567367	.	.	+	gene20029
+scaffold_43	575928	577437	.	.	-	gene20097
+scaffold_43	582678	584194	.	.	-	
+scaffold_43	741985	743519	.	.	-	gene20108
+scaffold_43	778120	779626	.	.	-	
+scaffold_43	784099	785629	.	.	-	
+scaffold_43	1004988	1006521	.	.	+	gene20061;gene20133
+scaffold_436	27187	28688	.	.	+	gene20161
+scaffold_44	324494	326005	.	.	-	gene20320
+scaffold_45	564967	566472	.	.	-	
+scaffold_45	609434	610935	.	.	+	gene20490
+scaffold_46	53134	54639	.	.	+	gene20675
+scaffold_46	122813	124320	.	.	+	gene20679
+scaffold_46	176624	178160	.	.	+	gene20684
+scaffold_46	332374	333878	.	.	-	gene20785
+scaffold_46	392630	394135	.	.	-	
+scaffold_46	473721	475225	.	.	-	
+scaffold_46	736145	737746	.	.	-	gene20826;gene20827
+scaffold_46	740886	742407	.	.	+	gene20737
+scaffold_47	56934	58446	.	.	+	gene20927
+scaffold_47	197743	199248	.	.	-	
+scaffold_47	296800	298313	.	.	-	
+scaffold_47	297087	298591	.	.	-	
+scaffold_47	312757	314263	.	.	+	gene20943
+scaffold_47	346156	347663	.	.	+	
+scaffold_47	430837	432441	.	.	-	gene21030
+scaffold_47	431497	433006	.	.	-	gene21030
+scaffold_47	443715	445222	.	.	-	gene21031
+scaffold_47	648847	650356	.	.	-	gene21055
+scaffold_47	777595	779099	.	.	+	gene20979
+scaffold_47	782206	783746	.	.	+	
+scaffold_47	938176	939682	.	.	+	gene20996
+scaffold_47	939140	940659	.	.	+	gene20996
+scaffold_48	133462	134978	.	.	-	gene21223
+scaffold_5	49792	51350	.	.	-	gene21719
+scaffold_5	62700	64224	.	.	+	gene21525
+scaffold_5	81593	83121	.	.	-	
+scaffold_5	904568	906077	.	.	-	
+scaffold_5	905648	907168	.	.	-	
+scaffold_5	914491	916048	.	.	-	
+scaffold_5	999911	1001416	.	.	-	gene21786
+scaffold_5	1096604	1098105	.	.	+	
+scaffold_5	1147278	1148783	.	.	-	gene21809;gene21810
+scaffold_5	1152349	1153854	.	.	+	gene21597
+scaffold_5	1152571	1154153	.	.	+	gene21597
+scaffold_5	1152811	1154438	.	.	+	gene21597
+scaffold_5	1156076	1157581	.	.	+	gene21598
+scaffold_5	1159672	1161175	.	.	+	gene21599
+scaffold_5	1170917	1172418	.	.	-	gene21812
+scaffold_5	1184643	1186152	.	.	-	gene21814
+scaffold_5	1244553	1246060	.	.	+	gene21614
+scaffold_5	1320204	1321705	.	.	-	gene21822
+scaffold_5	1323531	1325049	.	.	-	
+scaffold_5	1330143	1331649	.	.	+	
+scaffold_5	1528139	1529798	.	.	+	gene21631
+scaffold_5	1711164	1712669	.	.	-	gene21843
+scaffold_5	1892712	1894216	.	.	-	
+scaffold_5	1929046	1930554	.	.	-	gene21860
+scaffold_5	1956939	1958444	.	.	-	gene21864
+scaffold_5	2021640	2023148	.	.	-	
+scaffold_5	2241433	2242938	.	.	-	
+scaffold_5	2267292	2268798	.	.	-	gene21884
+scaffold_5	2323318	2324826	.	.	-	
+scaffold_5	2475622	2477139	.	.	+	gene21707
+scaffold_5	2475750	2477386	.	.	+	gene21707
+scaffold_5	2476668	2478188	.	.	+	gene21707
+scaffold_51	55254	56801	.	.	-	gene22186
+scaffold_51	56047	57563	.	.	-	gene22186
+scaffold_51	57239	58890	.	.	-	gene22186
+scaffold_51	551646	553148	.	.	+	gene22144
+scaffold_51	558971	560481	.	.	+	gene22144
+scaffold_51	757342	758877	.	.	-	gene22232
+scaffold_52	222439	224000	.	.	-	gene22377
+scaffold_52	224128	225649	.	.	-	gene22377
+scaffold_52	346440	347973	.	.	+	gene22313
+scaffold_52	362581	364085	.	.	-	
+scaffold_52	648082	649592	.	.	-	
+scaffold_53	42167	43704	.	.	+	gene22467
+scaffold_53	131238	132745	.	.	-	gene22548
+scaffold_53	133380	134949	.	.	-	gene22548
+scaffold_53	141911	143415	.	.	-	
+scaffold_53	205196	206697	.	.	+	gene22480
+scaffold_53	368416	369956	.	.	+	gene22505
+scaffold_53	556490	557993	.	.	-	
+scaffold_53	665153	666660	.	.	+	gene22527
+scaffold_53	779095	780604	.	.	-	gene22586
+scaffold_54	579200	580708	.	.	-	gene22744;gene22745
+scaffold_54	649901	651405	.	.	-	
+scaffold_55	393977	395490	.	.	-	gene22836
+scaffold_56	17492	19015	.	.	+	gene22934
+scaffold_56	409447	410948	.	.	-	gene23004
+scaffold_56	504697	506251	.	.	+	gene22959
+scaffold_56	518553	520160	.	.	+	gene22961
+scaffold_57	499824	501327	.	.	+	
+scaffold_574	37123	38624	.	.	+	gene23203
+scaffold_5798	29	1533	.	.	+	
+scaffold_58	379277	380834	.	.	-	gene23277;gene23329
+scaffold_58	438919	440433	.	.	+	gene23283
+scaffold_59	165688	167206	.	.	-	
+scaffold_59	193278	194782	.	.	+	
+scaffold_59	367266	368775	.	.	-	gene23458
+scaffold_59	517905	519413	.	.	+	gene23421
+scaffold_59	586394	587898	.	.	+	
+scaffold_59	686870	688377	.	.	-	
+scaffold_59	690022	691574	.	.	-	
+scaffold_59	735241	736747	.	.	+	gene23480
+scaffold_598	27258	28765	.	.	-	gene23528
+scaffold_6	63458	64967	.	.	-	
+scaffold_6	103611	105167	.	.	+	gene23548
+scaffold_6	127323	128839	.	.	-	gene23554
+scaffold_6	141910	143411	.	.	-	gene23556
+scaffold_6	276100	277607	.	.	-	gene23567
+scaffold_6	415341	416852	.	.	+	gene23579
+scaffold_6	460962	462468	.	.	-	
+scaffold_6	563899	565476	.	.	+	gene23609
+scaffold_6	564137	565638	.	.	+	gene23609
+scaffold_6	581203	582708	.	.	-	gene23920
+scaffold_6	756965	758470	.	.	+	gene23640
+scaffold_6	794977	796478	.	.	-	
+scaffold_6	883441	884957	.	.	+	gene23658;gene23971
+scaffold_6	904477	905986	.	.	-	gene23660
+scaffold_6	1022214	1023718	.	.	+	gene23673
+scaffold_6	1142421	1143929	.	.	+	gene23693
+scaffold_6	1142643	1144162	.	.	+	gene23693
+scaffold_6	1149341	1150849	.	.	+	gene23697
+scaffold_6	1502742	1504250	.	.	-	gene23742
+scaffold_6	1559551	1561052	.	.	+	gene23746
+scaffold_6	1702337	1703856	.	.	-	
+scaffold_6	1763366	1764870	.	.	-	gene24086
+scaffold_6	1834478	1836022	.	.	-	gene24093
+scaffold_6	1835535	1837038	.	.	-	gene24093
+scaffold_6	1837097	1838603	.	.	-	
+scaffold_6	1875955	1877464	.	.	-	
+scaffold_6	2026325	2027845	.	.	-	gene24118
+scaffold_6	2048361	2049930	.	.	+	gene23815
+scaffold_6	2065526	2067062	.	.	+	gene23815
+scaffold_6	2069232	2070734	.	.	+	gene23815
+scaffold_6	2115563	2117077	.	.	-	gene24133
+scaffold_6	2211045	2212548	.	.	-	gene24149
+scaffold_6	2214040	2215548	.	.	+	gene24150
+scaffold_6	2214316	2215825	.	.	+	gene24150
+scaffold_6	2328815	2330321	.	.	-	gene24163
+scaffold_6	2348547	2350112	.	.	+	gene23857
+scaffold_60	269301	270843	.	.	+	gene24200
+scaffold_60	304589	306093	.	.	-	gene24274
+scaffold_60	384041	385542	.	.	-	
+scaffold_60	566152	567663	.	.	-	gene24294
+scaffold_6071	1494	2998	.	.	-	
+scaffold_61	110280	111784	.	.	-	gene24389
+scaffold_61	135168	136679	.	.	+	gene24392
+scaffold_61	316591	318097	.	.	-	gene24496
+scaffold_61	321096	322602	.	.	-	gene24497
+scaffold_61	330313	331828	.	.	-	gene24498;gene24499
+scaffold_61	433767	435281	.	.	-	gene24511
+scaffold_61	445152	446658	.	.	+	gene24424
+scaffold_61	447390	448895	.	.	+	gene24425
+scaffold_61	501145	502656	.	.	+	gene24435
+scaffold_61	506991	508495	.	.	+	gene24436
+scaffold_61	555009	556547	.	.	-	gene24444;gene24526
+scaffold_62	299461	300962	.	.	+	gene24616
+scaffold_62	317684	319189	.	.	-	
+scaffold_62	393332	394837	.	.	-	
+scaffold_62	434944	436445	.	.	+	
+scaffold_62	476445	477993	.	.	+	
+scaffold_62	499115	500619	.	.	+	
+scaffold_62	600068	601575	.	.	-	
+scaffold_62	600195	601914	.	.	-	
+scaffold_62	734642	736149	.	.	-	gene24727
+scaffold_627	12245	13746	.	.	-	gene24759
+scaffold_63	87926	89442	.	.	-	gene24778;gene24853
+scaffold_63	90163	91782	.	.	+	gene24779
+scaffold_63	238280	239784	.	.	-	gene24865
+scaffold_63	479553	481054	.	.	+	
+scaffold_63	594775	596328	.	.	+	
+scaffold_63	679529	681138	.	.	-	gene24895
+scaffold_63	681813	683381	.	.	-	
+scaffold_65	600557	602061	.	.	+	
+scaffold_66	194416	195925	.	.	-	
+scaffold_66	274702	276207	.	.	-	gene25383
+scaffold_66	666794	668301	.	.	-	
+scaffold_66	767627	769131	.	.	-	gene25411
+scaffold_66	769585	771086	.	.	-	
+scaffold_66	771001	772502	.	.	+	gene25362
+scaffold_66	793691	795270	.	.	-	
+scaffold_67	51950	53538	.	.	-	gene25553
+scaffold_67	52256	53784	.	.	-	gene25553
+scaffold_67	88019	89522	.	.	-	
+scaffold_67	89137	90642	.	.	-	gene25563
+scaffold_67	91730	93282	.	.	-	gene25565
+scaffold_67	95148	96661	.	.	-	gene25566;gene25567
+scaffold_67	97674	99181	.	.	+	gene25569
+scaffold_67	97915	99434	.	.	+	gene25569
+scaffold_67	412937	414451	.	.	+	gene25503
+scaffold_67	416701	418207	.	.	+	gene25504
+scaffold_67	457101	458667	.	.	-	gene25588
+scaffold_67	461873	463418	.	.	+	gene25515
+scaffold_67	467472	468976	.	.	-	gene25593
+scaffold_67	469131	470633	.	.	+	
+scaffold_67	469601	471217	.	.	+	gene25517
+scaffold_67	515798	517304	.	.	-	
+scaffold_67	598514	600034	.	.	-	gene25609
+scaffold_69	586237	587747	.	.	+	gene25824
+scaffold_69	641738	643342	.	.	-	gene25875
+scaffold_69	642286	643825	.	.	-	gene25875
+scaffold_69	642792	644379	.	.	-	gene25875
+scaffold_7	12604	14106	.	.	+	
+scaffold_7	101663	103184	.	.	-	gene25930;gene26090
+scaffold_7	118171	119690	.	.	-	gene26093
+scaffold_7	162547	164065	.	.	-	
+scaffold_7	406985	408486	.	.	-	gene25942
+scaffold_7	575654	577200	.	.	+	gene25947
+scaffold_7	649237	650738	.	.	+	
+scaffold_7	784937	786531	.	.	+	
+scaffold_7	866499	868004	.	.	+	
+scaffold_7	1011529	1013034	.	.	-	
+scaffold_7	1033510	1035011	.	.	+	
+scaffold_7	1361805	1363306	.	.	-	
+scaffold_7	1440694	1442215	.	.	-	gene26181
+scaffold_7	1543679	1545186	.	.	+	gene26014
+scaffold_7	1615051	1616558	.	.	+	
+scaffold_7	1615159	1616664	.	.	+	
+scaffold_7	1667290	1668792	.	.	+	
+scaffold_7	1911785	1913295	.	.	+	gene26057
+scaffold_7	2087320	2088823	.	.	-	
+scaffold_7	2136942	2138449	.	.	+	
+scaffold_7	2168135	2169636	.	.	-	gene26248
+scaffold_70	25020	26674	.	.	-	
+scaffold_70	499525	501107	.	.	+	gene26332
+scaffold_70	500269	501777	.	.	+	gene26332
+scaffold_71	464442	465946	.	.	-	
+scaffold_71	468858	470362	.	.	-	gene26565
+scaffold_718	75	1579	.	.	+	
+scaffold_72	85296	86820	.	.	+	gene26625
+scaffold_72	271593	273097	.	.	-	
+scaffold_72	273976	275585	.	.	-	gene26740
+scaffold_72	337038	338547	.	.	+	gene26661
+scaffold_72	358536	360040	.	.	+	gene26667
+scaffold_72	385088	386589	.	.	-	
+scaffold_72	487110	488615	.	.	+	gene26682
+scaffold_72	563633	565141	.	.	+	
+scaffold_73	186002	187503	.	.	+	
+scaffold_73	367532	369102	.	.	+	gene26830
+scaffold_74	246973	248474	.	.	+	gene26939
+scaffold_74	439401	440907	.	.	-	
+scaffold_74	442067	443568	.	.	-	
+scaffold_75	10570	12078	.	.	+	gene27015
+scaffold_75	334735	336264	.	.	-	gene27112;gene27113
+scaffold_75	438516	440296	.	.	-	gene27119
+scaffold_75	512746	514275	.	.	-	
+scaffold_76	56874	58375	.	.	-	gene27159
+scaffold_76	176741	178242	.	.	-	
+scaffold_76	417888	419392	.	.	+	gene27181
+scaffold_76	453365	454925	.	.	-	gene27231
+scaffold_76	453986	455495	.	.	-	gene27231
+scaffold_76	518808	520309	.	.	-	
+scaffold_76	606773	608279	.	.	+	gene27197
+scaffold_766	9590	11095	.	.	+	
+scaffold_77	266465	268001	.	.	+	
+scaffold_77	317179	318684	.	.	-	gene27352
+scaffold_77	492701	494211	.	.	-	
+scaffold_78	142386	143918	.	.	+	gene27433
+scaffold_78	143318	144874	.	.	+	gene27433
+scaffold_78	165221	166722	.	.	-	
+scaffold_78	360821	362341	.	.	+	gene27452
+scaffold_79	142016	143518	.	.	-	gene27625
+scaffold_79	164223	165729	.	.	+	gene27564
+scaffold_79	359233	360738	.	.	+	gene27582
+scaffold_79	555625	557129	.	.	+	
+scaffold_8	131354	132861	.	.	+	
+scaffold_8	170418	171919	.	.	+	gene27729
+scaffold_8	186452	187957	.	.	+	gene27730
+scaffold_8	265177	266746	.	.	-	
+scaffold_8	271207	272716	.	.	+	
+scaffold_8	306624	308130	.	.	-	gene27957
+scaffold_8	306774	308309	.	.	-	gene27957
+scaffold_8	308478	309994	.	.	-	gene27957
+scaffold_8	380424	381975	.	.	-	gene27963
+scaffold_8	382254	383755	.	.	-	gene27963
+scaffold_8	402624	404178	.	.	-	
+scaffold_8	403361	404874	.	.	-	
+scaffold_8	565651	567159	.	.	-	
+scaffold_8	601034	602582	.	.	+	gene27977
+scaffold_8	821684	823199	.	.	+	
+scaffold_8	1006663	1008179	.	.	-	gene28006
+scaffold_8	1057629	1059130	.	.	-	gene27792
+scaffold_8	1118921	1120472	.	.	-	gene28011
+scaffold_8	1285694	1287223	.	.	-	
+scaffold_8	1382389	1383891	.	.	+	
+scaffold_8	1409150	1410658	.	.	+	
+scaffold_8	1563582	1565085	.	.	-	gene28049
+scaffold_8	1569019	1570525	.	.	+	gene27831
+scaffold_8	1574366	1575884	.	.	-	gene28051
+scaffold_8	1876329	1877830	.	.	+	
+scaffold_8	2000455	2002024	.	.	-	gene27881;gene28088
+scaffold_8	2002659	2004164	.	.	-	gene28089
+scaffold_8	2034514	2036025	.	.	+	gene27889;gene28094
+scaffold_8	2175898	2177428	.	.	-	gene27912;gene28102
+scaffold_8	2208299	2209801	.	.	-	
+scaffold_80	274399	275912	.	.	-	
+scaffold_80	418197	419705	.	.	+	gene28149
+scaffold_80	478417	479947	.	.	-	gene28155
+scaffold_81	107014	108516	.	.	-	
+scaffold_81	445204	446756	.	.	+	gene28270
+scaffold_82	522816	524347	.	.	-	gene28406
+scaffold_83	16726	18232	.	.	-	gene28476
+scaffold_83	107910	109415	.	.	+	gene28440
+scaffold_83	183971	185475	.	.	-	
+scaffold_83	186207	187709	.	.	-	gene28499
+scaffold_83	214856	216357	.	.	+	
+scaffold_83	593515	595023	.	.	-	gene28534
+scaffold_83	599458	600969	.	.	+	
+scaffold_84	81798	83354	.	.	+	
+scaffold_85	346755	348265	.	.	-	
+scaffold_86	203899	205404	.	.	+	gene28775
+scaffold_86	298712	300230	.	.	+	gene28788
+scaffold_86	309096	310776	.	.	-	gene28846
+scaffold_86	317807	319315	.	.	-	gene28847
+scaffold_86	371747	373251	.	.	+	gene28797
+scaffold_86	472657	474176	.	.	+	
+scaffold_87	35492	36998	.	.	+	gene28903
+scaffold_87	148946	150454	.	.	-	gene28994
+scaffold_87	171462	172968	.	.	+	
+scaffold_87	200697	202215	.	.	-	gene29004
+scaffold_87	225435	226948	.	.	-	gene29007
+scaffold_87	402009	403510	.	.	-	
+scaffold_88	138156	139660	.	.	+	gene29059
+scaffold_88	303196	304700	.	.	-	
+scaffold_88	491299	492800	.	.	+	gene29102
+scaffold_89	333923	335424	.	.	+	gene29188
+scaffold_89	358921	360422	.	.	+	gene29189
+scaffold_89	464253	465757	.	.	+	gene29201
+scaffold_89	471144	472776	.	.	+	
+scaffold_89	482791	484297	.	.	-	gene29237
+scaffold_89	483284	484787	.	.	-	
+scaffold_89	493448	494953	.	.	-	gene29239
+scaffold_89	597898	599401	.	.	+	gene29206
+scaffold_89	632697	634203	.	.	-	
+scaffold_9	18645	20150	.	.	+	
+scaffold_9	18856	20374	.	.	+	gene29281
+scaffold_9	50580	52092	.	.	-	gene29479
+scaffold_9	137873	139382	.	.	-	gene29481
+scaffold_9	141946	143447	.	.	-	
+scaffold_9	176604	178109	.	.	+	
+scaffold_9	210652	212153	.	.	+	
+scaffold_9	390760	392263	.	.	+	
+scaffold_9	413814	415318	.	.	-	
+scaffold_9	545797	547311	.	.	+	gene29334
+scaffold_9	568576	570080	.	.	+	gene29338
+scaffold_9	665414	666921	.	.	-	
+scaffold_9	852968	854472	.	.	-	gene29559
+scaffold_9	908258	909765	.	.	-	gene29565
+scaffold_9	1087608	1089116	.	.	+	gene29391
+scaffold_9	1182796	1184299	.	.	-	gene29395
+scaffold_9	1363141	1364647	.	.	+	
+scaffold_9	1625127	1626630	.	.	+	gene29437
+scaffold_9	1840924	1842428	.	.	+	
+scaffold_9	2120475	2121984	.	.	+	
+scaffold_9	2120628	2122129	.	.	+	
+scaffold_90	183440	184969	.	.	+	gene29685
+scaffold_90	203392	204894	.	.	+	gene29690;gene29691
+scaffold_90	356595	358101	.	.	-	gene29751
+scaffold_90	359418	360955	.	.	-	gene29704;gene29752
+scaffold_90	417131	418638	.	.	-	gene29761
+scaffold_90	437211	438716	.	.	+	
+scaffold_91	37379	38902	.	.	+	gene29785
+scaffold_91	268306	269807	.	.	+	gene29816
+scaffold_93	284897	286497	.	.	-	
+scaffold_93	318602	320123	.	.	-	
+scaffold_94	167121	168629	.	.	+	gene30114
+scaffold_94	292916	294420	.	.	-	
+scaffold_94	312255	313765	.	.	+	gene30135
+scaffold_94	359387	360982	.	.	-	gene30185
+scaffold_95	218097	219692	.	.	+	gene30250
+scaffold_95	218780	220307	.	.	+	gene30250;gene30286
+scaffold_97	31650	33161	.	.	+	gene30437
+scaffold_97	56760	58309	.	.	+	gene30438
+scaffold_97	57590	59091	.	.	+	gene30438
+scaffold_97	130457	131958	.	.	+	gene30448
+scaffold_97	180987	182530	.	.	-	gene30495;gene30496
+scaffold_97	233182	234687	.	.	+	gene30452
+scaffold_97	280017	281543	.	.	+	
+scaffold_97	385354	386985	.	.	+	gene30468
+scaffold_97	424418	426019	.	.	-	gene30521
+scaffold_98	459287	460803	.	.	+	gene30632
+scaffold_99	145307	146902	.	.	-	gene30726
+scaffold_99	191515	193017	.	.	-	gene30728
+scaffold_99	262617	264118	.	.	+	gene30694
+scaffold_99	296132	297668	.	.	-	gene30737
+scaffold_99	325823	327329	.	.	+	
