@@ -1,0 +1,12 @@
+Motif Name	Consensus	p-value	Log p-value	Log2 enrichment ratio	# target sequences with Motif(total=0)	% of target sequences with Motif	# background sequences with Motif(total=0)	% of background sequences with Motif
+caudal(Homeobox)/Drosophila-Embryos-ChIP-Chip(modEncode)/Homer	GGYCATAAAW	1e0	0.000	-nan	0	-nan%	0	-nan%
+DREF/Drosophila-Promoters/Homer	AVYTATCGATAD	1e0	0.000	-nan	0	-nan%	0	-nan%
+E-box/Drosophila-Promoters/Homer	AACAGCTGTTHN	1e0	0.000	-nan	0	-nan%	0	-nan%
+Initiator/Drosophila-Promoters/Homer	NTCAGTYG	1e0	0.000	-nan	0	-nan%	0	-nan%
+Unknown1(NR/Ini-like)/Drosophila-Promoters/Homer	MYGGTCACACTG	1e0	0.000	-nan	0	-nan%	0	-nan%
+TATA-box/Drosophila-Promoters/Homer	CTATAAAAGCSV	1e0	0.000	-nan	0	-nan%	0	-nan%
+Unknown2/Drosophila-Promoters/Homer	CATCMCTA	1e0	0.000	-nan	0	-nan%	0	-nan%
+Unknown3/Drosophila-Promoters/Homer	ACVAKCTGGCAGCGC	1e0	0.000	-nan	0	-nan%	0	-nan%
+Unknown4/Drosophila-Promoters/Homer	AAAAATACCRMA	1e0	0.000	-nan	0	-nan%	0	-nan%
+Unknown5/Drosophila-Promoters/Homer	GCTGATAASV	1e0	0.000	-nan	0	-nan%	0	-nan%
+Unknown6/Drosophila-Promoters/Homer	AATTTTAAAA	1e0	0.000	-nan	0	-nan%	0	-nan%
