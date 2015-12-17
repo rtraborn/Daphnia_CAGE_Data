@@ -1,0 +1,1 @@
+cmd = /home/rtraborn/Daphnia/CAGE/TCO/motif_analysis/Dp_homer_tag_directory/test_data/test_list_5.txt /home/rtraborn/Daphnia/annotation_files/Daphnia_pulex.fasta homer_test_5 -size -50,50 -len 6,8,10,12 -bits -norevopp -mset insects
