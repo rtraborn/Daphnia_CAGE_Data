@@ -1,6 +1,8 @@
 -----------------------------
-letter-probability matrix:
+Motif 1 position-specific
+ probability matrix
 -----------------------------
+letter-probability matrix:
 alength= 4 w= 10 nsites= 20 E= 1e-66 
 0.001 0.134 0.864 0.001
 0.001 0.001 0.001 0.997
@@ -13,8 +15,10 @@ alength= 4 w= 10 nsites= 20 E= 1e-66
 0.173 0.001 0.825 0.001
 0.001 0.803 0.195 0.001
 -----------------------------
-letter-probability matrix:
+Motif 2 position-specific
+ probability matrix
 -----------------------------
+letter-probability matrix:
 alength= 4 w= 10 nsites= 20 E= 1e-57 
 0.174 0.309 0.265 0.251
 0.178 0.226 0.158 0.437
@@ -27,8 +31,10 @@ alength= 4 w= 10 nsites= 20 E= 1e-57
 0.113 0.313 0.406 0.168
 0.2 0.204 0.248 0.349
 -----------------------------
-letter-probability matrix:
+Motif 3 position-specific
+ probability matrix
 -----------------------------
+letter-probability matrix:
 alength= 4 w= 12 nsites= 20 E= 1e-45 
 0.174 0.201 0.112 0.513
 0.066 0.067 0.58 0.287
@@ -43,8 +49,10 @@ alength= 4 w= 12 nsites= 20 E= 1e-45
 0.318 0.001 0.001 0.68
 0.588 0.003 0.175 0.234
 -----------------------------
-letter-probability matrix:
+Motif 4 position-specific
+ probability matrix
 -----------------------------
+letter-probability matrix:
 alength= 4 w= 10 nsites= 20 E= 1e-29 
 0.882 0.001 0.001 0.116
 0.079 0.509 0.142 0.27
@@ -57,8 +65,10 @@ alength= 4 w= 10 nsites= 20 E= 1e-29
 0.997 0.001 0.001 0.001
 0.122 0.711 0.001 0.166
 -----------------------------
-letter-probability matrix:
+Motif 5 position-specific
+ probability matrix
 -----------------------------
+letter-probability matrix:
 alength= 4 w= 12 nsites= 20 E= 1e-25 
 0.119 0.048 0.095 0.738
 0.096 0.024 0.215 0.665
@@ -73,8 +83,10 @@ alength= 4 w= 12 nsites= 20 E= 1e-25
 0.162 0.024 0.623 0.191
 0.641 0.119 0.168 0.072
 -----------------------------
-letter-probability matrix:
+Motif 6 position-specific
+ probability matrix
 -----------------------------
+letter-probability matrix:
 alength= 4 w= 12 nsites= 20 E= 1e-22 
 0.084 0.784 0.001 0.131
 0.426 0.042 0.365 0.166
@@ -89,8 +101,10 @@ alength= 4 w= 12 nsites= 20 E= 1e-22
 0.206 0.671 0.082 0.041
 0.041 0.001 0.801 0.157
 -----------------------------
-letter-probability matrix:
+Motif 7 position-specific
+ probability matrix
 -----------------------------
+letter-probability matrix:
 alength= 4 w= 12 nsites= 20 E= 1e-20 
 0.852 0.146 0.001 0.001
 0.001 0.997 0.001 0.001
@@ -105,8 +119,10 @@ alength= 4 w= 12 nsites= 20 E= 1e-20
 0.001 0.883 0.115 0.001
 0.001 0.001 0.001 0.997
 -----------------------------
-letter-probability matrix:
+Motif 8 position-specific
+ probability matrix
 -----------------------------
+letter-probability matrix:
 alength= 4 w= 10 nsites= 20 E= 1e-20 
 0.001 0.001 0.997 0.001
 0.997 0.001 0.001 0.001
@@ -119,8 +135,10 @@ alength= 4 w= 10 nsites= 20 E= 1e-20
 0.001 0.997 0.001 0.001
 0.001 0.973 0.001 0.025
 -----------------------------
-letter-probability matrix:
+Motif 9 position-specific
+ probability matrix
 -----------------------------
+letter-probability matrix:
 alength= 4 w= 12 nsites= 20 E= 1e-17 
 0.281 0.001 0.717 0.001
 0.001 0.14 0.001 0.858
@@ -135,8 +153,10 @@ alength= 4 w= 12 nsites= 20 E= 1e-17
 0.001 0.001 0.746 0.252
 0.281 0.001 0.001 0.717
 -----------------------------
-letter-probability matrix:
+Motif 10 position-specific
+ probability matrix
 -----------------------------
+letter-probability matrix:
 alength= 4 w= 10 nsites= 20 E= 1e-16 
 0.001 0.917 0.081 0.001
 0.962 0.001 0.036 0.001
@@ -149,8 +169,10 @@ alength= 4 w= 10 nsites= 20 E= 1e-16
 0.955 0.001 0.043 0.001
 0.141 0.001 0.809 0.049
 -----------------------------
-letter-probability matrix:
+Motif 11 position-specific
+ probability matrix
 -----------------------------
+letter-probability matrix:
 alength= 4 w= 12 nsites= 20 E= 1e-14 
 0.225 0.199 0.046 0.53
 0.705 0.025 0.051 0.219
