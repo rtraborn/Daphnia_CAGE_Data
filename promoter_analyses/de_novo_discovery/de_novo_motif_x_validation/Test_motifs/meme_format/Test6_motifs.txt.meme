@@ -1,7 +1,7 @@
 -----------------------------
 motif_1 position-specific probability matrix
 -----------------------------
-alength= 4 w= 10 nsites= 20 E= 1e-59 
+letter-probability matrix:
 0.313 0.205 0.449 0.033
 0.001 0.037 0.001 0.961
 0.881 0.067 0.001 0.051
@@ -16,7 +16,7 @@ alength= 4 w= 10 nsites= 20 E= 1e-59
 -----------------------------
 motif_2 position-specific probability matrix
 -----------------------------
-alength= 4 w= 8 nsites= 20 E= 1e-51 
+letter-probability matrix:
 0.315 0.163 0.235 0.287
 0.002 0.07 0.234 0.694
 0.013 0.985 0.001 0.001
@@ -29,7 +29,7 @@ alength= 4 w= 8 nsites= 20 E= 1e-51
 -----------------------------
 motif_3 position-specific probability matrix
 -----------------------------
-alength= 4 w= 10 nsites= 20 E= 1e-31 
+letter-probability matrix:
 0.042 0.235 0.028 0.695
 0.087 0.086 0.786 0.041
 0.299 0.038 0.602 0.061
@@ -44,7 +44,7 @@ alength= 4 w= 10 nsites= 20 E= 1e-31
 -----------------------------
 motif_4 position-specific probability matrix
 -----------------------------
-alength= 4 w= 12 nsites= 20 E= 1e-14 
+letter-probability matrix:
 0.001 0.001 0.997 0.001
 0.083 0.751 0.083 0.083
 0.148 0.086 0.765 0.001
@@ -61,7 +61,7 @@ alength= 4 w= 12 nsites= 20 E= 1e-14
 -----------------------------
 motif_5 position-specific probability matrix
 -----------------------------
-alength= 4 w= 12 nsites= 20 E= 1e-13 
+letter-probability matrix:
 0.162 0.001 0.801 0.036
 0.759 0.087 0.153 0.001
 0.046 0.726 0.14 0.088
@@ -78,7 +78,7 @@ alength= 4 w= 12 nsites= 20 E= 1e-13
 -----------------------------
 motif_6 position-specific probability matrix
 -----------------------------
-alength= 4 w= 12 nsites= 20 E= 1e-13 
+letter-probability matrix:
 0.001 0.001 0.001 0.997
 0.001 0.997 0.001 0.001
 0.001 0.001 0.001 0.997
@@ -95,7 +95,7 @@ alength= 4 w= 12 nsites= 20 E= 1e-13
 -----------------------------
 motif_7 position-specific probability matrix
 -----------------------------
-alength= 4 w= 8 nsites= 20 E= 1e-12 
+letter-probability matrix:
 0.997 0.001 0.001 0.001
 0.213 0.016 0.637 0.134
 0.863 0.001 0.076 0.06
