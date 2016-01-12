@@ -1,5 +1,5 @@
 -----------------------------
-motif_1 position-specific probability matrix
+1-GTATAWAARS position-specific probability matrix
 -----------------------------
 letter-probability matrix:
 0.104 0.309 0.541 0.046
@@ -14,7 +14,7 @@ letter-probability matrix:
 0.145 0.357 0.445 0.053
 
 -----------------------------
-motif_2 position-specific probability matrix
+2-WKTCGTCTGCTW position-specific probability matrix
 -----------------------------
 letter-probability matrix:
 0.378 0.045 0.17 0.408
@@ -31,7 +31,7 @@ letter-probability matrix:
 0.389 0.107 0.034 0.469
 
 -----------------------------
-motif_3 position-specific probability matrix
+2-TCAGTCGC position-specific probability matrix
 -----------------------------
 letter-probability matrix:
 0.001 0.001 0.215 0.783
@@ -44,7 +44,7 @@ letter-probability matrix:
 0.032 0.732 0.001 0.235
 
 -----------------------------
-motif_4 position-specific probability matrix
+6-TGGCAACGCTGD position-specific probability matrix
 -----------------------------
 letter-probability matrix:
 0.112 0.038 0.001 0.849
@@ -61,7 +61,7 @@ letter-probability matrix:
 0.217 0.188 0.253 0.342
 
 -----------------------------
-motif_5 position-specific probability matrix
+6-AAGATGGCGG position-specific probability matrix
 -----------------------------
 letter-probability matrix:
 0.751 0.072 0.07 0.107
@@ -76,7 +76,7 @@ letter-probability matrix:
 0.069 0.026 0.782 0.123
 
 -----------------------------
-motif_6 position-specific probability matrix
+9-GAGCATCASCRW position-specific probability matrix
 -----------------------------
 letter-probability matrix:
 0.217 0.001 0.781 0.001
@@ -93,7 +93,7 @@ letter-probability matrix:
 0.459 0.001 0.001 0.539
 
 -----------------------------
-motif_7 position-specific probability matrix
+11-CAACTDCAGBGC position-specific probability matrix
 -----------------------------
 letter-probability matrix:
 0.001 0.997 0.001 0.001
@@ -110,7 +110,7 @@ letter-probability matrix:
 0.001 0.997 0.001 0.001
 
 -----------------------------
-motif_8 position-specific probability matrix
+12-GGGTGATAAAAA position-specific probability matrix
 -----------------------------
 letter-probability matrix:
 0.001 0.001 0.997 0.001
@@ -127,7 +127,7 @@ letter-probability matrix:
 0.997 0.001 0.001 0.001
 
 -----------------------------
-motif_9 position-specific probability matrix
+7-TTTTGACATT position-specific probability matrix
 -----------------------------
 letter-probability matrix:
 0.066 0.071 0.067 0.796
@@ -142,7 +142,7 @@ letter-probability matrix:
 0.06 0.054 0.033 0.853
 
 -----------------------------
-motif_10 position-specific probability matrix
+13-TCATTCACASAC position-specific probability matrix
 -----------------------------
 letter-probability matrix:
 0.167 0.041 0.001 0.791
@@ -159,7 +159,7 @@ letter-probability matrix:
 0.242 0.482 0.088 0.188
 
 -----------------------------
-motif_11 position-specific probability matrix
+8-AGACCTCATT position-specific probability matrix
 -----------------------------
 letter-probability matrix:
 0.895 0.059 0.001 0.045
@@ -174,7 +174,7 @@ letter-probability matrix:
 0.065 0.047 0.011 0.877
 
 -----------------------------
-motif_12 position-specific probability matrix
+10-CTGTTTAGTA position-specific probability matrix
 -----------------------------
 letter-probability matrix:
 0.001 0.997 0.001 0.001
@@ -189,7 +189,7 @@ letter-probability matrix:
 0.795 0.062 0.086 0.057
 
 -----------------------------
-motif_13 position-specific probability matrix
+11-CACGTGTGAT position-specific probability matrix
 -----------------------------
 letter-probability matrix:
 0.001 0.927 0.001 0.071
