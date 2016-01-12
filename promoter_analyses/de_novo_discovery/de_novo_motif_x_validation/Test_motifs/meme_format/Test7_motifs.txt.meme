@@ -1,5 +1,5 @@
 -----------------------------
-letter probability matrix:
+letter-probability matrix:
 -----------------------------
 alength= 4 w= 12 nsites= 20 E= 1e-58 
 0.062 0.087 0.454 0.397
@@ -15,7 +15,7 @@ alength= 4 w= 12 nsites= 20 E= 1e-58
 0.181 0.032 0.786 0.001
 0.118 0.087 0.764 0.031
 -----------------------------
-letter probability matrix:
+letter-probability matrix:
 -----------------------------
 alength= 4 w= 8 nsites= 20 E= 1e-51 
 0.075 0.058 0.278 0.589
@@ -27,7 +27,7 @@ alength= 4 w= 8 nsites= 20 E= 1e-51
 0.001 0.001 0.853 0.145
 0.452 0.257 0.039 0.252
 -----------------------------
-letter probability matrix:
+letter-probability matrix:
 -----------------------------
 alength= 4 w= 12 nsites= 20 E= 1e-37 
 0.001 0.115 0.06 0.824
@@ -43,7 +43,7 @@ alength= 4 w= 12 nsites= 20 E= 1e-37
 0.03 0.091 0.684 0.195
 0.206 0.412 0.139 0.243
 -----------------------------
-letter probability matrix:
+letter-probability matrix:
 -----------------------------
 alength= 4 w= 8 nsites= 20 E= 1e-21 
 0.001 0.001 0.896 0.102
@@ -55,7 +55,7 @@ alength= 4 w= 8 nsites= 20 E= 1e-21
 0.001 0.418 0.001 0.58
 0.305 0.001 0.488 0.206
 -----------------------------
-letter probability matrix:
+letter-probability matrix:
 -----------------------------
 alength= 4 w= 8 nsites= 20 E= 1e-20 
 0.736 0.148 0.071 0.045
@@ -67,7 +67,7 @@ alength= 4 w= 8 nsites= 20 E= 1e-20
 0.021 0.832 0.021 0.126
 0.051 0.046 0.644 0.259
 -----------------------------
-letter probability matrix:
+letter-probability matrix:
 -----------------------------
 alength= 4 w= 8 nsites= 20 E= 1e-16 
 0.001 0.301 0.602 0.096
@@ -79,7 +79,7 @@ alength= 4 w= 8 nsites= 20 E= 1e-16
 0.001 0.001 0.001 0.997
 0.001 0.997 0.001 0.001
 -----------------------------
-letter probability matrix:
+letter-probability matrix:
 -----------------------------
 alength= 4 w= 12 nsites= 20 E= 1e-14 
 0.001 0.001 0.997 0.001
@@ -95,7 +95,7 @@ alength= 4 w= 12 nsites= 20 E= 1e-14
 0.001 0.997 0.001 0.001
 0.997 0.001 0.001 0.001
 -----------------------------
-letter probability matrix:
+letter-probability matrix:
 -----------------------------
 alength= 4 w= 12 nsites= 20 E= 1e-13 
 0.997 0.001 0.001 0.001
@@ -111,7 +111,7 @@ alength= 4 w= 12 nsites= 20 E= 1e-13
 0.001 0.229 0.001 0.769
 0.921 0.001 0.077 0.001
 -----------------------------
-letter probability matrix:
+letter-probability matrix:
 -----------------------------
 alength= 4 w= 10 nsites= 20 E= 1e-12 
 0.827 0.058 0.048 0.067
@@ -125,7 +125,7 @@ alength= 4 w= 10 nsites= 20 E= 1e-12
 0.058 0.059 0.001 0.882
 0.047 0.87 0.033 0.05
 -----------------------------
-letter probability matrix:
+letter-probability matrix:
 -----------------------------
 alength= 4 w= 8 nsites= 20 E= 1e-12 
 0.001 0.117 0.001 0.881
