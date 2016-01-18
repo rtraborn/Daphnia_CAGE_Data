@@ -40,12 +40,12 @@
 ]>
 <tomtom version="4.9.0" release="Wed Oct  3 11:07:26 EST 2012">
 	<model>
-		<command_line>tomtom -no-ssc -oc . -verbosity 1 -min-overlap 5 -dist pearson -evalue -thresh 0.001 meme_format/Train_motifs_combined.meme meme_format/Train_motifs_combined.meme</command_line>
+		<command_line>tomtom -no-ssc -oc . -verbosity 1 -min-overlap 5 -eps -dist pearson -evalue -thresh 0.001 meme_format/Train_motifs_combined.meme meme_format/Train_motifs_combined.meme</command_line>
 		<distance_measure value="pearson"/>
 		<threshold type="evalue">0.001</threshold>
 		<background from="first_target" A="0.25" C="0.25" G="0.25" T="0.25"/>
 		<host>gnomic.soic.indiana.edu</host>
-		<when>Mon Jan 18 16:14:30 2016</when>
+		<when>Mon Jan 18 16:29:11 2016</when>
 	</model>
 	<targets>
 		<target_file index="1" source="meme_format/Train_motifs_combined.meme" name="Train_motifs_combined.meme" loaded="228" excluded="7" last_mod_date="Thu Jan 14 13:31:14 2016">
@@ -7090,5 +7090,5 @@
 			</query>
 		</query_file>
 	</queries>
-	<runtime cycles="55928475" seconds="55.928"/>
+	<runtime cycles="55825698" seconds="55.826"/>
 </tomtom>
