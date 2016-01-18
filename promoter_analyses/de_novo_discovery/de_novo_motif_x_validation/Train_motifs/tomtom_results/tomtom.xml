@@ -40,12 +40,12 @@
 ]>
 <tomtom version="4.9.0" release="Wed Oct  3 11:07:26 EST 2012">
 	<model>
-		<command_line>tomtom -no-ssc -oc . -verbosity 1 -min-overlap 5 -dist pearson -evalue -thresh 0.01 meme_format/Train_motifs_combined.meme meme_format/Train_motifs_combined.meme</command_line>
+		<command_line>tomtom -no-ssc -oc . -verbosity 1 -min-overlap 5 -dist pearson -evalue -thresh 0.001 meme_format/Train_motifs_combined.meme meme_format/Train_motifs_combined.meme</command_line>
 		<distance_measure value="pearson"/>
-		<threshold type="evalue">0.01</threshold>
+		<threshold type="evalue">0.001</threshold>
 		<background from="first_target" A="0.25" C="0.25" G="0.25" T="0.25"/>
 		<host>gnomic.soic.indiana.edu</host>
-		<when>Thu Jan 14 15:24:45 2016</when>
+		<when>Mon Jan 18 16:14:30 2016</when>
 	</model>
 	<targets>
 		<target_file index="1" source="meme_format/Train_motifs_combined.meme" name="Train_motifs_combined.meme" loaded="228" excluded="7" last_mod_date="Thu Jan 14 13:31:14 2016">
@@ -2926,10 +2926,6 @@
 				<match target="t_1_motif_4_6-MWAGATGGCK" orientation="forward" offset="-2" pvalue="6.41712e-07" evalue="0.000141818" qvalue="6.16716e-05"/>
 				<match target="t_1_motif_5_8-CMAGATGGCG" orientation="forward" offset="-2" pvalue="7.23399e-07" evalue="0.000159871" qvalue="6.16716e-05"/>
 				<match target="t_1_motif_4_5-CAAGATGGCG" orientation="forward" offset="-2" pvalue="9.82004e-07" evalue="0.000217023" qvalue="6.97653e-05"/>
-				<match target="t_1_motif_12_12-CCGCTAGAKGGC" orientation="forward" offset="1" pvalue="1.1005e-05" evalue="0.00243212" qvalue="0.000670149"/>
-				<match target="t_1_motif_4_6-AAGATGGCGG" orientation="forward" offset="-3" pvalue="1.44814e-05" evalue="0.0032004" qvalue="0.000771612"/>
-				<match target="t_1_motif_4_6-WAGATGGCKN" orientation="forward" offset="-3" pvalue="1.80034e-05" evalue="0.00397875" qvalue="0.000852686"/>
-				<match target="t_1_motif_5_7-WAGATGGCKS" orientation="forward" offset="-3" pvalue="2.07842e-05" evalue="0.0045933" qvalue="0.000885951"/>
 			</query>
 			<query>
 				<motif id="q_motif_6_8-CTCCGACACGGC" name="motif_6_8-CTCCGACACGGC" length="12" nsites="20" evalue="1.0e-054" >
@@ -2949,7 +2945,6 @@
 				<match target="t_1_motif_6_8-CTCCGACACGGC" orientation="forward" offset="0" pvalue="2.30842e-18" evalue="5.10162e-16" qvalue="1.00225e-15"/>
 				<match target="t_1_motif_5_9-TCTCCGACACGG" orientation="forward" offset="1" pvalue="3.4548e-07" evalue="7.63511e-05" qvalue="7.49987e-05"/>
 				<match target="t_1_motif_5_7-TCCGACACGGCA" orientation="forward" offset="-1" pvalue="5.4661e-07" evalue="0.000120801" qvalue="7.91073e-05"/>
-				<match target="t_1_motif_6_7-TCTCCGACACGA" orientation="forward" offset="1" pvalue="5.98305e-06" evalue="0.00132226" qvalue="0.000649417"/>
 			</query>
 			<query>
 				<motif id="q_motif_7_7-GAGCATCTCC" name="motif_7_7-GAGCATCTCC" length="10" nsites="20" evalue="1.0e-047" >
@@ -2967,7 +2962,6 @@
 				<match target="t_1_motif_7_7-GAGCATCTCC" orientation="forward" offset="0" pvalue="9.14463e-11" evalue="2.02096e-08" qvalue="1.3357e-08"/>
 				<match target="t_1_motif_8_9-GAGCATCTCC" orientation="forward" offset="0" pvalue="9.14463e-11" evalue="2.02096e-08" qvalue="1.3357e-08"/>
 				<match target="t_1_motif_6_8-GAGCATCTCC" orientation="forward" offset="0" pvalue="9.14463e-11" evalue="2.02096e-08" qvalue="1.3357e-08"/>
-				<match target="t_1_motif_6_8-AGCATCTCCGAC" orientation="forward" offset="-1" pvalue="1.88374e-05" evalue="0.00416307" qvalue="0.0020636"/>
 			</query>
 			<query>
 				<motif id="q_motif_8_9-GGGTGAGAAAAA" name="motif_8_9-GGGTGAGAAAAA" length="12" nsites="20" evalue="1.0e-046" >
@@ -2992,7 +2986,6 @@
 				<match target="t_1_motif_6_8-GGGTDAGAAAAA" orientation="forward" offset="0" pvalue="5.34201e-08" evalue="1.18058e-05" qvalue="3.86557e-06"/>
 				<match target="t_1_motif_7_9-GGGTGAKCAAAA" orientation="forward" offset="0" pvalue="8.74764e-08" evalue="1.93323e-05" qvalue="5.42567e-06"/>
 				<match target="t_1_motif_5_8-GGGTBRBMAAAA" orientation="forward" offset="0" pvalue="1.76053e-06" evalue="0.000389077" qvalue="9.55462e-05"/>
-				<match target="t_1_motif_6_8-GGGTGATHAA" orientation="forward" offset="0" pvalue="4.64747e-06" evalue="0.00102709" qvalue="0.0002242"/>
 			</query>
 			<query>
 				<motif id="q_motif_9_10-AATCAGTCGAGT" name="motif_9_10-AATCAGTCGAGT" length="12" nsites="20" evalue="1.0e-038" >
@@ -3026,9 +3019,6 @@
 					<pos i="8" A="0.864" C="0.001" G="0.001" T="0.134"/>
 				</motif>
 				<match target="t_1_motif_10_13-DTTGTTTA" orientation="forward" offset="0" pvalue="4.20392e-12" evalue="9.29065e-10" qvalue="1.82522e-09"/>
-				<match target="t_1_motif_11_10-TTGTTTAC" orientation="forward" offset="-1" pvalue="8.76125e-06" evalue="0.00193624" qvalue="0.00190194"/>
-				<match target="t_1_motif_9_10-YTGTTTAS" orientation="forward" offset="-1" pvalue="3.4488e-05" evalue="0.00762186" qvalue="0.00402586"/>
-				<match target="t_1_motif_12_13-GCTGTTTAGTAT" orientation="forward" offset="0" pvalue="3.70901e-05" evalue="0.00819691" qvalue="0.00402586"/>
 			</query>
 			<query>
 				<motif id="q_motif_11_11-AGAGAAAAGGCG" name="motif_11_11-AGAGAAAAGGCG" length="12" nsites="20" evalue="1.0e-036" >
@@ -3052,7 +3042,6 @@
 				<match target="t_1_motif_11_13-GAGAAAAGGCGA" orientation="forward" offset="-1" pvalue="4.06983e-07" evalue="8.99431e-05" qvalue="2.51354e-05"/>
 				<match target="t_1_motif_11_12-GAGAAAAGGCGA" orientation="forward" offset="-1" pvalue="4.06983e-07" evalue="8.99431e-05" qvalue="2.51354e-05"/>
 				<match target="t_1_motif_10_11-GAGAAAAGGCGA" orientation="forward" offset="-1" pvalue="4.06983e-07" evalue="8.99431e-05" qvalue="2.51354e-05"/>
-				<match target="t_1_motif_11_12-GAGAAAAGGYKA" orientation="forward" offset="-1" pvalue="5.45314e-06" evalue="0.00120514" qvalue="0.00029469"/>
 			</query>
 			<query>
 				<motif id="q_motif_12_12-CTKCAGYGCACT" name="motif_12_12-CTKCAGYGCACT" length="12" nsites="20" evalue="1.0e-035" >
@@ -3072,7 +3061,6 @@
 				<match target="t_1_motif_12_12-CTKCAGYGCACT" orientation="forward" offset="0" pvalue="9.37025e-27" evalue="2.07083e-24" qvalue="4.03264e-24"/>
 				<match target="t_1_motif_10_12-CTGCAGHGCACT" orientation="forward" offset="0" pvalue="2.2112e-12" evalue="4.88676e-10" qvalue="4.75814e-10"/>
 				<match target="t_1_motif_9_10-CTGCAGCGCACT" orientation="forward" offset="0" pvalue="2.6506e-10" evalue="5.85783e-08" qvalue="3.80244e-08"/>
-				<match target="t_1_motif_9_10-AACTGCAGYGCA" orientation="forward" offset="2" pvalue="1.18558e-05" evalue="0.00262014" qvalue="0.00127559"/>
 			</query>
 			<query>
 				<motif id="q_motif_13_12-CGCGAGTGTC" name="motif_13_12-CGCGAGTGTC" length="10" nsites="20" evalue="1.0e-034" >
@@ -3089,7 +3077,6 @@
 				</motif>
 				<match target="t_1_motif_13_12-CGCGAGTGTC" orientation="forward" offset="0" pvalue="1.98082e-21" evalue="4.37761e-19" qvalue="8.65987e-19"/>
 				<match target="t_1_motif_13_10-CGCGAGTGTC" orientation="forward" offset="0" pvalue="7.04321e-08" evalue="1.55655e-05" qvalue="1.5396e-05"/>
-				<match target="t_1_motif_21_21-GCGCGAGTGT" orientation="forward" offset="1" pvalue="2.9106e-05" evalue="0.00643243" qvalue="0.00424158"/>
 			</query>
 			<query>
 				<motif id="q_motif_14_15-CCGCTAGA" name="motif_14_15-CCGCTAGA" length="8" nsites="20" evalue="1.0e-033" >
@@ -3106,8 +3093,6 @@
 				<match target="t_1_motif_12_12-CCGCTAGAGG" orientation="forward" offset="0" pvalue="2.37648e-09" evalue="5.25202e-07" qvalue="5.13703e-07"/>
 				<match target="t_1_motif_17_17-CCGCTAGA" orientation="forward" offset="0" pvalue="1.39501e-08" evalue="3.08298e-06" qvalue="2.01032e-06"/>
 				<match target="t_1_motif_13_16-CCGCTAGAGG" orientation="forward" offset="0" pvalue="3.06919e-07" evalue="6.78291e-05" qvalue="3.31721e-05"/>
-				<match target="t_1_motif_11_10-CCGCTAGAKG" orientation="forward" offset="0" pvalue="1.54105e-05" evalue="0.00340572" qvalue="0.00133246"/>
-				<match target="t_1_motif_12_12-CCGCTAGAKGGC" orientation="forward" offset="0" pvalue="1.9249e-05" evalue="0.00425403" qvalue="0.00138696"/>
 			</query>
 			<query>
 				<motif id="q_motif_15_14-CAACATGAAG" name="motif_15_14-CAACATGAAG" length="10" nsites="20" evalue="1.0e-030" >
@@ -3145,8 +3130,6 @@
 					<pos i="12" A="0.017" C="0.017" G="0.949" T="0.017"/>
 				</motif>
 				<match target="t_1_motif_16_15-GCGGCCATTTTG" orientation="forward" offset="0" pvalue="1.44432e-13" evalue="3.19196e-11" qvalue="6.2418e-11"/>
-				<match target="t_1_motif_20_17-GGCCATTCTG" orientation="forward" offset="-2" pvalue="1.21193e-05" evalue="0.00267837" qvalue="0.00261875"/>
-				<match target="t_1_motif_20_19-GGCCATTCTG" orientation="forward" offset="-2" pvalue="1.94042e-05" evalue="0.00428832" qvalue="0.00279524"/>
 			</query>
 			<query>
 				<motif id="q_motif_17_16-TGTTTTGAAATT" name="motif_17_16-TGTTTTGAAATT" length="12" nsites="20" evalue="1.0e-026" >
@@ -3164,7 +3147,6 @@
 					<pos i="12" A="0.075" C="0.065" G="0.073" T="0.787"/>
 				</motif>
 				<match target="t_1_motif_17_16-TGTTTTGAAATT" orientation="forward" offset="0" pvalue="3.0805e-23" evalue="6.80791e-21" qvalue="1.31651e-20"/>
-				<match target="t_1_motif_18_16-TTTTGACATT" orientation="forward" offset="-2" pvalue="1.96619e-05" evalue="0.00434528" qvalue="0.00420144"/>
 			</query>
 			<query>
 				<motif id="q_motif_18_16-ACACGTGTTT" name="motif_18_16-ACACGTGTTT" length="10" nsites="20" evalue="1.0e-026" >
@@ -3184,8 +3166,6 @@
 				<match target="t_1_motif_14_15-ACACGTGTTT" orientation="forward" offset="0" pvalue="2.19078e-08" evalue="4.84162e-06" qvalue="2.74856e-06"/>
 				<match target="t_1_motif_14_13-CACGTGTT" orientation="forward" offset="-1" pvalue="2.58002e-08" evalue="5.70183e-06" qvalue="2.74856e-06"/>
 				<match target="t_1_motif_9_10-ACACGTGTTT" orientation="forward" offset="0" pvalue="7.35521e-08" evalue="1.6255e-05" qvalue="6.26856e-06"/>
-				<match target="t_1_motif_15_13-RSACGTGTTT" orientation="forward" offset="0" pvalue="4.53738e-06" evalue="0.00100276" qvalue="0.000322253"/>
-				<match target="t_1_motif_16_15-ACACGTGT" orientation="reverse" offset="0" pvalue="2.16061e-05" evalue="0.00477495" qvalue="0.00131529"/>
 			</query>
 			<query>
 				<motif id="q_motif_19_18-AAGTCGTCGG" name="motif_19_18-AAGTCGTCGG" length="10" nsites="20" evalue="1.0e-022" >
@@ -3219,7 +3199,6 @@
 				<match target="t_1_motif_20_20-TCAGAACTCA" orientation="forward" offset="0" pvalue="1.18889e-16" evalue="2.62745e-14" qvalue="5.19766e-14"/>
 				<match target="t_1_motif_22_18-TTCAGAACTCAT" orientation="forward" offset="1" pvalue="6.20888e-07" evalue="0.000137216" qvalue="0.000135722"/>
 				<match target="t_1_motif_24_22-TTCAGAACTCAT" orientation="forward" offset="1" pvalue="2.49938e-06" evalue="0.000552363" qvalue="0.000364231"/>
-				<match target="t_1_motif_16_16-TSACAACTCA" orientation="forward" offset="0" pvalue="2.69504e-05" evalue="0.00595605" qvalue="0.00294559"/>
 			</query>
 			<query>
 				<motif id="q_motif_21_21-CCACHACMAC" name="motif_21_21-CCACHACMAC" length="10" nsites="20" evalue="1.0e-020" >
@@ -3237,7 +3216,6 @@
 				<match target="t_1_motif_21_21-CCACHACMAC" orientation="forward" offset="0" pvalue="9.16228e-23" evalue="2.02486e-20" qvalue="4.01483e-20"/>
 				<match target="t_1_motif_17_22-CCACAACAAC" orientation="forward" offset="0" pvalue="3.00178e-08" evalue="6.63394e-06" qvalue="6.57677e-06"/>
 				<match target="t_1_motif_23_22-ACAACAAC" orientation="forward" offset="-2" pvalue="6.17271e-07" evalue="0.000136417" qvalue="9.01608e-05"/>
-				<match target="t_1_motif_20_20-MCMACMAC" orientation="forward" offset="-2" pvalue="1.266e-05" evalue="0.00279787" qvalue="0.00138688"/>
 			</query>
 			<query>
 				<motif id="q_motif_22_22-ACACGGTTAC" name="motif_22_22-ACACGGTTAC" length="10" nsites="20" evalue="1.0e-020" >
@@ -3292,8 +3270,6 @@
 				<match target="t_1_motif_24_21-GGTTGTGACGTT" orientation="forward" offset="0" pvalue="2.21294e-18" evalue="4.8906e-16" qvalue="9.56347e-16"/>
 				<match target="t_1_motif_15_15-GGTYSTGACGTT" orientation="forward" offset="0" pvalue="8.17879e-08" evalue="1.80751e-05" qvalue="1.76728e-05"/>
 				<match target="t_1_motif_21_17-GTTKTGACGTTT" orientation="forward" offset="-1" pvalue="2.19583e-06" evalue="0.000485278" qvalue="0.000316317"/>
-				<match target="t_1_motif_15_18-TGGTCGTGACGT" orientation="forward" offset="1" pvalue="6.85677e-06" evalue="0.00151535" qvalue="0.000740807"/>
-				<match target="t_1_motif_16_16-GTCGTGACGTTT" orientation="forward" offset="-1" pvalue="2.09743e-05" evalue="0.00463532" qvalue="0.00181286"/>
 			</query>
 			<query>
 				<motif id="q_motif_25_22-GTCTTCAGGGAC" name="motif_25_22-GTCTTCAGGGAC" length="12" nsites="20" evalue="1.0e-017" >
@@ -3318,7 +3294,6 @@
 				<match target="t_1_motif_22_20-GTCTTCAGGGAC" orientation="forward" offset="0" pvalue="1.64617e-08" evalue="3.63805e-06" qvalue="1.12701e-06"/>
 				<match target="t_1_motif_19_22-GTCTTCAGGGAC" orientation="forward" offset="0" pvalue="1.81284e-08" evalue="4.00639e-06" qvalue="1.12701e-06"/>
 				<match target="t_1_motif_23_23-CKTCAGGGAY" orientation="forward" offset="-2" pvalue="2.66797e-06" evalue="0.00058962" qvalue="0.000145129"/>
-				<match target="t_1_motif_20_21-GTGTCTTCAGGG" orientation="forward" offset="2" pvalue="1.6283e-05" evalue="0.00359855" qvalue="0.000787331"/>
 			</query>
 			<query>
 				<motif id="q_motif_26_23-WTGGGCGAAACA" name="motif_26_23-WTGGGCGAAACA" length="12" nsites="20" evalue="1.0e-017" >
@@ -3462,8 +3437,6 @@
 				<match target="t_1_motif_5_9-TCTCCGACACGG" orientation="forward" offset="0" pvalue="2.95782e-15" evalue="6.53679e-13" qvalue="1.28123e-12"/>
 				<match target="t_1_motif_6_7-TCTCCGACACGA" orientation="forward" offset="0" pvalue="1.82797e-07" evalue="4.03982e-05" qvalue="3.95907e-05"/>
 				<match target="t_1_motif_6_8-CTCCGACACGGC" orientation="forward" offset="-1" pvalue="5.29452e-07" evalue="0.000117009" qvalue="7.64468e-05"/>
-				<match target="t_1_motif_5_7-TCCGACACGGCA" orientation="forward" offset="-2" pvalue="2.38058e-05" evalue="0.00526109" qvalue="0.00257797"/>
-				<match target="t_1_motif_13_11-TCTCCGAC" orientation="forward" offset="0" pvalue="4.20783e-05" evalue="0.00929931" qvalue="0.00282985"/>
 			</query>
 			<query>
 				<motif id="q_motif_6_8-GGGTGATHAA" name="motif_6_8-GGGTGATHAA" length="10" nsites="20" evalue="1.0e-045" >
@@ -3485,8 +3458,6 @@
 				<match target="t_1_motif_7_9-GGGTGAKCAAAA" orientation="forward" offset="0" pvalue="7.87745e-07" evalue="0.000174092" qvalue="6.85615e-05"/>
 				<match target="t_1_motif_8_10-GGGTGATAAAAA" orientation="forward" offset="0" pvalue="1.3703e-06" evalue="0.000302836" qvalue="9.93867e-05"/>
 				<match target="t_1_motif_6_8-GGGTDAGAAAAA" orientation="forward" offset="0" pvalue="1.92171e-06" evalue="0.000424698" qvalue="0.000119469"/>
-				<match target="t_1_motif_7_9-GGGTGAGAAAAA" orientation="forward" offset="0" pvalue="1.27073e-05" evalue="0.0028083" qvalue="0.000691236"/>
-				<match target="t_1_motif_5_8-GGGTBRBMAAAA" orientation="forward" offset="0" pvalue="2.10002e-05" evalue="0.00464104" qvalue="0.00101542"/>
 			</query>
 			<query>
 				<motif id="q_motif_7_11-WKYCGAGTGAGC" name="motif_7_11-WKYCGAGTGAGC" length="12" nsites="20" evalue="1.0e-043" >
@@ -3522,11 +3493,6 @@
 					<pos i="12" A="0.059" C="0.698" G="0.001" T="0.242"/>
 				</motif>
 				<match target="t_1_motif_8_12-CTGTTTAGTCYC" orientation="forward" offset="0" pvalue="6.72031e-20" evalue="1.48519e-17" qvalue="2.91776e-17"/>
-				<match target="t_1_motif_8_7-STGTTTAGTC" orientation="forward" offset="0" pvalue="6.1175e-06" evalue="0.00135197" qvalue="0.00132802"/>
-				<match target="t_1_motif_12_13-GCTGTTTAGTAT" orientation="forward" offset="1" pvalue="1.82384e-05" evalue="0.00403068" qvalue="0.00151061"/>
-				<match target="t_1_motif_11_13-TGCTGTTTAG" orientation="forward" offset="2" pvalue="1.88529e-05" evalue="0.00416648" qvalue="0.00151061"/>
-				<match target="t_1_motif_8_12-CTGTTTAGTT" orientation="forward" offset="0" pvalue="2.08758e-05" evalue="0.00461355" qvalue="0.00151061"/>
-				<match target="t_1_motif_13_13-TACTGTTTAG" orientation="forward" offset="2" pvalue="2.08758e-05" evalue="0.00461355" qvalue="0.00151061"/>
 			</query>
 			<query>
 				<motif id="q_motif_9_9-GGCAACAACT" name="motif_9_9-GGCAACAACT" length="10" nsites="20" evalue="1.0e-040" >
@@ -3564,10 +3530,6 @@
 				<match target="t_1_motif_16_14-CGCTAGAGGG" orientation="forward" offset="0" pvalue="2.40417e-14" evalue="5.31322e-12" qvalue="5.19495e-12"/>
 				<match target="t_1_motif_9_10-CGCTAGAGGG" orientation="forward" offset="0" pvalue="1.51548e-07" evalue="3.34922e-05" qvalue="2.18311e-05"/>
 				<match target="t_1_motif_12_12-CCGCTAGAKGGC" orientation="forward" offset="1" pvalue="3.71045e-06" evalue="0.000820009" qvalue="0.000400878"/>
-				<match target="t_1_motif_6_10-CGCYAGWKNG" orientation="forward" offset="0" pvalue="4.79761e-06" evalue="0.00106027" qvalue="0.000414668"/>
-				<match target="t_1_motif_13_16-CCGCTAGAGG" orientation="forward" offset="1" pvalue="8.0436e-06" evalue="0.00177764" qvalue="0.000535437"/>
-				<match target="t_1_motif_12_12-CCGCTAGAGG" orientation="forward" offset="1" pvalue="8.67284e-06" evalue="0.0019167" qvalue="0.000535437"/>
-				<match target="t_1_motif_11_10-CCGCTAGAKG" orientation="forward" offset="1" pvalue="3.08971e-05" evalue="0.00682826" qvalue="0.00166907"/>
 			</query>
 			<query>
 				<motif id="q_motif_11_13-GAGAAAAGGCGA" name="motif_11_13-GAGAAAAGGCGA" length="12" nsites="20" evalue="1.0e-038" >
@@ -3611,7 +3573,6 @@
 				<match target="t_1_motif_12_14-CAACTGCAGTGC" orientation="forward" offset="0" pvalue="3.39744e-30" evalue="7.50835e-28" qvalue="1.42953e-27"/>
 				<match target="t_1_motif_7_9-CAACTGCAGTGC" orientation="forward" offset="0" pvalue="1.98409e-09" evalue="4.38484e-07" qvalue="4.17418e-07"/>
 				<match target="t_1_motif_9_10-AACTGCAGYGCA" orientation="forward" offset="-1" pvalue="5.34649e-07" evalue="0.000118157" qvalue="7.49872e-05"/>
-				<match target="t_1_motif_8_10-ACAACTGCAGHR" orientation="forward" offset="1" pvalue="5.82389e-06" evalue="0.00128708" qvalue="0.000612623"/>
 			</query>
 			<query>
 				<motif id="q_motif_13_12-TTGTGAATTT" name="motif_13_12-TTGTGAATTT" length="10" nsites="20" evalue="1.0e-029" >
@@ -3646,8 +3607,6 @@
 				<match target="t_1_motif_18_16-ACACGTGTTT" orientation="forward" offset="0" pvalue="4.82993e-07" evalue="0.000106742" qvalue="6.86061e-05"/>
 				<match target="t_1_motif_9_10-ACACGTGTTT" orientation="forward" offset="0" pvalue="8.20884e-07" evalue="0.000181415" qvalue="8.7451e-05"/>
 				<match target="t_1_motif_14_13-CACGTGTT" orientation="forward" offset="-1" pvalue="3.58546e-06" evalue="0.000792386" qvalue="0.000305575"/>
-				<match target="t_1_motif_15_13-RSACGTGTTT" orientation="forward" offset="0" pvalue="6.30929e-06" evalue="0.00139435" qvalue="0.000448097"/>
-				<match target="t_1_motif_16_15-ACACGTGT" orientation="forward" offset="0" pvalue="8.64651e-06" evalue="0.00191088" qvalue="0.000526363"/>
 			</query>
 			<query>
 				<motif id="q_motif_15_17-TCGTGAAAMGAG" name="motif_15_17-TCGTGAAAMGAG" length="12" nsites="20" evalue="1.0e-025" >
@@ -3681,7 +3640,6 @@
 					<pos i="8" A="0.796" C="0.001" G="0.001" T="0.202"/>
 				</motif>
 				<match target="t_1_motif_16_16-TGTCAAAA" orientation="forward" offset="0" pvalue="2.13845e-10" evalue="4.72597e-08" qvalue="9.28821e-08"/>
-				<match target="t_1_motif_18_16-TTTTGACATT" orientation="reverse" offset="2" pvalue="2.30038e-05" evalue="0.00508383" qvalue="0.00499577"/>
 			</query>
 			<query>
 				<motif id="q_motif_17_19-CCWAGACGCAGC" name="motif_17_19-CCWAGACGCAGC" length="12" nsites="20" evalue="1.0e-020" >
@@ -3719,8 +3677,6 @@
 				</motif>
 				<match target="t_1_motif_18_20-TTCAAACCTCAT" orientation="forward" offset="0" pvalue="1.52298e-18" evalue="3.36579e-16" qvalue="6.61234e-16"/>
 				<match target="t_1_motif_16_16-TTCAHAACTCRT" orientation="forward" offset="0" pvalue="2.11243e-06" evalue="0.000466846" qvalue="0.000458577"/>
-				<match target="t_1_motif_24_22-TTCAGAACTCAT" orientation="forward" offset="0" pvalue="5.28234e-06" evalue="0.0011674" qvalue="0.000764479"/>
-				<match target="t_1_motif_22_18-TTCAGAACTCAT" orientation="forward" offset="0" pvalue="7.98451e-06" evalue="0.00176458" qvalue="0.00086666"/>
 			</query>
 			<query>
 				<motif id="q_motif_19_22-GTCTTCAGGGAC" name="motif_19_22-GTCTTCAGGGAC" length="12" nsites="20" evalue="1.0e-015" >
@@ -3745,7 +3701,6 @@
 				<match target="t_1_motif_22_20-GTCTTCAGGGAC" orientation="forward" offset="0" pvalue="5.19867e-09" evalue="1.14891e-06" qvalue="3.77056e-07"/>
 				<match target="t_1_motif_24_23-TCTTCAGGGA" orientation="forward" offset="-1" pvalue="1.04494e-06" evalue="0.000230932" qvalue="6.4962e-05"/>
 				<match target="t_1_motif_20_21-GTGTCTTCAGGG" orientation="forward" offset="2" pvalue="1.51191e-06" evalue="0.000334132" qvalue="8.22434e-05"/>
-				<match target="t_1_motif_23_23-CKTCAGGGAY" orientation="forward" offset="-2" pvalue="1.45848e-05" evalue="0.00322324" qvalue="0.000705217"/>
 			</query>
 			<query>
 				<motif id="q_motif_1_1-GTATAAAAGG" name="motif_1_1-GTATAAAAGG" length="10" nsites="20" evalue="1.0e-307" >
@@ -3786,9 +3741,6 @@
 				<match target="t_1_motif_2_1-NNKCAGTCGN" orientation="forward" offset="1" pvalue="1.57037e-07" evalue="3.47052e-05" qvalue="2.23732e-05"/>
 				<match target="t_1_motif_2_1-NRTCAGTCGH" orientation="forward" offset="1" pvalue="3.78892e-07" evalue="8.37352e-05" qvalue="4.04857e-05"/>
 				<match target="t_1_motif_2_2-NNTCAGTCGW" orientation="forward" offset="1" pvalue="3.60862e-06" evalue="0.000797506" qvalue="0.000308473"/>
-				<match target="t_1_motif_1_1-NNKCAGTYGN" orientation="forward" offset="1" pvalue="1.20254e-05" evalue="0.00265761" qvalue="0.000856632"/>
-				<match target="t_1_motif_2_1-NDTCAGTCDN" orientation="forward" offset="1" pvalue="2.2208e-05" evalue="0.00490798" qvalue="0.0012752"/>
-				<match target="t_1_motif_2_2-GNCAGTCK" orientation="forward" offset="0" pvalue="2.38684e-05" evalue="0.00527491" qvalue="0.0012752"/>
 			</query>
 			<query>
 				<motif id="q_motif_3_4-TGGCAACGTTGC" name="motif_3_4-TGGCAACGTTGC" length="12" nsites="20" evalue="1.0e-134" >
@@ -3825,7 +3777,6 @@
 				</motif>
 				<match target="t_1_motif_4_4-GTCTGCTA" orientation="forward" offset="0" pvalue="9.5284e-10" evalue="2.10578e-07" qvalue="4.17526e-07"/>
 				<match target="t_1_motif_11_12-CTAGCAGACT" orientation="reverse" offset="1" pvalue="1.66781e-06" evalue="0.000368587" qvalue="0.00036541"/>
-				<match target="t_1_motif_4_4-AGTCTGCT" orientation="forward" offset="1" pvalue="3.63978e-05" evalue="0.00804392" qvalue="0.0053164"/>
 			</query>
 			<query>
 				<motif id="q_motif_5_8-CWAGATGGCG" name="motif_5_8-CWAGATGGCG" length="10" nsites="20" evalue="1.0e-084" >
@@ -3848,8 +3799,6 @@
 				<match target="t_1_motif_4_6-CRMYAGATGGCG" orientation="forward" offset="2" pvalue="7.9549e-08" evalue="1.75803e-05" qvalue="5.71634e-06"/>
 				<match target="t_1_motif_4_6-AAGATGGCGG" orientation="forward" offset="-1" pvalue="2.5544e-06" evalue="0.000564523" qvalue="0.000157335"/>
 				<match target="t_1_motif_5_7-WAGATGGCKS" orientation="forward" offset="-1" pvalue="3.82954e-06" evalue="0.000846329" qvalue="0.000206391"/>
-				<match target="t_1_motif_4_6-WAGATGGCKN" orientation="forward" offset="-1" pvalue="4.81859e-06" evalue="0.00106491" qvalue="0.00023084"/>
-				<match target="t_1_motif_4_7-AGATGGCKGY" orientation="forward" offset="-2" pvalue="2.88614e-05" evalue="0.00637836" qvalue="0.00124437"/>
 			</query>
 			<query>
 				<motif id="q_motif_6_7-GGGTGATAAAAA" name="motif_6_7-GGGTGATAAAAA" length="12" nsites="20" evalue="1.0e-054" >
@@ -3896,7 +3845,6 @@
 				<match target="t_1_motif_7_10-ATCTCCGACA" orientation="forward" offset="-2" pvalue="4.69325e-10" evalue="1.03721e-07" qvalue="5.07059e-08"/>
 				<match target="t_1_motif_8_11-ATCTCCGACA" orientation="forward" offset="-2" pvalue="4.69325e-10" evalue="1.03721e-07" qvalue="5.07059e-08"/>
 				<match target="t_1_motif_6_8-AGCATCTCCGAC" orientation="forward" offset="1" pvalue="2.67624e-07" evalue="5.91449e-05" qvalue="2.31313e-05"/>
-				<match target="t_1_motif_13_11-TCTCCGAC" orientation="forward" offset="-3" pvalue="2.88053e-05" evalue="0.00636598" qvalue="0.00207476"/>
 			</query>
 			<query>
 				<motif id="q_motif_8_12-CTGTTTAGTT" name="motif_8_12-CTGTTTAGTT" length="10" nsites="20" evalue="1.0e-045" >
@@ -3913,7 +3861,6 @@
 				</motif>
 				<match target="t_1_motif_8_12-CTGTTTAGTT" orientation="forward" offset="0" pvalue="5.29473e-28" evalue="1.17014e-25" qvalue="2.28903e-25"/>
 				<match target="t_1_motif_8_7-STGTTTAGTC" orientation="forward" offset="0" pvalue="5.5409e-07" evalue="0.000122454" qvalue="0.000119773"/>
-				<match target="t_1_motif_8_12-CTGTTTAGTCYC" orientation="forward" offset="0" pvalue="4.14246e-05" evalue="0.00915485" qvalue="0.00596961"/>
 			</query>
 			<query>
 				<motif id="q_motif_9_10-GGYAACAACTKC" name="motif_9_10-GGYAACAACTKC" length="12" nsites="20" evalue="1.0e-042" >
@@ -3933,9 +3880,6 @@
 				<match target="t_1_motif_9_10-GGYAACAACTKC" orientation="forward" offset="0" pvalue="1.79429e-17" evalue="3.96538e-15" qvalue="7.82636e-15"/>
 				<match target="t_1_motif_9_9-GGCAACAACT" orientation="forward" offset="0" pvalue="3.51694e-07" evalue="7.77244e-05" qvalue="7.67012e-05"/>
 				<match target="t_1_motif_13_14-CGGCAACAACTK" orientation="forward" offset="1" pvalue="3.08609e-06" evalue="0.000682025" qvalue="0.000448697"/>
-				<match target="t_1_motif_9_10-CGGCAACAACTG" orientation="forward" offset="1" pvalue="4.89277e-06" evalue="0.0010813" qvalue="0.000533533"/>
-				<match target="t_1_motif_5_7-ACGGCAACAACT" orientation="forward" offset="2" pvalue="9.24462e-06" evalue="0.00204306" qvalue="0.000806465"/>
-				<match target="t_1_motif_13_14-CAACAACTGC" orientation="forward" offset="-2" pvalue="1.30114e-05" evalue="0.00287551" qvalue="0.000945884"/>
 			</query>
 			<query>
 				<motif id="q_motif_10_12-AGAGAAAAGGCG" name="motif_10_12-AGAGAAAAGGCG" length="12" nsites="20" evalue="1.0e-033" >
@@ -3959,7 +3903,6 @@
 				<match target="t_1_motif_11_13-GAGAAAAGGCGA" orientation="forward" offset="-1" pvalue="3.02325e-07" evalue="6.68138e-05" qvalue="1.87154e-05"/>
 				<match target="t_1_motif_11_12-GAGAAAAGGCGA" orientation="forward" offset="-1" pvalue="3.02325e-07" evalue="6.68138e-05" qvalue="1.87154e-05"/>
 				<match target="t_1_motif_10_11-GAGAAAAGGCGA" orientation="forward" offset="-1" pvalue="3.02325e-07" evalue="6.68138e-05" qvalue="1.87154e-05"/>
-				<match target="t_1_motif_11_12-GAGAAAAGGYKA" orientation="forward" offset="-1" pvalue="8.22414e-06" evalue="0.00181753" qvalue="0.000445474"/>
 			</query>
 			<query>
 				<motif id="q_motif_11_11-CGCACGTG" name="motif_11_11-CGCACGTG" length="8" nsites="20" evalue="1.0e-032" >
@@ -3989,8 +3932,6 @@
 				</motif>
 				<match target="t_1_motif_12_15-GTTTTGACWT" orientation="forward" offset="0" pvalue="5.93607e-26" evalue="1.31187e-23" qvalue="2.47955e-23"/>
 				<match target="t_1_motif_17_16-TGTTTTGAAATT" orientation="forward" offset="1" pvalue="1.71217e-06" evalue="0.000378391" qvalue="0.000357595"/>
-				<match target="t_1_motif_18_16-TTTTGACATT" orientation="forward" offset="-1" pvalue="5.25582e-06" evalue="0.00116154" qvalue="0.0007318"/>
-				<match target="t_1_motif_21_17-GTTKTGACGTTT" orientation="forward" offset="0" pvalue="1.32767e-05" evalue="0.00293415" qvalue="0.00138645"/>
 			</query>
 			<query>
 				<motif id="q_motif_13_16-CCGCTAGAGG" name="motif_13_16-CCGCTAGAGG" length="10" nsites="20" evalue="1.0e-030" >
@@ -4011,9 +3952,6 @@
 				<match target="t_1_motif_11_10-CCGCTAGAKG" orientation="forward" offset="0" pvalue="7.21625e-07" evalue="0.000159479" qvalue="7.74206e-05"/>
 				<match target="t_1_motif_17_17-CCGCTAGA" orientation="forward" offset="0" pvalue="1.24129e-06" evalue="0.000274324" qvalue="0.000106539"/>
 				<match target="t_1_motif_12_12-CCGCTAGAKGGC" orientation="forward" offset="0" pvalue="2.42605e-06" evalue="0.000536157" qvalue="0.000173521"/>
-				<match target="t_1_motif_10_10-CGCTAGAGGG" orientation="forward" offset="-1" pvalue="6.72198e-06" evalue="0.00148556" qvalue="0.000360589"/>
-				<match target="t_1_motif_16_14-CGCTAGAGGG" orientation="forward" offset="-1" pvalue="6.72198e-06" evalue="0.00148556" qvalue="0.000360589"/>
-				<match target="t_1_motif_9_10-CGCTAGAGGG" orientation="forward" offset="-1" pvalue="2.24325e-05" evalue="0.00495758" qvalue="0.00106964"/>
 			</query>
 			<query>
 				<motif id="q_motif_14_17-TCAACATGAAGG" name="motif_14_17-TCAACATGAAGG" length="12" nsites="20" evalue="1.0e-022" >
@@ -4054,8 +3992,6 @@
 				</motif>
 				<match target="t_1_motif_15_18-TGGTCGTGACGT" orientation="forward" offset="0" pvalue="1.37676e-17" evalue="3.04264e-15" qvalue="6.01899e-15"/>
 				<match target="t_1_motif_15_15-GGTYSTGACGTT" orientation="forward" offset="-1" pvalue="2.34188e-06" evalue="0.000517556" qvalue="0.000511919"/>
-				<match target="t_1_motif_24_21-GGTTGTGACGTT" orientation="forward" offset="-1" pvalue="4.92829e-06" evalue="0.00108915" qvalue="0.000718194"/>
-				<match target="t_1_motif_16_16-GTCGTGACGTTT" orientation="forward" offset="-2" pvalue="1.18152e-05" evalue="0.00261115" qvalue="0.00129136"/>
 			</query>
 			<query>
 				<motif id="q_motif_16_20-CGAGTGTCTTCA" name="motif_16_20-CGAGTGTCTTCA" length="12" nsites="20" evalue="1.0e-017" >
@@ -4176,11 +4112,6 @@
 					<pos i="12" A="0.103" C="0.317" G="0.213" T="0.367"/>
 				</motif>
 				<match target="t_1_motif_3_4-AWHTGGCAACRY" orientation="forward" offset="0" pvalue="3.30053e-28" evalue="7.29417e-26" qvalue="1.41054e-25"/>
-				<match target="t_1_motif_3_4-TGGCAACGYTGN" orientation="forward" offset="-3" pvalue="9.36165e-06" evalue="0.00206892" qvalue="0.00141277"/>
-				<match target="t_1_motif_3_4-TGGCAACGYTGH" orientation="forward" offset="-3" pvalue="1.21507e-05" evalue="0.0026853" qvalue="0.00141277"/>
-				<match target="t_1_motif_3_5-TGGCAACGYTGY" orientation="forward" offset="-3" pvalue="1.3223e-05" evalue="0.00292228" qvalue="0.00141277"/>
-				<match target="t_1_motif_3_5-TGGCAACGYTGC" orientation="forward" offset="-3" pvalue="1.69288e-05" evalue="0.00374127" qvalue="0.00144697"/>
-				<match target="t_1_motif_3_4-TGGCAACGYTGY" orientation="forward" offset="-3" pvalue="2.69978e-05" evalue="0.00596651" qvalue="0.001923"/>
 			</query>
 			<query>
 				<motif id="q_motif_4_6-WAGATGGCKN" name="motif_4_6-WAGATGGCKN" length="10" nsites="20" evalue="1.0e-086" >
@@ -4220,7 +4151,6 @@
 					<pos i="10" A="0.047" C="0.087" G="0.843" T="0.023"/>
 				</motif>
 				<match target="t_1_motif_5_7-AAGTCGTCTG" orientation="forward" offset="0" pvalue="6.07158e-17" evalue="1.34182e-14" qvalue="2.53154e-14"/>
-				<match target="t_1_motif_19_18-AAGTCGTCGG" orientation="forward" offset="0" pvalue="7.13072e-06" evalue="0.00157589" qvalue="0.00148657"/>
 			</query>
 			<query>
 				<motif id="q_motif_6_8-GGGTDAGAAAAA" name="motif_6_8-GGGTDAGAAAAA" length="12" nsites="20" evalue="1.0e-052" >
@@ -4264,10 +4194,6 @@
 				<match target="t_1_motif_8_11-ATCTCCGACA" orientation="forward" offset="0" pvalue="3.80191e-10" evalue="8.40223e-08" qvalue="8.2534e-08"/>
 				<match target="t_1_motif_7_8-GCATCTCCGACA" orientation="forward" offset="2" pvalue="1.14057e-09" evalue="2.52067e-07" qvalue="1.23801e-07"/>
 				<match target="t_1_motif_5_7-GCATCTCCGACA" orientation="forward" offset="2" pvalue="1.14057e-09" evalue="2.52067e-07" qvalue="1.23801e-07"/>
-				<match target="t_1_motif_6_8-AGCATCTCCGAC" orientation="forward" offset="3" pvalue="1.37397e-05" evalue="0.00303646" qvalue="0.00119307"/>
-				<match target="t_1_motif_6_7-TCTCCGACACGA" orientation="forward" offset="-1" pvalue="2.28233e-05" evalue="0.00504395" qvalue="0.00165153"/>
-				<match target="t_1_motif_13_11-TCTCCGAC" orientation="forward" offset="-1" pvalue="2.74998e-05" evalue="0.00607746" qvalue="0.00170566"/>
-				<match target="t_1_motif_5_9-TCTCCGACACGG" orientation="forward" offset="-1" pvalue="3.36157e-05" evalue="0.00742907" qvalue="0.00182437"/>
 			</query>
 			<query>
 				<motif id="q_motif_8_10-ACACGDYAACAA" name="motif_8_10-ACACGDYAACAA" length="12" nsites="20" evalue="1.0e-046" >
@@ -4315,7 +4241,6 @@
 				<match target="t_1_motif_10_12-CTGCAGHGCACT" orientation="forward" offset="0" pvalue="1.56307e-26" evalue="3.45439e-24" qvalue="6.70818e-24"/>
 				<match target="t_1_motif_9_10-CTGCAGCGCACT" orientation="forward" offset="0" pvalue="3.03534e-12" evalue="6.70811e-10" qvalue="6.51334e-10"/>
 				<match target="t_1_motif_12_12-CTKCAGYGCACT" orientation="forward" offset="0" pvalue="2.75089e-09" evalue="6.07947e-07" qvalue="3.9353e-07"/>
-				<match target="t_1_motif_9_10-AACTGCAGYGCA" orientation="forward" offset="2" pvalue="1.89284e-05" evalue="0.00418317" qvalue="0.00203086"/>
 			</query>
 			<query>
 				<motif id="q_motif_11_13-GAGAAAAGGCGA" name="motif_11_13-GAGAAAAGGCGA" length="12" nsites="20" evalue="1.0e-036" >
@@ -4360,9 +4285,6 @@
 				<match target="t_1_motif_14_15-CCGCTAGA" orientation="forward" offset="0" pvalue="6.57002e-07" evalue="0.000145198" qvalue="7.04874e-05"/>
 				<match target="t_1_motif_17_17-CCGCTAGA" orientation="forward" offset="0" pvalue="1.20256e-06" evalue="0.000265766" qvalue="0.000103215"/>
 				<match target="t_1_motif_12_12-CCGCTAGAKGGC" orientation="forward" offset="0" pvalue="1.57109e-06" evalue="0.00034721" qvalue="0.000112371"/>
-				<match target="t_1_motif_16_14-CGCTAGAGGG" orientation="forward" offset="-1" pvalue="7.83796e-06" evalue="0.00173219" qvalue="0.000454146"/>
-				<match target="t_1_motif_10_10-CGCTAGAGGG" orientation="forward" offset="-1" pvalue="8.46605e-06" evalue="0.001871" qvalue="0.000454146"/>
-				<match target="t_1_motif_9_10-CGCTAGAGGG" orientation="forward" offset="-1" pvalue="2.10636e-05" evalue="0.00465506" qvalue="0.00100437"/>
 			</query>
 			<query>
 				<motif id="q_motif_13_13-TACTGTTTAG" name="motif_13_13-TACTGTTTAG" length="10" nsites="20" evalue="1.0e-034" >
@@ -4433,9 +4355,6 @@
 				<match target="t_1_motif_16_16-GTCGTGACGTTT" orientation="forward" offset="0" pvalue="3.42775e-18" evalue="7.57534e-16" qvalue="1.49168e-15"/>
 				<match target="t_1_motif_18_19-TGACGTTT" orientation="forward" offset="-4" pvalue="1.42541e-06" evalue="0.000315016" qvalue="0.000278669"/>
 				<match target="t_1_motif_21_17-GTTKTGACGTTT" orientation="forward" offset="0" pvalue="1.92108e-06" evalue="0.000424558" qvalue="0.000278669"/>
-				<match target="t_1_motif_15_15-GGTYSTGACGTT" orientation="forward" offset="1" pvalue="4.63159e-06" evalue="0.00102358" qvalue="0.000459566"/>
-				<match target="t_1_motif_19_17-TGACGTTT" orientation="forward" offset="-4" pvalue="5.28023e-06" evalue="0.00116693" qvalue="0.000459566"/>
-				<match target="t_1_motif_24_21-GGTTGTGACGTT" orientation="forward" offset="1" pvalue="2.6352e-05" evalue="0.00582378" qvalue="0.00191129"/>
 			</query>
 			<query>
 				<motif id="q_motif_17_18-AGCAGAAATGGG" name="motif_17_18-AGCAGAAATGGG" length="12" nsites="20" evalue="1.0e-021" >
@@ -4454,7 +4373,6 @@
 				</motif>
 				<match target="t_1_motif_17_18-AGCAGAAATGGG" orientation="forward" offset="0" pvalue="1.56555e-20" evalue="3.45987e-18" qvalue="6.87584e-18"/>
 				<match target="t_1_motif_20_23-AGCAGAAATGGG" orientation="forward" offset="0" pvalue="4.2249e-09" evalue="9.33702e-07" qvalue="9.27779e-07"/>
-				<match target="t_1_motif_23_21-AGGCGAAATGGG" orientation="forward" offset="0" pvalue="1.02518e-05" evalue="0.00226564" qvalue="0.00150085"/>
 			</query>
 			<query>
 				<motif id="q_motif_18_20-GTCTTCAGGGAC" name="motif_18_20-GTCTTCAGGGAC" length="12" nsites="20" evalue="1.0e-019" >
@@ -4478,8 +4396,6 @@
 				<match target="t_1_motif_21_20-GTCTTCAGGGAC" orientation="forward" offset="0" pvalue="1.00208e-08" evalue="2.2146e-06" qvalue="8.72161e-07"/>
 				<match target="t_1_motif_19_22-GTCTTCAGGGAC" orientation="forward" offset="0" pvalue="2.82316e-08" evalue="6.23918e-06" qvalue="2.04762e-06"/>
 				<match target="t_1_motif_24_23-TCTTCAGGGA" orientation="forward" offset="-1" pvalue="4.57127e-07" evalue="0.000101025" qvalue="2.84187e-05"/>
-				<match target="t_1_motif_23_23-CKTCAGGGAY" orientation="forward" offset="-2" pvalue="5.37971e-06" evalue="0.00118892" qvalue="0.00029264"/>
-				<match target="t_1_motif_20_21-GTGTCTTCAGGG" orientation="forward" offset="2" pvalue="1.50717e-05" evalue="0.00333086" qvalue="0.000728762"/>
 			</query>
 			<query>
 				<motif id="q_motif_19_22-TGAAACGAGA" name="motif_19_22-TGAAACGAGA" length="10" nsites="20" evalue="1.0e-018" >
@@ -4495,11 +4411,6 @@
 					<pos i="10" A="0.633" C="0.001" G="0.032" T="0.334"/>
 				</motif>
 				<match target="t_1_motif_19_22-TGAAACGAGA" orientation="forward" offset="0" pvalue="1.68241e-15" evalue="3.71812e-13" qvalue="7.33834e-13"/>
-				<match target="t_1_motif_23_20-TCGTGAAACGAG" orientation="forward" offset="3" pvalue="1.08923e-05" evalue="0.0024072" qvalue="0.00170881"/>
-				<match target="t_1_motif_18_19-CGTGAAACGAGG" orientation="forward" offset="2" pvalue="1.1753e-05" evalue="0.00259742" qvalue="0.00170881"/>
-				<match target="t_1_motif_18_15-TCGTGAAACGAG" orientation="forward" offset="3" pvalue="1.6597e-05" evalue="0.00366793" qvalue="0.00180982"/>
-				<match target="t_1_motif_19_19-TGAAACGAGG" orientation="forward" offset="0" pvalue="2.34733e-05" evalue="0.00518759" qvalue="0.00195513"/>
-				<match target="t_1_motif_18_18-TGAAACGAGGTG" orientation="forward" offset="0" pvalue="2.68944e-05" evalue="0.00594365" qvalue="0.00195513"/>
 			</query>
 			<query>
 				<motif id="q_motif_20_20-MCMACMAC" name="motif_20_20-MCMACMAC" length="8" nsites="20" evalue="1.0e-016" >
@@ -4515,7 +4426,6 @@
 				<match target="t_1_motif_20_20-MCMACMAC" orientation="forward" offset="0" pvalue="2.3547e-15" evalue="5.20388e-13" qvalue="1.02234e-12"/>
 				<match target="t_1_motif_23_22-ACAACAAC" orientation="forward" offset="0" pvalue="5.17886e-07" evalue="0.000114453" qvalue="0.000112425"/>
 				<match target="t_1_motif_21_21-CCACHACMAC" orientation="forward" offset="2" pvalue="4.49651e-06" evalue="0.000993729" qvalue="0.000650751"/>
-				<match target="t_1_motif_17_22-CCACAACAAC" orientation="forward" offset="2" pvalue="1.47919e-05" evalue="0.003269" qvalue="0.00160555"/>
 			</query>
 			<query>
 				<motif id="q_motif_21_17-TTTGTT" name="motif_21_17-TTTGTT" length="6" nsites="20" evalue="1.0e-015" >
@@ -4588,7 +4498,6 @@
 				<match target="t_1_motif_1_1-NNKCAGTYGN" orientation="forward" offset="1" pvalue="1.32816e-06" evalue="0.000293523" qvalue="9.5218e-05"/>
 				<match target="t_1_motif_2_1-NNKCAGTYDN" orientation="forward" offset="1" pvalue="1.69791e-06" evalue="0.000375238" qvalue="0.000104337"/>
 				<match target="t_1_motif_2_1-KTCAGTCG" orientation="forward" offset="0" pvalue="2.12924e-06" evalue="0.000470562" qvalue="0.000114487"/>
-				<match target="t_1_motif_2_1-DTCAGTCG" orientation="forward" offset="0" pvalue="9.90432e-06" evalue="0.00218885" qvalue="0.000473372"/>
 			</query>
 			<query>
 				<motif id="q_motif_3_4-TGGCAACGYTGH" name="motif_3_4-TGGCAACGYTGH" length="12" nsites="20" evalue="1.0e-162" >
@@ -4611,7 +4520,6 @@
 				<match target="t_1_motif_3_5-TGGCAACGYTGC" orientation="forward" offset="0" pvalue="2.0167e-16" evalue="4.45691e-14" qvalue="2.18898e-14"/>
 				<match target="t_1_motif_3_4-TGGCAACGYTGY" orientation="forward" offset="0" pvalue="4.7676e-14" evalue="1.05364e-11" qvalue="4.1399e-12"/>
 				<match target="t_1_motif_3_4-TGGCAACGTTGC" orientation="forward" offset="0" pvalue="6.70209e-11" evalue="1.48116e-08" qvalue="4.84976e-09"/>
-				<match target="t_1_motif_3_4-AWHTGGCAACRY" orientation="forward" offset="3" pvalue="2.77694e-05" evalue="0.00613703" qvalue="0.00172238"/>
 			</query>
 			<query>
 				<motif id="q_motif_4_5-GTCYGC" name="motif_4_5-GTCYGC" length="6" nsites="20" evalue="1.0e-125" >
@@ -4646,7 +4554,6 @@
 				<match target="t_1_motif_5_7-WAGATGGCKS" orientation="forward" offset="-1" pvalue="2.40022e-07" evalue="5.30449e-05" qvalue="1.47494e-05"/>
 				<match target="t_1_motif_4_6-WAGATGGCKN" orientation="forward" offset="-1" pvalue="4.1503e-07" evalue="9.17217e-05" qvalue="2.23157e-05"/>
 				<match target="t_1_motif_4_6-AAGATGGCGG" orientation="forward" offset="-1" pvalue="4.90964e-07" evalue="0.000108503" qvalue="2.34654e-05"/>
-				<match target="t_1_motif_4_7-AGATGGCKGY" orientation="forward" offset="-2" pvalue="1.00163e-05" evalue="0.00221361" qvalue="0.000430854"/>
 			</query>
 			<query>
 				<motif id="q_motif_6_8-CGACACGGCAAC" name="motif_6_8-CGACACGGCAAC" length="12" nsites="20" evalue="1.0e-055" >
@@ -4664,7 +4571,6 @@
 					<pos i="12" A="0.001" C="0.99" G="0.008" T="0.001"/>
 				</motif>
 				<match target="t_1_motif_6_8-CGACACGGCAAC" orientation="forward" offset="0" pvalue="4.10196e-13" evalue="9.06533e-11" qvalue="1.78654e-10"/>
-				<match target="t_1_motif_5_7-TCCGACACGGCA" orientation="forward" offset="2" pvalue="1.26885e-05" evalue="0.00280415" qvalue="0.00276313"/>
 			</query>
 			<query>
 				<motif id="q_motif_7_9-GGGTGATAAAAA" name="motif_7_9-GGGTGATAAAAA" length="12" nsites="20" evalue="1.0e-046" >
@@ -4689,7 +4595,6 @@
 				<match target="t_1_motif_7_9-GGGTGAKCAAAA" orientation="forward" offset="0" pvalue="1.06771e-07" evalue="2.35964e-05" qvalue="7.58625e-06"/>
 				<match target="t_1_motif_6_8-GGGTDAGAAAAA" orientation="forward" offset="0" pvalue="1.22028e-07" evalue="2.69682e-05" qvalue="7.58625e-06"/>
 				<match target="t_1_motif_5_8-GGGTBRBMAAAA" orientation="forward" offset="0" pvalue="3.64461e-07" evalue="8.05459e-05" qvalue="1.98256e-05"/>
-				<match target="t_1_motif_6_8-GGGTGATHAA" orientation="forward" offset="0" pvalue="7.86686e-06" evalue="0.00173858" qvalue="0.000380385"/>
 			</query>
 			<query>
 				<motif id="q_motif_8_9-GAGCATCTCC" name="motif_8_9-GAGCATCTCC" length="10" nsites="20" evalue="1.0e-044" >
@@ -4707,7 +4612,6 @@
 				<match target="t_1_motif_7_7-GAGCATCTCC" orientation="forward" offset="0" pvalue="1.30727e-10" evalue="2.88908e-08" qvalue="1.90945e-08"/>
 				<match target="t_1_motif_8_9-GAGCATCTCC" orientation="forward" offset="0" pvalue="1.30727e-10" evalue="2.88908e-08" qvalue="1.90945e-08"/>
 				<match target="t_1_motif_6_8-GAGCATCTCC" orientation="forward" offset="0" pvalue="1.30727e-10" evalue="2.88908e-08" qvalue="1.90945e-08"/>
-				<match target="t_1_motif_6_8-AGCATCTCCGAC" orientation="forward" offset="-1" pvalue="2.04166e-05" evalue="0.00451207" qvalue="0.00223659"/>
 			</query>
 			<query>
 				<motif id="q_motif_9_10-CTGCAGCGCACT" name="motif_9_10-CTGCAGCGCACT" length="12" nsites="20" evalue="1.0e-043" >
@@ -4727,8 +4631,6 @@
 				<match target="t_1_motif_9_10-CTGCAGCGCACT" orientation="forward" offset="0" pvalue="2.21462e-19" evalue="4.8943e-17" qvalue="9.65973e-17"/>
 				<match target="t_1_motif_10_12-CTGCAGHGCACT" orientation="forward" offset="0" pvalue="1.26542e-08" evalue="2.79658e-06" qvalue="2.75977e-06"/>
 				<match target="t_1_motif_12_12-CTKCAGYGCACT" orientation="forward" offset="0" pvalue="1.67497e-07" evalue="3.70168e-05" qvalue="2.4353e-05"/>
-				<match target="t_1_motif_14_12-GCAGCGCACTAT" orientation="forward" offset="-2" pvalue="1.6933e-05" evalue="0.00374218" qvalue="0.00184646"/>
-				<match target="t_1_motif_9_10-AACTGCAGYGCA" orientation="forward" offset="2" pvalue="4.00454e-05" evalue="0.00885003" qvalue="0.00349341"/>
 			</query>
 			<query>
 				<motif id="q_motif_10_11-AGTCGAGTGAGC" name="motif_10_11-AGTCGAGTGAGC" length="12" nsites="20" evalue="1.0e-041" >
@@ -4788,7 +4690,6 @@
 					<pos i="12" A="0.204" C="0.045" G="0.001" T="0.75"/>
 				</motif>
 				<match target="t_1_motif_12_13-GCTGTTTAGTAT" orientation="forward" offset="0" pvalue="8.97751e-21" evalue="1.98403e-18" qvalue="3.89778e-18"/>
-				<match target="t_1_motif_8_12-CTGTTTAGTCYC" orientation="forward" offset="-1" pvalue="1.61756e-05" evalue="0.0035748" qvalue="0.00351148"/>
 			</query>
 			<query>
 				<motif id="q_motif_13_11-TCTCCGAC" name="motif_13_11-TCTCCGAC" length="8" nsites="20" evalue="1.0e-036" >
@@ -4803,8 +4704,6 @@
 				</motif>
 				<match target="t_1_motif_13_11-TCTCCGAC" orientation="forward" offset="0" pvalue="5.80537e-16" evalue="1.28299e-13" qvalue="2.52052e-13"/>
 				<match target="t_1_motif_6_7-TCTCCGACACGA" orientation="forward" offset="0" pvalue="4.19252e-07" evalue="9.26548e-05" qvalue="9.10136e-05"/>
-				<match target="t_1_motif_7_10-ATCTCCGACA" orientation="forward" offset="1" pvalue="3.1784e-05" evalue="0.00702426" qvalue="0.0028749"/>
-				<match target="t_1_motif_8_11-ATCTCCGACA" orientation="forward" offset="1" pvalue="3.1784e-05" evalue="0.00702426" qvalue="0.0028749"/>
 			</query>
 			<query>
 				<motif id="q_motif_14_14-AAAGCATCAGTT" name="motif_14_14-AAAGCATCAGTT" length="12" nsites="20" evalue="1.0e-035" >
@@ -4851,11 +4750,6 @@
 				<match target="t_1_motif_16_14-CGCTAGAGGG" orientation="forward" offset="0" pvalue="1.09928e-15" evalue="2.4294e-13" qvalue="4.75065e-13"/>
 				<match target="t_1_motif_10_10-CGCTAGAGGG" orientation="forward" offset="0" pvalue="1.70806e-13" evalue="3.77482e-11" qvalue="3.69079e-11"/>
 				<match target="t_1_motif_9_10-CGCTAGAGGG" orientation="forward" offset="0" pvalue="4.56366e-07" evalue="0.000100857" qvalue="6.57412e-05"/>
-				<match target="t_1_motif_12_12-CCGCTAGAKGGC" orientation="forward" offset="1" pvalue="5.11229e-06" evalue="0.00112982" qvalue="0.000552333"/>
-				<match target="t_1_motif_13_16-CCGCTAGAGG" orientation="forward" offset="1" pvalue="9.357e-06" evalue="0.0020679" qvalue="0.000730689"/>
-				<match target="t_1_motif_6_10-CGCYAGWKNG" orientation="forward" offset="0" pvalue="1.01447e-05" evalue="0.00224197" qvalue="0.000730689"/>
-				<match target="t_1_motif_12_12-CCGCTAGAGG" orientation="forward" offset="1" pvalue="1.20028e-05" evalue="0.00265261" qvalue="0.000741019"/>
-				<match target="t_1_motif_11_10-CCGCTAGAKG" orientation="forward" offset="1" pvalue="4.30266e-05" evalue="0.00950888" qvalue="0.0023243"/>
 			</query>
 			<query>
 				<motif id="q_motif_17_16-TCCAAGACGCAG" name="motif_17_16-TCCAAGACGCAG" length="12" nsites="20" evalue="1.0e-028" >
@@ -4874,7 +4768,6 @@
 				</motif>
 				<match target="t_1_motif_17_16-TCCAAGACGCAG" orientation="forward" offset="0" pvalue="3.55583e-16" evalue="7.85838e-14" qvalue="1.55098e-13"/>
 				<match target="t_1_motif_17_19-CCWAGACGCAGC" orientation="forward" offset="-1" pvalue="1.2971e-06" evalue="0.00028666" qvalue="0.000282886"/>
-				<match target="t_1_motif_17_17-CCTAGACGCAGC" orientation="forward" offset="-1" pvalue="1.14673e-05" evalue="0.00253426" qvalue="0.00166727"/>
 			</query>
 			<query>
 				<motif id="q_motif_18_16-TTTTGACATT" name="motif_18_16-TTTTGACATT" length="10" nsites="20" evalue="1.0e-027" >
@@ -4891,7 +4784,6 @@
 				</motif>
 				<match target="t_1_motif_18_16-TTTTGACATT" orientation="forward" offset="0" pvalue="1.06566e-21" evalue="2.35511e-19" qvalue="4.61607e-19"/>
 				<match target="t_1_motif_16_16-TGTCAAAA" orientation="reverse" offset="0" pvalue="1.93917e-06" evalue="0.000428557" qvalue="0.000419991"/>
-				<match target="t_1_motif_17_16-TGTTTTGAAATT" orientation="forward" offset="2" pvalue="1.8596e-05" evalue="0.00410972" qvalue="0.00268505"/>
 			</query>
 			<query>
 				<motif id="q_motif_19_14-ACCATGGA" name="motif_19_14-ACCATGGA" length="8" nsites="20" evalue="1.0e-024" >
@@ -4922,8 +4814,6 @@
 					<pos i="12" A="0.117" C="0.04" G="0.672" T="0.171"/>
 				</motif>
 				<match target="t_1_motif_20_18-CATGGTGAAACG" orientation="forward" offset="0" pvalue="1.409e-28" evalue="3.1139e-26" qvalue="6.15996e-26"/>
-				<match target="t_1_motif_23_20-TCGTGAAACGAG" orientation="forward" offset="-2" pvalue="3.473e-05" evalue="0.00767532" qvalue="0.00600807"/>
-				<match target="t_1_motif_18_15-TCGTGAAACGAG" orientation="forward" offset="-2" pvalue="4.12278e-05" evalue="0.00911134" qvalue="0.00600807"/>
 			</query>
 			<query>
 				<motif id="q_motif_21_18-GTGACGTTTA" name="motif_21_18-GTGACGTTTA" length="10" nsites="20" evalue="1.0e-022" >
@@ -4939,8 +4829,6 @@
 					<pos i="10" A="0.845" C="0.153" G="0.001" T="0.001"/>
 				</motif>
 				<match target="t_1_motif_21_18-GTGACGTTTA" orientation="forward" offset="0" pvalue="1.14424e-18" evalue="2.52877e-16" qvalue="4.99096e-16"/>
-				<match target="t_1_motif_18_19-TGACGTTT" orientation="forward" offset="-1" pvalue="5.56077e-06" evalue="0.00122893" qvalue="0.00121275"/>
-				<match target="t_1_motif_19_17-TGACGTTT" orientation="forward" offset="-1" pvalue="1.15156e-05" evalue="0.00254495" qvalue="0.00167429"/>
 			</query>
 			<query>
 				<motif id="q_motif_22_20-GTCTTCAGGGAC" name="motif_22_20-GTCTTCAGGGAC" length="12" nsites="20" evalue="1.0e-019" >
@@ -4964,8 +4852,6 @@
 				<match target="t_1_motif_26_22-GTCTTCAGGGAC" orientation="forward" offset="0" pvalue="7.91139e-09" evalue="1.74842e-06" qvalue="6.88569e-07"/>
 				<match target="t_1_motif_19_22-GTCTTCAGGGAC" orientation="forward" offset="0" pvalue="2.26504e-08" evalue="5.00575e-06" qvalue="1.64282e-06"/>
 				<match target="t_1_motif_24_23-TCTTCAGGGA" orientation="forward" offset="-1" pvalue="6.82557e-07" evalue="0.000150845" qvalue="4.24332e-05"/>
-				<match target="t_1_motif_23_23-CKTCAGGGAY" orientation="forward" offset="-2" pvalue="7.3385e-06" evalue="0.00162181" qvalue="0.000399192"/>
-				<match target="t_1_motif_20_21-GTGTCTTCAGGG" orientation="forward" offset="2" pvalue="1.22975e-05" evalue="0.00271775" qvalue="0.00059462"/>
 			</query>
 			<query>
 				<motif id="q_motif_23_21-AGGCGAAATGGG" name="motif_23_21-AGGCGAAATGGG" length="12" nsites="20" evalue="1.0e-018" >
@@ -4983,8 +4869,6 @@
 					<pos i="12" A="0.001" C="0.029" G="0.942" T="0.028"/>
 				</motif>
 				<match target="t_1_motif_23_21-AGGCGAAATGGG" orientation="forward" offset="0" pvalue="3.51677e-16" evalue="7.77206e-14" qvalue="1.54809e-13"/>
-				<match target="t_1_motif_17_18-AGCAGAAATGGG" orientation="forward" offset="0" pvalue="9.75325e-06" evalue="0.00215547" qvalue="0.0021467"/>
-				<match target="t_1_motif_20_23-AGCAGAAATGGG" orientation="forward" offset="0" pvalue="1.7522e-05" evalue="0.00387235" qvalue="0.00257106"/>
 			</query>
 			<query>
 				<motif id="q_motif_24_22-TTCAGAACTCAT" name="motif_24_22-TTCAGAACTCAT" length="12" nsites="20" evalue="1.0e-017" >
@@ -5005,9 +4889,6 @@
 				<match target="t_1_motif_22_18-TTCAGAACTCAT" orientation="forward" offset="0" pvalue="5.10266e-10" evalue="1.12769e-07" qvalue="1.1154e-07"/>
 				<match target="t_1_motif_16_16-TTCAHAACTCRT" orientation="forward" offset="0" pvalue="9.41879e-07" evalue="0.000208155" qvalue="0.000137259"/>
 				<match target="t_1_motif_20_20-TCAGAACTCA" orientation="forward" offset="-1" pvalue="1.71171e-06" evalue="0.000378288" qvalue="0.000187084"/>
-				<match target="t_1_motif_18_20-TTCAAACCTCAT" orientation="forward" offset="0" pvalue="8.55733e-06" evalue="0.00189117" qvalue="0.000748229"/>
-				<match target="t_1_motif_16_17-CACAACTCAT" orientation="forward" offset="-2" pvalue="3.47081e-05" evalue="0.00767049" qvalue="0.0024455"/>
-				<match target="t_1_motif_16_16-TSACAACTCA" orientation="forward" offset="-1" pvalue="3.91561e-05" evalue="0.0086535" qvalue="0.0024455"/>
 			</query>
 			<query>
 				<motif id="q_motif_25_16-CACGTG" name="motif_25_16-CACGTG" length="6" nsites="20" evalue="1.0e-016" >
@@ -5092,7 +4973,6 @@
 				<match target="t_1_motif_3_5-TGGCAACGYTGY" orientation="forward" offset="0" pvalue="2.05551e-16" evalue="4.54267e-14" qvalue="2.2268e-14"/>
 				<match target="t_1_motif_3_4-TGGCAACGYTGY" orientation="forward" offset="0" pvalue="3.64674e-15" evalue="8.05929e-13" qvalue="3.16051e-13"/>
 				<match target="t_1_motif_3_4-TGGCAACGTTGC" orientation="forward" offset="0" pvalue="2.79218e-12" evalue="6.17072e-10" qvalue="2.01657e-10"/>
-				<match target="t_1_motif_3_4-AWHTGGCAACRY" orientation="forward" offset="3" pvalue="3.82362e-05" evalue="0.0084502" qvalue="0.002367"/>
 			</query>
 			<query>
 				<motif id="q_motif_4_5-CAAGATGGCG" name="motif_4_5-CAAGATGGCG" length="10" nsites="20" evalue="1.0e-088" >
@@ -5112,10 +4992,6 @@
 				<match target="t_1_motif_5_8-CMAGATGGCG" orientation="forward" offset="0" pvalue="1.76712e-09" evalue="3.90532e-07" qvalue="2.50642e-07"/>
 				<match target="t_1_motif_4_6-MWAGATGGCK" orientation="forward" offset="0" pvalue="9.49263e-08" evalue="2.09787e-05" qvalue="1.0098e-05"/>
 				<match target="t_1_motif_4_6-AAGATGGCGG" orientation="forward" offset="-1" pvalue="2.39644e-06" evalue="0.000529614" qvalue="0.000203942"/>
-				<match target="t_1_motif_5_5-CRCTAGATGGCG" orientation="forward" offset="2" pvalue="4.73538e-06" evalue="0.00104652" qvalue="0.000320526"/>
-				<match target="t_1_motif_4_6-CRMYAGATGGCG" orientation="forward" offset="2" pvalue="5.27292e-06" evalue="0.00116532" qvalue="0.000320526"/>
-				<match target="t_1_motif_5_7-WAGATGGCKS" orientation="forward" offset="-1" pvalue="6.06178e-06" evalue="0.00133965" qvalue="0.000322419"/>
-				<match target="t_1_motif_4_6-WAGATGGCKN" orientation="forward" offset="-1" pvalue="1.40291e-05" evalue="0.00310042" qvalue="0.000663279"/>
 			</query>
 			<query>
 				<motif id="q_motif_5_7-GCATCTCCGACA" name="motif_5_7-GCATCTCCGACA" length="12" nsites="20" evalue="1.0e-062" >
@@ -5137,7 +5013,6 @@
 				<match target="t_1_motif_7_10-ATCTCCGACA" orientation="forward" offset="-2" pvalue="9.93753e-10" evalue="2.19619e-07" qvalue="1.07365e-07"/>
 				<match target="t_1_motif_8_11-ATCTCCGACA" orientation="forward" offset="-2" pvalue="9.93753e-10" evalue="2.19619e-07" qvalue="1.07365e-07"/>
 				<match target="t_1_motif_6_8-AGCATCTCCGAC" orientation="forward" offset="1" pvalue="2.56306e-07" evalue="5.66435e-05" qvalue="2.2153e-05"/>
-				<match target="t_1_motif_13_11-TCTCCGAC" orientation="forward" offset="-3" pvalue="3.09336e-05" evalue="0.00683632" qvalue="0.00222804"/>
 			</query>
 			<query>
 				<motif id="q_motif_6_7-TTGTCAGTTC" name="motif_6_7-TTGTCAGTTC" length="10" nsites="20" evalue="1.0e-053" >
@@ -5166,8 +5041,6 @@
 					<pos i="8" A="0.001" C="0.968" G="0.001" T="0.03"/>
 				</motif>
 				<match target="t_1_motif_7_11-CTGTTTAC" orientation="forward" offset="0" pvalue="2.03434e-08" evalue="4.49588e-06" qvalue="8.8325e-06"/>
-				<match target="t_1_motif_11_10-TTGTTTAC" orientation="forward" offset="0" pvalue="3.58474e-05" evalue="0.00792228" qvalue="0.0058916"/>
-				<match target="t_1_motif_9_10-YTGTTTAS" orientation="forward" offset="0" pvalue="4.07093e-05" evalue="0.00899676" qvalue="0.0058916"/>
 			</query>
 			<query>
 				<motif id="q_motif_8_9-GGGTGAGAAAAA" name="motif_8_9-GGGTGAGAAAAA" length="12" nsites="20" evalue="1.0e-047" >
@@ -5192,7 +5065,6 @@
 				<match target="t_1_motif_7_9-GGGTGATAAAAA" orientation="forward" offset="0" pvalue="6.17889e-08" evalue="1.36554e-05" qvalue="4.47116e-06"/>
 				<match target="t_1_motif_7_9-GGGTGAKCAAAA" orientation="forward" offset="0" pvalue="1.08511e-07" evalue="2.39809e-05" qvalue="6.73032e-06"/>
 				<match target="t_1_motif_5_8-GGGTBRBMAAAA" orientation="forward" offset="0" pvalue="2.16751e-06" evalue="0.00047902" qvalue="0.000117634"/>
-				<match target="t_1_motif_6_8-GGGTGATHAA" orientation="forward" offset="0" pvalue="5.47677e-06" evalue="0.00121037" qvalue="0.000264206"/>
 			</query>
 			<query>
 				<motif id="q_motif_9_10-CGGCAACAACTG" name="motif_9_10-CGGCAACAACTG" length="12" nsites="20" evalue="1.0e-047" >
@@ -5213,8 +5085,6 @@
 				<match target="t_1_motif_13_14-CGGCAACAACTK" orientation="forward" offset="0" pvalue="3.61441e-08" evalue="7.98785e-06" qvalue="7.8282e-06"/>
 				<match target="t_1_motif_9_9-GGCAACAACT" orientation="forward" offset="-1" pvalue="1.16576e-07" evalue="2.57633e-05" qvalue="1.68322e-05"/>
 				<match target="t_1_motif_5_7-ACGGCAACAACT" orientation="forward" offset="1" pvalue="3.16249e-07" evalue="6.98911e-05" qvalue="3.42471e-05"/>
-				<match target="t_1_motif_9_10-GGYAACAACTKC" orientation="forward" offset="-1" pvalue="4.55686e-06" evalue="0.00100707" qvalue="0.000394775"/>
-				<match target="t_1_motif_13_14-CAACAACTGC" orientation="forward" offset="-3" pvalue="1.8352e-05" evalue="0.00405578" qvalue="0.00132491"/>
 			</query>
 			<query>
 				<motif id="q_motif_10_11-AGAGAAAAGGCG" name="motif_10_11-AGAGAAAAGGCG" length="12" nsites="20" evalue="1.0e-041" >
@@ -5238,7 +5108,6 @@
 				<match target="t_1_motif_11_13-GAGAAAAGGCGA" orientation="forward" offset="-1" pvalue="2.99415e-07" evalue="6.61707e-05" qvalue="1.95547e-05"/>
 				<match target="t_1_motif_11_12-GAGAAAAGGCGA" orientation="forward" offset="-1" pvalue="2.99415e-07" evalue="6.61707e-05" qvalue="1.95547e-05"/>
 				<match target="t_1_motif_10_11-GAGAAAAGGCGA" orientation="forward" offset="-1" pvalue="3.15883e-07" evalue="6.98101e-05" qvalue="1.95547e-05"/>
-				<match target="t_1_motif_11_12-GAGAAAAGGYKA" orientation="forward" offset="-1" pvalue="7.58406e-06" evalue="0.00167608" qvalue="0.000410804"/>
 			</query>
 			<query>
 				<motif id="q_motif_11_10-CCGCTAGAKG" name="motif_11_10-CCGCTAGAKG" length="10" nsites="20" evalue="1.0e-039" >
@@ -5261,8 +5130,6 @@
 				<match target="t_1_motif_10_10-CGCTAGAGGG" orientation="forward" offset="-1" pvalue="2.59276e-06" evalue="0.000572999" qvalue="0.000184199"/>
 				<match target="t_1_motif_16_14-CGCTAGAGGG" orientation="forward" offset="-1" pvalue="3.69441e-06" evalue="0.000816464" qvalue="0.000221412"/>
 				<match target="t_1_motif_9_10-CGCTAGAGGG" orientation="forward" offset="-1" pvalue="4.15541e-06" evalue="0.000918347" qvalue="0.000221412"/>
-				<match target="t_1_motif_17_17-CCGCTAGA" orientation="forward" offset="0" pvalue="4.78632e-06" evalue="0.00105778" qvalue="0.000226692"/>
-				<match target="t_1_motif_6_10-CGCYAGWKNG" orientation="forward" offset="-1" pvalue="3.44876e-05" evalue="0.00762176" qvalue="0.00147008"/>
 			</query>
 			<query>
 				<motif id="q_motif_12_13-MATMWGTCGAGT" name="motif_12_13-MATMWGTCGAGT" length="12" nsites="20" evalue="1.0e-031" >
@@ -5316,7 +5183,6 @@
 				<match target="t_1_motif_15_14-ACACGTGTTT" orientation="forward" offset="1" pvalue="7.46683e-07" evalue="0.000165017" qvalue="0.000159092"/>
 				<match target="t_1_motif_14_15-ACACGTGTTT" orientation="forward" offset="1" pvalue="2.04385e-06" evalue="0.00045169" qvalue="0.000290315"/>
 				<match target="t_1_motif_18_16-ACACGTGTTT" orientation="forward" offset="1" pvalue="4.0084e-06" evalue="0.000885857" qvalue="0.000427026"/>
-				<match target="t_1_motif_9_10-ACACGTGTTT" orientation="forward" offset="1" pvalue="2.44836e-05" evalue="0.00541088" qvalue="0.00208664"/>
 			</query>
 			<query>
 				<motif id="q_motif_15_15-GGTYSTGACGTT" name="motif_15_15-GGTYSTGACGTT" length="12" nsites="20" evalue="1.0e-024" >
@@ -5337,8 +5203,6 @@
 				<match target="t_1_motif_24_21-GGTTGTGACGTT" orientation="forward" offset="0" pvalue="1.8075e-08" evalue="3.99458e-06" qvalue="3.91474e-06"/>
 				<match target="t_1_motif_15_18-TGGTCGTGACGT" orientation="forward" offset="1" pvalue="2.02977e-06" evalue="0.00044858" qvalue="0.000219807"/>
 				<match target="t_1_motif_16_16-GTCGTGACGTTT" orientation="forward" offset="-1" pvalue="2.02977e-06" evalue="0.00044858" qvalue="0.000219807"/>
-				<match target="t_1_motif_21_17-GTTKTGACGTTT" orientation="forward" offset="-1" pvalue="7.42956e-06" evalue="0.00164193" qvalue="0.000643646"/>
-				<match target="t_1_motif_18_19-TGACGTTT" orientation="forward" offset="-5" pvalue="4.19455e-05" evalue="0.00926995" qvalue="0.00302822"/>
 			</query>
 			<query>
 				<motif id="q_motif_16_16-TTCAHAACTCRT" name="motif_16_16-TTCAHAACTCRT" length="12" nsites="20" evalue="1.0e-024" >
@@ -5359,7 +5223,6 @@
 				<match target="t_1_motif_24_22-TTCAGAACTCAT" orientation="forward" offset="0" pvalue="3.21356e-07" evalue="7.10197e-05" qvalue="6.99232e-05"/>
 				<match target="t_1_motif_22_18-TTCAGAACTCAT" orientation="forward" offset="0" pvalue="7.72036e-07" evalue="0.00017062" qvalue="0.000104493"/>
 				<match target="t_1_motif_18_20-TTCAAACCTCAT" orientation="forward" offset="0" pvalue="9.6047e-07" evalue="0.000212264" qvalue="0.000104493"/>
-				<match target="t_1_motif_16_17-CACAACTCAT" orientation="forward" offset="-2" pvalue="9.64106e-06" evalue="0.00213067" qvalue="0.000839111"/>
 			</query>
 			<query>
 				<motif id="q_motif_17_17-GACGCAGCAGAA" name="motif_17_17-GACGCAGCAGAA" length="12" nsites="20" evalue="1.0e-023" >
@@ -5378,7 +5241,6 @@
 				</motif>
 				<match target="t_1_motif_17_17-GACGCAGCAGAA" orientation="forward" offset="0" pvalue="2.14278e-19" evalue="4.73555e-17" qvalue="9.38948e-17"/>
 				<match target="t_1_motif_22_23-GACGCAGCAG" orientation="forward" offset="0" pvalue="1.23269e-07" evalue="2.72425e-05" qvalue="2.70077e-05"/>
-				<match target="t_1_motif_25_21-CGCWGCAGAA" orientation="forward" offset="-2" pvalue="1.27065e-05" evalue="0.00280814" qvalue="0.00185596"/>
 			</query>
 			<query>
 				<motif id="q_motif_18_18-TGAAACGAGGTG" name="motif_18_18-TGAAACGAGGTG" length="12" nsites="20" evalue="1.0e-022" >
@@ -5397,8 +5259,6 @@
 				</motif>
 				<match target="t_1_motif_18_18-TGAAACGAGGTG" orientation="forward" offset="0" pvalue="1.90129e-21" evalue="4.20185e-19" qvalue="8.31217e-19"/>
 				<match target="t_1_motif_19_19-TGAAACGAGG" orientation="forward" offset="0" pvalue="1.16855e-07" evalue="2.58249e-05" qvalue="2.55436e-05"/>
-				<match target="t_1_motif_18_19-CGTGAAACGAGG" orientation="forward" offset="2" pvalue="1.19027e-05" evalue="0.00263049" qvalue="0.00170835"/>
-				<match target="t_1_motif_19_22-TGAAACGAGA" orientation="forward" offset="0" pvalue="1.56304e-05" evalue="0.00345432" qvalue="0.00170835"/>
 			</query>
 			<query>
 				<motif id="q_motif_19_19-CAGCGCACTATC" name="motif_19_19-CAGCGCACTATC" length="12" nsites="20" evalue="1.0e-021" >
@@ -5433,7 +5293,6 @@
 				</motif>
 				<match target="t_1_motif_20_17-GGCCATTCTG" orientation="forward" offset="0" pvalue="4.97259e-14" evalue="1.09894e-11" qvalue="2.18894e-11"/>
 				<match target="t_1_motif_20_19-GGCCATTCTG" orientation="forward" offset="0" pvalue="5.83277e-10" evalue="1.28904e-07" qvalue="1.2838e-07"/>
-				<match target="t_1_motif_16_15-GCGGCCATTTTG" orientation="forward" offset="2" pvalue="2.04115e-05" evalue="0.00451094" qvalue="0.00299505"/>
 			</query>
 			<query>
 				<motif id="q_motif_21_20-GTCTTCAGGGAC" name="motif_21_20-GTCTTCAGGGAC" length="12" nsites="20" evalue="1.0e-019" >
@@ -5457,8 +5316,6 @@
 				<match target="t_1_motif_18_20-GTCTTCAGGGAC" orientation="forward" offset="0" pvalue="9.38754e-09" evalue="2.07465e-06" qvalue="8.17046e-07"/>
 				<match target="t_1_motif_19_22-GTCTTCAGGGAC" orientation="forward" offset="0" pvalue="1.49957e-08" evalue="3.31405e-06" qvalue="1.08763e-06"/>
 				<match target="t_1_motif_24_23-TCTTCAGGGA" orientation="forward" offset="-1" pvalue="5.5554e-07" evalue="0.000122774" qvalue="3.45368e-05"/>
-				<match target="t_1_motif_23_23-CKTCAGGGAY" orientation="forward" offset="-2" pvalue="6.56202e-06" evalue="0.00145021" qvalue="0.000356954"/>
-				<match target="t_1_motif_20_21-GTGTCTTCAGGG" orientation="forward" offset="2" pvalue="9.82329e-06" evalue="0.00217095" qvalue="0.000474984"/>
 			</query>
 			<query>
 				<motif id="q_motif_22_20-AGTGAGCA" name="motif_22_20-AGTGAGCA" length="8" nsites="20" evalue="1.0e-017" >
@@ -5584,10 +5441,6 @@
 				<match target="t_1_motif_4_6-MWAGATGGCK" orientation="forward" offset="-2" pvalue="1.98198e-08" evalue="4.38017e-06" qvalue="1.70111e-06"/>
 				<match target="t_1_motif_4_5-CAAGATGGCG" orientation="forward" offset="-2" pvalue="1.18061e-07" evalue="2.60915e-05" qvalue="8.44424e-06"/>
 				<match target="t_1_motif_4_6-WAGATGGCKN" orientation="forward" offset="-3" pvalue="2.32929e-06" evalue="0.000514773" qvalue="0.000142801"/>
-				<match target="t_1_motif_5_7-WAGATGGCKS" orientation="forward" offset="-3" pvalue="5.45796e-06" evalue="0.00120621" qvalue="0.000292782"/>
-				<match target="t_1_motif_4_6-AAGATGGCGG" orientation="forward" offset="-3" pvalue="9.23588e-06" evalue="0.00204113" qvalue="0.000440393"/>
-				<match target="t_1_motif_12_12-CCGCTAGAKGGC" orientation="forward" offset="1" pvalue="1.408e-05" evalue="0.00311169" qvalue="0.000604239"/>
-				<match target="t_1_motif_4_7-AGATGGCKGY" orientation="forward" offset="-4" pvalue="2.05346e-05" evalue="0.00453815" qvalue="0.000801122"/>
 			</query>
 			<query>
 				<motif id="q_motif_5_7-TCCGACACGGCA" name="motif_5_7-TCCGACACGGCA" length="12" nsites="20" evalue="1.0e-064" >
@@ -5606,8 +5459,6 @@
 				</motif>
 				<match target="t_1_motif_5_7-TCCGACACGGCA" orientation="forward" offset="0" pvalue="9.43444e-13" evalue="2.08501e-10" qvalue="4.14357e-10"/>
 				<match target="t_1_motif_6_8-CTCCGACACGGC" orientation="forward" offset="1" pvalue="4.23047e-07" evalue="9.34935e-05" qvalue="9.29004e-05"/>
-				<match target="t_1_motif_5_9-TCTCCGACACGG" orientation="forward" offset="2" pvalue="9.95001e-06" evalue="0.00219895" qvalue="0.00145667"/>
-				<match target="t_1_motif_6_8-CGACACGGCAAC" orientation="forward" offset="-2" pvalue="1.35182e-05" evalue="0.00298752" qvalue="0.00148428"/>
 			</query>
 			<query>
 				<motif id="q_motif_6_8-GAGCATCTCC" name="motif_6_8-GAGCATCTCC" length="10" nsites="20" evalue="1.0e-052" >
@@ -5625,7 +5476,6 @@
 				<match target="t_1_motif_8_9-GAGCATCTCC" orientation="forward" offset="0" pvalue="7.27091e-12" evalue="1.60687e-09" qvalue="1.59302e-09"/>
 				<match target="t_1_motif_6_8-GAGCATCTCC" orientation="forward" offset="0" pvalue="7.27091e-12" evalue="1.60687e-09" qvalue="1.59302e-09"/>
 				<match target="t_1_motif_7_7-GAGCATCTCC" orientation="forward" offset="0" pvalue="1.0611e-10" evalue="2.34503e-08" qvalue="1.54988e-08"/>
-				<match target="t_1_motif_6_8-AGCATCTCCGAC" orientation="forward" offset="-1" pvalue="1.83822e-05" evalue="0.00406246" qvalue="0.00201373"/>
 			</query>
 			<query>
 				<motif id="q_motif_7_9-GGGTGAGAAAAA" name="motif_7_9-GGGTGAGAAAAA" length="12" nsites="20" evalue="1.0e-049" >
@@ -5650,7 +5500,6 @@
 				<match target="t_1_motif_7_9-GGGTGATAAAAA" orientation="forward" offset="0" pvalue="1.02934e-07" evalue="2.27484e-05" qvalue="7.44849e-06"/>
 				<match target="t_1_motif_7_9-GGGTGAKCAAAA" orientation="forward" offset="0" pvalue="2.7957e-07" evalue="6.17849e-05" qvalue="1.73402e-05"/>
 				<match target="t_1_motif_5_8-GGGTBRBMAAAA" orientation="forward" offset="0" pvalue="7.91636e-07" evalue="0.000174951" qvalue="4.29631e-05"/>
-				<match target="t_1_motif_6_8-GGGTGATHAA" orientation="forward" offset="0" pvalue="2.12004e-05" evalue="0.0046853" qvalue="0.00102273"/>
 			</query>
 			<query>
 				<motif id="q_motif_8_10-ACAACTGCAGHR" name="motif_8_10-ACAACTGCAGHR" length="12" nsites="20" evalue="1.0e-049" >
@@ -5668,7 +5517,6 @@
 					<pos i="12" A="0.438" C="0.185" G="0.315" T="0.062"/>
 				</motif>
 				<match target="t_1_motif_8_10-ACAACTGCAGHR" orientation="forward" offset="0" pvalue="3.34113e-28" evalue="7.3839e-26" qvalue="1.41828e-25"/>
-				<match target="t_1_motif_12_14-CAACTGCAGTGC" orientation="forward" offset="-1" pvalue="5.26167e-06" evalue="0.00116283" qvalue="0.00111676"/>
 			</query>
 			<query>
 				<motif id="q_motif_9_10-YTGTTTAS" name="motif_9_10-YTGTTTAS" length="8" nsites="20" evalue="1.0e-045" >
@@ -5683,8 +5531,6 @@
 				</motif>
 				<match target="t_1_motif_9_10-YTGTTTAS" orientation="forward" offset="0" pvalue="1.5513e-17" evalue="3.42837e-15" qvalue="6.71969e-15"/>
 				<match target="t_1_motif_11_10-TTGTTTAC" orientation="forward" offset="0" pvalue="1.35117e-09" evalue="2.98609e-07" qvalue="2.92641e-07"/>
-				<match target="t_1_motif_12_13-GCTGTTTAGTAT" orientation="forward" offset="1" pvalue="9.6467e-06" evalue="0.00213192" qvalue="0.00139287"/>
-				<match target="t_1_motif_10_13-DTTGTTTA" orientation="forward" offset="1" pvalue="3.32784e-05" evalue="0.00735453" qvalue="0.00360377"/>
 			</query>
 			<query>
 				<motif id="q_motif_10_10-GTTAGT" name="motif_10_10-GTTAGT" length="6" nsites="20" evalue="1.0e-043" >
@@ -5719,8 +5565,6 @@
 				<match target="t_1_motif_10_11-GAGAAAAGGCGA" orientation="forward" offset="0" pvalue="8.77548e-08" evalue="1.93938e-05" qvalue="9.48025e-06"/>
 				<match target="t_1_motif_11_11-AGAGAAAAGGCG" orientation="forward" offset="1" pvalue="3.52146e-06" evalue="0.000778242" qvalue="0.000294875"/>
 				<match target="t_1_motif_10_11-AGAGAAAAGGCG" orientation="forward" offset="1" pvalue="4.4254e-06" evalue="0.000978014" qvalue="0.000294875"/>
-				<match target="t_1_motif_10_11-AGAGAAAAGTCG" orientation="forward" offset="1" pvalue="4.77669e-06" evalue="0.00105565" qvalue="0.000294875"/>
-				<match target="t_1_motif_10_12-AGAGAAAAGGCG" orientation="forward" offset="1" pvalue="5.56493e-06" evalue="0.00122985" qvalue="0.000300593"/>
 			</query>
 			<query>
 				<motif id="q_motif_12_15-MAACATGG" name="motif_12_15-MAACATGG" length="8" nsites="20" evalue="1.0e-035" >
@@ -5784,7 +5628,6 @@
 				<match target="t_1_motif_18_16-ACACGTGTTT" orientation="forward" offset="0" pvalue="5.76797e-08" evalue="1.27472e-05" qvalue="8.17371e-06"/>
 				<match target="t_1_motif_15_14-ACACGTGTTT" orientation="forward" offset="0" pvalue="9.32234e-08" evalue="2.06024e-05" qvalue="9.90791e-06"/>
 				<match target="t_1_motif_14_15-ACACGTGTTT" orientation="forward" offset="0" pvalue="1.17384e-07" evalue="2.59419e-05" qvalue="9.98061e-06"/>
-				<match target="t_1_motif_14_13-CACGTGTT" orientation="forward" offset="-1" pvalue="3.7047e-05" evalue="0.00818738" qvalue="0.00262494"/>
 			</query>
 			<query>
 				<motif id="q_motif_16_15-AATGGCGGAT" name="motif_16_15-AATGGCGGAT" length="10" nsites="20" evalue="1.0e-028" >
@@ -5816,8 +5659,6 @@
 				<match target="t_1_motif_14_15-CCGCTAGA" orientation="forward" offset="0" pvalue="1.83753e-08" evalue="4.06094e-06" qvalue="3.97203e-06"/>
 				<match target="t_1_motif_12_12-CCGCTAGAGG" orientation="forward" offset="0" pvalue="8.10853e-07" evalue="0.000179199" qvalue="0.00011685"/>
 				<match target="t_1_motif_13_16-CCGCTAGAGG" orientation="forward" offset="0" pvalue="1.65131e-06" evalue="0.00036494" qvalue="0.000178475"/>
-				<match target="t_1_motif_11_10-CCGCTAGAKG" orientation="forward" offset="0" pvalue="2.34581e-05" evalue="0.00518424" qvalue="0.00197726"/>
-				<match target="t_1_motif_12_12-CCGCTAGAKGGC" orientation="forward" offset="0" pvalue="2.74414e-05" evalue="0.00606455" qvalue="0.00197726"/>
 			</query>
 			<query>
 				<motif id="q_motif_18_15-TCGTGAAACGAG" name="motif_18_15-TCGTGAAACGAG" length="12" nsites="20" evalue="1.0e-024" >
@@ -5838,7 +5679,6 @@
 				<match target="t_1_motif_23_20-TCGTGAAACGAG" orientation="forward" offset="0" pvalue="1.81808e-10" evalue="4.01795e-08" qvalue="3.96505e-08"/>
 				<match target="t_1_motif_15_17-TCGTGAAAMGAG" orientation="forward" offset="0" pvalue="4.0281e-09" evalue="8.90211e-07" qvalue="5.85661e-07"/>
 				<match target="t_1_motif_18_19-CGTGAAACGAGG" orientation="forward" offset="-1" pvalue="5.95733e-07" evalue="0.000131657" qvalue="6.49619e-05"/>
-				<match target="t_1_motif_19_19-TGAAACGAGG" orientation="forward" offset="-3" pvalue="3.42485e-05" evalue="0.00756892" qvalue="0.00298771"/>
 			</query>
 			<query>
 				<motif id="q_motif_19_16-AATCAGTCGAGT" name="motif_19_16-AATCAGTCGAGT" length="12" nsites="20" evalue="1.0e-023" >
@@ -5875,7 +5715,6 @@
 				</motif>
 				<match target="t_1_motif_20_19-GGCCATTCTG" orientation="forward" offset="0" pvalue="9.53367e-14" evalue="2.10694e-11" qvalue="4.19673e-11"/>
 				<match target="t_1_motif_20_17-GGCCATTCTG" orientation="forward" offset="0" pvalue="6.01257e-10" evalue="1.32878e-07" qvalue="1.32337e-07"/>
-				<match target="t_1_motif_16_15-GCGGCCATTTTG" orientation="forward" offset="2" pvalue="3.22808e-05" evalue="0.00713406" qvalue="0.00473668"/>
 			</query>
 			<query>
 				<motif id="q_motif_21_17-GTTKTGACGTTT" name="motif_21_17-GTTKTGACGTTT" length="12" nsites="20" evalue="1.0e-022" >
@@ -5895,9 +5734,6 @@
 				<match target="t_1_motif_21_17-GTTKTGACGTTT" orientation="forward" offset="0" pvalue="2.01606e-27" evalue="4.45549e-25" qvalue="8.69235e-25"/>
 				<match target="t_1_motif_16_16-GTCGTGACGTTT" orientation="forward" offset="0" pvalue="7.79599e-07" evalue="0.000172291" qvalue="0.000121254"/>
 				<match target="t_1_motif_24_21-GGTTGTGACGTT" orientation="forward" offset="1" pvalue="8.43687e-07" evalue="0.000186455" qvalue="0.000121254"/>
-				<match target="t_1_motif_15_15-GGTYSTGACGTT" orientation="forward" offset="1" pvalue="5.63072e-06" evalue="0.00124439" qvalue="0.000601101"/>
-				<match target="t_1_motif_19_17-TGACGTTT" orientation="forward" offset="-4" pvalue="8.36498e-06" evalue="0.00184866" qvalue="0.000601101"/>
-				<match target="t_1_motif_18_19-TGACGTTT" orientation="forward" offset="-4" pvalue="8.36498e-06" evalue="0.00184866" qvalue="0.000601101"/>
 			</query>
 			<query>
 				<motif id="q_motif_22_18-TTCAGAACTCAT" name="motif_22_18-TTCAGAACTCAT" length="12" nsites="20" evalue="1.0e-021" >
@@ -5918,9 +5754,6 @@
 				<match target="t_1_motif_24_22-TTCAGAACTCAT" orientation="forward" offset="0" pvalue="8.88859e-09" evalue="1.96438e-06" qvalue="1.94298e-06"/>
 				<match target="t_1_motif_20_20-TCAGAACTCA" orientation="forward" offset="-1" pvalue="1.55656e-07" evalue="3.43999e-05" qvalue="2.26835e-05"/>
 				<match target="t_1_motif_16_16-TTCAHAACTCRT" orientation="forward" offset="0" pvalue="2.2947e-06" evalue="0.000507128" qvalue="0.000250802"/>
-				<match target="t_1_motif_18_20-TTCAAACCTCAT" orientation="forward" offset="0" pvalue="9.90066e-06" evalue="0.00218805" qvalue="0.000865686"/>
-				<match target="t_1_motif_16_17-CACAACTCAT" orientation="forward" offset="-2" pvalue="1.40359e-05" evalue="0.00310194" qvalue="0.00102272"/>
-				<match target="t_1_motif_16_16-TSACAACTCA" orientation="forward" offset="-1" pvalue="3.90689e-05" evalue="0.00863423" qvalue="0.00244006"/>
 			</query>
 			<query>
 				<motif id="q_motif_23_22-ACAACAAC" name="motif_23_22-ACAACAAC" length="8" nsites="20" evalue="1.0e-019" >
@@ -5935,8 +5768,6 @@
 				</motif>
 				<match target="t_1_motif_23_22-ACAACAAC" orientation="forward" offset="0" pvalue="1.10066e-19" evalue="2.43246e-17" qvalue="4.76769e-17"/>
 				<match target="t_1_motif_17_22-CCACAACAAC" orientation="forward" offset="2" pvalue="3.70018e-08" evalue="8.17741e-06" qvalue="8.01396e-06"/>
-				<match target="t_1_motif_20_20-MCMACMAC" orientation="forward" offset="0" pvalue="2.35321e-05" evalue="0.00520059" qvalue="0.00339776"/>
-				<match target="t_1_motif_21_21-CCACHACMAC" orientation="forward" offset="2" pvalue="4.01942e-05" evalue="0.00888291" qvalue="0.00435268"/>
 			</query>
 			<query>
 				<motif id="q_motif_24_20-GACTCTAGTC" name="motif_24_20-GACTCTAGTC" length="10" nsites="20" evalue="1.0e-018" >
@@ -5992,7 +5823,6 @@
 				<match target="t_1_motif_22_20-GTCTTCAGGGAC" orientation="forward" offset="0" pvalue="1.25972e-08" evalue="2.78399e-06" qvalue="9.13668e-07"/>
 				<match target="t_1_motif_19_22-GTCTTCAGGGAC" orientation="forward" offset="0" pvalue="1.74736e-08" evalue="3.86167e-06" qvalue="1.0863e-06"/>
 				<match target="t_1_motif_23_23-CKTCAGGGAY" orientation="forward" offset="-2" pvalue="2.53233e-06" evalue="0.000559644" qvalue="0.000137751"/>
-				<match target="t_1_motif_20_21-GTGTCTTCAGGG" orientation="forward" offset="2" pvalue="1.70627e-05" evalue="0.00377085" qvalue="0.000825029"/>
 			</query>
 			<query>
 				<motif id="q_motif_1_1-GTATAAAAAVVS" name="motif_1_1-GTATAAAAAVVS" length="12" nsites="20" evalue="1.0e-308" >
@@ -6037,8 +5867,6 @@
 				<match target="t_1_motif_2_2-NNTCAGTCGW" orientation="forward" offset="2" pvalue="5.73571e-09" evalue="1.26759e-06" qvalue="4.93444e-07"/>
 				<match target="t_1_motif_1_1-NNKCAGTYGN" orientation="forward" offset="2" pvalue="1.4684e-08" evalue="3.24517e-06" qvalue="1.05272e-06"/>
 				<match target="t_1_motif_2_1-NRTCAGTCGH" orientation="forward" offset="2" pvalue="1.05953e-07" evalue="2.34155e-05" qvalue="6.5108e-06"/>
-				<match target="t_1_motif_2_1-KTCAGTCG" orientation="forward" offset="1" pvalue="1.16953e-05" evalue="0.00258465" qvalue="0.000628841"/>
-				<match target="t_1_motif_2_2-GNCAGTCK" orientation="forward" offset="1" pvalue="4.00765e-05" evalue="0.0088569" qvalue="0.00191544"/>
 			</query>
 			<query>
 				<motif id="q_motif_3_5-TGGCAACGYTGY" name="motif_3_5-TGGCAACGYTGY" length="12" nsites="20" evalue="1.0e-148" >
@@ -6061,7 +5889,6 @@
 				<match target="t_1_motif_3_5-TGGCAACGYTGC" orientation="forward" offset="0" pvalue="6.51399e-17" evalue="1.43959e-14" qvalue="7.08972e-15"/>
 				<match target="t_1_motif_3_4-TGGCAACGYTGY" orientation="forward" offset="0" pvalue="1.82838e-15" evalue="4.04071e-13" qvalue="1.59198e-13"/>
 				<match target="t_1_motif_3_4-TGGCAACGTTGC" orientation="forward" offset="0" pvalue="2.06606e-11" evalue="4.56599e-09" qvalue="1.49911e-09"/>
-				<match target="t_1_motif_3_4-AWHTGGCAACRY" orientation="forward" offset="3" pvalue="9.9109e-06" evalue="0.00219031" qvalue="0.000616392"/>
 			</query>
 			<query>
 				<motif id="q_motif_4_7-AGATGGCKGY" name="motif_4_7-AGATGGCKGY" length="10" nsites="20" evalue="1.0e-104" >
@@ -6080,10 +5907,6 @@
 				<match target="t_1_motif_4_6-AAGATGGCGG" orientation="forward" offset="1" pvalue="3.94011e-08" evalue="8.70764e-06" qvalue="8.5138e-06"/>
 				<match target="t_1_motif_5_7-WAGATGGCKS" orientation="forward" offset="1" pvalue="1.57213e-07" evalue="3.4744e-05" qvalue="2.26471e-05"/>
 				<match target="t_1_motif_4_6-WAGATGGCKN" orientation="forward" offset="1" pvalue="4.48431e-07" evalue="9.91032e-05" qvalue="4.84485e-05"/>
-				<match target="t_1_motif_4_6-MWAGATGGCK" orientation="forward" offset="2" pvalue="1.34281e-05" evalue="0.00296761" qvalue="0.00108863"/>
-				<match target="t_1_motif_5_8-CMAGATGGCG" orientation="forward" offset="2" pvalue="1.58272e-05" evalue="0.0034978" qvalue="0.00108863"/>
-				<match target="t_1_motif_5_8-CWAGATGGCG" orientation="forward" offset="2" pvalue="2.01522e-05" evalue="0.00445365" qvalue="0.00108863"/>
-				<match target="t_1_motif_4_5-CAAGATGGCG" orientation="forward" offset="2" pvalue="2.01522e-05" evalue="0.00445365" qvalue="0.00108863"/>
 			</query>
 			<query>
 				<motif id="q_motif_5_8-GGGTBRBMAAAA" name="motif_5_8-GGGTBRBMAAAA" length="12" nsites="20" evalue="1.0e-050" >
@@ -6128,9 +5951,6 @@
 				<match target="t_1_motif_12_12-CCGCTAGAKGGC" orientation="forward" offset="1" pvalue="7.12374e-09" evalue="1.57435e-06" qvalue="1.01699e-06"/>
 				<match target="t_1_motif_10_10-CGCTAGAGGG" orientation="forward" offset="0" pvalue="9.87119e-08" evalue="2.18153e-05" qvalue="1.05691e-05"/>
 				<match target="t_1_motif_16_14-CGCTAGAGGG" orientation="forward" offset="0" pvalue="4.54437e-07" evalue="0.000100431" qvalue="3.89256e-05"/>
-				<match target="t_1_motif_11_10-CCGCTAGAKG" orientation="forward" offset="1" pvalue="9.74294e-06" evalue="0.00215319" qvalue="0.000695456"/>
-				<match target="t_1_motif_5_5-CRCTAGATGGCG" orientation="forward" offset="0" pvalue="1.8231e-05" evalue="0.00402905" qvalue="0.00111543"/>
-				<match target="t_1_motif_4_6-CRMYAGATGGCG" orientation="forward" offset="0" pvalue="4.37266e-05" evalue="0.00966357" qvalue="0.00234092"/>
 			</query>
 			<query>
 				<motif id="q_motif_7_9-AGCAGA" name="motif_7_9-AGCAGA" length="6" nsites="20" evalue="1.0e-048" >
@@ -6161,10 +5981,6 @@
 				<match target="t_1_motif_8_11-ATCTCCGACA" orientation="forward" offset="0" pvalue="6.27677e-10" evalue="1.38717e-07" qvalue="1.36259e-07"/>
 				<match target="t_1_motif_7_8-GCATCTCCGACA" orientation="forward" offset="2" pvalue="1.88303e-09" evalue="4.1615e-07" qvalue="2.04389e-07"/>
 				<match target="t_1_motif_5_7-GCATCTCCGACA" orientation="forward" offset="2" pvalue="1.88303e-09" evalue="4.1615e-07" qvalue="2.04389e-07"/>
-				<match target="t_1_motif_6_8-AGCATCTCCGAC" orientation="forward" offset="3" pvalue="1.47306e-05" evalue="0.00325546" qvalue="0.00127912"/>
-				<match target="t_1_motif_6_7-TCTCCGACACGA" orientation="forward" offset="-1" pvalue="2.49696e-05" evalue="0.00551829" qvalue="0.0017577"/>
-				<match target="t_1_motif_13_11-TCTCCGAC" orientation="forward" offset="-1" pvalue="2.83389e-05" evalue="0.00626289" qvalue="0.0017577"/>
-				<match target="t_1_motif_5_9-TCTCCGACACGG" orientation="forward" offset="-1" pvalue="3.50945e-05" evalue="0.00775588" qvalue="0.00190463"/>
 			</query>
 			<query>
 				<motif id="q_motif_9_10-AACTGCAGYGCA" name="motif_9_10-AACTGCAGYGCA" length="12" nsites="20" evalue="1.0e-037" >
@@ -6184,9 +6000,6 @@
 				<match target="t_1_motif_9_10-AACTGCAGYGCA" orientation="forward" offset="0" pvalue="1.80601e-24" evalue="3.99128e-22" qvalue="7.80486e-22"/>
 				<match target="t_1_motif_12_14-CAACTGCAGTGC" orientation="forward" offset="1" pvalue="6.12243e-07" evalue="0.000135306" qvalue="0.000111706"/>
 				<match target="t_1_motif_7_9-CAACTGCAGTGC" orientation="forward" offset="1" pvalue="7.7545e-07" evalue="0.000171374" qvalue="0.000111706"/>
-				<match target="t_1_motif_10_12-CTGCAGHGCACT" orientation="forward" offset="-2" pvalue="2.52426e-05" evalue="0.00557861" qvalue="0.00218177"/>
-				<match target="t_1_motif_9_10-CTGCAGCGCACT" orientation="forward" offset="-2" pvalue="2.52426e-05" evalue="0.00557861" qvalue="0.00218177"/>
-				<match target="t_1_motif_12_12-CTKCAGYGCACT" orientation="forward" offset="-2" pvalue="4.10437e-05" evalue="0.00907067" qvalue="0.00295625"/>
 			</query>
 			<query>
 				<motif id="q_motif_10_11-AGAGAAAAGTCG" name="motif_10_11-AGAGAAAAGTCG" length="12" nsites="20" evalue="1.0e-033" >
@@ -6210,7 +6023,6 @@
 				<match target="t_1_motif_10_11-GAGAAAAGGCGA" orientation="forward" offset="-1" pvalue="2.38806e-06" evalue="0.000527761" qvalue="0.000184117"/>
 				<match target="t_1_motif_11_13-GAGAAAAGGCGA" orientation="forward" offset="-1" pvalue="2.55333e-06" evalue="0.000564285" qvalue="0.000184117"/>
 				<match target="t_1_motif_11_12-GAGAAAAGGCGA" orientation="forward" offset="-1" pvalue="3.28321e-06" evalue="0.000725589" qvalue="0.000202927"/>
-				<match target="t_1_motif_11_12-GAGAAAAGGYKA" orientation="forward" offset="-1" pvalue="1.00188e-05" evalue="0.00221416" qvalue="0.000541834"/>
 			</query>
 			<query>
 				<motif id="q_motif_11_13-TGCTGTTTAG" name="motif_11_13-TGCTGTTTAG" length="10" nsites="20" evalue="1.0e-030" >
@@ -6253,8 +6065,6 @@
 					<pos i="10" A="0.001" C="0.997" G="0.001" T="0.001"/>
 				</motif>
 				<match target="t_1_motif_13_14-CAACAACTGC" orientation="forward" offset="0" pvalue="5.15477e-10" evalue="1.1392e-07" qvalue="2.21071e-07"/>
-				<match target="t_1_motif_9_10-GGYAACAACTKC" orientation="forward" offset="2" pvalue="4.89901e-06" evalue="0.00108268" qvalue="0.00105051"/>
-				<match target="t_1_motif_9_10-CGGCAACAACTG" orientation="forward" offset="3" pvalue="2.2853e-05" evalue="0.00505051" qvalue="0.00326696"/>
 			</query>
 			<query>
 				<motif id="q_motif_14_13-TTTGACAG" name="motif_14_13-TTTGACAG" length="8" nsites="20" evalue="1.0e-027" >
@@ -6305,8 +6115,6 @@
 				<match target="t_1_motif_16_15-ACACGTGT" orientation="forward" offset="0" pvalue="3.82677e-11" evalue="8.45716e-09" qvalue="1.6307e-08"/>
 				<match target="t_1_motif_15_14-ACACGTGTTT" orientation="forward" offset="0" pvalue="1.94879e-06" evalue="0.000430682" qvalue="0.000276813"/>
 				<match target="t_1_motif_9_10-ACACGTGTTT" orientation="forward" offset="0" pvalue="3.44309e-06" evalue="0.000760922" qvalue="0.000293441"/>
-				<match target="t_1_motif_14_15-ACACGTGTTT" orientation="forward" offset="0" pvalue="5.28473e-06" evalue="0.00116792" qvalue="0.000375331"/>
-				<match target="t_1_motif_18_16-ACACGTGTTT" orientation="reverse" offset="2" pvalue="7.3675e-06" evalue="0.00162822" qvalue="0.00039244"/>
 			</query>
 			<query>
 				<motif id="q_motif_17_17-CCTAGACGCAGC" name="motif_17_17-CCTAGACGCAGC" length="12" nsites="20" evalue="1.0e-024" >
@@ -6325,7 +6133,6 @@
 				</motif>
 				<match target="t_1_motif_17_17-CCTAGACGCAGC" orientation="forward" offset="0" pvalue="4.12104e-19" evalue="9.10749e-17" qvalue="1.80994e-16"/>
 				<match target="t_1_motif_17_19-CCWAGACGCAGC" orientation="forward" offset="0" pvalue="1.23194e-09" evalue="2.72259e-07" qvalue="2.70532e-07"/>
-				<match target="t_1_motif_17_16-TCCAAGACGCAG" orientation="forward" offset="1" pvalue="1.31602e-05" evalue="0.00290839" qvalue="0.00192663"/>
 			</query>
 			<query>
 				<motif id="q_motif_18_19-CGTGAAACGAGG" name="motif_18_19-CGTGAAACGAGG" length="12" nsites="20" evalue="1.0e-024" >
@@ -6347,8 +6154,6 @@
 				<match target="t_1_motif_23_20-TCGTGAAACGAG" orientation="forward" offset="1" pvalue="1.58454e-07" evalue="3.50184e-05" qvalue="2.30383e-05"/>
 				<match target="t_1_motif_15_17-TCGTGAAAMGAG" orientation="forward" offset="1" pvalue="4.32095e-07" evalue="9.54931e-05" qvalue="4.71179e-05"/>
 				<match target="t_1_motif_19_19-TGAAACGAGG" orientation="forward" offset="-2" pvalue="3.63763e-06" evalue="0.000803916" qvalue="0.000317333"/>
-				<match target="t_1_motif_19_22-TGAAACGAGA" orientation="forward" offset="-2" pvalue="1.75187e-05" evalue="0.00387164" qvalue="0.00127356"/>
-				<match target="t_1_motif_18_18-TGAAACGAGGTG" orientation="forward" offset="-2" pvalue="2.92383e-05" evalue="0.00646167" qvalue="0.00182188"/>
 			</query>
 			<query>
 				<motif id="q_motif_19_17-TGACGTTT" name="motif_19_17-TGACGTTT" length="8" nsites="20" evalue="1.0e-021" >
@@ -6363,8 +6168,6 @@
 				</motif>
 				<match target="t_1_motif_19_17-TGACGTTT" orientation="forward" offset="0" pvalue="2.23956e-09" evalue="4.94944e-07" qvalue="9.74604e-07"/>
 				<match target="t_1_motif_18_19-TGACGTTT" orientation="forward" offset="0" pvalue="7.74794e-08" evalue="1.7123e-05" qvalue="1.68586e-05"/>
-				<match target="t_1_motif_16_16-GTCGTGACGTTT" orientation="forward" offset="4" pvalue="5.07796e-06" evalue="0.00112223" qvalue="0.000736602"/>
-				<match target="t_1_motif_21_18-GTGACGTTTA" orientation="forward" offset="1" pvalue="3.28578e-05" evalue="0.00726156" qvalue="0.00357473"/>
 			</query>
 			<query>
 				<motif id="q_motif_20_21-CTAGTGTCTTCA" name="motif_20_21-CTAGTGTCTTCA" length="12" nsites="20" evalue="1.0e-018" >
@@ -6456,8 +6259,6 @@
 				<match target="t_1_motif_21_20-GTCTTCAGGGAC" orientation="forward" offset="1" pvalue="4.55415e-07" evalue="0.000100647" qvalue="3.96371e-05"/>
 				<match target="t_1_motif_19_22-GTCTTCAGGGAC" orientation="forward" offset="1" pvalue="6.04857e-07" evalue="0.000133673" qvalue="4.38699e-05"/>
 				<match target="t_1_motif_22_20-GTCTTCAGGGAC" orientation="forward" offset="1" pvalue="1.24278e-06" evalue="0.000274655" qvalue="7.72613e-05"/>
-				<match target="t_1_motif_20_21-GTGTCTTCAGGG" orientation="forward" offset="3" pvalue="2.04487e-05" evalue="0.00451917" qvalue="0.00111235"/>
-				<match target="t_1_motif_23_23-CKTCAGGGAY" orientation="forward" offset="-1" pvalue="2.31258e-05" evalue="0.0051108" qvalue="0.0011182"/>
 			</query>
 			<query>
 				<motif id="q_motif_1_1-NNKCAGTYGN" name="motif_1_1-NNKCAGTYGN" length="10" nsites="20" evalue="1.0e-308" >
@@ -6550,7 +6351,6 @@
 				<match target="t_1_motif_4_7-AGATGGCKGY" orientation="forward" offset="-1" pvalue="2.00806e-06" evalue="0.000443781" qvalue="0.000173561"/>
 				<match target="t_1_motif_5_8-CWAGATGGCG" orientation="forward" offset="1" pvalue="2.57326e-06" evalue="0.00056869" qvalue="0.00018295"/>
 				<match target="t_1_motif_4_6-MWAGATGGCK" orientation="forward" offset="1" pvalue="2.96336e-06" evalue="0.000654903" qvalue="0.00018295"/>
-				<match target="t_1_motif_5_8-CMAGATGGCG" orientation="forward" offset="1" pvalue="5.60865e-06" evalue="0.00123951" qvalue="0.00030298"/>
 			</query>
 			<query>
 				<motif id="q_motif_5_7-ACGGCAACAACT" name="motif_5_7-ACGGCAACAACT" length="12" nsites="20" evalue="1.0e-061" >
@@ -6590,12 +6390,6 @@
 				<match target="t_1_motif_6_8-AGCATCTCCGAC" orientation="forward" offset="0" pvalue="1.20189e-13" evalue="2.65618e-11" qvalue="5.19411e-11"/>
 				<match target="t_1_motif_7_8-GCATCTCCGACA" orientation="forward" offset="-1" pvalue="2.80451e-07" evalue="6.19796e-05" qvalue="4.03999e-05"/>
 				<match target="t_1_motif_5_7-GCATCTCCGACA" orientation="forward" offset="-1" pvalue="2.80451e-07" evalue="6.19796e-05" qvalue="4.03999e-05"/>
-				<match target="t_1_motif_7_10-ATCTCCGACA" orientation="forward" offset="-3" pvalue="7.15766e-06" evalue="0.00158184" qvalue="0.000618652"/>
-				<match target="t_1_motif_8_11-ATCTCCGACA" orientation="forward" offset="-3" pvalue="7.15766e-06" evalue="0.00158184" qvalue="0.000618652"/>
-				<match target="t_1_motif_13_11-TCTCCGAC" orientation="forward" offset="-4" pvalue="1.61621e-05" evalue="0.00357183" qvalue="0.00107524"/>
-				<match target="t_1_motif_8_9-GAGCATCTCC" orientation="forward" offset="1" pvalue="2.12155e-05" evalue="0.00468862" qvalue="0.00107524"/>
-				<match target="t_1_motif_6_8-GAGCATCTCC" orientation="forward" offset="1" pvalue="2.12155e-05" evalue="0.00468862" qvalue="0.00107524"/>
-				<match target="t_1_motif_7_7-GAGCATCTCC" orientation="forward" offset="1" pvalue="2.23924e-05" evalue="0.00494872" qvalue="0.00107524"/>
 			</query>
 			<query>
 				<motif id="q_motif_7_9-GGGTGAKCAAAA" name="motif_7_9-GGGTGAKCAAAA" length="12" nsites="20" evalue="1.0e-051" >
@@ -6620,7 +6414,6 @@
 				<match target="t_1_motif_7_9-GGGTGAGAAAAA" orientation="forward" offset="0" pvalue="2.90942e-07" evalue="6.42982e-05" qvalue="1.99751e-05"/>
 				<match target="t_1_motif_8_10-GGGTGATAAAAA" orientation="forward" offset="0" pvalue="3.228e-07" evalue="7.13387e-05" qvalue="1.99751e-05"/>
 				<match target="t_1_motif_5_8-GGGTBRBMAAAA" orientation="forward" offset="0" pvalue="3.94947e-07" evalue="8.72834e-05" qvalue="2.13847e-05"/>
-				<match target="t_1_motif_6_8-GGGTGATHAA" orientation="forward" offset="0" pvalue="1.25548e-05" evalue="0.00277461" qvalue="0.000604258"/>
 			</query>
 			<query>
 				<motif id="q_motif_8_7-STGTTTAGTC" name="motif_8_7-STGTTTAGTC" length="10" nsites="20" evalue="1.0e-047" >
@@ -6637,7 +6430,6 @@
 				</motif>
 				<match target="t_1_motif_8_7-STGTTTAGTC" orientation="forward" offset="0" pvalue="2.07492e-19" evalue="4.58557e-17" qvalue="9.00868e-17"/>
 				<match target="t_1_motif_8_12-CTGTTTAGTT" orientation="forward" offset="0" pvalue="1.32738e-06" evalue="0.00029335" qvalue="0.000288154"/>
-				<match target="t_1_motif_8_12-CTGTTTAGTCYC" orientation="forward" offset="0" pvalue="1.51073e-05" evalue="0.00333871" qvalue="0.00218638"/>
 			</query>
 			<query>
 				<motif id="q_motif_9_10-CGCTAGAGGG" name="motif_9_10-CGCTAGAGGG" length="10" nsites="20" evalue="1.0e-043" >
@@ -6657,11 +6449,6 @@
 				<match target="t_1_motif_16_14-CGCTAGAGGG" orientation="forward" offset="0" pvalue="3.85542e-09" evalue="8.52048e-07" qvalue="5.53197e-07"/>
 				<match target="t_1_motif_12_12-CCGCTAGAKGGC" orientation="forward" offset="1" pvalue="7.21561e-09" evalue="1.59465e-06" qvalue="7.76502e-07"/>
 				<match target="t_1_motif_6_10-CGCYAGWKNG" orientation="forward" offset="0" pvalue="2.42221e-07" evalue="5.35309e-05" qvalue="2.08532e-05"/>
-				<match target="t_1_motif_12_12-CCGCTAGAGG" orientation="forward" offset="1" pvalue="9.27578e-06" evalue="0.00204995" qvalue="0.00061087"/>
-				<match target="t_1_motif_13_16-CCGCTAGAGG" orientation="forward" offset="1" pvalue="9.93385e-06" evalue="0.00219538" qvalue="0.00061087"/>
-				<match target="t_1_motif_11_10-CCGCTAGAKG" orientation="forward" offset="1" pvalue="1.23107e-05" evalue="0.00272065" qvalue="0.0006624"/>
-				<match target="t_1_motif_5_5-CRCTAGATGGCG" orientation="forward" offset="0" pvalue="1.76396e-05" evalue="0.00389835" qvalue="0.000843676"/>
-				<match target="t_1_motif_4_6-CRMYAGATGGCG" orientation="forward" offset="0" pvalue="3.77448e-05" evalue="0.00834161" qvalue="0.00162475"/>
 			</query>
 			<query>
 				<motif id="q_motif_10_11-GAGAAAAGGCGA" name="motif_10_11-GAGAAAAGGCGA" length="12" nsites="20" evalue="1.0e-036" >
@@ -6702,7 +6489,6 @@
 				</motif>
 				<match target="t_1_motif_11_12-CTAGCAGACT" orientation="forward" offset="0" pvalue="3.57029e-17" evalue="7.89034e-15" qvalue="1.56447e-14"/>
 				<match target="t_1_motif_4_4-AGTCTGCT" orientation="reverse" offset="-2" pvalue="2.24552e-06" evalue="0.00049626" qvalue="0.000491983"/>
-				<match target="t_1_motif_4_4-GTCTGCTA" orientation="reverse" offset="-1" pvalue="7.24523e-06" evalue="0.00160119" qvalue="0.00105826"/>
 			</query>
 			<query>
 				<motif id="q_motif_12_12-TCAKTGYT" name="motif_12_12-TCAKTGYT" length="8" nsites="20" evalue="1.0e-034" >
@@ -6748,7 +6534,6 @@
 				<match target="t_1_motif_14_12-GCAGCGCACTAT" orientation="forward" offset="0" pvalue="9.0617e-19" evalue="2.00264e-16" qvalue="3.97075e-16"/>
 				<match target="t_1_motif_19_19-CAGCGCACTATC" orientation="forward" offset="-1" pvalue="7.79561e-07" evalue="0.000172283" qvalue="0.000170798"/>
 				<match target="t_1_motif_9_10-CTGCAGCGCACT" orientation="forward" offset="2" pvalue="3.4523e-06" evalue="0.000762959" qvalue="0.000504256"/>
-				<match target="t_1_motif_10_12-CTGCAGHGCACT" orientation="forward" offset="2" pvalue="1.67816e-05" evalue="0.00370874" qvalue="0.00183839"/>
 			</query>
 			<query>
 				<motif id="q_motif_15_14-ACACGTGTTT" name="motif_15_14-ACACGTGTTT" length="10" nsites="20" evalue="1.0e-026" >
@@ -6768,8 +6553,6 @@
 				<match target="t_1_motif_14_13-CACGTGTT" orientation="forward" offset="-1" pvalue="7.13197e-08" evalue="1.57616e-05" qvalue="1.01305e-05"/>
 				<match target="t_1_motif_18_16-ACACGTGTTT" orientation="forward" offset="0" pvalue="3.28285e-07" evalue="7.25509e-05" qvalue="3.4973e-05"/>
 				<match target="t_1_motif_9_10-ACACGTGTTT" orientation="forward" offset="0" pvalue="7.40929e-07" evalue="0.000163745" qvalue="6.31465e-05"/>
-				<match target="t_1_motif_16_15-ACACGTGT" orientation="reverse" offset="0" pvalue="6.77302e-06" evalue="0.00149684" qvalue="0.000413717"/>
-				<match target="t_1_motif_15_13-RSACGTGTTT" orientation="forward" offset="0" pvalue="6.79608e-06" evalue="0.00150193" qvalue="0.000413717"/>
 			</query>
 			<query>
 				<motif id="q_motif_16_17-CACAACTCAT" name="motif_16_17-CACAACTCAT" length="10" nsites="20" evalue="1.0e-023" >
@@ -6785,9 +6568,6 @@
 					<pos i="10" A="0.061" C="0.102" G="0.086" T="0.751"/>
 				</motif>
 				<match target="t_1_motif_16_17-CACAACTCAT" orientation="forward" offset="0" pvalue="8.23394e-13" evalue="1.8197e-10" qvalue="3.59976e-10"/>
-				<match target="t_1_motif_16_16-TTCAHAACTCRT" orientation="forward" offset="2" pvalue="1.05719e-05" evalue="0.00233639" qvalue="0.00231094"/>
-				<match target="t_1_motif_22_18-TTCAGAACTCAT" orientation="forward" offset="2" pvalue="2.04124e-05" evalue="0.00451115" qvalue="0.00289476"/>
-				<match target="t_1_motif_24_22-TTCAGAACTCAT" orientation="forward" offset="2" pvalue="2.64854e-05" evalue="0.00585327" qvalue="0.00289476"/>
 			</query>
 			<query>
 				<motif id="q_motif_17_18-CAACATGAAG" name="motif_17_18-CAACATGAAG" length="10" nsites="20" evalue="1.0e-022" >
@@ -6825,7 +6605,6 @@
 					<pos i="12" A="0.997" C="0.001" G="0.001" T="0.001"/>
 				</motif>
 				<match target="t_1_motif_18_19-AAACGAGACAAA" orientation="forward" offset="0" pvalue="1.62676e-17" evalue="3.59513e-15" qvalue="7.0629e-15"/>
-				<match target="t_1_motif_21_17-GTTKTGACGTTT" orientation="reverse" offset="0" pvalue="3.01977e-05" evalue="0.00667368" qvalue="0.00655547"/>
 			</query>
 			<query>
 				<motif id="q_motif_19_19-TGAAACGAGG" name="motif_19_19-TGAAACGAGG" length="10" nsites="20" evalue="1.0e-021" >
@@ -6843,7 +6622,6 @@
 				<match target="t_1_motif_19_19-TGAAACGAGG" orientation="forward" offset="0" pvalue="7.98093e-11" evalue="1.76379e-08" qvalue="3.48915e-08"/>
 				<match target="t_1_motif_18_18-TGAAACGAGGTG" orientation="forward" offset="0" pvalue="1.41325e-06" evalue="0.000312328" qvalue="0.000308926"/>
 				<match target="t_1_motif_18_19-CGTGAAACGAGG" orientation="forward" offset="2" pvalue="2.75051e-06" evalue="0.000607862" qvalue="0.000400828"/>
-				<match target="t_1_motif_19_22-TGAAACGAGA" orientation="forward" offset="0" pvalue="1.94652e-05" evalue="0.00430182" qvalue="0.00212748"/>
 			</query>
 			<query>
 				<motif id="q_motif_20_23-AGCAGAAATGGG" name="motif_20_23-AGCAGAAATGGG" length="12" nsites="20" evalue="1.0e-020" >
@@ -6862,7 +6640,6 @@
 				</motif>
 				<match target="t_1_motif_20_23-AGCAGAAATGGG" orientation="forward" offset="0" pvalue="2.6792e-14" evalue="5.92102e-12" qvalue="1.17669e-11"/>
 				<match target="t_1_motif_17_18-AGCAGAAATGGG" orientation="forward" offset="0" pvalue="4.90045e-09" evalue="1.083e-06" qvalue="1.07613e-06"/>
-				<match target="t_1_motif_23_21-AGGCGAAATGGG" orientation="forward" offset="0" pvalue="1.13534e-05" evalue="0.0025091" qvalue="0.00166212"/>
 			</query>
 			<query>
 				<motif id="q_motif_21_21-GCGCGAGTGT" name="motif_21_21-GCGCGAGTGT" length="10" nsites="20" evalue="1.0e-018" >
@@ -6878,7 +6655,6 @@
 					<pos i="10" A="0.001" C="0.023" G="0.001" T="0.975"/>
 				</motif>
 				<match target="t_1_motif_21_21-GCGCGAGTGT" orientation="forward" offset="0" pvalue="1.02096e-10" evalue="2.25633e-08" qvalue="4.50455e-08"/>
-				<match target="t_1_motif_13_12-CGCGAGTGTC" orientation="forward" offset="-1" pvalue="4.5228e-05" evalue="0.00999538" qvalue="0.00893961"/>
 			</query>
 			<query>
 				<motif id="q_motif_22_22-ATGTCCCCCA" name="motif_22_22-ATGTCCCCCA" length="10" nsites="20" evalue="1.0e-018" >
@@ -6960,7 +6736,6 @@
 				<match target="t_1_motif_2_2-NNTCAGTCGW" orientation="forward" offset="1" pvalue="5.60584e-07" evalue="0.000123889" qvalue="4.792e-05"/>
 				<match target="t_1_motif_1_1-NNKCAGTYGN" orientation="forward" offset="1" pvalue="2.84724e-06" evalue="0.000629239" qvalue="0.000202823"/>
 				<match target="t_1_motif_2_1-NDTCAGTCDN" orientation="forward" offset="1" pvalue="3.67696e-06" evalue="0.000812608" qvalue="0.00022451"/>
-				<match target="t_1_motif_2_2-GNCAGTCK" orientation="forward" offset="0" pvalue="1.38397e-05" evalue="0.00305857" qvalue="0.000739404"/>
 			</query>
 			<query>
 				<motif id="q_motif_3_4-TGGCAACGYTGN" name="motif_3_4-TGGCAACGYTGN" length="12" nsites="20" evalue="1.0e-143" >
@@ -6983,7 +6758,6 @@
 				<match target="t_1_motif_3_5-TGGCAACGYTGC" orientation="forward" offset="0" pvalue="2.04238e-17" evalue="4.51367e-15" qvalue="2.22199e-15"/>
 				<match target="t_1_motif_3_4-TGGCAACGYTGY" orientation="forward" offset="0" pvalue="1.35621e-14" evalue="2.99723e-12" qvalue="1.18038e-12"/>
 				<match target="t_1_motif_3_4-TGGCAACGTTGC" orientation="forward" offset="0" pvalue="3.52633e-11" evalue="7.7932e-09" qvalue="2.55763e-09"/>
-				<match target="t_1_motif_3_4-AWHTGGCAACRY" orientation="forward" offset="3" pvalue="1.23843e-05" evalue="0.00273692" qvalue="0.000769904"/>
 			</query>
 			<query>
 				<motif id="q_motif_4_4-AGTCTGCT" name="motif_4_4-AGTCTGCT" length="8" nsites="20" evalue="1.0e-120" >
@@ -7020,8 +6794,6 @@
 				<match target="t_1_motif_4_6-MWAGATGGCK" orientation="forward" offset="1" pvalue="1.56379e-07" evalue="3.45597e-05" qvalue="9.6544e-06"/>
 				<match target="t_1_motif_5_8-CWAGATGGCG" orientation="forward" offset="1" pvalue="1.56379e-07" evalue="3.45597e-05" qvalue="9.6544e-06"/>
 				<match target="t_1_motif_4_5-CAAGATGGCG" orientation="forward" offset="1" pvalue="3.52492e-07" evalue="7.79008e-05" qvalue="1.90417e-05"/>
-				<match target="t_1_motif_5_5-CRCTAGATGGCG" orientation="forward" offset="3" pvalue="1.64748e-05" evalue="0.00364094" qvalue="0.000711978"/>
-				<match target="t_1_motif_4_6-CRMYAGATGGCG" orientation="forward" offset="3" pvalue="1.64748e-05" evalue="0.00364094" qvalue="0.000711978"/>
 			</query>
 			<query>
 				<motif id="q_motif_6_7-TCTCCGACACGA" name="motif_6_7-TCTCCGACACGA" length="12" nsites="20" evalue="1.0e-051" >
@@ -7040,10 +6812,6 @@
 				</motif>
 				<match target="t_1_motif_6_7-TCTCCGACACGA" orientation="forward" offset="0" pvalue="1.23286e-17" evalue="2.72461e-15" qvalue="5.3527e-15"/>
 				<match target="t_1_motif_5_9-TCTCCGACACGG" orientation="forward" offset="0" pvalue="2.91699e-07" evalue="6.44654e-05" qvalue="6.33235e-05"/>
-				<match target="t_1_motif_6_8-CTCCGACACGGC" orientation="forward" offset="-1" pvalue="1.24203e-05" evalue="0.00274488" qvalue="0.00157398"/>
-				<match target="t_1_motif_13_11-TCTCCGAC" orientation="forward" offset="0" pvalue="1.87308e-05" evalue="0.00413951" qvalue="0.00157398"/>
-				<match target="t_1_motif_8_11-ATCTCCGACA" orientation="forward" offset="1" pvalue="2.02688e-05" evalue="0.0044794" qvalue="0.00157398"/>
-				<match target="t_1_motif_7_10-ATCTCCGACA" orientation="forward" offset="1" pvalue="2.17515e-05" evalue="0.00480709" qvalue="0.00157398"/>
 			</query>
 			<query>
 				<motif id="q_motif_7_9-CAACTGCAGTGC" name="motif_7_9-CAACTGCAGTGC" length="12" nsites="20" evalue="1.0e-046" >
@@ -7087,7 +6855,6 @@
 				<match target="t_1_motif_6_8-GGGTDAGAAAAA" orientation="forward" offset="0" pvalue="2.07371e-07" evalue="4.58291e-05" qvalue="1.50405e-05"/>
 				<match target="t_1_motif_7_9-GGGTGAKCAAAA" orientation="forward" offset="0" pvalue="4.16214e-07" evalue="9.19833e-05" qvalue="2.58752e-05"/>
 				<match target="t_1_motif_5_8-GGGTBRBMAAAA" orientation="forward" offset="0" pvalue="2.27503e-06" evalue="0.000502782" qvalue="0.000123755"/>
-				<match target="t_1_motif_6_8-GGGTGATHAA" orientation="forward" offset="0" pvalue="1.05274e-05" evalue="0.00232655" qvalue="0.000509028"/>
 			</query>
 			<query>
 				<motif id="q_motif_9_10-ACACGTGTTT" name="motif_9_10-ACACGTGTTT" length="10" nsites="20" evalue="1.0e-041" >
@@ -7108,7 +6875,6 @@
 				<match target="t_1_motif_14_15-ACACGTGTTT" orientation="forward" offset="0" pvalue="1.19071e-08" evalue="2.63147e-06" qvalue="1.2685e-06"/>
 				<match target="t_1_motif_16_15-ACACGTGT" orientation="forward" offset="0" pvalue="3.55283e-08" evalue="7.85176e-06" qvalue="3.02794e-06"/>
 				<match target="t_1_motif_15_13-RSACGTGTTT" orientation="forward" offset="0" pvalue="2.00881e-06" evalue="0.000443947" qvalue="0.000122288"/>
-				<match target="t_1_motif_14_13-CACGTGTT" orientation="forward" offset="-1" pvalue="1.23016e-05" evalue="0.00271866" qvalue="0.000655262"/>
 			</query>
 			<query>
 				<motif id="q_motif_10_11-AGAGAAAAGGCG" name="motif_10_11-AGAGAAAAGGCG" length="12" nsites="20" evalue="1.0e-040" >
@@ -7132,7 +6898,6 @@
 				<match target="t_1_motif_11_13-GAGAAAAGGCGA" orientation="forward" offset="-1" pvalue="3.03659e-07" evalue="6.71087e-05" qvalue="1.98312e-05"/>
 				<match target="t_1_motif_10_11-GAGAAAAGGCGA" orientation="forward" offset="-1" pvalue="3.03659e-07" evalue="6.71087e-05" qvalue="1.98312e-05"/>
 				<match target="t_1_motif_11_12-GAGAAAAGGCGA" orientation="forward" offset="-1" pvalue="3.20976e-07" evalue="7.09357e-05" qvalue="1.98312e-05"/>
-				<match target="t_1_motif_11_12-GAGAAAAGGYKA" orientation="forward" offset="-1" pvalue="7.62953e-06" evalue="0.00168613" qvalue="0.000412459"/>
 			</query>
 			<query>
 				<motif id="q_motif_11_10-TTGTTTAC" name="motif_11_10-TTGTTTAC" length="8" nsites="20" evalue="1.0e-040" >
@@ -7147,7 +6912,6 @@
 				</motif>
 				<match target="t_1_motif_11_10-TTGTTTAC" orientation="forward" offset="0" pvalue="1.63218e-14" evalue="3.60712e-12" qvalue="7.05365e-12"/>
 				<match target="t_1_motif_9_10-YTGTTTAS" orientation="forward" offset="0" pvalue="2.02131e-09" evalue="4.4671e-07" qvalue="4.36766e-07"/>
-				<match target="t_1_motif_10_13-DTTGTTTA" orientation="forward" offset="1" pvalue="3.83079e-05" evalue="0.00846605" qvalue="0.00551839"/>
 			</query>
 			<query>
 				<motif id="q_motif_12_12-CCGCTAGAKGGC" name="motif_12_12-CCGCTAGAKGGC" length="12" nsites="20" evalue="1.0e-040" >
@@ -7174,8 +6938,6 @@
 				<match target="t_1_motif_17_17-CCGCTAGA" orientation="forward" offset="0" pvalue="1.05168e-06" evalue="0.000232422" qvalue="5.61694e-05"/>
 				<match target="t_1_motif_16_14-CGCTAGAGGG" orientation="forward" offset="-1" pvalue="1.51568e-06" evalue="0.000334966" qvalue="7.19567e-05"/>
 				<match target="t_1_motif_6_10-CGCYAGWKNG" orientation="forward" offset="-1" pvalue="2.3304e-06" evalue="0.000515017" qvalue="9.95714e-05"/>
-				<match target="t_1_motif_5_5-CRCTAGATGGCG" orientation="forward" offset="-1" pvalue="8.66785e-06" evalue="0.00191559" qvalue="0.000336685"/>
-				<match target="t_1_motif_4_6-CRMYAGATGGCG" orientation="forward" offset="-1" pvalue="3.02274e-05" evalue="0.00668025" qvalue="0.00107628"/>
 			</query>
 			<query>
 				<motif id="q_motif_13_14-CGGCAACAACTK" name="motif_13_14-CGGCAACAACTK" length="12" nsites="20" evalue="1.0e-036" >
@@ -7240,10 +7002,6 @@
 					<pos i="10" A="0.958" C="0.001" G="0.04" T="0.001"/>
 				</motif>
 				<match target="t_1_motif_16_16-TSACAACTCA" orientation="forward" offset="0" pvalue="2.09418e-24" evalue="4.62813e-22" qvalue="9.15545e-22"/>
-				<match target="t_1_motif_20_20-TCAGAACTCA" orientation="forward" offset="0" pvalue="1.40942e-05" evalue="0.00311482" qvalue="0.00186255"/>
-				<match target="t_1_motif_16_16-TTCAHAACTCRT" orientation="forward" offset="1" pvalue="1.47645e-05" evalue="0.00326295" qvalue="0.00186255"/>
-				<match target="t_1_motif_24_22-TTCAGAACTCAT" orientation="forward" offset="1" pvalue="1.70413e-05" evalue="0.00376612" qvalue="0.00186255"/>
-				<match target="t_1_motif_22_18-TTCAGAACTCAT" orientation="forward" offset="1" pvalue="2.2508e-05" evalue="0.00497427" qvalue="0.00196804"/>
 			</query>
 			<query>
 				<motif id="q_motif_17_17-CAACATGAAG" name="motif_17_17-CAACATGAAG" length="10" nsites="20" evalue="1.0e-022" >
@@ -7278,8 +7036,6 @@
 				</motif>
 				<match target="t_1_motif_18_19-TGACGTTT" orientation="forward" offset="0" pvalue="6.69982e-10" evalue="1.48066e-07" qvalue="2.9156e-07"/>
 				<match target="t_1_motif_19_17-TGACGTTT" orientation="forward" offset="0" pvalue="5.48704e-08" evalue="1.21264e-05" qvalue="1.19391e-05"/>
-				<match target="t_1_motif_16_16-GTCGTGACGTTT" orientation="forward" offset="4" pvalue="5.65595e-06" evalue="0.00124996" qvalue="0.000820444"/>
-				<match target="t_1_motif_21_18-GTGACGTTTA" orientation="forward" offset="1" pvalue="3.00466e-05" evalue="0.00664031" qvalue="0.00326889"/>
 			</query>
 			<query>
 				<motif id="q_motif_19_20-GTAGGCTATGGT" name="motif_19_20-GTAGGCTATGGT" length="12" nsites="20" evalue="1.0e-019" >
@@ -7314,13 +7070,6 @@
 					<pos i="12" A="0.029" C="0.001" G="0.942" T="0.028"/>
 				</motif>
 				<match target="t_1_motif_20_21-GTGTCTTCAGGG" orientation="forward" offset="0" pvalue="2.04523e-16" evalue="4.51997e-14" qvalue="8.85925e-14"/>
-				<match target="t_1_motif_21_20-GTCTTCAGGGAC" orientation="forward" offset="-2" pvalue="1.15276e-05" evalue="0.00254761" qvalue="0.000816423"/>
-				<match target="t_1_motif_25_22-GTCTTCAGGGAC" orientation="forward" offset="-2" pvalue="1.20489e-05" evalue="0.00266281" qvalue="0.000816423"/>
-				<match target="t_1_motif_22_20-GTCTTCAGGGAC" orientation="forward" offset="-2" pvalue="1.20489e-05" evalue="0.00266281" qvalue="0.000816423"/>
-				<match target="t_1_motif_26_22-GTCTTCAGGGAC" orientation="forward" offset="-2" pvalue="1.20489e-05" evalue="0.00266281" qvalue="0.000816423"/>
-				<match target="t_1_motif_19_22-GTCTTCAGGGAC" orientation="forward" offset="-2" pvalue="1.31935e-05" evalue="0.00291576" qvalue="0.000816423"/>
-				<match target="t_1_motif_18_20-GTCTTCAGGGAC" orientation="forward" offset="-2" pvalue="1.31935e-05" evalue="0.00291576" qvalue="0.000816423"/>
-				<match target="t_1_motif_24_23-TCTTCAGGGA" orientation="forward" offset="-3" pvalue="1.66252e-05" evalue="0.00367418" qvalue="0.000900186"/>
 			</query>
 			<query>
 				<motif id="q_motif_21_22-AAGACGATGACG" name="motif_21_22-AAGACGATGACG" length="12" nsites="20" evalue="1.0e-012" >
@@ -7341,5 +7090,5 @@
 			</query>
 		</query_file>
 	</queries>
-	<runtime cycles="50929509" seconds="50.930"/>
+	<runtime cycles="55928475" seconds="55.928"/>
 </tomtom>
