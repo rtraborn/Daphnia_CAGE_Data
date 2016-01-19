@@ -4,7 +4,7 @@ ALPHABET= ACGT
 
 strands: + -
 
-MOTIF motif_1_1-GTATAAAARVVG 
+MOTIF motif_Train4_1 1-GTATAAAARVVG 
 letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-308 
 0.221	0.263	0.445	0.071
 0.001	0.001	0.004	0.994
@@ -19,7 +19,7 @@ letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-308
 0.247	0.342	0.296	0.115
 0.221	0.231	0.396	0.152
 
-MOTIF motif_2_2-GNCAGTCK 
+MOTIF motif_Train4_2 2-GNCAGTCK 
 letter-probability matrix: alength= 4 w= 8 nsites= 20 E= 1e-247 
 0.225	0.168	0.395	0.211
 0.214	0.243	0.208	0.336
@@ -30,7 +30,7 @@ letter-probability matrix: alength= 4 w= 8 nsites= 20 E= 1e-247
 0.001	0.796	0.095	0.108
 0.189	0.001	0.439	0.37
 
-MOTIF motif_3_4-TGGCAACGYTGH 
+MOTIF motif_Train4_3 4-TGGCAACGYTGH 
 letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-162 
 0.039	0.168	0.022	0.771
 0.017	0.017	0.848	0.118
@@ -45,7 +45,7 @@ letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-162
 0.051	0.107	0.645	0.197
 0.225	0.309	0.151	0.315
 
-MOTIF motif_4_5-GTCYGC 
+MOTIF motif_Train4_4 5-GTCYGC 
 letter-probability matrix: alength= 4 w= 6 nsites= 20 E= 1e-125 
 0.289	0.203	0.5	0.008
 0.001	0.072	0.249	0.678
@@ -54,7 +54,7 @@ letter-probability matrix: alength= 4 w= 6 nsites= 20 E= 1e-125
 0.132	0.1	0.76	0.008
 0.016	0.696	0.287	0.001
 
-MOTIF motif_5_8-CMAGATGGCG 
+MOTIF motif_Train4_5 8-CMAGATGGCG 
 letter-probability matrix: alength= 4 w= 10 nsites= 20 E= 1e-95 
 0.265	0.436	0.086	0.213
 0.433	0.306	0.001	0.261
@@ -67,7 +67,7 @@ letter-probability matrix: alength= 4 w= 10 nsites= 20 E= 1e-95
 0.066	0.719	0.001	0.214
 0.121	0.118	0.47	0.29
 
-MOTIF motif_6_8-CGACACGGCAAC 
+MOTIF motif_Train4_6 8-CGACACGGCAAC 
 letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-55 
 0.001	0.997	0.001	0.001
 0.009	0.009	0.981	0.001
@@ -82,7 +82,7 @@ letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-55
 0.99	0.001	0.001	0.008
 0.001	0.99	0.008	0.001
 
-MOTIF motif_7_9-GGGTGATAAAAA 
+MOTIF motif_Train4_7 9-GGGTGATAAAAA 
 letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-46 
 0.088	0.022	0.8	0.09
 0.157	0.191	0.628	0.024
@@ -97,7 +97,7 @@ letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-46
 0.889	0.088	0.022	0.001
 0.822	0.067	0.066	0.045
 
-MOTIF motif_8_9-GAGCATCTCC 
+MOTIF motif_Train4_8 9-GAGCATCTCC 
 letter-probability matrix: alength= 4 w= 10 nsites= 20 E= 1e-44 
 0.001	0.001	0.997	0.001
 0.989	0.001	0.009	0.001
@@ -110,7 +110,7 @@ letter-probability matrix: alength= 4 w= 10 nsites= 20 E= 1e-44
 0.001	0.997	0.001	0.001
 0.001	0.997	0.001	0.001
 
-MOTIF motif_9_10-CTGCAGCGCACT 
+MOTIF motif_Train4_9 10-CTGCAGCGCACT 
 letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-43 
 0.025	0.899	0.025	0.051
 0.051	0.076	0.025	0.848
@@ -125,7 +125,7 @@ letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-43
 0.102	0.695	0.076	0.127
 0.051	0.025	0.025	0.899
 
-MOTIF motif_10_11-AGTCGAGTGAGC 
+MOTIF motif_Train4_10 11-AGTCGAGTGAGC 
 letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-41 
 0.703	0.081	0.027	0.189
 0.001	0.027	0.891	0.081
@@ -140,7 +140,7 @@ letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-41
 0.054	0.027	0.892	0.027
 0.027	0.865	0.081	0.027
 
-MOTIF motif_11_12-GAGAAAAGGCGA 
+MOTIF motif_Train4_11 12-GAGAAAAGGCGA 
 letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-40 
 0.001	0.001	0.997	0.001
 0.985	0.001	0.013	0.001
@@ -155,7 +155,7 @@ letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-40
 0.014	0.122	0.823	0.041
 0.958	0.001	0.001	0.04
 
-MOTIF motif_12_13-GCTGTTTAGTAT 
+MOTIF motif_Train4_12 13-GCTGTTTAGTAT 
 letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-38 
 0.272	0.001	0.614	0.113
 0.001	0.726	0.001	0.272
@@ -170,7 +170,7 @@ letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-38
 0.795	0.136	0.068	0.001
 0.204	0.045	0.001	0.75
 
-MOTIF motif_13_11-TCTCCGAC 
+MOTIF motif_Train4_13 11-TCTCCGAC 
 letter-probability matrix: alength= 4 w= 8 nsites= 20 E= 1e-36 
 0.1	0.1	0.1	0.7
 0.1	0.7	0.1	0.1
@@ -181,7 +181,7 @@ letter-probability matrix: alength= 4 w= 8 nsites= 20 E= 1e-36
 0.7	0.1	0.1	0.1
 0.1	0.7	0.1	0.1
 
-MOTIF motif_14_14-AAAGCATCAGTT 
+MOTIF motif_Train4_14 14-AAAGCATCAGTT 
 letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-35 
 0.63	0.121	0.075	0.174
 0.826	0.136	0.037	0.001
@@ -196,7 +196,7 @@ letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-35
 0.037	0.001	0.037	0.925
 0.038	0.152	0.038	0.772
 
-MOTIF motif_15_11-GTTAGT 
+MOTIF motif_Train4_15 11-GTTAGT 
 letter-probability matrix: alength= 4 w= 6 nsites= 20 E= 1e-35 
 0.001	0.001	0.748	0.25
 0.001	0.237	0.001	0.761
@@ -205,7 +205,7 @@ letter-probability matrix: alength= 4 w= 6 nsites= 20 E= 1e-35
 0.001	0.001	0.997	0.001
 0.001	0.001	0.001	0.997
 
-MOTIF motif_16_14-CGCTAGAGGG 
+MOTIF motif_Train4_16 14-CGCTAGAGGG 
 letter-probability matrix: alength= 4 w= 10 nsites= 20 E= 1e-33 
 0.07	0.8	0.084	0.046
 0.06	0.054	0.855	0.031
@@ -218,7 +218,7 @@ letter-probability matrix: alength= 4 w= 10 nsites= 20 E= 1e-33
 0.109	0.078	0.74	0.073
 0.136	0.024	0.761	0.079
 
-MOTIF motif_17_16-TCCAAGACGCAG 
+MOTIF motif_Train4_17 16-TCCAAGACGCAG 
 letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-28 
 0.001	0.001	0.001	0.997
 0.001	0.997	0.001	0.001
@@ -233,7 +233,7 @@ letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-28
 0.997	0.001	0.001	0.001
 0.001	0.001	0.997	0.001
 
-MOTIF motif_18_16-TTTTGACATT 
+MOTIF motif_Train4_18 16-TTTTGACATT 
 letter-probability matrix: alength= 4 w= 10 nsites= 20 E= 1e-27 
 0.191	0.07	0.01	0.729
 0.066	0.008	0.168	0.758
@@ -246,7 +246,7 @@ letter-probability matrix: alength= 4 w= 10 nsites= 20 E= 1e-27
 0.001	0.137	0.196	0.666
 0.136	0.215	0.051	0.598
 
-MOTIF motif_19_14-ACCATGGA 
+MOTIF motif_Train4_19 14-ACCATGGA 
 letter-probability matrix: alength= 4 w= 8 nsites= 20 E= 1e-24 
 0.997	0.001	0.001	0.001
 0.145	0.853	0.001	0.001
@@ -257,7 +257,7 @@ letter-probability matrix: alength= 4 w= 8 nsites= 20 E= 1e-24
 0.09	0.001	0.908	0.001
 0.944	0.054	0.001	0.001
 
-MOTIF motif_20_18-CATGGTGAAACG 
+MOTIF motif_Train4_20 18-CATGGTGAAACG 
 letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-24 
 0.204	0.46	0.221	0.114
 0.601	0.097	0.174	0.128
@@ -272,7 +272,7 @@ letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-24
 0.216	0.586	0.079	0.119
 0.117	0.04	0.672	0.171
 
-MOTIF motif_21_18-GTGACGTTTA 
+MOTIF motif_Train4_21 18-GTGACGTTTA 
 letter-probability matrix: alength= 4 w= 10 nsites= 20 E= 1e-22 
 0.001	0.423	0.575	0.001
 0.001	0.001	0.083	0.915
@@ -285,7 +285,7 @@ letter-probability matrix: alength= 4 w= 10 nsites= 20 E= 1e-22
 0.336	0.001	0.001	0.662
 0.845	0.153	0.001	0.001
 
-MOTIF motif_22_20-GTCTTCAGGGAC 
+MOTIF motif_Train4_22 20-GTCTTCAGGGAC 
 letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-19 
 0.099	0.001	0.813	0.087
 0.001	0.001	0.043	0.955
@@ -300,7 +300,7 @@ letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-19
 0.728	0.14	0.088	0.044
 0.131	0.776	0.001	0.092
 
-MOTIF motif_23_21-AGGCGAAATGGG 
+MOTIF motif_Train4_23 21-AGGCGAAATGGG 
 letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-18 
 0.943	0.001	0.001	0.055
 0.056	0.028	0.86	0.056
@@ -315,7 +315,7 @@ letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-18
 0.093	0.028	0.795	0.084
 0.001	0.029	0.942	0.028
 
-MOTIF motif_24_22-TTCAGAACTCAT 
+MOTIF motif_Train4_24 22-TTCAGAACTCAT 
 letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-17 
 0.07	0.081	0.038	0.811
 0.001	0.012	0.062	0.925
@@ -330,7 +330,7 @@ letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-17
 0.694	0.05	0.094	0.162
 0.001	0.123	0.041	0.835
 
-MOTIF motif_25_16-CACGTG 
+MOTIF motif_Train4_25 16-CACGTG 
 letter-probability matrix: alength= 4 w= 6 nsites= 20 E= 1e-16 
 0.1	0.7	0.1	0.1
 0.7	0.1	0.1	0.1
