@@ -1,3 +1,6 @@
+MEME version 4
+ALPHABET= ACGT
+
 MOTIF motif_Train9_8 10-GGGTGATAAAAA 
 letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-46 
 0.052	0.017	0.897	0.034
