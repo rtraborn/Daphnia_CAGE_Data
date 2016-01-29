@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="fimo-to-html.xsl"?>
+<!-- Begin document body -->
+<fimo version="4.9.0" release="6 EST 20">
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation=  xmlns:fimo="http://noble.gs.washington.edu/schema/fimo"
+>
+<command-line>fimo --thresh 0.001 ../../motif_groups_network/group_rep_motifs/group2_rep.meme test_list_3.fa</command-line>
+<settings>
+<setting name="output directory">fimo_out</setting>
+<setting name="MEME file name">../../motif_groups_network/group_rep_motifs/group2_rep.meme</setting>
+<setting name="sequence file name">test_list_3.fa</setting>
+<setting name="allow clobber">true</setting>
+<setting name="compute q-values">true</setting>
+<setting name="text only">false</setting>
+<setting name="scan both strands">true</setting>
+<setting name="max sequence length">250000000</setting>
+<setting name="output threshold">0.001</setting>
+<setting name="threshold type">p-value</setting>
+<setting name="max stored scores">100000</setting>
+<setting name="parse genomic coord.">false</setting>
+<setting name="pseudocount">0.1</setting>
+<setting name="verbosity">2</setting>
+</settings>
+<sequence-data num-sequences="1748" num-residues="263221" />
+<alphabet>nucleotide</alphabet>
+<motif name="motif_Train1_6" width="10" best-possible-match="GGGTGATAAA"/>
+<background source="non-redundant database">
+<value letter="A">0.275</value>
+<value letter="C">0.225</value>
+<value letter="G">0.225</value>
+<value letter="T">0.275</value>
+</background>
+<cisml-file>cisml.xml</cisml-file>
+</fimo>
