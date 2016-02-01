@@ -10,8 +10,7 @@ letter-probability matrix: alength= 4 w= 8 nsites= 20 E= 1e-33
 0.001	0.001	0.001	0.997
 0.997	0.001	0.001	0.001
 0.001	0.037	0.961	0.001
-0.863	0.001	0.135	0.001MEME version 4
-ALPHABET= ACGT
+0.863	0.001	0.135	0.001
 
 MOTIF motif_Train1_6 8-GGGTGATHAA 
 letter-probability matrix: alength= 4 w= 10 nsites= 20 E= 1e-45 
@@ -24,8 +23,7 @@ letter-probability matrix: alength= 4 w= 10 nsites= 20 E= 1e-45
 0.001	0.001	0.392	0.606
 0.384	0.361	0.001	0.254
 0.997	0.001	0.001	0.001
-0.997	0.001	0.001	0.001MEME version 4
-ALPHABET= ACGT
+0.997	0.001	0.001	0.001
 
 MOTIF motif_Train2_10 12-AGAGAAAAGGCG 
 letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-33 
@@ -40,8 +38,7 @@ letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-33
 0.026	0.013	0.948	0.013
 0.013	0.001	0.719	0.267
 0.001	0.973	0.001	0.025
-0.039	0.067	0.893	0.001MEME version 4
-ALPHABET= ACGT
+0.039	0.067	0.893	0.001
 
 MOTIF motif_Train9_20 21-GTGTCTTCAGGG 
 letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-19 
@@ -56,8 +53,7 @@ letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-19
 0.942	0.001	0.001	0.056
 0.115	0.001	0.827	0.057
 0.174	0.057	0.683	0.086
-0.029	0.001	0.942	0.028MEME version 4
-ALPHABET= ACGT
+0.029	0.001	0.942	0.028
 
 MOTIF motif_10_2 1-NNKCAGTCGN 
 letter-probability matrix: alength= 4 w= 10 nsites= 20 E= 1e-283 
@@ -70,8 +66,7 @@ letter-probability matrix: alength= 4 w= 10 nsites= 20 E= 1e-283
 0.229	0.001	0.001	0.769
 0.062	0.615	0.001	0.322
 0.144	0.176	0.499	0.181
-0.267	0.225	0.23	0.277MEME version 4
-ALPHABET= ACGT
+0.267	0.225	0.23	0.277
 
 MOTIF motif_Train2_3 4-TGGCAACGTTGC 
 letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-134 
@@ -86,8 +81,7 @@ letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-134
 0.035	0.27	0.031	0.664
 0.111	0.226	0.071	0.592
 0.047	0.047	0.835	0.071
-0.161	0.507	0.054	0.278MEME version 4
-ALPHABET= ACGT
+0.161	0.507	0.054	0.278
 
 MOTIF motif_Train7_1 1-GTATAAAAAVVS 
 letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-308 
@@ -102,8 +96,7 @@ letter-probability matrix: alength= 4 w= 12 nsites= 20 E= 1e-308
 0.479	0.083	0.317	0.121
 0.226	0.259	0.356	0.16
 0.25	0.264	0.352	0.134
-0.209	0.268	0.38	0.143MEME version 4
-ALPHABET= ACGT
+0.209	0.268	0.38	0.143
 
 MOTIF motif_Train2_5 8-CWAGATGGCG 
 letter-probability matrix: alength= 4 w= 10 nsites= 20 E= 1e-84 
