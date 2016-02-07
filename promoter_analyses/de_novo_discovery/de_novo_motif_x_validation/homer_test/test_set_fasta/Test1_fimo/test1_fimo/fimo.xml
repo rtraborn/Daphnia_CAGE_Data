@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml-stylesheet type="text/xsl" href="fimo-to-html.xsl"?>
+<!-- Begin document body -->
+<fimo version="4.9.0" release="6 EST 20">
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation=  xmlns:fimo="http://noble.gs.washington.edu/schema/fimo"
+>
+<command-line>fimo /home/rtraborn/Daphnia/Daphnia_CAGE_Data/promoter_analyses/de_novo_discovery/de_novo_motif_x_validation/motif_groups_network/group_rep_motifs/meme_format/Group1_consensus.meme test_list_1.fa</command-line>
+<settings>
+<setting name="output directory">fimo_out</setting>
+<setting name="MEME file name">/home/rtraborn/Daphnia/Daphnia_CAGE_Data/promoter_analyses/de_novo_discovery/de_novo_motif_x_validation/motif_groups_network/group_rep_motifs/meme_format/Group1_consensus.meme</setting>
+<setting name="sequence file name">test_list_1.fa</setting>
+<setting name="allow clobber">true</setting>
+<setting name="compute q-values">true</setting>
+<setting name="text only">false</setting>
+<setting name="scan both strands">true</setting>
+<setting name="max sequence length">250000000</setting>
+<setting name="output threshold">0.0001</setting>
+<setting name="threshold type">p-value</setting>
+<setting name="max stored scores">100000</setting>
+<setting name="parse genomic coord.">false</setting>
+<setting name="pseudocount">0.1</setting>
+<setting name="verbosity">2</setting>
+</settings>
+<sequence-data num-sequences="1651" num-residues="248715" />
+<alphabet>nucleotide</alphabet>
+<motif name="Group1_consensus.meme" width="7" best-possible-match="CGCTAGA"/>
+<background source="non-redundant database">
+<value letter="A">0.275</value>
+<value letter="C">0.225</value>
+<value letter="G">0.225</value>
+<value letter="T">0.275</value>
+</background>
+<cisml-file>cisml.xml</cisml-file>
+</fimo>
