@@ -4,6 +4,8 @@ ALPHABET= ACGT
 
 strands: + -
 
+MOTIF Group3_consensus.meme
+letter-probability matrix: alength= 4 w= 11 nsites= 20
 0.0186	0.001	0.9794	0.001
 0.9604	0.014	0.0246	0.001
 0.0191	0.0151	0.9485	0.0173
