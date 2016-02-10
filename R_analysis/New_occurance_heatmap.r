@@ -5,11 +5,11 @@ library(RColorBrewer)
 
 setwd("/home/rtraborn/Daphnia/Daphnia_CAGE_Data/promoter_analyses/de_novo_discovery/motif_peak_annotation_files/")
 
-promoter_comp <- read.table(file="DpTCO.logPvalue.matrix.txt", skip=1, header=FALSE,sep="\t",stringsAsFactors = FALSE)
+promoter_comp <- read.table(file="DpTCO_tagClusters_200_50.logPvalue.matrix.txt", skip=1, header=FALSE,sep="\t",stringsAsFactors = FALSE)
 
 head(promoter_comp)
 
-colnames(promoter_comp) <- c("Name","Dpm1","Dpm2","Dpm3","Dpm4","Dpm5","Dpm6","Dpm7","Dpm8") #renaming to match the final Dpm set
+colnames(promoter_comp) <- c("MotifID","Motif1","Motif2","Motif3","Motif4","Motif5","Motif6","Motif7","Motif8") #renaming to match the final Dpm set
 
 row_in <- promoter_comp[,1]
 
