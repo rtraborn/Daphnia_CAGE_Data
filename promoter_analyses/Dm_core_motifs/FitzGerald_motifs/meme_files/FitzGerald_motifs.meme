@@ -44,6 +44,16 @@ letter-probability matrix: alength= 4 w= 8 nsites= 20 E= NA
 0.001	0.499	0.499	0.001
 0.001	0.001	0.499	0.499
 
+MOTIF motif_DMp_5 DMp5 
+letter-probability matrix: alength= 4 w= 8 nsites= 20 E= NA
+0.001   0.997   0.001   0.001
+0.001   0.001   0.997   0.001
+0.001   0.001   0.997   0.001
+0.997   0.001   0.001   0.001
+0.001   0.997   0.001   0.001
+0.001   0.001   0.997   0.001
+0.001   0.001   0.001   0.997
+
 MOTIF motif_DMv_1 DMv1 
 letter-probability matrix: alength= 4 w= 7 nsites= 20 E= NA 
 0.001	0.997	0.001	0.001
@@ -86,6 +96,17 @@ letter-probability matrix: alength= 4 w= 8 nsites= 20 E= NA
 0.001	0.997	0.001	0.001
 0.997	0.001	0.001	0.001
 0.001	0.997	0.001	0.001
+
+MOTIF motif_DMv_5 DMv5 
+letter-probability matrix: alength= 4 w= 8 nsites= 20 E= NA
+0.001   0.001   0.001   0.997
+0.001   0.001   0.997   0.001
+0.001   0.001   0.997   0.001
+0.001   0.001   0.001   0.997
+0.997   0.001   0.001   0.001
+0.001   0.001   0.001   0.997
+0.001   0.001   0.001   0.997
+0.001   0.001   0.001   0.997
 
 MOTIF motif_NDM_1 NDM1 
 letter-probability matrix: alength= 4 w= 7 nsites= 20 E= NA 
