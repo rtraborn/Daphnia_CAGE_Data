@@ -1,4 +1,4 @@
-This file is supplementary table 2 for Ohler et al,
+fThis file is supplementary table 2 for Ohler et al,
 Computational analysis of core promoters in the Drosophila genome.
 
 It contains log-odds weight matrix descriptions of the binding sites 

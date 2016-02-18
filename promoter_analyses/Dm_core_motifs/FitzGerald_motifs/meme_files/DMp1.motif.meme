@@ -1,0 +1,25 @@
+MEME version 4
+
+ALPHABET= ACGT
+
+strands: + -
+
+ [1] "BREd_motif.motif"        "BREu_motif.motif"       
+ [3] "Dm_caudal.motif"         "Dm_core.meme"           
+ [5] "Dm_core.meme~"           "Dm_core.motif"          
+ [7] "Dm_DRE.motif"            "Dm_Ebox.motif"          
+ [9] "Dm_Inr.motif"            "Dm_motifs_table.xlsx"   
+[11] "Dm_TATA.motif"           "DMp1.motif"             
+[13] "DMp1.motif.meme"         "DMp2.motif"             
+[15] "DMp3.motif"              "DMp4.motif"             
+[17] "DMp5.motif"              "DMv1.motif"             
+[19] "DMv2.motif"              "DMv3.motif"             
+[21] "DMv4.motif"              "DMv5.motif"             
+[23] "DPE_motif.motif"         "FitzGerald_motifs.txt"  
+[25] "homer_dros_matrices.txt" "MTE_motif.motif"        
+[27] "NDM1.motif"              "NDM2.motif"             
+[29] "NDM3.motif"              "NDM4.motif"             
+[31] "NDM5.motif"              "ohler_motifs.txt"       
+[33] "ohler6_motif.motif"      "ohler7_motif.motif"     
+[35] "ohler8_motif.motif"      "TATA_ohler.txt"         
+[37] "TATA_ohler.txt~"         "TCT_motif.motif"        
