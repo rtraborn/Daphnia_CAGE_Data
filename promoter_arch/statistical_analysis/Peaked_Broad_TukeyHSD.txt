@@ -1,0 +1,26 @@
+> factor(TSRs_breadth_gc$Shape) -> TSRs_breadth_gc$Shape
+> is.factor(TSRs_breadth_gc$Shape)
+[1] TRUE
+> fit <- aov(nTSSs ~ Shape, data= TSRs_breadth_gc)
+> fit
+Call:
+   aov(formula = nTSSs ~ Shape, data = TSRs_breadth_gc)
+
+Terms:
+                      Shape   Residuals
+Sum of Squares  4.50046e+10 1.42622e+13
+Deg. of Freedom           2       10577
+
+Residual standard error: 36720.78
+Estimated effects may be unbalanced
+> TukeyHSD(fit)
+  Tukey multiple comparisons of means
+    95% family-wise confidence level
+
+Fit: aov(formula = nTSSs ~ Shape, data = TSRs_breadth_gc)
+
+$Shape
+                         diff        lwr        upr     p adj
+Peaked-Broad         6474.829   2517.511 10432.1479 0.0003710
+Unclassified-Broad  -1574.012  -4121.649   973.6252 0.3162551
+Unclassified-Peaked -8048.841 -11351.608 -4746.0752 0.0000000
