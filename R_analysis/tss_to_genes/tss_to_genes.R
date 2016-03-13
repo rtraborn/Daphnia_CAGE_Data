@@ -12,7 +12,7 @@ names(dpulex_genes) <- c("chr","start","end","geneID","score","strand","version"
 names(dpulex_promoters) <- c("chr","start","end","placeholder","score","strand","start2","end2","score2","score3","score4","score5")
 
 #region around gene to call a TSS
-span <- 200
+span <- 500
 
 #adding space to the genes on the positive strand
 dpulex_genes[dpulex_genes$strand=='+','start']  <- dpulex_genes[dpulex_genes$strand=='+',"start"]-span
