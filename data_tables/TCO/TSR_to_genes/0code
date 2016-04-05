@@ -1,0 +1,11 @@
+
+##TSRs and their overlapping genes
+### +/- 1kb surrounding the gene translation start
+bedtools intersect -a combined.tagClusters_merged.bed -b Dp_genes_1kb_up_1kb_down.bed -wb -s > Combined_TSRs_mapped_geneIDs_1kb_flanks.bed
+
+### +/- 500bp surrounding the gene translation start
+bedtools intersect -a combined.tagClusters_merged.bed -b Dp_genes_500_up_500_down_cut.bed -wb -s > Combined_TSRs_mapped_geneIDs_500_flanks.bed
+
+## Genes with overlapping promoters (reverse order)
+### +/- 500bp surrounding the gene translation start 
+bedtools intersect -b combined.tagClusters_merged.bed -a Dp_genes_500_up_500_down_cut.bed -wa -s > Dp_Fg_TSR_overlap_500_flank.bed
