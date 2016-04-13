@@ -50,8 +50,12 @@ contrasts.matrix <- makeContrasts(
     pEvM=pE_fem-mat_male,
     MfvpE=mat_fem-pE_fem,
     MvF=mat_male-(mat_fem+pE_fem)/2,
-    AvS=mat_fem-(mat_fem+pE_fem)/2,
+    AvS=mat_fem-(mat_male+pE_fem)/2,
     levels=design)
+
+#for direct comparison between the three groups
+#contrasts.matrix <- makeContrasts(pE_fem-mat_fem, mat_male-pE_fem, mat_male-mat_fem,
+#                                  levels=design)
 
 contrasts.matrix
 
@@ -61,24 +65,23 @@ p_cutoff <- 0.01
 rowsum_threshold <- 25
 
 Dp_dge <- DGEList(counts=Dp_edger,group=group)
-head(Dp_dge)
 A <- rowSums(Dp_dge$counts) 
 Dp_dge <- Dp_dge[A>rowsum_threshold,]  
-#Dp_dge <- calcNormFactors(Dp_dge)
+Dp_dge <- calcNormFactors(Dp_dge)
 Dp_dge <- estimateCommonDisp(Dp_dge, verbose=T)
 Dp_dge <- estimateTagwiseDisp(Dp_dge, trend="none")
 
 plotBCV(Dp_dge)
 
-Dp_dge <- calcNormFactors(Dp_dge)
+#de.tagwisedisp <- exactTest(Dp_dge)
 
 v <- voom(Dp_dge, design, plot=TRUE)
 fit <- lmFit(v,design)
 fit2 <- contrasts.fit(fit,contrasts.matrix)
 fit2 <- eBayes(fit2)
-res <- decideTests(fit2,p.value=0.01,lfc=log2(2))
-ind = which(apply(res,1,function(x) {length(which(x != 0))>0}) == T)
-length(ind)
+results <- decideTests(fit2,p.value=0.01,lfc=log2(2))
+#ind = which(apply(res,1,function(x) {length(which(x != 0))>0}) == T)
+#length(ind)
 
 head(res)
 
@@ -99,11 +102,12 @@ volcanoplot(fit2,coef=3,highlight=20)
 volcanoplot(fit2,coef=4,highlight=20)
 volcanoplot(fit2,coef=5,highlight=20)
 
-#results <- decideTests(fit2)
+#vennDiagram(results, names=c("Asexual females","Sexual females","Sexual Males"),include="both",circle.col=c("green","red","blue"))
 #vennDiagram(results, names=c("Asexual females","Sexual females","Sexual Males"),include="up",circle.col=c("green","red","blue"))
+#vennDiagram(results, names=c("Asexual females","Sexual females","Sexual Males"),include="down",circle.col=c("green","red","blue"))
 
-#top_table2 <- cbind(top_table,results)
-#write.table(top_table2,file="de_TCO_combined_table.txt", row.names=TRUE,quote=FALSE)
+top_table2 <- cbind(top_table,results)
+write.table(top_table2,file="de_TCO_combined_table.txt", row.names=TRUE,quote=FALSE)
 
 ################################### mat females vs pE females ############################
 

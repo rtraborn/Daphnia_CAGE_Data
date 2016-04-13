@@ -95,7 +95,7 @@ p2 <- ggplot(subset(de_table_m,de=="downregulated"), aes(y=value,x=variable)) + 
 
 p2 <- p2 + theme_bw() + theme(axis.title.x= element_blank(), axis.ticks.x = element_blank(),axis.text.x = element_blank())  
 
-png(filename = "de_genes_by_comparison.png")
+png(filename = "de_genes_by_comparison.png",width=7,height=7,units="in",res=300)
 
 multiplot(p, p2, cols=1)
 
