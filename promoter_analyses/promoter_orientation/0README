@@ -1,0 +1,2 @@
+### Command-line code used to generate files in this folder
+'bedtools closest -a ConsensusClusters_TCO.bed -b ConsensusClusters_TCO.bed -S -d -io > ConsensusClusters_bidirectional_closest.bed'
