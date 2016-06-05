@@ -1,0 +1,2 @@
+##### Commands used to generate the files in this folder
+>$ bedtools closest -S -D a -io -id -a dpulex_genes.bed -b dpulex_genes.bed > dpulex_genes_upstream_dist.bed
