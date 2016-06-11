@@ -1,0 +1,4 @@
+### Commands used to generate files in this folder:
+>$ bedtools cluster -s -d 500 -i ConsensusClusters_TCO.bed > ConsensusClusters_TCO_cluster500bp.bed
+>$ bedtools cluster -s -d 1000 -i ConsensusClusters_TCO.bed > ConsensusClusters_TCO_cluster1kb.bed
+>$ bedtools cluster -s -d 250 -i ConsensusClusters_TCO.bed > ConsensusClusters_TCO_cluster250bp.bed
