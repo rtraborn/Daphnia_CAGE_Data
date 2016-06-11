@@ -2,3 +2,5 @@
 >$ bedtools closest -a ConsensusClusters_TCO.bed -b ConsensusClusters_TCO.bed -S -d -io > ConsensusClusters_bidirectional_closest.bed
 >$ bedtools closest -S -Da -io -id -a ConsensusClusters_TCO.bed -b ConsensusClusters_TCO.bed > ConsensusClusters_bidirectional_closest_upstream.bed
 >$ bedtools closest -io -id -D a -a ConsensusClusters_TCO.bed -b ConsensusClusters_TCO.bed > ConsensusClusters_upstream_dist.bed
+>$ bedtools closest -S -io -id -D a -a ConsensusClusters_TCO.bed -b ConsensusClusters_TCO.bed > ConsensusClusters_upstream_dist_opposite_strand.bed
+>$ bedtools closest -s -io -id -D a -a ConsensusClusters_TCO.bed -b ConsensusClusters_TCO.bed > ConsensusClusters_upstream_dist_same_strand.bed
