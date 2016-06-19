@@ -4,3 +4,4 @@
 >$ bedtools closest -io -id -D a -a ConsensusClusters_TCO.bed -b ConsensusClusters_TCO.bed > ConsensusClusters_upstream_dist.bed
 >$ bedtools closest -S -io -id -D a -a ConsensusClusters_TCO.bed -b ConsensusClusters_TCO.bed > ConsensusClusters_upstream_dist_opposite_strand.bed
 >$ bedtools closest -s -io -id -D a -a ConsensusClusters_TCO.bed -b ConsensusClusters_TCO.bed > ConsensusClusters_upstream_dist_same_strand.bed
+>$ bedtools closest -a ConsensusClusters_TCO.bed -b ConsensusClusters_TCO.bed -id -io -D ref > ConsensusClusters_up_dist_ref.bed
