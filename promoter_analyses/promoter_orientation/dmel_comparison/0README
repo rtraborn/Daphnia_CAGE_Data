@@ -1,0 +1,4 @@
+# commands used to generate files in this folder:
+cp /projects/rtraborn/Daphnia/Daphnia_CAGE_Data/promoter_arch/dmel_hoskins/All.samples.tagClusters.qLow0.1_qUp0.9.bed .
+
+bedtools closest -a All.samples.tagClusters.qLow0.1_qUp0.9.bed -b All.samples.tagClusters.qLow0.1_qUp0.9.bed -iu -io -D ref > dmel_TC_dist_table.bed
